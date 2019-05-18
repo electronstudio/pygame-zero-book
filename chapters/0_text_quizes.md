@@ -3,9 +3,11 @@
 These programs can be entered using any text editor or IDE, but I suggest using [the Mu editor](https://codewith.mu/)
 because it comes with Python, Pygame Zero and other libraries all pre-installed in one easy download.
 
-## Hello, world
+\vspace{\parskip}
+\vspace{\parskip}
+\noindent\begin{minipage}{\textwidth}
 
-\begin{minipage}{\textwidth}
+## Hello, world
 
 The traditional first program used to make sure Python is working and that we can run programs. 
 
@@ -23,10 +25,10 @@ The traditional first program used to make sure Python is working and that we ca
 * Click 'Run'.
 
 \end{minipage}
+\vspace{\parskip}
+\noindent\begin{minipage}{\textwidth}
 
 ## Getting input from the keyboard
-
-\begin{minipage}{\textwidth}
 
 When you run this program it will pause and wait for you to enter some
 text with the keyboard, followed by the return key. The text you enter
@@ -42,10 +44,10 @@ is stored in a variable, *x*.
 * Add some names of your friends with different messages for each.
 
 \end{minipage}
+\vspace{\parskip}
+\noindent\begin{minipage}{\textwidth}
 
 ## Decisions: if, elif, else
-
-\begin{minipage}{\textwidth}
 
 This is how I added another name.
 
@@ -59,10 +61,10 @@ This is how I added another name.
 a new file and use copy and paste to copy the code from the old program into the new.
 
 \end{minipage}
+\vspace{\parskip}
+\noindent\begin{minipage}{\textwidth}
 
 ## A random maths question
-
-\begin{minipage}{\textwidth}
 
 \begin{codelisting}
 \codecaption{A random maths question}
@@ -78,10 +80,10 @@ a new file and use copy and paste to copy the code from the old program into the
 * Print how many questions the player got correct at the end.
 
 \end{minipage}
+\vspace{\parskip}
+\noindent\begin{minipage}{\textwidth}
 
 ## Keeping score
-
-\begin{minipage}{\textwidth}
 
 \begin{codelisting}
 \codecaption{Keeping score}
@@ -91,10 +93,10 @@ a new file and use copy and paste to copy the code from the old program into the
 \end{codelisting}
 
 \end{minipage}
+\vspace{\parskip}
+\noindent\begin{minipage}{\textwidth}
 
 ## Guessing game with a loop
-
-\begin{minipage}{\textwidth}
 
 \begin{codelisting}
 \codecaption{Guessing game with a loop}
@@ -106,11 +108,11 @@ a new file and use copy and paste to copy the code from the old program into the
 * Give a hint to the player when they are wrong.
 * Print how many guesses at the end.
 
+\vspace{\parskip}
 \end{minipage}
+\noindent\begin{minipage}{\textwidth}
 
 ## Improved guessing game
-
-\begin{minipage}{\textwidth}
 
 \begin{codelisting}
 \codecaption{Improved guessing game}

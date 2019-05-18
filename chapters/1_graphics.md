@@ -4,6 +4,8 @@ To create graphics for our games we will use [the Pygame Zero library](https://p
 
 Co-ordinate diagram FIXME. Make sure you understand (x,y) co-ordinates(In maths this called a 'Cartesian coordinate system' and everything we do in Pygame Zero will use it)
 
+\noindent\begin{minipage}{\textwidth}
+
 ## Lines and circles
 
 If are using the Mu editor, Pygame Zero is built-in, but **you must remember to click 'Mode' and select 'Pygame Zero' before running your program**!
@@ -18,6 +20,7 @@ If you are using a different editor, [instructions are online](https://pygame-ze
 
 * Finish drawing this picture, or your own picture.
 
+\end{minipage}
 \noindent\begin{minipage}{\textwidth}
 
 ## Moving rectangles
