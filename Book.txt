@@ -1,0 +1,8 @@
+#cover
+frontmatter:
+maketitle
+tableofcontents
+preface.md
+mainmatter:
+0_text_quizes.md
+1_graphics.md
