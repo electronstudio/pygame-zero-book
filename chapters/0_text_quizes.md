@@ -5,6 +5,8 @@ because it comes with Python, Pygame Zero and other libraries all pre-installed 
 
 ## Hello, world
 
+\begin{minipage}{\textwidth}
+
 The traditional first program used to make sure Python is working and that we can run programs. 
 
 \begin{codelisting}
@@ -20,7 +22,11 @@ The traditional first program used to make sure Python is working and that we ca
 * Click 'Save' and enter a name for the program.
 * Click 'Run'.
 
+\end{minipage}
+
 ## Getting input from the keyboard
+
+\begin{minipage}{\textwidth}
 
 When you run this program it will pause and wait for you to enter some
 text with the keyboard, followed by the return key. The text you enter
@@ -33,9 +39,13 @@ is stored in a variable, *x*.
 
 \end{codelisting}
 
-\noindent Can you add some names of your friends with different messages for each?
+* Add some names of your friends with different messages for each.
+
+\end{minipage}
 
 ## Decisions: if, elif, else
+
+\begin{minipage}{\textwidth}
 
 This is how I added another name.
 
@@ -48,43 +58,65 @@ This is how I added another name.
 \noindent Program~\ref{code:input2} is very similar to Program~\ref{code:input}. The new lines have been highlighted.  You can either modify Program~\ref{code:input} or else create
 a new file and use copy and paste to copy the code from the old program into the new.
 
+\end{minipage}
+
 ## A random maths question
+
+\begin{minipage}{\textwidth}
 
 \begin{codelisting}
 \codecaption{A random maths question}
 \label{code:maths}
+\phantom{.}
 <<(programs/04_maths_question.py)
 \end{codelisting}
 
-* add some more questions, e.g.
+* Add some more questions, e.g.
    * instead of 7, use another random number
    * use a bigger random number
    * multiply or divide or subtract numbers
-* print how many questions the player got correct at the end.
+* Print how many questions the player got correct at the end.
+
+\end{minipage}
 
 ## Keeping score
+
+\begin{minipage}{\textwidth}
 
 \begin{codelisting}
 \codecaption{Keeping score}
 \label{code:maths2}
+\phantom{.}
 <<(programs/05_maths_question2.py)
 \end{codelisting}
 
+\end{minipage}
+
 ## Guessing game with a loop
+
+\begin{minipage}{\textwidth}
 
 \begin{codelisting}
 \codecaption{Guessing game with a loop}
 \label{code:loop}
+\phantom{.}
 <<(programs/06_loop.py)
 \end{codelisting}
 
-* give a hint to the player when they are wrong
-* print how many guesses at the end
+* Give a hint to the player when they are wrong.
+* Print how many guesses at the end.
+
+\end{minipage}
 
 ## Improved guessing game
+
+\begin{minipage}{\textwidth}
 
 \begin{codelisting}
 \codecaption{Improved guessing game}
 \label{code:loop2}
+\phantom{.}
 <<(programs/07_loop2.py)
 \end{codelisting}
+
+\end{minipage}

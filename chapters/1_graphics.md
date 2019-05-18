@@ -2,91 +2,94 @@
 
 To create graphics for our games we will use [the Pygame Zero library](https://pygame-zero.readthedocs.io). You will find the documentation on the website useful!
 
-If are using the Mu editor, Pygame Zero is built-in, but **you must remember to click 'Mode' and select 'Pygame Zero' before running your program!**
-
-If you are using a different editor, [instructions are online](https://pygame-zero.readthedocs.io/en/stable/ide-mode.html)
+Co-ordinate diagram FIXME. Make sure you understand (x,y) co-ordinates(In maths this called a 'Cartesian coordinate system' and everything we do in Pygame Zero will use it)
 
 ## Lines and circles
 
+If are using the Mu editor, Pygame Zero is built-in, but **you must remember to click 'Mode' and select 'Pygame Zero' before running your program**!
+
+If you are using a different editor, [instructions are online](https://pygame-zero.readthedocs.io/en/stable/ide-mode.html)
 
 \begin{codelisting}
 \codecaption{Lines and circles}
-\label{code:lines}
+\label{code:10_lines_circles}
 <<(programs/10_lines_circles.py)
 \end{codelisting}
 
-\noindent
+* Finish drawing this picture, or your own picture.
 
-Finishing drawing this picture, or your own picture.
-Make sure you understand (x,y) co-ordinates
-(In maths this called a 'Cartesian coordinate system'
-and everything we do in Pygame Zero will use it)
+\noindent\begin{minipage}{\textwidth}
 
-## Getting input from the keyboard
+## Moving rectangles
 
-When you run this program it will pause and wait for you to enter some
-text with the keyboard, followed by the return key. The text you enter
-is stored in a variable, *x*.
+To make things move we need to add the special *update()* function.
+Pygame Zero calls this function for us, over and over, once per frame.
 
 \begin{codelisting}
-\codecaption{Getting input from the keyboard}
-\label{code:input}
-<<(programs/02_input.py)
-
+\codecaption{Moving rectangles}
+\label{code:11_moving_boxes}
+<<(programs/11_moving_boxes.py)
 \end{codelisting}
 
-\noindent Can you add some names of your friends with different messages for each?
+* Make box move faster.
+* Move in different direction.
+* Have two boxes with different colours.
 
-## Decisions: if, elif, else
+\vspace{\parskip}
+\end{minipage}
+\noindent\begin{minipage}{\textwidth}
 
-This is how I added another name.
+## Actor sprites
+
+Actor sprites are very similiar to boxes!
+Click 'Images' to see images available.
+*alien.png* should already be there, but
+for other images you must add them yourself.
 
 \begin{codelisting}
-\codecaption{Decisions: if, elif, else}
-\label{code:input2}
-<<(programs/03_input2.py, options: "hl_lines": [6, 7, 8, 9])
+\codecaption{Actor sprites}
+\label{code:12_sprites}
+<<(programs/12_sprites.py)
 \end{codelisting}
 
-\noindent Program~\ref{code:input2} is very similar to Program~\ref{code:input}. The new lines have been highlighted.  You can either modify Program~\ref{code:input} or else create
-a new file and use copy and paste to copy the code from the old program into the new.
+* Draw or download your own image to use instead of alien.
 
-## A random maths question
+\vspace{\parskip}
+\end{minipage}
+\noindent\begin{minipage}{\textwidth}
+
+## Keyboard input
+
+The alien moves when you press the cursor keys.
 
 \begin{codelisting}
-\codecaption{A random maths question}
-\label{code:maths}
-<<(programs/04_maths_question.py)
+\codecaption{Keyboard input}
+\label{code:13_keyboard_input}
+<<(programs/13_keyboard_input.py)
 \end{codelisting}
 
-* add some more questions, e.g.
-   * instead of 7, use another random number
-   * use a bigger random number
-   * multiply or divide or subtract numbers
-* print how many questions the player got correct at the end.
+* Make the alien move up and down as well as left and right.
+* Use the += operator to change the alien.x more concisely (see FIXME).
+* Use the 'or' operator to allow WASD keys to move the alien in addition to the cursor keys (see FIXME).
+* Make alien wrap around when he moves off edge of screen.
 
-## Keeping score
+\vspace{\parskip}
+\end{minipage}
+\noindent\begin{minipage}{\textwidth}
+
+## Joystick input
+
+You may call them gamepads or game controllers, but Pygame calls them joysticks.
+ Some controllers have different inputs and some are not be compatible so don't be surprised if this doesnt work properly!  Use FIXME to test yours and find out what inputs it has.
+
 
 \begin{codelisting}
-\codecaption{Keeping score}
-\label{code:maths2}
-<<(programs/05_maths_question2.py)
+\codecaption{Joystick input}
+\label{code:14_joystick_input}
+<<(programs/14_joystick_input.py)
 \end{codelisting}
 
-## Guessing game with a loop
+* Make the alien move up and down as well as left and right.
 
-\begin{codelisting}
-\codecaption{Guessing game with a loop}
-\label{code:loop}
-<<(programs/06_loop.py)
-\end{codelisting}
-
-* give a hint to the player when they are wrong
-* print how many guesses at the end
-
-## Improved guessing game
-
-\begin{codelisting}
-\codecaption{Improved guessing game}
-\label{code:loop2}
-<<(programs/07_loop2.py)
-\end{codelisting}
+\vspace{\parskip}
+\end{minipage}
