@@ -6,3 +6,6 @@ preface.md
 mainmatter:
 0_text_quizes.md
 1_graphics.md
+2_simple_games.md
+3_python_fundamentals.md
+4_more_graphics.md

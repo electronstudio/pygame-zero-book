@@ -18,8 +18,8 @@ print(f"76 divided by 10 is {x} and the remainder is {remainder}")
 WIDTH = 500
 a = 502
 b = 502
-# Modulo is often used as a shortcut to reset a number back to zero if it gets too big
-# So instead of:
+# Modulo is often used as a shortcut to reset a number back
+# to zero if it gets too big.  So instead of:
 if a > WIDTH:
     a = a - WIDTH
 # You could simply do:

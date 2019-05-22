@@ -9,5 +9,3 @@ for x in range(0, 10, 2):
 for a in range(0, 6):
     for b in range(0, 6):
         print(a, "times", b, "is", a * b)
-
-# Can you print 12 times table?

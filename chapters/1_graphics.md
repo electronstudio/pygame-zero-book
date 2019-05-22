@@ -2,7 +2,9 @@
 
 To create graphics for our games we will use [the Pygame Zero library](https://pygame-zero.readthedocs.io). You will find the documentation on the website useful!
 
-Co-ordinate diagram FIXME. Make sure you understand (x,y) co-ordinates(In maths this called a 'Cartesian coordinate system' and everything we do in Pygame Zero will use it)
+Co-ordinate diagram FIXME. Make sure you understand (x,y) co-ordinates(In maths this called a 'Cartesian coordinate system' and everything we do in Pygame Zero will use it).
+
+\vspace{20mm}
 
 \noindent\begin{minipage}{\textwidth}
 
@@ -14,7 +16,7 @@ If you are using a different editor, [instructions are online](https://pygame-ze
 
 \begin{codelisting}
 \codecaption{Lines and circles}
-\label{code:10_lines_circles}
+\label{code:lines_circles}
 <<(programs/10_lines_circles.py)
 \end{codelisting}
 
@@ -30,7 +32,7 @@ Pygame Zero calls this function for us, over and over, once per frame.
 
 \begin{codelisting}
 \codecaption{Moving rectangles}
-\label{code:11_moving_boxes}
+\label{code:moving_boxes}
 <<(programs/11_moving_boxes.py)
 \end{codelisting}
 
@@ -51,7 +53,7 @@ for other images you must add them yourself.
 
 \begin{codelisting}
 \codecaption{Actor sprites}
-\label{code:12_sprites}
+\label{code:prites}
 <<(programs/12_sprites.py)
 \end{codelisting}
 
@@ -67,7 +69,7 @@ The alien moves when you press the cursor keys.
 
 \begin{codelisting}
 \codecaption{Keyboard input}
-\label{code:13_keyboard_input}
+\label{code:keyboard_input}
 <<(programs/13_keyboard_input.py)
 \end{codelisting}
 
@@ -83,16 +85,15 @@ The alien moves when you press the cursor keys.
 ## Joystick input
 
 You may call them gamepads or game controllers, but Pygame calls them joysticks.
- Some controllers have different inputs and some are not be compatible so don't be surprised if this doesnt work properly!  Use FIXME to test yours and find out what inputs it has.
+ Some controllers have different inputs and some are not compatible at all so don't be surprised if this doesnt work properly!  PS4 and Xbox One controllers connected by USB cable seems to work best.  Use FIXME to test yours and find out what inputs it has.  Note that if you come back to this program in future when you no longer have a controller plugged in you will get an error.
 
 
 \begin{codelisting}
 \codecaption{Joystick input}
-\label{code:14_joystick_input}
+\label{code:oystick_input}
 <<(programs/14_joystick_input.py)
 \end{codelisting}
 
 * Make the alien move up and down as well as left and right.
 
-\vspace{\parskip}
 \end{minipage}
