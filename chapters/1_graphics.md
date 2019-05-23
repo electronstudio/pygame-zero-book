@@ -27,8 +27,8 @@ If you are using a different editor, [instructions are online](https://pygame-ze
 
 ## Moving rectangles
 
-To make things move we need to add the special *update()* function.
-Pygame Zero calls this function for us, over and over, once per frame.
+To make things move we need to add the special `update()` function.
+We don't need to write our own loop because *Pygame Zero calls this function for us in its own loop*, over and over, many times per second.
 
 \begin{codelisting}
 \codecaption{Moving rectangles}
@@ -38,7 +38,7 @@ Pygame Zero calls this function for us, over and over, once per frame.
 
 * Make box move faster.
 * Move in different direction.
-* Have two boxes with different colours.
+* Make two boxes with different colours.
 
 \vspace{\parskip}
 \end{minipage}
@@ -46,10 +46,10 @@ Pygame Zero calls this function for us, over and over, once per frame.
 
 ## Actor sprites
 
-Actor sprites are very similiar to boxes!
-Click 'Images' to see images available.
+Actor sprites are very similar to boxes!
+Click 'Images' to see the folder of image files available.
 *alien.png* should already be there, but
-for other images you must add them yourself.
+for other images you must add the files yourself.
 
 \begin{codelisting}
 \codecaption{Actor sprites}
@@ -57,7 +57,7 @@ for other images you must add them yourself.
 <<(programs/12_sprites.py)
 \end{codelisting}
 
-* Draw or download your own image to use instead of alien.
+* Draw or download your own image to use instead of alien.  You could use Microsoft Paint which comes with Windows.
 
 \vspace{\parskip}
 \end{minipage}
@@ -74,7 +74,7 @@ The alien moves when you press the cursor keys.
 \end{codelisting}
 
 * Make the alien move up and down as well as left and right.
-* Use the += operator to change the alien.x more concisely (see FIXME).
+* Use the += operator to change the alien.x more concisely (see Program~\ref{code:shortcuts}).
 * Use the 'or' operator to allow WASD keys to move the alien in addition to the cursor keys (see FIXME).
 * Make alien wrap around when he moves off edge of screen.
 
@@ -84,8 +84,9 @@ The alien moves when you press the cursor keys.
 
 ## Joystick input
 
-You may call them gamepads or game controllers, but Pygame calls them joysticks.
- Some controllers have different inputs and some are not compatible at all so don't be surprised if this doesnt work properly!  PS4 and Xbox One controllers connected by USB cable seems to work best.  Use FIXME to test yours and find out what inputs it has.  Note that if you come back to this program in future when you no longer have a controller plugged in you will get an error.
+You may call them *gamepads* or game *controllers*, but Pygame calls them *joysticks*.
+
+ Some controllers have different inputs and some are not compatible at all so don't be surprised if this doesnt work properly!  PS4 and Xbox One controllers connected by USB cable seems to work best.  Use Program~\ref{code:joystick_tester} to test yours and find out what inputs it has.  Note that if you come back to this program in future when you no longer have a controller plugged in you will get an error.
 
 
 \begin{codelisting}

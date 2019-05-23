@@ -19,10 +19,10 @@ The traditional first program used to make sure Python is working and that we ca
 
 \noindent If using the Mu editor:
 
-* Click the mode button and make sure the mode is set to 'Python3'
+* Click the mode button and make sure the mode is set to `Python3`
 * Type in the program. 
-* Click 'Save' and enter a name for the program.
-* Click 'Run'.
+* Click `Save` and enter a name for the program.
+* Click `Run`.
 
 \end{minipage}
 \vspace{\parskip}
@@ -32,7 +32,7 @@ The traditional first program used to make sure Python is working and that we ca
 
 When you run this program it will pause and wait for you to enter some
 text with the keyboard, followed by the return key. The text you enter
-is stored in a variable, *x*.
+is stored in a variable, `x`.
 
 \begin{codelisting}
 \codecaption{Getting input from the keyboard}
@@ -41,7 +41,7 @@ is stored in a variable, *x*.
 
 \end{codelisting}
 
-* Add some names of your friends with different messages for each.
+* Add some names of your friends and display a different message for each friend.
 
 \end{minipage}
 \vspace{\parskip}
@@ -49,7 +49,7 @@ is stored in a variable, *x*.
 
 ## Decisions: if, elif, else
 
-This is how I added another name.
+This is how I added another name to  Program~\ref{code:input}
 
 \begin{codelisting}
 \codecaption{Decisions: if, elif, else}
@@ -74,9 +74,9 @@ a new file and use copy and paste to copy the code from the old program into the
 \end{codelisting}
 
 * Add some more questions, e.g.
-   * instead of 7, use another random number
-   * use a bigger random number
-   * multiply or divide or subtract numbers
+   * Instead of 7, use another random number.
+   * Use a bigger random number.
+   * Multiply, divide or subtract numbers.
 * Print how many questions the player got correct at the end.
 
 \end{minipage}
@@ -84,6 +84,8 @@ a new file and use copy and paste to copy the code from the old program into the
 \noindent\begin{minipage}{\textwidth}
 
 ## Keeping score
+
+We create a `score` variable to record how many questions the player answered correctly.
 
 \begin{codelisting}
 \codecaption{Keeping score}
@@ -97,7 +99,10 @@ a new file and use copy and paste to copy the code from the old program into the
 \noindent\begin{minipage}{\textwidth}
 
 ## Guessing game with a loop
-
+ 
+This `while` loop goes round and round forever until the player gets a correct
+answer and then it `break`s.  Note that everything in the loop is indented.
+ 
 \begin{codelisting}
 \codecaption{Guessing game with a loop}
 \label{code:loop}
@@ -113,6 +118,8 @@ a new file and use copy and paste to copy the code from the old program into the
 \noindent\begin{minipage}{\textwidth}
 
 ## Improved guessing game
+
+Program~\ref{code:loop} with a hint whether the guess is greater or lesser than the answer.
 
 \begin{codelisting}
 \codecaption{Improved guessing game}

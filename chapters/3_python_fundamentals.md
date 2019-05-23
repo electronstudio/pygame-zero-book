@@ -1,6 +1,6 @@
 # Python Fundamentals
 
-Now we've had some fun with games I hope to have generated enough interest to tackle some coding basics.  I don't have the students type these, just discuss them, and possibly not all in the same lesson.
+Now we've had some fun with games I hope to have generated enough interest to tackle some coding basics!  I don't have the students type these, just discuss them, and possibly not all in the same lesson but only when they relevant to other programs.
 
 \noindent\begin{minipage}{\textwidth}
 
@@ -36,7 +36,7 @@ It is often useful to put one loop inside another loop.
 
 ## Arrays
 
-Python calls them *lists* but most languages call them arrays.
+Python calls them *lists* but most languages call them *arrays*.
   
 \begin{codelisting}
 \codecaption{Array lists}
@@ -50,7 +50,7 @@ Python calls them *lists* but most languages call them arrays.
 
 ## Functions
 
-You have already defined specially named functions that are called by Pygame: *draw()* and *update()*
+You have already defined specially named functions that are called by Pygame: `draw()` and `update()`
 However you can define a function named whatever you like and call it yourself.
 
 Functions are useful for many reasons. The simplest is that they make your program look more organized. They also enable you re-use code without

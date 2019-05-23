@@ -1,6 +1,6 @@
 # Aracade games
 
-To 
+Now we can draw actor sprites to the screen we can begin to make simple arcade style games with them. 
 
 \noindent\begin{minipage}{\textwidth}
 
@@ -14,7 +14,7 @@ Arcade games need to know when one sprite has hit another sprite.  Most of this 
 <<(programs/15_collisions.py)
 \end{codelisting}
 
-* Joystick input (again), vertical movement (again).
+* Add joystick input (as before); add vertical movement (as before).
 * Make the box chase the alien.
 * Print number of times hit (the score).
 
@@ -23,7 +23,7 @@ Arcade games need to know when one sprite has hit another sprite.  Most of this 
 
 ## Sound and animation
 
-Pygame Zero comes with one other image *alien_hurt.png* and one sound *eep.wav*.  If you want more you will have to add them to the *sounds* and *images* folders.
+Pygame Zero comes with one other image `alien_hurt.png` and one sound `eep.wav`.  If you want more you will have to add them to the `sounds` and `images` folders.
 
 Most of this code is copied from Program~\ref{code:collisions} 
 
@@ -33,9 +33,9 @@ Most of this code is copied from Program~\ref{code:collisions}
 <<(programs/16_collisions2_sound_animation.py)
 \end{codelisting}
 
-* Record your own sound effect
-* Add more boxes or sprites that move in different ways to avoid
-* Add a second alien controlled by different keys or gamepad
+* Record your own sound effect and add it to the game.
+* Add more boxes or sprites that move in different ways for the player to avoid.
+* Add a second alien controlled by different keys or gamepad for player 2.
 
 \vspace{\parskip}
 \end{minipage}
@@ -43,11 +43,11 @@ Most of this code is copied from Program~\ref{code:collisions}
 
 ## Mouse clicks
 
-This uses a function call-back for event-based input so you may want to explain functions. It is similiar to Program~\ref{code:collisions2_sound_animation} but
+This uses a function call-back for event-based input so you may want to explain functions. See Program~\ref{code:functions}.  It is similiar to Program~\ref{code:collisions2_sound_animation} but:
 
-* box has been removed
-* mouse function for clicking on alien
-* score is displayed (FIXME)
+* The box has been removed.
+* There is an `one_mouse_down` special function that is called automatically when the player click the mouse.
+* The score is displayed.
   
 \begin{codelisting}
 \codecaption{Getting input from mouse clicks}
@@ -69,13 +69,12 @@ If you are more interested in controllers than mice this may be skipped for now.
 <<(programs/18_mouse_movement.py)
 \end{codelisting}
 
-* what happens if you delete line 8 and replace it with this:
+* What happens if you delete line 8 and replace it with this:
 ```python
    animate(alien, pos=pos, duration=1, tween='bounce_end')
 ```
-* what happens if you change on_mouse_move to on_mouse_down?
-* can you make a game with one alien controlled by mouse
-* and another controlled by keyboard?
+* What happens if you change `on_mouse_move` to `on_mouse_down`?
+* Can you make a game with one alien controlled by mouse and another controlled by keyboard?
 
 \end{minipage}
 
