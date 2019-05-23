@@ -17,13 +17,16 @@ def update():
         y += 14
         for i in range(axes):
             axis = joystick.get_axis(i)
-            screen.draw.text("Axis {} value: {:>6.3f}".format(i, axis), (20, y))
+            screen.draw.text("Axis {} value: {:>6.3f}".format(i, axis),
+                             (20, y))
             y += 14
         for i in range(buttons):
             button = joystick.get_button(i)
-            screen.draw.text("Button {:>2} value: {}".format(i, button), (20, y))
+            screen.draw.text("Button {:>2} value: {}".format(i, button),
+                             (20, y))
             y += 14
         for i in range(hats):
             hat = joystick.get_hat(i)
-            screen.draw.text("Hat {} value: {}".format(i, str(hat)), (20, y))
+            screen.draw.text("Hat {} value: {}".format(i, str(hat)),
+                             (20, y))
             y += 14

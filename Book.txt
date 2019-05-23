@@ -9,3 +9,5 @@ mainmatter:
 2_simple_games.md
 3_python_fundamentals.md
 4_more_graphics.md
+5_more_games.md
+6_advanced.md

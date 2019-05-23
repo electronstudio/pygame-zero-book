@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85ef30d2-737e-42b4-b9a4-54300f9dc2b1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapters/2_simple_games.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapters/3_python_fundamentals.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapters/4_more_graphics.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapters/5_more_games.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapters/6_advanced.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Book.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Book.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapters/1_graphics.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/1_graphics.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/book.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/book.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programs/0A_shortcuts.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/0A_shortcuts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programs/0B_for_loop.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/0B_for_loop.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programs/0D_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/0D_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programs/11_moving_boxes.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/11_moving_boxes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/19_joystick_tester.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/19_joystick_tester.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,20 +40,53 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Book.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+            <state relative-caret-position="192">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/chapters/6_advanced.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="272">
+                <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/chapters/5_more_games.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="465">
+                <caret line="100" column="25" lean-forward="true" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chapters/4_more_graphics.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="305">
-                <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
+              <first_editor relative-caret-position="129">
+                <caret line="53" selection-start-line="53" selection-end-line="53" />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/programs/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -71,32 +97,6 @@
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="453">
                 <caret line="74" column="3" selection-start-line="74" selection-start-column="3" selection-end-line="74" selection-end-column="3" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/preamble.tex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/marketing.yml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chapters/1_graphics.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="288">
-                <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
               </first_editor>
               <second_editor />
             </state>
@@ -116,7 +116,7 @@
         <entry file="file://$PROJECT_DIR$/chapters/3_python_fundamentals.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="581">
+              <first_editor relative-caret-position="1392">
                 <caret line="86" column="14" selection-start-line="86" selection-start-column="14" selection-end-line="86" selection-end-column="14" />
               </first_editor>
               <second_editor />
@@ -134,6 +134,7 @@
       <find>head</find>
       <find>break</find>
       <find>ref</find>
+      <find>joystick_t</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -155,15 +156,17 @@
         <option value="$PROJECT_DIR$/chapters/1_graphics.md" />
         <option value="$PROJECT_DIR$/config/book.yml" />
         <option value="$PROJECT_DIR$/chapters/2_simple_games.md" />
-        <option value="$PROJECT_DIR$/Book.txt" />
         <option value="$PROJECT_DIR$/chapters/3_python_fundamentals.md" />
         <option value="$PROJECT_DIR$/chapters/4_more_graphics.md" />
+        <option value="$PROJECT_DIR$/Book.txt" />
+        <option value="$PROJECT_DIR$/chapters/6_advanced.md" />
+        <option value="$PROJECT_DIR$/chapters/5_more_games.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="636" />
-    <option name="y" value="163" />
+    <option name="x" value="576" />
+    <option name="y" value="212" />
     <option name="width" value="1920" />
     <option name="height" value="870" />
   </component>
@@ -302,7 +305,7 @@
       <workItem from="1558035059313" duration="61000" />
       <workItem from="1558106720949" duration="28812000" />
       <workItem from="1558291319708" duration="598000" />
-      <workItem from="1558292387205" duration="5174000" />
+      <workItem from="1558292387205" duration="7561000" />
     </task>
     <task id="LOCAL-00001" summary="mess with formatting">
       <created>1558146868663</created>
@@ -318,14 +321,21 @@
       <option name="project" value="LOCAL" />
       <updated>1558200616406</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="more chaters">
+      <created>1558542494899</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1558542494899</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41724000" />
+    <option name="totallyTimeSpent" value="44111000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="636" y="163" width="1920" height="870" extended-state="0" />
+    <frame x="576" y="212" width="1920" height="870" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14643237" />
@@ -370,7 +380,8 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="mess with formatting" />
     <MESSAGE value="improve" />
-    <option name="LAST_COMMIT_MESSAGE" value="improve" />
+    <MESSAGE value="more chaters" />
+    <option name="LAST_COMMIT_MESSAGE" value="more chaters" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/copy_programs.sh">
@@ -523,13 +534,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Book.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/chapters/2_simple_games.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -540,21 +544,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chapters/3_python_fundamentals.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="581">
-            <caret line="86" column="14" selection-start-line="86" selection-start-column="14" selection-end-line="86" selection-end-column="14" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/programs/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/chapters/4_more_graphics.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="305">
-            <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
+          <first_editor relative-caret-position="129">
+            <caret line="53" selection-start-line="53" selection-end-line="53" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chapters/3_python_fundamentals.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1392">
+            <caret line="86" column="14" selection-start-line="86" selection-start-column="14" selection-end-line="86" selection-end-column="14" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Book.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chapters/6_advanced.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="272">
+            <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chapters/5_more_games.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="465">
+            <caret line="100" column="25" lean-forward="true" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
           </first_editor>
           <second_editor />
         </state>
