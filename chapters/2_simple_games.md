@@ -46,7 +46,7 @@ Most of this code is copied from Program~\ref{code:collisions}
 This uses a function call-back for event-based input so you may want to explain functions. See Program~\ref{code:functions}.  It is similiar to Program~\ref{code:collisions2_sound_animation} but:
 
 * The box has been removed.
-* There is an `one_mouse_down` special function that is called automatically when the player click the mouse.
+* There is an `on_mouse_down()` special function that is called automatically when the player click the mouse.
 * The score is displayed.
   
 \begin{codelisting}

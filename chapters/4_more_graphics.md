@@ -1,6 +1,6 @@
 # More graphics
 
-FIXME
+Here are some tips that will enable you to enhance your games.
 
 \noindent\begin{minipage}{\textwidth}
 
@@ -16,13 +16,13 @@ We draw greeen circles using a loop within another loop.
 <<(programs/20_loops.py)
 \end{codelisting}
 
-* import random and make the positions random, e.g.
+* `import random` and make the positions random, e.g. use
+```
+random.randint(0, 100)
+```
+* Learn about RGB colour and make random colours (see Program~\ref{code:colours}).
 
-    random.randint(0, 100)
-
-* learn about RGB colour and make random colours (see colours.py) FIXME ref
-
-* create a timer variable and change colours based on time (see timer.py)
+* Create a timer variable and change colours based on time (see Program~\ref{code:timer})
 
 \end{minipage}
 \noindent\begin{minipage}{\textwidth}
@@ -31,8 +31,8 @@ We draw greeen circles using a loop within another loop.
 
 Note that sometimes *colour* is spelt *color* in American programs.
 
-Instead of using ready made colours like 'red', 'yellow', etc you can create your
-own color from three numbers. The numbers must be between 0-255 and represent
+Instead of using ready made colours like 'red', 'yellow', etc. you can create your
+own color from three numbers. The numbers must be between 0 - 255 and represent
 how much *red*, *green* and *blue* to mix together.
 
 

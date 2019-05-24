@@ -5,20 +5,13 @@ programming with the domain of action games used to make learning more interesti
 introducing new language concepts or showing how the Pygame Zero API works, but most are a mixture of both.
 
 The intention is that
-each program is **short, complete and introduces only one or two new ideas**.
+each program is *brief, complete* and *introduces only one or two new ideas*.
 
-* one or two new ideas
+* Keeping the programs short means the students can feasibly type them in during the class.  I think typing for themselves is very valuable to beginners, because it helps them learn to type, and to type precisely without mistakes (which show up as syntax errors). Even if it took them a while, they should feel proud that they typed a correct program in the end![^example_footnote]
 
-    so the student learns mostly through doing and simply observing the output of each program rather than memorizing.  To this end the **order** of the programs within each Lesson has been carefully selected.  However I have attempted to indicate which ones are more important in that sequence / interesting for them to experiment with and which ones are more easily skipped.  The chapter ordering is more loose and it is possible to skip back and forth between chapter.  If the text quizzes or the Python fundamentals are boring the children, skip ahead to the graphical games, then come back to the earlier examples when they are necessary to explain something in the games.
+* Each program being complete in itself avoids the confusion caused by worksheets that tell a student to add lines to a program piecemeal.  If they make error or ommit a step it seems to often cause them to never recover and never produce a working program.  Also being *complete* and *separate* means the whole class can be told to skip to the same program and it won't matter so much that some of them didnt complete all the prior programs.
 
-* complete
-
-    to avoid the confusion caused by worksheets that tell a student to add lines to a program piecemeal.  If they make error or ommit a step it seems to often cause them to never recover and never produce a working program.  Also being **complete** and **separate** means the whole class can be told to skip to the same program and it won't matter so much that some of them didnt complete all the prior programs.
-
-
-* short
-
-    so the student can type most of the programs themselves.  I think typing for themselves is very valuable to beginners, because it helps them learn to type, and to type precisely without mistakes (which show up as syntax errors). Even if it took them a while, they should feel proud that they typed a correct program in the end![^example_footnote]
+* Introducing ideas one or two at a time allows the students to learn mostly through *doing* and observing the output of each program rather than memorizing.  To this end the *order* of the programs within each chapter has been carefully selected.  However I have attempted to indicate which ones are more important in that sequence or interesting for them to experiment with and which ones are more easily skipped.  The chapter ordering is more loose and it is possible to skip back and forth between chapter.  If the text quizzes or the Python fundamentals are boring the children, skip ahead to the graphical games, then come back to the earlier examples when they are necessary to explain something in the games.
 
 Following each program are some ideas for how students can modify the program.  It is hoped they will go further and modify these programs into their own unique games!  The difficulty of these suggestions varies, to accommodate students of different age and ability.
 

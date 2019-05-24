@@ -36,8 +36,8 @@ We don't need to write our own loop because *Pygame Zero calls this function for
 <<(programs/11_moving_boxes.py)
 \end{codelisting}
 
-* Make box move faster.
-* Move in different direction.
+* Make the box move faster
+* and in different directions.
 * Make two boxes with different colours.
 
 \vspace{\parskip}
@@ -47,8 +47,8 @@ We don't need to write our own loop because *Pygame Zero calls this function for
 ## Actor sprites
 
 Actor sprites are very similar to boxes!
-Click 'Images' to see the folder of image files available.
-*alien.png* should already be there, but
+Click `Images` to see the folder of image files available.
+`alien.png` should already be there, but
 for other images you must add the files yourself.
 
 \begin{codelisting}
@@ -75,7 +75,7 @@ The alien moves when you press the cursor keys.
 
 * Make the alien move up and down as well as left and right.
 * Use the += operator to change the alien.x more concisely (see Program~\ref{code:shortcuts}).
-* Use the 'or' operator to allow WASD keys to move the alien in addition to the cursor keys (see FIXME).
+* Use the `or` operator to allow WASD keys to move the alien in addition to the cursor keys (see Program~\ref{code:logic}).
 * Make alien wrap around when he moves off edge of screen.
 
 \vspace{\parskip}

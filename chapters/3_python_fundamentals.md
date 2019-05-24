@@ -2,6 +2,25 @@
 
 Now we've had some fun with games I hope to have generated enough interest to tackle some coding basics!  I don't have the students type these, just discuss them, and possibly not all in the same lesson but only when they relevant to other programs.
 
+
+\noindent\begin{minipage}{\textwidth}
+
+## Logic
+
+\begin{codelisting}
+\codecaption{Boolean logic}
+\label{code:logic}
+\phantom{.}
+<<(programs/08_logic.py)
+\end{codelisting}
+
+\begin{codelisting}
+\codecaption{Greater than, lesser than, equality}
+\label{code:logic2}
+<<(programs/09_logic2.py)
+\end{codelisting}
+
+\end{minipage}
 \noindent\begin{minipage}{\textwidth}
 
 ## Shortcuts
@@ -54,7 +73,8 @@ You have already defined specially named functions that are called by Pygame: `d
 However you can define a function named whatever you like and call it yourself.
 
 Functions are useful for many reasons. The simplest is that they make your program look more organized. They also enable you re-use code without
-needing to copy it and risk making mistakes.  
+needing to copy it and risk making mistakes.  When your programs get longer they enable you to create *abstractions* so you only have to think about
+what function you want to call and don't need to remember the details of the code inside the function.
 
 \begin{codelisting}
 \codecaption{Functions}

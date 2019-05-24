@@ -12,8 +12,8 @@ Add a new alien when the mouse is clicked.
 
 \begin{codelisting}
 \codecaption{Array lists are useful in games!}
-\label{code:shortcuts}
-<<(programs/0A_shortcuts.py)
+\label{code:arrays}
+<<(programs/21_arrays.py)
 \end{codelisting}
 
 * Go back to your previous game (e.g. FIXME6)
