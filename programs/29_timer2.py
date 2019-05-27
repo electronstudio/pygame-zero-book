@@ -4,7 +4,9 @@ import random
 aliens = []
 
 def add_alien():
-    aliens.append(Actor("alien", (random.randint(0,500), random.randint(0,500))))
+    aliens.append(
+        Actor("alien", (random.randint(0,500), random.randint(0,500)))
+    )
 
 # call add_alien once, 0.5 seconds from now
 clock.schedule(add_alien, 0.5)

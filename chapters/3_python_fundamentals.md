@@ -1,7 +1,12 @@
 # Python Fundamentals
 
-Now we've had some fun with games I hope to have generated enough interest to tackle some coding basics!  I don't have the students type these, just discuss them, and possibly not all in the same lesson but only when they relevant to other programs.
+Now we've had some fun with games I hope to have generated enough interest to tackle some coding basics!
 
+\begin{aside}
+\label{aside:funda}
+\heading{Instructor note}
+\noindent I don't have the students type these, just discuss them, and possibly not all in the same lesson but only when they relevant to other programs.
+\end{aside}
 
 \noindent\begin{minipage}{\textwidth}
 
@@ -88,7 +93,13 @@ what function you want to call and don't need to remember the details of the cod
 
 ## Bugs
 
-Fixing bugs can feel frustrating but all programmers must wrestle with them.  Can you spot and fix the bug in this program?
+Fixing bugs can feel frustrating but all programmers must wrestle with them.  The simplest (but still annoying!) are *syntax errors*.
+The computer is not very intelligent and is unable to guess what you mean, so you must type the programs in this book **exactly** as they appear.
+A single wrong letter or space will prevent them from working.
+
+A particular issue in Python is that *indentation* must be correct.
+
+Can you spot and fix the bug in this program?
 
 \begin{codelisting}
 \codecaption{Buggy program}

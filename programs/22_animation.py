@@ -1,4 +1,3 @@
-# Most of this code is copied from program 15
 
 alien = Actor("alien")
 alien.pos = (200, 200)

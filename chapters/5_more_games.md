@@ -1,14 +1,18 @@
 # More games
 
-FIXME
+These games demonstrate some essential building blocks you will need to make more advanced games of your own.
 
 \noindent\begin{minipage}{\textwidth}
 
 ## Array lists
 
-We introduced arrays in FIXME.  Create an empty array, use a loop to fill it with aliens
-Draw the aliens, move the aliens
-Add a new alien when the mouse is clicked.
+We introduced arrays in Program~\ref{code:arrays}.
+
+In this game, we create an empty array *[]* and use a loop to fill it with aliens.
+
+We again use loops to draw all the aliens and move all the aliens in the array.
+
+When the mouse is clicked we add a new alien to the array.
 
 \begin{codelisting}
 \codecaption{Array lists are useful in games!}
@@ -16,17 +20,18 @@ Add a new alien when the mouse is clicked.
 <<(programs/21_arrays.py)
 \end{codelisting}
 
-* Go back to your previous game (e.g. FIXME6)
-  make an array of bullets that shoot when you
-  press the space bar
+* Go back to a previous game (e.g. Program~\ref{code:collisions})
+  make an array of bullets that move up the screen.  When the player presses the spacebar to shoot,
+  add a new bullet to the array.
 
 \end{minipage}
 \noindent\begin{minipage}{\textwidth}
 
 ## Animation
 
-This is another use for functions. (See FIXME)  We define our own function and then ask Pygame to call it
+Animation is another use for functions. (See Program~\ref{code:functions})  We define our own function and then ask Pygame to *call it back*
 every 0.2 seconds.
+Most of this code is from Program~\ref{code:collisions}.
 
 \begin{codelisting}
 \codecaption{Animation}
@@ -34,16 +39,18 @@ every 0.2 seconds.
 <<(programs/22_animation.py)
 \end{codelisting}
 
-* make the alien animate faster
-* add another image to list of images
-* draw your own animation, e.g. a man walking left and make it play when the left key is pressed
+* Make the alien animate faster.
+* Add another image to list of images.
+* Draw your own animation, e.g. a man walking left which plays when the left key is pressed
 
 \end{minipage}
 \noindent\begin{minipage}{\textwidth}
 
 ## Simple physics
 
-Make a ball that bounces using simple velocity vector (vx and vy)
+Instead of moving this ball by a fixed number of pixels, we store the number of pixels to move in variables, *vx* and *vy*.
+These are velocities, i.e. speed in a fixed direction.
+This allow us to change the velocity - reverse it in fact - when the ball hits the edge.
   
 \begin{codelisting}
 \codecaption{Simple physics: velocity}
@@ -58,7 +65,7 @@ Make a ball that bounces using simple velocity vector (vx and vy)
 
 ## Pong
 
-Classic bat and ball game 
+Pong is a classic bat and ball game.
 
 \begin{codelisting}
 \codecaption{Pong}
@@ -66,8 +73,9 @@ Classic bat and ball game
 <<(programs/24_pong.py)
 \end{codelisting}
 
-* Add another bat at the top of the screen for player 2
-* Add bricks (Rects) that disappear when the ball hits them
+* Make the ball more quickly.
+* Add another bat at the top of the screen for player 2.
+* Add bricks (Rects) that disappear when the ball hits them.
 
 \end{minipage}
 
@@ -84,7 +92,9 @@ in a parameter to our update function. We use this to keep a timer.
 <<(programs/28_timer.py)
 \end{codelisting}
 
-This one has two bugs to fix.
+* Make the timer count down, not up.
+* Add a timer to one of your other games.
+* Add a timer to Program~\ref{code:arrays} that deletes one of the aliens when the timer runs out, then starts the timer again.
 
 \end{minipage}
 
@@ -92,8 +102,8 @@ This one has two bugs to fix.
 
 ## Another timer
 
-Pygame can tell us how much time has passed since the last frame
-in a parameter to our update function. We use this to keep a timer.
+Pygame has its own clock which we can use by asking it to *call back* one of our
+functions at a certain time, or regularly over and over at an interval.
 
 \begin{codelisting}
 \codecaption{Timer with callback functions}
@@ -102,9 +112,10 @@ in a parameter to our update function. We use this to keep a timer.
 \end{codelisting}
 
 * Make the aliens appear much faster
-* Use len(aliens) to print how many aliens there are
+* Use ```len(aliens)``` to print how many aliens there are
 * When there are too many aliens, stop adding them using this code:
-
+```python
     clock.unschedule(add_alien)
+```
 
 \end{minipage}

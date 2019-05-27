@@ -1,4 +1,4 @@
-# Aracade games
+# Arcade games
 
 Now we can draw actor sprites to the screen we can begin to make simple arcade style games with them. 
 
@@ -30,7 +30,7 @@ Most of this code is copied from Program~\ref{code:collisions}
 \begin{codelisting}
 \codecaption{Sound and animation upon collision}
 \label{code:collisions2_sound_animation}
-<<(programs/16_collisions2_sound_animation.py)
+<<(programs/16_collisions2_sound_animation.py, options: "hl_lines": [19, 20, 21, 22, 23])
 \end{codelisting}
 
 * Record your own sound effect and add it to the game.
@@ -43,11 +43,17 @@ Most of this code is copied from Program~\ref{code:collisions}
 
 ## Mouse clicks
 
-This uses a function call-back for event-based input so you may want to explain functions. See Program~\ref{code:functions}.  It is similiar to Program~\ref{code:collisions2_sound_animation} but:
+This uses a *function call-back* for event-based input.  It is similiar to Program~\ref{code:collisions2_sound_animation} but:
 
 * The box has been removed.
 * There is an `on_mouse_down()` special function that is called automatically when the player click the mouse.
 * The score is displayed.
+
+\begin{aside}
+\label{aside:mouseclicks}
+\heading{Instructor note}
+\noindent This is a good time to explain functions. See Program~\ref{code:functions} for more functions.
+\end{aside}
   
 \begin{codelisting}
 \codecaption{Getting input from mouse clicks}

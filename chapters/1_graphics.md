@@ -2,7 +2,13 @@
 
 To create graphics for our games we will use [the Pygame Zero library](https://pygame-zero.readthedocs.io). You will find the documentation on the website useful!
 
-Co-ordinate diagram FIXME. Make sure you understand (x,y) co-ordinates(In maths this called a 'Cartesian coordinate system' and everything we do in Pygame Zero will use it).
+The smallest square that can be displayed on a monitor is called a *pixel*. This diagram shows a close-up view
+of a window that is 40 pixels wide and 40 pixels high.  At normal size you will not see the grid lines.
+
+![Model View Controller](images/figures/pixelgrid.pdf)
+
+We can refer to any pixel by giving two co-ordinates, *(x,y)* Make sure you understand co-ordinates before moving on
+because everything we do in Pygame Zero will use it.  (In maths this called a 'Cartesian coordinate system').
 
 \vspace{20mm}
 

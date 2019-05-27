@@ -66,9 +66,10 @@ Then press *F* to go fullscreen, *ESCAPE* to quit.
 \end{minipage}
 \noindent\begin{minipage}{\textwidth}
 
-## Keeping score
+## Displaying the score
 
-FIXME this is wrong place to introduce Text?
+This game shows how you can keep the score in a variable and print it on to the game screen.  You can print any other
+messages to the player the same way.
 
 \begin{codelisting}
 \codecaption{Keeping score}
@@ -76,9 +77,9 @@ FIXME this is wrong place to introduce Text?
 <<(programs/27_displaying_text.py)
 \end{codelisting}
 
-Make the score text larger
-Add a second player who presses a different key and show their score too
-Add text to one of your other games FIXME
+* Make the score text larger.
+* Add a second player who presses a different key and show their score too.
+* Add text to one of your other games.
 
 \end{minipage}
 
