@@ -2,7 +2,7 @@
 
 These games demonstrate some essential building blocks you will need to make more advanced games of your own.
 
-\noindent\begin{minipage}{\textwidth}
+\newpage
 
 ## Array lists
 
@@ -24,8 +24,7 @@ When the mouse is clicked we add a new alien to the array.
   make an array of bullets that move up the screen.  When the player presses the spacebar to shoot,
   add a new bullet to the array.
 
-\end{minipage}
-\noindent\begin{minipage}{\textwidth}
+\pagebreak
 
 ## Animation
 
@@ -43,8 +42,7 @@ Most of this code is from Program~\ref{code:collisions}.
 * Add another image to list of images.
 * Draw your own animation, e.g. a man walking left which plays when the left key is pressed
 
-\end{minipage}
-\noindent\begin{minipage}{\textwidth}
+\pagebreak
 
 ## Simple physics
 
@@ -60,8 +58,7 @@ This allow us to change the velocity - reverse it in fact - when the ball hits t
 
 * Make the ball get faster each time it hits the sides
 
-\end{minipage}
-\noindent\begin{minipage}{\textwidth}
+\pagebreak
 
 ## Pong
 
@@ -77,9 +74,7 @@ Pong is a classic bat and ball game.
 * Add another bat at the top of the screen for player 2.
 * Add bricks (Rects) that disappear when the ball hits them.
 
-\end{minipage}
-
-\noindent\begin{minipage}{\textwidth}
+\pagebreak
 
 ## Timer
 
@@ -96,9 +91,7 @@ in a parameter to our update function. We use this to keep a timer.
 * Add a timer to one of your other games.
 * Add a timer to Program~\ref{code:arrays} that deletes one of the aliens when the timer runs out, then starts the timer again.
 
-\end{minipage}
-
-\noindent\begin{minipage}{\textwidth}
+\pagebreak
 
 ## Another timer
 
@@ -117,5 +110,3 @@ functions at a certain time, or regularly over and over at an interval.
 ```python
     clock.unschedule(add_alien)
 ```
-
-\end{minipage}

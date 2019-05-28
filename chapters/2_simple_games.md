@@ -2,7 +2,7 @@
 
 Now we can draw actor sprites to the screen we can begin to make simple arcade style games with them. 
 
-\noindent\begin{minipage}{\textwidth}
+\pagebreak
 
 ## Collisions
 
@@ -18,8 +18,7 @@ Arcade games need to know when one sprite has hit another sprite.  Most of this 
 * Make the box chase the alien.
 * Print number of times hit (the score).
 
-\end{minipage}
-\noindent\begin{minipage}{\textwidth}
+\pagebreak
 
 ## Sound and animation
 
@@ -37,9 +36,7 @@ Most of this code is copied from Program~\ref{code:collisions}
 * Add more boxes or sprites that move in different ways for the player to avoid.
 * Add a second alien controlled by different keys or gamepad for player 2.
 
-\vspace{\parskip}
-\end{minipage}
-\noindent\begin{minipage}{\textwidth}
+\pagebreak
 
 ## Mouse clicks
 
@@ -61,9 +58,7 @@ This uses a *function call-back* for event-based input.  It is similiar to Progr
 <<(programs/17_mouse_input.py)
 \end{codelisting}
 
-\vspace{\parskip}
-\end{minipage}
-\noindent\begin{minipage}{\textwidth}
+\pagebreak
 
 ## Mouse movement
 
@@ -82,6 +77,6 @@ If you are more interested in controllers than mice this may be skipped for now.
 * What happens if you change `on_mouse_move` to `on_mouse_down`?
 * Can you make a game with one alien controlled by mouse and another controlled by keyboard?
 
-\end{minipage}
+
 
 

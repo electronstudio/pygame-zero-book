@@ -10,10 +10,6 @@ of a window that is 40 pixels wide and 40 pixels high.  At normal size you will 
 We can refer to any pixel by giving two co-ordinates, *(x,y)* Make sure you understand co-ordinates before moving on
 because everything we do in Pygame Zero will use it.  (In maths this called a 'Cartesian coordinate system').
 
-\vspace{20mm}
-
-\noindent\begin{minipage}{\textwidth}
-
 ## Lines and circles
 
 If are using the Mu editor, Pygame Zero is built-in, but **you must remember to click 'Mode' and select 'Pygame Zero' before running your program**!
@@ -27,9 +23,7 @@ If you are using a different editor, [instructions are online](https://pygame-ze
 \end{codelisting}
 
 * Finish drawing this picture, or your own picture.
-
-\end{minipage}
-\noindent\begin{minipage}{\textwidth}
+\newpage
 
 ## Moving rectangles
 
@@ -45,10 +39,7 @@ We don't need to write our own loop because *Pygame Zero calls this function for
 * Make the box move faster
 * and in different directions.
 * Make two boxes with different colours.
-
-\vspace{\parskip}
-\end{minipage}
-\noindent\begin{minipage}{\textwidth}
+\newpage
 
 ## Actor sprites
 
@@ -64,10 +55,7 @@ for other images you must add the files yourself.
 \end{codelisting}
 
 * Draw or download your own image to use instead of alien.  You could use Microsoft Paint which comes with Windows.
-
-\vspace{\parskip}
-\end{minipage}
-\noindent\begin{minipage}{\textwidth}
+\newpage
 
 ## Keyboard input
 
@@ -84,9 +72,7 @@ The alien moves when you press the cursor keys.
 * Use the `or` operator to allow WASD keys to move the alien in addition to the cursor keys (see Program~\ref{code:logic}).
 * Make alien wrap around when he moves off edge of screen.
 
-\vspace{\parskip}
-\end{minipage}
-\noindent\begin{minipage}{\textwidth}
+\newpage
 
 ## Joystick input
 
@@ -103,4 +89,3 @@ You may call them *gamepads* or game *controllers*, but Pygame calls them *joyst
 
 * Make the alien move up and down as well as left and right.
 
-\end{minipage}

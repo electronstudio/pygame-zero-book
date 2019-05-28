@@ -2,7 +2,7 @@
 
 Here are some tips that will enable you to enhance your games.
 
-\noindent\begin{minipage}{\textwidth}
+\newpage
 
 ## Using loops
 
@@ -24,8 +24,7 @@ random.randint(0, 100)
 
 * Create a timer variable and change colours based on time (see Program~\ref{code:timer})
 
-\end{minipage}
-\noindent\begin{minipage}{\textwidth}
+\pagebreak
 
 ## Colours
 
@@ -46,9 +45,7 @@ how much *red*, *green* and *blue* to mix together.
 * Can you make gray?
 * Make random colours
 
-\vspace{\parskip}
-\end{minipage}
-\noindent\begin{minipage}{\textwidth}
+\pagebreak
 
 ## Fullscreen mode
 
@@ -62,9 +59,7 @@ Then press *F* to go fullscreen, *ESCAPE* to quit.
 <<(programs/26_fullscreen_mode.py)
 \end{codelisting}
 
-\vspace{\parskip}
-\end{minipage}
-\noindent\begin{minipage}{\textwidth}
+\pagebreak
 
 ## Displaying the score
 
@@ -81,6 +76,6 @@ messages to the player the same way.
 * Add a second player who presses a different key and show their score too.
 * Add text to one of your other games.
 
-\end{minipage}
+
 
 

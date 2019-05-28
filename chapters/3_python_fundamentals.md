@@ -8,8 +8,6 @@ Now we've had some fun with games I hope to have generated enough interest to ta
 \noindent I don't have the students type these, just discuss them, and possibly not all in the same lesson but only when they relevant to other programs.
 \end{aside}
 
-\noindent\begin{minipage}{\textwidth}
-
 ## Logic
 
 \begin{codelisting}
@@ -25,8 +23,7 @@ Now we've had some fun with games I hope to have generated enough interest to ta
 <<(programs/09_logic2.py)
 \end{codelisting}
 
-\end{minipage}
-\noindent\begin{minipage}{\textwidth}
+\pagebreak
 
 ## Shortcuts
 
@@ -39,8 +36,7 @@ You may have noticed some of these being used already.  They are quicker ways of
 \end{codelisting}
 
 
-\end{minipage}
-\noindent\begin{minipage}{\textwidth}
+\pagebreak
 
 ## For loops
 
@@ -54,9 +50,6 @@ It is often useful to put one loop inside another loop.
 
 * Can you print 12 times table?
 
-\vspace{\parskip}
-\end{minipage}
-\noindent\begin{minipage}{\textwidth}
 
 ## Arrays
 
@@ -68,9 +61,7 @@ Python calls them *lists* but most languages call them *arrays*.
 <<(programs/0C_arrays.py)
 \end{codelisting}
 
-\vspace{\parskip}
-\end{minipage}
-\noindent\begin{minipage}{\textwidth}
+
 
 ## Functions
 
@@ -87,9 +78,7 @@ what function you want to call and don't need to remember the details of the cod
 <<(programs/0D_functions.py)
 \end{codelisting}
 
-\end{minipage}
-
-\noindent\begin{minipage}{\textwidth}
+\pagebreak
 
 ## Bugs
 
@@ -114,5 +103,3 @@ This one has two bugs to fix.
 \label{code:bug2}
 <<(programs/0F_bug2.py)
 \end{codelisting}
-
-\end{minipage}
