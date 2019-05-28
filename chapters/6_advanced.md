@@ -1,4 +1,5 @@
 # Advanced topics
+
 \begin{aside}
 \label{aside:advanced}
 \heading{Instructor note}
@@ -8,9 +9,8 @@
 \end{aside}
 
 
+\newpage
 
-
-\noindent\begin{minipage}{\textwidth}
 
 ## Classes
 
@@ -27,10 +27,9 @@ these variables included.
 <<(programs/26_classes.py)
 \end{codelisting}
 
-\end{minipage}
-\vspace{\parskip}
+
 \newpage
-\noindent\begin{minipage}{\textwidth}
+
 
 ## Methods
 
@@ -43,9 +42,9 @@ Methods are the best place to modify the class's variables.
 <<(programs/27_classes2.py)
 \end{codelisting}
 
-\vspace{\parskip}
-\end{minipage}
-\noindent\begin{minipage}{\textwidth}
+
+\newpage
+
 
 ## Joystick tester
 
@@ -59,5 +58,5 @@ I dont's suggest typing this one yourself.
 <<(programs/19_joystick_tester.py)
 \end{codelisting}
 
-\vspace{\parskip}
-\end{minipage}
+
+

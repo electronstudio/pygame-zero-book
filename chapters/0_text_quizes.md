@@ -3,10 +3,6 @@
 These programs can be entered using any text editor or IDE, but I suggest using [the Mu editor](https://codewith.mu/)
 because it comes with Python, Pygame Zero and other libraries all pre-installed in one easy download.
 
-\vspace{\parskip}
-\vspace{\parskip}
-\noindent\begin{minipage}{\textwidth}
-
 ## Hello, world
 
 The traditional first program used to make sure Python is working and that we can run programs. 
@@ -24,10 +20,6 @@ The traditional first program used to make sure Python is working and that we ca
 * Click `Save` and enter a name for the program.
 * Click `Run`.
 
-\end{minipage}
-\vspace{\parskip}
-\noindent\begin{minipage}{\textwidth}
-
 ## Getting input from the keyboard
 
 When you run this program it will pause and wait for you to enter some
@@ -43,10 +35,6 @@ is stored in a variable, `x`.
 
 * Add some names of your friends and display a different message for each friend.
 
-\end{minipage}
-\vspace{\parskip}
-\noindent\begin{minipage}{\textwidth}
-
 ## Decisions: if, elif, else
 
 This is how I added another name to  Program~\ref{code:input}
@@ -59,10 +47,6 @@ This is how I added another name to  Program~\ref{code:input}
 
 \noindent Program~\ref{code:input2} is very similar to Program~\ref{code:input}. The new lines have been highlighted.  You can either modify Program~\ref{code:input} or else create
 a new file and use copy and paste to copy the code from the old program into the new.
-
-\end{minipage}
-\vspace{\parskip}
-\noindent\begin{minipage}{\textwidth}
 
 ## A random maths question
 
@@ -79,9 +63,7 @@ a new file and use copy and paste to copy the code from the old program into the
    * Multiply, divide or subtract numbers.
 * Print how many questions the player got correct at the end.
 
-\end{minipage}
-\vspace{\parskip}
-\noindent\begin{minipage}{\textwidth}
+\newpage
 
 ## Keeping score
 
@@ -94,9 +76,7 @@ We create a `score` variable to record how many questions the player answered co
 <<(programs/05_maths_question2.py)
 \end{codelisting}
 
-\end{minipage}
-\vspace{\parskip}
-\noindent\begin{minipage}{\textwidth}
+\newpage
 
 ## Guessing game with a loop
  
@@ -113,9 +93,7 @@ answer and then it `break`s.  Note that everything in the loop is indented.
 * Give a hint to the player when they are wrong.
 * Print how many guesses at the end.
 
-\vspace{\parskip}
-\end{minipage}
-\noindent\begin{minipage}{\textwidth}
+\newpage
 
 ## Improved guessing game
 
@@ -128,4 +106,4 @@ Program~\ref{code:loop} with a hint whether the guess is greater or lesser than 
 <<(programs/07_loop2.py)
 \end{codelisting}
 
-\end{minipage}
+
