@@ -2,7 +2,7 @@
 
 Now we can draw actor sprites to the screen we can begin to make simple arcade style games with them. 
 
-\pagebreak
+\newpage
 
 ## Collisions
 
