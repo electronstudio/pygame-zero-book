@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="stylesheets/pygments.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/softcover.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/custom.css" media="screen" rel="stylesheet" type="text/css" />
+    
+    <title>pygame-book</title>
+    
+      <script type="text/x-mathjax-config">
+              MathJax.Hub.Config({
+        "HTML-CSS": {
+          availableFonts: ["TeX"],
+        },
+        TeX: {
+          extensions: ["AMSmath.js", "AMSsymbols.js", "color.js"],
+          equationNumbers: {
+            autoNumber: "AMS",
+            formatNumber: function (n) { return "3" + '.' + n }
+          },
+          Macros: {
+            PolyTeX:    "Poly{\\TeX}",
+            PolyTeXnic: "Poly{\\TeX}nic",
+            "softcover": "\\texttt{softcover}",
+"unitvec": ["{\\hat #1}", 1]
+          }
+        },
+        showProcessingMessages: false,
+        messageStyle: "none",
+        imageFont: null,
+        "AssistiveMML": { disabled: true }
+      });
+
+        if (/PhantomJS/.test(window.navigator.userAgent)) {
+          MathJax.Hub.Queue([alert, 'MathJax Done']);
+        }
+      </script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+    
+  </head>
+  <body>
+    
+    <div id="book">
+      <div id="cid15" data-tralics-id="cid15" class="chapter" data-number="3" data-chapter="2_simple_games"><h1><a href="2_simple_games.html#cid15" class="heading hyperref"><span class="number">Lesson 3 </span>Arcade games</a></h1>
+<p class="noindent">Now we can draw actor sprites to the screen we can begin to make simple arcade style games with them.</p>
+</div>
+<div id="cid16" data-tralics-id="cid16" class="section" data-number="3.1"><h2><a href="2_simple_games.html#cid16" class="heading hyperref"><span class="number">3.1 </span>Collisions</a></h2>
+<p class="noindent">Arcade games need to know when one sprite has hit another sprite.<span class="intersentencespace"></span> Most of this code is copied from <a href="1_graphics.html#code-moving_boxes" class="hyperref">Program <span class="ref">2.2</span></a> and <a href="1_graphics.html#code-keyboard_input" class="hyperref">Program <span class="ref">2.4</span></a>.</p>
+<div class="codelisting" id="code-collisions" data-tralics-id="uid39" data-number="3.1"><div class="heading"><span class="number">Program 3.1:</span> <span class="description">Lines and circles</span>
+
+
+</div>
+
+<div class="code"><div class="highlight"><pre><span></span><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">"alien"</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">box</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">((</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">filled_rect</span><span class="p">(</span><span class="n">box</span><span class="p">,</span> <span class="s2">"red"</span><span class="p">)</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+    <span class="k">elif</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span>
+    <span class="n">box</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">box</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+    <span class="k">if</span> <span class="n">box</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">WIDTH</span><span class="p">:</span>
+        <span class="n">box</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">alien</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="n">box</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">"hit"</span><span class="p">)</span>
+</pre></div></div></div><ul>
+<li>Add joystick input (as before); add vertical movement (as before).<span class="intersentencespace"></span>
+</li>
+<li>Make the box chase the alien.<span class="intersentencespace"></span>
+</li>
+<li>Print number of times hit (the score).<span class="intersentencespace"></span>
+</li></ul>
+</div>
+<div id="cid17" data-tralics-id="cid17" class="section" data-number="3.2"><h2><a href="2_simple_games.html#cid17" class="heading hyperref"><span class="number">3.2 </span>Sound and animation</a></h2>
+<p class="noindent">Pygame Zero comes with one other image <code>alien_hurt.png</code> and one sound <code>eep.wav</code>.<span class="intersentencespace"></span> If you want more you will have to add them to the <code>sounds</code> and <code>images</code> folders.</p>
+<p>Most of this code is copied from <a href="2_simple_games.html#code-collisions" class="hyperref">Program <span class="ref">3.1</span></a></p>
+<div class="codelisting" id="code-collisions2_sound_animation" data-tralics-id="uid43" data-number="3.2"><div class="heading"><span class="number">Program 3.2:</span> <span class="description">Sound and animation upon collision</span>
+
+
+</div>
+
+<div class="code"><div class="highlight"><pre><span></span><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">"alien"</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">box</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">((</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">filled_rect</span><span class="p">(</span><span class="n">box</span><span class="p">,</span> <span class="s2">"red"</span><span class="p">)</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+    <span class="k">elif</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span>
+    <span class="n">box</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">box</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+    <span class="k">if</span> <span class="n">box</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">WIDTH</span><span class="p">:</span>
+        <span class="n">box</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1"># PLAY SOUND AND SHOW IMAGE WHEN HIT</span>
+<span class="hll">    <span class="k">if</span> <span class="n">alien</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="n">box</span><span class="p">):</span>
+</span><span class="hll">        <span class="n">alien</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s1">'alien_hurt'</span>
+</span><span class="hll">        <span class="n">sounds</span><span class="o">.</span><span class="n">eep</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+</span><span class="hll">    <span class="k">else</span><span class="p">:</span>
+</span><span class="hll">        <span class="n">alien</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s1">'alien'</span>
+</span></pre></div></div></div><ul>
+<li>Record your own sound effect and add it to the game.<span class="intersentencespace"></span>
+</li>
+<li>Add more boxes or sprites that move in different ways for the player to avoid.<span class="intersentencespace"></span>
+</li>
+<li>Add a second alien controlled by different keys or gamepad for player 2.<span class="intersentencespace"></span>
+</li></ul>
+</div>
+<div id="cid18" data-tralics-id="cid18" class="section" data-number="3.3"><h2><a href="2_simple_games.html#cid18" class="heading hyperref"><span class="number">3.3 </span>Mouse clicks</a></h2>
+<p class="noindent">This uses a <em>function call-back</em> for event-based input.<span class="intersentencespace"></span> It is similiar to <a href="2_simple_games.html#code-collisions2_sound_animation" class="hyperref">Program <span class="ref">3.2</span></a> but:</p>
+<ul>
+<li>The box has been removed.<span class="intersentencespace"></span>
+</li>
+<li>There is an <code>on_mouse_down()</code> special function that is called automatically when the player click the mouse.<span class="intersentencespace"></span>
+</li>
+<li>The score is displayed.<span class="intersentencespace"></span>
+</li></ul>
+<div class="aside" id="aside-mouseclicks" data-tralics-id="uid50" data-number="3.1"><div class="heading"><span class="number">Note 3.1.</span> 
+
+<span class="description">Instructor note</span></div>
+<p class="noindent">This is a good time to explain functions.<span class="intersentencespace"></span> See <a href="3_python_fundamentals.html#code-functions" class="hyperref">Program <span class="ref">4.6</span></a> for more functions.<span class="intersentencespace"></span></p>
+
+</div><div class="codelisting" id="code-mouse_input" data-tralics-id="uid51" data-number="3.3"><div class="heading"><span class="number">Program 3.3:</span> <span class="description">Getting input from mouse clicks</span>
+
+
+</div>
+
+<div class="code"><div class="highlight"><pre><span></span><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">"alien"</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">"Score "</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">score</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+    <span class="k">elif</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s1">'alien'</span>
+
+<span class="k">def</span> <span class="nf">on_mouse_down</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">button</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">score</span>
+    <span class="k">if</span> <span class="n">button</span> <span class="o">==</span> <span class="n">mouse</span><span class="o">.</span><span class="n">LEFT</span> <span class="ow">and</span> <span class="n">alien</span><span class="o">.</span><span class="n">collidepoint</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>
+        <span class="n">alien</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s1">'alien_hurt'</span>
+        <span class="n">sounds</span><span class="o">.</span><span class="n">eep</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="n">score</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div></div></div></div>
+<div id="cid19" data-tralics-id="cid19" class="section" data-number="3.4"><h2><a href="2_simple_games.html#cid19" class="heading hyperref"><span class="number">3.4 </span>Mouse movement</a></h2>
+<p class="noindent">If you are more interested in controllers than mice this may be skipped for now.</p>
+<div class="codelisting" id="code-mouse_movement" data-tralics-id="uid52" data-number="3.4"><div class="heading"><span class="number">Program 3.4:</span> <span class="description">Getting input from mouse movement</span>
+
+
+</div>
+
+<div class="code"><div class="highlight"><pre><span></span><span class="c1"># wiggle your mouse around the screen!</span>
+
+<span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">"alien"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">on_mouse_move</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">pos</span>
+</pre></div></div></div><ul>
+<li>What happens if you delete line 8 and replace it with this:
+<div class="code"><div class="highlight"><pre><span></span>   <span class="n">animate</span><span class="p">(</span><span class="n">alien</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">tween</span><span class="o">=</span><span class="s1">'bounce_end'</span><span class="p">)</span>
+</pre></div></div>
+</li>
+<li>What happens if you change <code>on_mouse_move</code> to <code>on_mouse_down</code>?<span class="intersentencespace"></span>
+</li>
+<li>Can you make a game with one alien controlled by mouse and another controlled by keyboard?<span class="intersentencespace"></span>
+</li></ul>
+</div>
+    </div>
+  </body>
+</html>

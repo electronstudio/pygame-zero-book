@@ -1,0 +1,143 @@
+<div id="cid9" data-tralics-id="cid9" class="chapter" data-number="2" data-chapter="1_graphics"><h1><a href="1_graphics_fragment.html#cid9" class="heading hyperref"><span class="number">Lesson 2 </span>Drawing graphics</a></h1>
+<p class="noindent">To create graphics for our games we will use <a href="https://pygame-zero.readthedocs.io" target="_blank" rel="noopener">the Pygame Zero library</a>.<span class="intersentencespace"></span> You will find the documentation on the website useful!</p>
+<p>The smallest square that can be displayed on a monitor is called a <em>pixel</em>.<span class="intersentencespace"></span> This diagram shows a close-up view
+of a window that is 40 pixels wide and 40 pixels high.<span class="intersentencespace"></span> At normal size you will not see the grid lines.</p>
+<div class="graphics image"><img src="images/figures/pixelgrid.png" alt="images/figures/pixelgrid" /></div>
+<p>We can refer to any pixel by giving two co-ordinates, <em>(x,y)</em> Make sure you understand co-ordinates before moving on
+because everything we do in Pygame Zero will use it.<span class="intersentencespace"></span> (In maths this called a ‘Cartesian coordinate system’).</p>
+</div><div id="cid10" data-tralics-id="cid10" class="section" data-number="2.1"><h2><a href="1_graphics_fragment.html#cid10" class="heading hyperref"><span class="number">2.1 </span>Lines and circles</a></h2>
+<p class="noindent">If are using the Mu editor, Pygame Zero is built-in, but <strong>you must remember to click ‘Mode’ and select ‘Pygame Zero’ before running your program</strong>!</p>
+<p>If you are using a different editor, <a href="https://pygame-zero.readthedocs.io/en/stable/ide-mode.html" target="_blank" rel="noopener">instructions are online</a></p>
+<div class="codelisting" id="code-lines_circles" data-tralics-id="uid24" data-number="2.1"><div class="heading"><span class="number">Program 2.1:</span> <span class="description">Lines and circles</span>
+
+
+</div>
+
+<div class="code"><div class="highlight"><pre><span></span><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">500</span>  <span class="c1"># what are these units? what if we change them?</span>
+<span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">500</span>  <span class="c1"># what if we delete this line?</span>
+
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">((</span><span class="mi">250</span><span class="p">,</span> <span class="mi">250</span><span class="p">),</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">"white"</span><span class="p">)</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">filled_circle</span><span class="p">((</span><span class="mi">250</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">"red"</span><span class="p">)</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">((</span><span class="mi">150</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">450</span><span class="p">),</span> <span class="s2">"purple"</span><span class="p">)</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">((</span><span class="mi">150</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="mi">350</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="s2">"purple"</span><span class="p">)</span>
+</pre></div></div></div><ul>
+<li>Finish drawing this picture, or your own picture.<span class="intersentencespace"></span>
+</li></ul>
+</div><div id="cid11" data-tralics-id="cid11" class="section" data-number="2.2"><h2><a href="1_graphics_fragment.html#cid11" class="heading hyperref"><span class="number">2.2 </span>Moving rectangles</a></h2>
+<p class="noindent">To make things move we need to add the special <code>update()</code> function.<span class="intersentencespace"></span> We don’t need to write our own loop because <em>Pygame Zero calls this function for us in its own loop</em>, over and over, many times per second.</p>
+<div class="codelisting" id="code-moving_boxes" data-tralics-id="uid26" data-number="2.2"><div class="heading"><span class="number">Program 2.2:</span> <span class="description">Moving rectangles</span>
+
+
+</div>
+
+<div class="code"><div class="highlight"><pre><span></span><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="n">box</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">((</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">filled_rect</span><span class="p">(</span><span class="n">box</span><span class="p">,</span> <span class="s2">"red"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="n">box</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">box</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+    <span class="k">if</span> <span class="n">box</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">WIDTH</span><span class="p">:</span>
+        <span class="n">box</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div></div></div><ul>
+<li>Make the box move faster
+</li>
+<li>and in different directions.<span class="intersentencespace"></span>
+</li>
+<li>Make two boxes with different colours.<span class="intersentencespace"></span>
+</li></ul>
+</div><div id="cid12" data-tralics-id="cid12" class="section" data-number="2.3"><h2><a href="1_graphics_fragment.html#cid12" class="heading hyperref"><span class="number">2.3 </span>Actor sprites</a></h2>
+<p class="noindent">Actor sprites are very similar to boxes!<span class="intersentencespace"></span> Click <code>Images</code> to see the folder of image files available.<span class="intersentencespace"></span> <code>alien.png</code> should already be there, but
+for other images you must add the files yourself.</p>
+<div class="codelisting" id="code-prites" data-tralics-id="uid30" data-number="2.3"><div class="heading"><span class="number">Program 2.3:</span> <span class="description">Actor sprites</span>
+
+
+</div>
+
+<div class="code"><div class="highlight"><pre><span></span><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">50</span>
+
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">2</span>
+    <span class="k">if</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">WIDTH</span><span class="p">:</span>
+        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div></div></div><ul>
+<li>Draw or download your own image to use instead of alien.<span class="intersentencespace"></span> You could use Microsoft Paint which comes with Windows.<span class="intersentencespace"></span>
+</li></ul>
+</div><div id="cid13" data-tralics-id="cid13" class="section" data-number="2.4"><h2><a href="1_graphics_fragment.html#cid13" class="heading hyperref"><span class="number">2.4 </span>Keyboard input</a></h2>
+<p class="noindent">The alien moves when you press the cursor keys.</p>
+<div class="codelisting" id="code-keyboard_input" data-tralics-id="uid32" data-number="2.4"><div class="heading"><span class="number">Program 2.4:</span> <span class="description">Keyboard input</span>
+
+
+</div>
+
+<div class="code"><div class="highlight"><pre><span></span><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">keyboard</span><span class="o">.</span><span class="n">right</span><span class="p">):</span>
+        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">keyboard</span><span class="o">.</span><span class="n">left</span><span class="p">):</span>
+        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span>
+</pre></div></div></div><ul>
+<li>Make the alien move up and down as well as left and right.<span class="intersentencespace"></span>
+</li>
+<li>Use the += operator to change the alien.x more concisely (see <a href="3_python_fundamentals_fragment.html#code-shortcuts" class="hyperref">Program <span class="ref">4.3</span></a>).<span class="intersentencespace"></span>
+</li>
+<li>Use the <code>or</code> operator to allow WASD keys to move the alien in addition to the cursor keys (see <a href="3_python_fundamentals_fragment.html#code-logic" class="hyperref">Program <span class="ref">4.1</span></a>).<span class="intersentencespace"></span>
+</li>
+<li>Make alien wrap around when he moves off edge of screen.<span class="intersentencespace"></span>
+</li></ul>
+</div><div id="cid14" data-tralics-id="cid14" class="section" data-number="2.5"><h2><a href="1_graphics_fragment.html#cid14" class="heading hyperref"><span class="number">2.5 </span>Joystick input</a></h2>
+<p class="noindent">You may call them <em>gamepads</em> or game <em>controllers</em>, but Pygame calls them <em>joysticks</em>.</p>
+<p>Some controllers have different inputs and some are not compatible at all so don’t be surprised if this doesnt work properly!<span class="intersentencespace"></span> PS4 and Xbox One controllers connected by USB cable seems to work best.<span class="intersentencespace"></span> Use <a href="6_advanced_fragment.html#code-joystick_tester" class="hyperref">Program <span class="ref">7.3</span></a> to test yours and find out what inputs it has.<span class="intersentencespace"></span> Note that if you come back to this program in future when you no longer have a controller plugged in you will get an error.</p>
+<div class="codelisting" id="code-oystick_input" data-tralics-id="uid37" data-number="2.5"><div class="heading"><span class="number">Program 2.5:</span> <span class="description">Joystick input</span>
+
+
+</div>
+
+<div class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pygame</span>
+
+<span class="n">joystick</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">joystick</span><span class="o">.</span><span class="n">Joystick</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">joystick</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">"alien"</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">right</span> <span class="ow">or</span> <span class="n">joystick</span><span class="o">.</span><span class="n">get_axis</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.1</span><span class="p">:</span>
+        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+    <span class="k">elif</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">left</span> <span class="ow">or</span> <span class="n">joystick</span><span class="o">.</span><span class="n">get_axis</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">:</span>
+        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span>
+</pre></div></div></div><ul>
+<li>Make the alien move up and down as well as left and right.<span class="intersentencespace"></span>
+</li></ul>
+</div>

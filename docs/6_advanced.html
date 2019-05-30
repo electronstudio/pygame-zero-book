@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="stylesheets/pygments.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/softcover.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/custom.css" media="screen" rel="stylesheet" type="text/css" />
+    
+    <title>pygame-book</title>
+    
+      <script type="text/x-mathjax-config">
+              MathJax.Hub.Config({
+        "HTML-CSS": {
+          availableFonts: ["TeX"],
+        },
+        TeX: {
+          extensions: ["AMSmath.js", "AMSsymbols.js", "color.js"],
+          equationNumbers: {
+            autoNumber: "AMS",
+            formatNumber: function (n) { return "7" + '.' + n }
+          },
+          Macros: {
+            PolyTeX:    "Poly{\\TeX}",
+            PolyTeXnic: "Poly{\\TeX}nic",
+            "softcover": "\\texttt{softcover}",
+"unitvec": ["{\\hat #1}", 1]
+          }
+        },
+        showProcessingMessages: false,
+        messageStyle: "none",
+        imageFont: null,
+        "AssistiveMML": { disabled: true }
+      });
+
+        if (/PhantomJS/.test(window.navigator.userAgent)) {
+          MathJax.Hub.Queue([alert, 'MathJax Done']);
+        }
+      </script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+    
+  </head>
+  <body>
+    
+    <div id="book">
+      <div id="cid39" data-tralics-id="cid39" class="chapter" data-number="7" data-chapter="6_advanced"><h1><a href="6_advanced.html#cid39" class="heading hyperref"><span class="number">Lesson 7 </span>Advanced topics</a></h1>
+<div class="aside" id="aside-advanced" data-tralics-id="uid99" data-number="7.1"><div class="heading"><span class="number">Note 7.1.</span> 
+
+<span class="description">Instructor note</span></div>
+<p class="noindent">This is beginning of my attempts to teach object oriented programming, but I wouldn’t attempt this with young students.</p>
+
+</div></div>
+<div id="cid40" data-tralics-id="cid40" class="section" data-number="7.1"><h2><a href="6_advanced.html#cid40" class="heading hyperref"><span class="number">7.1 </span>Classes</a></h2>
+<p class="noindent">You’ve already been using class types, e.g.<span class="intersentencespace"></span> Rect and Actor.<span class="intersentencespace"></span> But if we want to store velocity as in <a href="5_more_games.html#code-simple_physics" class="hyperref">Program <span class="ref">6.3</span></a> we find classes do not include <em>vx</em> and <em>vy</em> variables inside them.</p>
+<p>There let’s
+create our own class, Sprite, that is the same as Actor but with
+these variables included.</p>
+<div class="codelisting" id="code-classes" data-tralics-id="uid100" data-number="7.1"><div class="heading"><span class="number">Program 7.1:</span> <span class="description">Classes</span>
+
+
+</div>
+
+<div class="code"><div class="highlight"><pre><span></span><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="k">class</span> <span class="nc">Sprite</span><span class="p">(</span><span class="n">Actor</span><span class="p">):</span>
+    <span class="n">vx</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">vy</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">ball</span> <span class="o">=</span> <span class="n">Sprite</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">ball</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="n">ball</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">ball</span><span class="o">.</span><span class="n">vx</span>
+    <span class="n">ball</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">ball</span><span class="o">.</span><span class="n">vy</span>
+    <span class="k">if</span> <span class="n">ball</span><span class="o">.</span><span class="n">right</span> <span class="o">&gt;</span> <span class="n">WIDTH</span> <span class="ow">or</span> <span class="n">ball</span><span class="o">.</span><span class="n">left</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">ball</span><span class="o">.</span><span class="n">vx</span> <span class="o">=</span> <span class="o">-</span><span class="n">ball</span><span class="o">.</span><span class="n">vx</span>
+    <span class="k">if</span> <span class="n">ball</span><span class="o">.</span><span class="n">bottom</span> <span class="o">&gt;</span> <span class="n">HEIGHT</span> <span class="ow">or</span> <span class="n">ball</span><span class="o">.</span><span class="n">top</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">ball</span><span class="o">.</span><span class="n">vy</span> <span class="o">=</span> <span class="o">-</span><span class="n">ball</span><span class="o">.</span><span class="n">vy</span>
+</pre></div></div></div></div>
+<div id="cid41" data-tralics-id="cid41" class="section" data-number="7.2"><h2><a href="6_advanced.html#cid41" class="heading hyperref"><span class="number">7.2 </span>Methods</a></h2>
+<p class="noindent">Classes can contain functions (called <em>methods</em>) as well as variables.<span class="intersentencespace"></span> Methods are the best place to modify the class’s variables.</p>
+<div class="codelisting" id="code-classes2" data-tralics-id="uid101" data-number="7.2"><div class="heading"><span class="number">Program 7.2:</span> <span class="description">Class methods</span>
+
+
+</div>
+
+<div class="code"><div class="highlight"><pre><span></span><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="k">class</span> <span class="nc">Sprite</span><span class="p">(</span><span class="n">Actor</span><span class="p">):</span>
+    <span class="n">vx</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">vy</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vx</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vy</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">&gt;</span> <span class="n">WIDTH</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vx</span> <span class="o">=</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">vx</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">&gt;</span> <span class="n">HEIGHT</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vy</span> <span class="o">=</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">vy</span>
+
+<span class="n">ball</span> <span class="o">=</span> <span class="n">Sprite</span><span class="p">(</span><span class="s2">"alien"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">ball</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="n">ball</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+</pre></div></div></div></div>
+<div id="cid42" data-tralics-id="cid42" class="section" data-number="7.3"><h2><a href="6_advanced.html#cid42" class="heading hyperref"><span class="number">7.3 </span>Joystick tester</a></h2>
+<p class="noindent">This is an example of controller input and example of for loops but
+mostly here so you can test your controllers’ input.<span class="intersentencespace"></span> I dont’s suggest typing this one yourself.</p>
+<div class="codelisting" id="code-joystick_tester" data-tralics-id="uid102" data-number="7.3"><div class="heading"><span class="number">Program 7.3:</span> <span class="description">Joystick tester</span>
+
+
+</div>
+
+<div class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pygame</span>
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">joystick_count</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">joystick</span><span class="o">.</span><span class="n">get_count</span><span class="p">()</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">joystick_count</span><span class="p">):</span>
+        <span class="n">joystick</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">joystick</span><span class="o">.</span><span class="n">Joystick</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">joystick</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">joystick</span><span class="o">.</span><span class="n">get_name</span><span class="p">()</span>
+        <span class="n">axes</span> <span class="o">=</span> <span class="n">joystick</span><span class="o">.</span><span class="n">get_numaxes</span><span class="p">()</span>
+        <span class="n">buttons</span> <span class="o">=</span> <span class="n">joystick</span><span class="o">.</span><span class="n">get_numbuttons</span><span class="p">()</span>
+        <span class="n">hats</span> <span class="o">=</span> <span class="n">joystick</span><span class="o">.</span><span class="n">get_numhats</span><span class="p">()</span>
+        <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
+            <span class="s2">"Joystick {} name: {} axes:{} buttons:{} hats:{}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">i</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">axes</span><span class="p">,</span> <span class="n">buttons</span><span class="p">,</span> <span class="n">hats</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+        <span class="n">y</span> <span class="o">+=</span> <span class="mi">14</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">axes</span><span class="p">):</span>
+            <span class="n">axis</span> <span class="o">=</span> <span class="n">joystick</span><span class="o">.</span><span class="n">get_axis</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">"Axis {} value: {:&gt;6.3f}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">axis</span><span class="p">),</span>
+                             <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+            <span class="n">y</span> <span class="o">+=</span> <span class="mi">14</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">buttons</span><span class="p">):</span>
+            <span class="n">button</span> <span class="o">=</span> <span class="n">joystick</span><span class="o">.</span><span class="n">get_button</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">"Button {:&gt;2} value: {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">button</span><span class="p">),</span>
+                             <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+            <span class="n">y</span> <span class="o">+=</span> <span class="mi">14</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">hats</span><span class="p">):</span>
+            <span class="n">hat</span> <span class="o">=</span> <span class="n">joystick</span><span class="o">.</span><span class="n">get_hat</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">"Hat {} value: {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">hat</span><span class="p">)),</span>
+                             <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+            <span class="n">y</span> <span class="o">+=</span> <span class="mi">14</span>
+</pre></div></div></div></div>
+    </div>
+  </body>
+</html>
