@@ -3,7 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="85ef30d2-737e-42b4-b9a4-54300f9dc2b1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapters/preface.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/preface.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapters/0_text_quizes.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/0_text_quizes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epub/OEBPS/frontmatter_fragment.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/epub/OEBPS/frontmatter_fragment.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/01_whereAmI.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/02_teleport.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/03_teleport2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/04_maths_question.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/04_maths_question.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/04_teleport3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/05_maths_question2.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/05_maths_question2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/05_teleport4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/06_loop.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/06_loop.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/07_loop2.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/07_loop2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/change_blocks.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/launcher.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/test.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,39 +31,15 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chapters/6_advanced.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor>
-                <caret column="12" lean-forward="true" selection-start-column="12" selection-end-column="12" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/epub/OEBPS/styles/page-template.xpgt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-150" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chapters/0_text_quizes.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="424">
-                <caret line="75" column="34" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
+              <first_editor relative-caret-position="198">
+                <caret line="82" column="85" selection-start-line="82" selection-start-column="85" selection-end-line="82" selection-end-column="85" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/epub/OEBPS/styles/custom_epub.css">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -61,17 +51,17 @@
         <entry file="file://$PROJECT_DIR$/docs/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="128">
-              <caret line="8" column="35" lean-forward="true" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+              <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="144">
-                <caret line="7" selection-start-line="7" selection-end-line="7" />
+                <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
               </first_editor>
               <second_editor />
             </state>
@@ -82,17 +72,47 @@
         <entry file="file://$PROJECT_DIR$/LICENSE.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+              <caret column="5" selection-start-column="5" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chapters/preface.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="448">
-                <caret line="19" column="266" selection-start-line="19" selection-start-column="266" selection-end-line="19" selection-end-column="266" />
+              <first_editor relative-caret-position="112">
+                <caret line="7" column="80" selection-start-line="7" selection-start-column="80" selection-end-line="7" selection-end-column="80" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Book.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/book.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/chapters/1_graphics.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="608">
+                <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
               </first_editor>
               <second_editor />
             </state>
@@ -134,10 +154,8 @@
         <option value="$PROJECT_DIR$/chapters/yet_another_chapter.md" />
         <option value="$PROJECT_DIR$/latex_styles/softcover.sty" />
         <option value="$PROJECT_DIR$/pygame-book.tex" />
-        <option value="$PROJECT_DIR$/config/book.yml" />
         <option value="$PROJECT_DIR$/Book.txt" />
         <option value="$PROJECT_DIR$/config/lang.yml" />
-        <option value="$PROJECT_DIR$/chapters/0_text_quizes.md" />
         <option value="$PROJECT_DIR$/latex_styles/custom_pdf.sty" />
         <option value="$PROJECT_DIR$/config/preamble.tex" />
         <option value="$PROJECT_DIR$/chapters/1_graphics.md" />
@@ -146,16 +164,18 @@
         <option value="$PROJECT_DIR$/chapters/5_more_games.md" />
         <option value="$PROJECT_DIR$/chapters/2_simple_games.md" />
         <option value="$PROJECT_DIR$/docs/index.html" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/LICENSE.txt" />
         <option value="$PROJECT_DIR$/chapters/6_advanced.md" />
         <option value="$PROJECT_DIR$/chapters/preface.md" />
+        <option value="$PROJECT_DIR$/config/book.yml" />
+        <option value="$PROJECT_DIR$/chapters/0_text_quizes.md" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="66" />
-    <option name="y" value="206" />
+    <option name="x" value="349" />
+    <option name="y" value="148" />
     <option name="width" value="1920" />
     <option name="height" value="870" />
   </component>
@@ -165,6 +185,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -226,6 +247,11 @@
             <path>
               <item name="pygame-book" type="b2602c69:ProjectViewProjectNode" />
               <item name="pygame-book" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pygame-book" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pygame-book" type="462c0819:PsiDirectoryNode" />
               <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -253,7 +279,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -360,7 +385,8 @@
       <workItem from="1558292387205" duration="8211000" />
       <workItem from="1558659115417" duration="3844000" />
       <workItem from="1558978286853" duration="12580000" />
-      <workItem from="1559156148098" duration="4818000" />
+      <workItem from="1559156148098" duration="6919000" />
+      <workItem from="1559358292087" duration="949000" />
     </task>
     <task id="LOCAL-00001" summary="mess with formatting">
       <created>1558146868663</created>
@@ -453,17 +479,31 @@
       <option name="project" value="LOCAL" />
       <updated>1559179452551</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="tom fixes">
+      <created>1559256163494</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1559256163494</updated>
+    </task>
+    <task id="LOCAL-00015" summary="title">
+      <created>1559256550116</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1559256550116</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66003000" />
+    <option name="totallyTimeSpent" value="69053000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="66" y="206" width="1920" height="870" extended-state="0" />
+    <frame x="349" y="148" width="1920" height="870" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1517572" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15335463" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -516,7 +556,9 @@
     <MESSAGE value="why no index publish?" />
     <MESSAGE value="license, readme" />
     <MESSAGE value="creative commons" />
-    <option name="LAST_COMMIT_MESSAGE" value="creative commons" />
+    <MESSAGE value="tom fixes" />
+    <MESSAGE value="title" />
+    <option name="LAST_COMMIT_MESSAGE" value="title" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/programs/10_lines_circles.py">
@@ -586,20 +628,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chapters/another_chapter.md" />
     <entry file="file://$PROJECT_DIR$/chapters/a_chapter.md" />
-    <entry file="file://$PROJECT_DIR$/Book.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/book.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/generated_polytex/preface.tex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
@@ -655,16 +683,6 @@
     <entry file="file://$PROJECT_DIR$/latex_styles/custom.sty">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/chapters/1_graphics.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="608">
-            <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/chapters/4_more_graphics.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -716,16 +734,77 @@
     <entry file="file://$PROJECT_DIR$/epub/OEBPS/styles/custom_epub.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/epub/OEBPS/cover.xhtml">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/chapters/6_advanced.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor>
+            <caret column="12" selection-start-column="12" selection-end-column="12" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/_config.yml">
+    <entry file="file://$PROJECT_DIR$/epub/OEBPS/cover.xhtml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
-          <caret line="8" column="35" lean-forward="true" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LICENSE.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chapters/preface.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="112">
+            <caret line="7" column="80" selection-start-line="7" selection-start-column="80" selection-end-line="7" selection-end-column="80" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Book.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/_config.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/book.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chapters/1_graphics.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="608">
+            <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chapters/0_text_quizes.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="198">
+            <caret line="82" column="85" selection-start-line="82" selection-start-column="85" selection-end-line="82" selection-end-column="85" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
@@ -733,44 +812,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="144">
-            <caret line="7" selection-start-line="7" selection-end-line="7" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LICENSE.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chapters/0_text_quizes.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="424">
-            <caret line="75" column="34" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chapters/6_advanced.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor>
-            <caret column="12" lean-forward="true" selection-start-column="12" selection-end-column="12" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chapters/preface.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="448">
-            <caret line="19" column="266" selection-start-line="19" selection-start-column="266" selection-end-line="19" selection-end-column="266" />
+            <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
           </first_editor>
           <second_editor />
         </state>

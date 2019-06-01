@@ -60,7 +60,7 @@ a new file and use copy and paste to copy the code from the old program into the
 * Add some more questions, e.g.
    * Instead of 7, use another random number.
    * Use a bigger random number.
-   * Multiply, divide or subtract numbers.
+   * Multiply (use `*`), divide (use `/`) or subtract (use `-`) numbers.
 * Print how many questions the player got correct at the end.
 
 \newpage
@@ -80,8 +80,8 @@ We create a `score` variable to record how many questions the player answered co
 
 ## Guessing game with a loop
  
-This `while` loop goes round and round forever until the player gets a correct
-answer and then it `break`s.  Note that everything in the loop is indented.
+This `while` loop goes round and round forever ... or until the player gets a correct
+answer, and then it `break`s out of the loop.  Note that everything in the loop is indented.
  
 \begin{codelisting}
 \codecaption{Guessing game with a loop}

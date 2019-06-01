@@ -5,12 +5,12 @@ guesses = 0
 
 while True:
     guesses = guesses + 1
-    print("I am thinking of a number, can you guess it?")
+    print("I am thinking of a number, can you guess what it is?")
     g = int(input())
     if g == n:
         break
     elif g < n:
-        print("too low")
+        print("Too low")
     elif g > n:
-        print("too high")
-print("correct! you took", guesses, "guesses")
+        print("Too high")
+print("Correct! You took", guesses, "guesses.")
