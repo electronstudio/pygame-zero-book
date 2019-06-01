@@ -1,6 +1,6 @@
-# Text based quiz games
+# Text-based quiz games
 
-These programs can be entered using any text editor or IDE, but I suggest using [the Mu editor](https://codewith.mu/)
+These programs can be entered using any text editor, but I suggest using [the Mu editor](https://codewith.mu/)
 because it comes with Python, Pygame Zero and other libraries all pre-installed in one easy download.
 
 ## Hello, world
@@ -15,14 +15,14 @@ The traditional first program used to make sure Python is working and that we ca
 
 \noindent If using the Mu editor:
 
-* Click the mode button and make sure the mode is set to `Python3`
-* Type in the program. 
-* Click `Save` and enter a name for the program.
-* Click `Run`.
+1. Click the mode button and make sure the mode is set to `Python3`.
+2. Type in the program. 
+3. Click `Save` and enter a name for the program.
+4.  Click `Run`.
 
 ## Getting input from the keyboard
 
-When you run this program it will pause and wait for you to enter some
+This program will pause and wait for you to enter some
 text with the keyboard, followed by the return key. The text you enter
 is stored in a variable, `x`.
 
@@ -37,7 +37,7 @@ is stored in a variable, `x`.
 
 ## Decisions: if, elif, else
 
-This is how I added another name to  Program~\ref{code:input}
+This is how to add another name to  Program~\ref{code:input}
 
 \begin{codelisting}
 \codecaption{Decisions: if, elif, else}
@@ -45,7 +45,7 @@ This is how I added another name to  Program~\ref{code:input}
 <<(programs/03_input2.py, options: "hl_lines": [6, 7, 8, 9])
 \end{codelisting}
 
-\noindent Program~\ref{code:input2} is very similar to Program~\ref{code:input}. The new lines have been highlighted.  You can either modify Program~\ref{code:input} or else create
+\noindent Program~\ref{code:input2} is very similar to Program~\ref{code:input}. The new lines have been highlighted.  You can either modify Program~\ref{code:input}, or else create
 a new file and use copy and paste to copy the code from the old program into the new.
 
 ## A random maths question
