@@ -1,15 +1,15 @@
 # Arcade games
 
-Now we can draw actor sprites to the screen we can begin to make simple arcade style games with them. 
+Now we can draw actor sprites to the screen, we can begin to make simple arcade games with them. 
 
 \newpage
 
 ## Collisions
 
-Arcade games need to know when one sprite has hit another sprite.  Most of this code is copied from Program~\ref{code:moving_boxes} and Program~\ref{code:keyboard_input}.
+Arcade games need to know when one actor sprite has hit another actor sprite.  Most of this code is copied from Program~\ref{code:moving_boxes} and Program~\ref{code:keyboard_input}.
 
 \begin{codelisting}
-\codecaption{Lines and circles}
+\codecaption{Collisions}
 \label{code:collisions}
 <<(programs/15_collisions.py)
 \end{codelisting}
@@ -62,7 +62,7 @@ This uses a *function call-back* for event-based input.  It is similiar to Progr
 
 ## Mouse movement
 
-If you are more interested in controllers than mice this may be skipped for now.  
+If you are more interested in playing using controllers than mice this may be skipped for now.  
 
 \begin{codelisting}
 \codecaption{Getting input from mouse movement}

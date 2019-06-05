@@ -36,8 +36,8 @@ We don't need to write our own loop because *Pygame Zero calls this function for
 <<(programs/11_moving_boxes.py)
 \end{codelisting}
 
-* Make the box move faster
-* and in different directions.
+* Make the box move faster.
+* Make the box move in different directions.
 * Make two boxes with different colours.
 \newpage
 
@@ -68,17 +68,17 @@ The alien moves when you press the cursor keys.
 \end{codelisting}
 
 * Make the alien move up and down as well as left and right.
-* Use the += operator to change the alien.x more concisely (see Program~\ref{code:shortcuts}).
+* Use the more concise += operator to change the `alien.x` value (see Program~\ref{code:shortcuts}).
 * Use the `or` operator to allow WASD keys to move the alien in addition to the cursor keys (see Program~\ref{code:logic}).
-* Make alien wrap around when he moves off edge of screen.
+* Make the alien wrap around when he moves off edge of screen.
 
 \newpage
 
 ## Joystick input
 
-You may call them *gamepads* or game *controllers*, but Pygame calls them *joysticks*.
+You may call them *gamepads* or *controllers*, but Pygame calls them *joysticks*.
 
- Some controllers have different inputs and some are not compatible at all so don't be surprised if this doesnt work properly!  PS4 and Xbox One controllers connected by USB cable seems to work best.  Use Program~\ref{code:joystick_tester} to test yours and find out what inputs it has.  Note that if you come back to this program in future when you no longer have a controller plugged in you will get an error.
+ Some controllers have different inputs and some are not compatible at all so don't be surprised if this doesnt work properly!  PS4 and Xbox One controllers connected by USB cable seems to work best.  Use Program~\ref{code:joystick_tester} to test yours and find out what inputs it has.  Note: if you run this program with no controller plugged in you will get an error.
 
 
 \begin{codelisting}

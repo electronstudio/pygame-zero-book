@@ -15,6 +15,6 @@ each program is *brief, complete* and *introduces only one or two new concepts*.
 
 Following each program are some ideas for how students can modify the program.  Hopefully they will go further and modify these programs into their own unique games!  The difficulty of these suggestions varies, to accommodate students of different age and ability.
 
-This book may be suitable for self-teaching by a motivated learner, but does not attempt to be comprehensive or give detailed explanations because it is intended to be used in a class with a teacher who will fill in the gaps as needed by the students.
+This book may be suitable for self-teaching by a motivated learner, but does not attempt to be comprehensive or give detailed explanations because it is intended to be used in a class with an instructor who will fill in the gaps as needed by the students.
 
 [^example_footnote]: For writing essays nowadays people can use voice input and touch-screen input, but for programming the majority of programmers still type on a keyboard.  There’s no sign of this changing in the immediate future, so practising keyboard skills now is still very important for the future. Students can practise at home with a program such as TuxType. That being said, many programs contain similar code, so it’s also a useful skill for them be able to copy and paste from their other programs.
