@@ -1,10 +1,10 @@
-# f is an easy way to do string interpolation
+# f is an easy way to insert variables into strings
 score = 56
 name = "Richard"
 message = f"{name} scored {score} points"
 print(message)
 
-# += is an easy way to increment a variable
+# += is an easy way to increase the value of a variable
 score = score + 10  # hard way
 score += 10         # easy way
 print(score)

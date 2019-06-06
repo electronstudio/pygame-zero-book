@@ -5,8 +5,10 @@ Now we've had some fun with games I hope to have generated enough interest to ta
 \begin{aside}
 \label{aside:funda}
 \heading{Instructor note}
-\noindent I don't have the students type these, just discuss them, and possibly not all in the same lesson but only when they relevant to other programs.
+\noindent Don't have the students type these, just discuss them.  You also don't need to cover all of the programs in the chapter in the same lesson; you can teach them when they are relevant to another program.
 \end{aside}
+
+\pagebreak
 
 ## Logic
 
@@ -17,9 +19,12 @@ Now we've had some fun with games I hope to have generated enough interest to ta
 <<(programs/08_logic.py)
 \end{codelisting}
 
+## Comparisons
+
 \begin{codelisting}
-\codecaption{Greater than, lesser than, equality}
+\codecaption{Comparisons: greater than, lesser than, equal to}
 \label{code:logic2}
+\phantom{.}
 <<(programs/09_logic2.py)
 \end{codelisting}
 
@@ -27,7 +32,7 @@ Now we've had some fun with games I hope to have generated enough interest to ta
 
 ## Shortcuts
 
-You may have noticed some of these being used already.  They are quicker ways of doing basic things.
+Shortcuts are quicker ways of doing basic things.  You may have noticed some of these being used already.  
 
 \begin{codelisting}
 \codecaption{Shortcuts}
@@ -51,9 +56,9 @@ It is often useful to put one loop inside another loop.
 * Can you print 12 times table?
 
 
-## Arrays
+## Array Lists
 
-Python calls them *lists* but most languages call them *arrays*.
+Python calls them *lists*. Most languages call them *arrays* so we will use both terms.[^afoot]
   
 \begin{codelisting}
 \codecaption{Array lists}
@@ -61,12 +66,14 @@ Python calls them *lists* but most languages call them *arrays*.
 <<(programs/0C_arrays.py)
 \end{codelisting}
 
+[^afoot]: There is a difference but it need not concern the beginner.
+
 
 
 ## Functions
 
-You have already defined specially named functions that are called by Pygame: `draw()` and `update()`
-However you can define a function named whatever you like and call it yourself.
+You have already defined specially named functions that are called by Pygame: `draw()` and `update()`.
+However, you can define a function named whatever you like and call it yourself.
 
 Functions are useful for many reasons. The simplest is that they make your program look more organized. They also enable you re-use code without
 needing to copy it and risk making mistakes.  When your programs get longer they enable you to create *abstractions* so you only have to think about

@@ -1,11 +1,14 @@
-# array is a list of variables
+# a is a list of integers
 
 a = [74, 53, 21]
+
+# b is a list of strings
+
 b = ["hello", "goodbye"]
 
-# can take a single element from the list
+# You can take a single element from the list.
 print(a[2])
 
-# can use a for loop to take every element
+# You can use a for loop to print every element.
 for x in a:
     print(x)

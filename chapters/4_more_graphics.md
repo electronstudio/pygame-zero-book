@@ -16,7 +16,7 @@ We draw greeen circles using a loop within another loop.
 <<(programs/20_loops.py)
 \end{codelisting}
 
-* `import random` and make the positions random, e.g. use
+* `import random` and make the positions random, e.g.
 ```
 random.randint(0, 100)
 ```
@@ -36,7 +36,7 @@ how much *red*, *green* and *blue* to mix together.
 
 
 \begin{codelisting}
-\codecaption{RGB Colours}
+\codecaption{RGB colours}
 \label{code:colours}
 <<(programs/25_colours.py)
 \end{codelisting}
@@ -63,11 +63,11 @@ Then press *F* to go fullscreen, *ESCAPE* to quit.
 
 ## Displaying the score
 
-This game shows how you can keep the score in a variable and print it on to the game screen.  You can print any other
+This game shows how you can keep the score in a variable and print it on to the game screen.  You can display any other
 messages to the player the same way.
 
 \begin{codelisting}
-\codecaption{Keeping score}
+\codecaption{Keeping score in a variable and displaying it}
 \label{code:displaying_text}
 <<(programs/27_displaying_text.py)
 \end{codelisting}
