@@ -1,4 +1,5 @@
-#Coding Games With Pygame Zero & Python: Student workbook
+# Coding Games With Pygame Zero \& Python
+## Student workbook
 
 [Read the text here](https://electronstudio.github.io/pygame-zero-book/)
 
