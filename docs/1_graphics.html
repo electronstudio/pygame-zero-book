@@ -58,8 +58,8 @@ because everything we do in Pygame Zero will use it.<span class="intersentencesp
 
 </div>
 
-<div class="code"><div class="highlight"><pre><span></span><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">500</span>  <span class="c1"># what are these units? what if we change them?</span>
-<span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">500</span>  <span class="c1"># what if we delete this line?</span>
+<div class="code"><div class="highlight"><pre><span></span><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">500</span>  <span class="c1"># What are these units? What if we change them?</span>
+<span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">500</span>  <span class="c1"># What if we delete this line?</span>
 
 
 <span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
@@ -93,9 +93,9 @@ because everything we do in Pygame Zero will use it.<span class="intersentencesp
     <span class="k">if</span> <span class="n">box</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">WIDTH</span><span class="p">:</span>
         <span class="n">box</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div></div></div><ul>
-<li>Make the box move faster
+<li>Make the box move faster.<span class="intersentencespace"></span>
 </li>
-<li>and in different directions.<span class="intersentencespace"></span>
+<li>Make the box move in different directions.<span class="intersentencespace"></span>
 </li>
 <li>Make two boxes with different colours.<span class="intersentencespace"></span>
 </li></ul>
@@ -152,16 +152,16 @@ for other images you must add the files yourself.</p>
 </pre></div></div></div><ul>
 <li>Make the alien move up and down as well as left and right.<span class="intersentencespace"></span>
 </li>
-<li>Use the += operator to change the alien.x more concisely (see <a href="3_python_fundamentals.html#code-shortcuts" class="hyperref">Program <span class="ref">4.3</span></a>).<span class="intersentencespace"></span>
+<li>Use the more concise += operator to change the <code>alien.x</code> value (see <a href="3_python_fundamentals.html#code-shortcuts" class="hyperref">Program <span class="ref">4.3</span></a>).<span class="intersentencespace"></span>
 </li>
 <li>Use the <code>or</code> operator to allow WASD keys to move the alien in addition to the cursor keys (see <a href="3_python_fundamentals.html#code-logic" class="hyperref">Program <span class="ref">4.1</span></a>).<span class="intersentencespace"></span>
 </li>
-<li>Make alien wrap around when he moves off edge of screen.<span class="intersentencespace"></span>
+<li>Make the alien wrap around when he moves off edge of screen.<span class="intersentencespace"></span>
 </li></ul>
 </div>
 <div id="cid14" data-tralics-id="cid14" class="section" data-number="2.5"><h2><a href="1_graphics.html#cid14" class="heading hyperref"><span class="number">2.5 </span>Joystick input</a></h2>
-<p class="noindent">You may call them <em>gamepads</em> or game <em>controllers</em>, but Pygame calls them <em>joysticks</em>.</p>
-<p>Some controllers have different inputs and some are not compatible at all so don’t be surprised if this doesnt work properly!<span class="intersentencespace"></span> PS4 and Xbox One controllers connected by USB cable seems to work best.<span class="intersentencespace"></span> Use <a href="6_advanced.html#code-joystick_tester" class="hyperref">Program <span class="ref">7.3</span></a> to test yours and find out what inputs it has.<span class="intersentencespace"></span> Note that if you come back to this program in future when you no longer have a controller plugged in you will get an error.</p>
+<p class="noindent">You may call them <em>gamepads</em> or <em>controllers</em>, but Pygame calls them <em>joysticks</em>.</p>
+<p>Some controllers have different inputs and some are not compatible at all so don’t be surprised if this doesnt work properly!<span class="intersentencespace"></span> PS4 and Xbox One controllers connected by USB cable seems to work best.<span class="intersentencespace"></span> Use <a href="6_advanced.html#code-joystick_tester" class="hyperref">Program <span class="ref">7.3</span></a> to test yours and find out what inputs it has.<span class="intersentencespace"></span> Note: if you run this program with no controller plugged in you will get an error.</p>
 <div class="codelisting" id="code-oystick_input" data-tralics-id="uid37" data-number="2.5"><div class="heading"><span class="number">Program 2.5:</span> <span class="description">Joystick input</span>
 
 

@@ -3,13 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="85ef30d2-737e-42b4-b9a4-54300f9dc2b1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapters/3_python_fundamentals.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/3_python_fundamentals.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapters/4_more_graphics.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/4_more_graphics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/images/figures/2011_michael_hartl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/images/figures/pixelgrid.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/docs/images/figures/pixelgrid.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/images/figures/pixelgrid.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/images/figures/pixelgrid.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/epub/OEBPS/frontmatter_fragment.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/epub/OEBPS/frontmatter_fragment.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programs/0A_shortcuts.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/0A_shortcuts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programs/0C_arrays.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/0C_arrays.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programs/10_lines_circles.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/10_lines_circles.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,8 +47,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="128">
-                <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+              <first_editor relative-caret-position="144">
+                <caret line="9" column="94" selection-start-line="9" selection-start-column="94" selection-end-line="9" selection-end-column="94" />
               </first_editor>
               <second_editor />
             </state>
@@ -83,7 +80,7 @@
         <entry file="file://$PROJECT_DIR$/config/book.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="48">
-              <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="4" selection-end-column="26" />
+              <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="4" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -189,8 +186,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="239" />
-    <option name="y" value="163" />
+    <option name="x" value="571" />
+    <option name="y" value="213" />
     <option name="width" value="1920" />
     <option name="height" value="870" />
   </component>
@@ -220,12 +217,22 @@
             <path>
               <item name="pygame-book" type="b2602c69:ProjectViewProjectNode" />
               <item name="pygame-book" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pygame-book" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pygame-book" type="462c0819:PsiDirectoryNode" />
               <item name="ebooks" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pygame-book" type="b2602c69:ProjectViewProjectNode" />
               <item name="pygame-book" type="462c0819:PsiDirectoryNode" />
               <item name="generated_polytex" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pygame-book" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pygame-book" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pygame-book" type="b2602c69:ProjectViewProjectNode" />
@@ -256,15 +263,15 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$PROJECT_DIR$/../Library/Android/sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/images/figures" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/images/figures" />
       <recent name="$PROJECT_DIR$/docs" />
+      <recent name="$PROJECT_DIR$/images/figures" />
       <recent name="$PROJECT_DIR$/chapters" />
     </key>
   </component>
@@ -357,7 +364,7 @@
       <workItem from="1558978286853" duration="12580000" />
       <workItem from="1559156148098" duration="6919000" />
       <workItem from="1559358292087" duration="2501000" />
-      <workItem from="1559672855322" duration="4262000" />
+      <workItem from="1559672855322" duration="4556000" />
     </task>
     <task id="LOCAL-00001" summary="mess with formatting">
       <created>1558146868663</created>
@@ -485,15 +492,28 @@
       <option name="project" value="LOCAL" />
       <updated>1559746493335</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="more tom fixes">
+      <created>1559795101482</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1559795101482</updated>
+    </task>
+    <task id="LOCAL-00020" summary="readme fix">
+      <created>1559795170753</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1559795170753</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74867000" />
+    <option name="totallyTimeSpent" value="75161000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="239" y="163" width="1920" height="870" extended-state="0" />
-    <editor active="true" />
+    <frame x="571" y="213" width="1920" height="870" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15495208" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -552,7 +572,9 @@
     <MESSAGE value="update html" />
     <MESSAGE value="improve pics" />
     <MESSAGE value="tom fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="tom fixes" />
+    <MESSAGE value="more tom fixes" />
+    <MESSAGE value="readme fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="readme fix" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/programs/10_lines_circles.py">
@@ -787,7 +809,7 @@
     <entry file="file://$PROJECT_DIR$/config/book.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
-          <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="4" selection-end-column="26" />
+          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="4" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -804,8 +826,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="128">
-            <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+          <first_editor relative-caret-position="144">
+            <caret line="9" column="94" selection-start-line="9" selection-start-column="94" selection-end-line="9" selection-end-column="94" />
           </first_editor>
           <second_editor />
         </state>
