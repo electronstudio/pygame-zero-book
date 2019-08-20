@@ -4,7 +4,7 @@
 \label{aside:advanced}
 \heading{Instructor note}
 
-\noindent This is beginning of my attempts to teach object oriented programming, but I wouldn't attempt this with young students.
+\noindent This is the beginning of my attempts to teach object oriented programming, but I wouldn't attempt this with young students since it requires abstract thinking.
 
 \end{aside}
 
@@ -48,9 +48,9 @@ Methods are the best place to modify the class's variables.
 
 ## Joystick tester
 
-This is an example of controller input and example of for loops but
-mostly here so you can test your controllers' input.
-I dont's suggest typing this one yourself.
+This program demonstrates using joysticks and for loops, but is mainly included to help you test the input from your controllers.
+
+(I don't suggest typing this one yourself.)
 
 \begin{codelisting}
 \codecaption{Joystick tester}

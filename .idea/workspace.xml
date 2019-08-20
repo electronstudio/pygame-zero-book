@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85ef30d2-737e-42b4-b9a4-54300f9dc2b1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/images/figures/repl.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chapters/3_python_fundamentals.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/3_python_fundamentals.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/copy_programs.sh" beforeDir="false" afterPath="$PROJECT_DIR$/copy_programs.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapters/5_more_games.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/5_more_games.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapters/6_advanced.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/6_advanced.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -137,7 +137,7 @@
       <workItem from="1559156148098" duration="6919000" />
       <workItem from="1559358292087" duration="2501000" />
       <workItem from="1559672855322" duration="4556000" />
-      <workItem from="1566297137447" duration="5621000" />
+      <workItem from="1566297137447" duration="8892000" />
     </task>
     <task id="LOCAL-00001" summary="mess with formatting">
       <created>1558146868663</created>
@@ -279,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1559795170753</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="more fundamentals">
+      <created>1566305122772</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1566305122772</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,7 +314,8 @@
     <MESSAGE value="tom fixes" />
     <MESSAGE value="more tom fixes" />
     <MESSAGE value="readme fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="readme fix" />
+    <MESSAGE value="more fundamentals" />
+    <option name="LAST_COMMIT_MESSAGE" value="more fundamentals" />
   </component>
   <component name="masterDetails">
     <states>

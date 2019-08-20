@@ -83,9 +83,9 @@ It is often useful to put one loop inside another loop.
 * Can you print 12 times table?
 
 
-## Array Lists
+## Array lists
 
-Python calls them *lists*. Most languages call them *arrays* so we will use both terms.[^afoot]
+Variables can be stored together in a *list*. Most languages call this an *array* so try to remember that word also.[^afoot]
   
 \begin{codelisting}
 \codecaption{Array lists}
@@ -93,7 +93,7 @@ Python calls them *lists*. Most languages call them *arrays* so we will use both
 <<(programs/0C_arrays.py)
 \end{codelisting}
 
-[^afoot]: There is a difference but it need not concern the beginner.
+[^afoot]: There are other kinds of list that are not arrays but this need not concern the beginner.
 
 
 
