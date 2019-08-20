@@ -10,6 +10,33 @@ Now we've had some fun with games I hope to have generated enough interest to ta
 
 \pagebreak
 
+## The REPL
+
+REPL stands for *Read Evaluate Print Loop*.  In Mu you access it via the `REPL` button.  It appears at the bottom of the window.  It's a special mode in which you type an instruction to Python and Python
+executes it immediately (no need to click `RUN`) and displays the result.  It's useful for doing calculations and trying things out, but it won't save what you type, so you will
+only want to use it for very short programs.
+
+![The REPL](images/figures/repl.png)
+
+## Variables
+
+A *variable* is a place in the computer's memory where data is stored.  You can name a variable whatever you like; you should
+try to make the name descriptive.  There are many *types* of variable but Python sets the type for us automatically
+when we store data in the variable.  (Unlike some languages we do not need to specify the type.)  The types we will see most often are whole numbers (*integers*)
+and *strings* of text.
+
+We create a variable and assign a value to it using the `=` operator.  Note this is different from the `==` operator which is used for comparisons.
+
+\begin{codelisting}
+\codecaption{Variable assignment}
+\label{code:variables}
+```python
+my_number = 7
+my_string = "hello"
+print(my_string, my_number)
+```
+\end{codelisting}
+
 ## Logic
 
 \begin{codelisting}
@@ -86,6 +113,49 @@ what function you want to call and don't need to remember the details of the cod
 \end{codelisting}
 
 \pagebreak
+
+## Indentation
+
+Code is arranged in *blocks*.  For example, a *function* consists of a one line delcaration followed by a block of several lines of code.  Similarly, all the lines
+of a loop form one block.  A *conditional* has a block of code following the `if` statement (and optionally blocks after the `elif` and `else`. )
+
+Many languages use `{}` or `()` to delimit a block.  However Python is unusual: each block begins with `:` and then all the lines of the block
+are *indented* by the same amount of whitespace (tabs or spaces).  The block ends when the indentation ends.
+
+Blocks can be *nested* inside other blocks.
+
+\begin{codelisting}
+\codecaption{Can you predict what this program will print?}
+\label{code:blocks}
+<<(programs/blocks.py)
+\end{codelisting}
+
+\pagebreak
+
+## Global variables
+
+A variable defined inside a function has *local scope*: it cannot be used outside of the function.  If you want to use the same
+variable in different functions then you must define it outside the functions, in the *global scope*.  However, if you attempt to
+modify the value of the global variable inside a function you will get an error, or - even worse - you will create a local variable with the same name as the global variable
+and your changes to the global variable will be silently lost.
+
+You must explicity tell Python that you
+want to use a global variable with the `global` keyword.
+
+\begin{codelisting}
+\codecaption{Try removing line 3 and see what happens}
+\label{code:globals}
+```python
+a = 10
+def my_function():
+    global a
+    a=20
+my_function()
+print(a)
+```
+\end{codelisting}
+
+
 
 ## Bugs
 
