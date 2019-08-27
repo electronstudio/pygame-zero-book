@@ -25,3 +25,10 @@ if a > WIDTH:
 # You could simply do:
 b = b % WIDTH
 print(a, b)
+
+# input() takes a string argument which it prints out.
+# Instead of:
+print("Enter a number")
+num = input()
+# You can have a single line:
+num = input("Enter a number")

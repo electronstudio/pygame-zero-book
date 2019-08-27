@@ -1,82 +1,8 @@
 # Exercises
 
 These exercises will test your understanding of the basics of Python.  Each exercise will ask you to write a program.  The solution is
-often on the following page - do not turn the page until you have attempted your own solution!  Save each program in a separate file.
-
-\newpage
-
-## For loops
-
-Run this program to see a `for` loop:
-
-```python
-for x in range(0,11):
-    print(x)
-```
-
-### A baker has three customers.
-
-He asks them each how many cakes they want
-so he knows how many he must bake. He writes this program.
-
-```python
-total = 0
-print("Customer", 1, "how many cakes do you want?")
-cakes = int(input())
-total = total + cakes
-print("Customer", 2, "how many cakes do you want?")
-cakes = int(input())
-total = total + cakes
-print("Customer", 3, "how many cakes do you want?")
-cakes = int(input())
-total = total + cakes
-print("I will bake", total, "cakes!")
-```
-
-This program is longer than it needs to be.  Instead of typing it, write your own program using a `for` loop.  It should be only 6 (or fewer) lines long.
-
-\newpage
-
-A possible solution:
-
-```python
-total=0
-for x in range(1, 4):
-    print("Customer", x, "how many cakes do you want?")
-    cakes = int(input())
-    total = total + cakes
-print("I will bake", total, "cakes!")
-```
 
 
-### The baker gets a fourth customer.
-
-Change your program so it works for 4 customers.
-
-### The baker has a different number of customers every day.
-
-Change the program so it
-asks how many customers there are. Store the number typed by the user in a variable
-called `c`. Change the loop so it works for `c` customers rather than 4 customers.
-
-\newpage
-
-A possible solution:
-
-```python
-print("How many customers are there today?")
-c = int(input())
-total=0
-for x in range(1, c+1):
-    print("Customer", x, "how many cakes do you want?")
-    cakes = int(input())
-    total = total + cakes
-print("I will bake", total, "cakes!")
-```
-
-### If a customer orders 12 cakes, he gets an extra cake for free
-
-Use an `if` statement to check `cakes > 12`. If so, add one more cake.
 
 ## List
 

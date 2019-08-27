@@ -1,6 +1,7 @@
 # Python Fundamentals
 
-Now we've had some fun with games I hope to have generated enough interest to tackle some coding basics!
+There are some exercises here.  Each exercise will ask you to write a program.  The solution is
+often on the following page - do not turn the page until you have attempted your own solution!  Save each program in a separate file.
 
 \begin{aside}
 \label{aside:funda}
@@ -60,50 +61,134 @@ print("Number of fruits:", fruits)
 
 ## Input
 
-## Logic
+Program~\ref{code:fruits} is not very useful if the number of apples changes.  This would require the programmer to change the program.  We can improve it by allowing the *user* of the program
+to change the numbers.  The `input()` function allows the user to type a string which can be different every time the program is run.
+
+```python
+my_string = input()
+print(my_string)
+```
+
+Sometimes we require that the user type in a number rather than a string.  We can use the `int()` function to convert the string to a number.
 
 \begin{codelisting}
-\codecaption{Boolean logic}
-\label{code:logic}
-\phantom{.}
-<<(programs/08_logic.py)
+\codecaption{Getting input from user}
+\label{code:input3}
+```python
+print("Enter a number")
+my_number = int(input())
+print("Double your number is", my_number * 2)
+```
 \end{codelisting}
 
-## Comparisons
-
-\begin{codelisting}
-\codecaption{Comparisons: greater than, lesser than, equal to}
-\label{code:logic2}
-\phantom{.}
-<<(programs/09_logic2.py)
-\end{codelisting}
-
-\pagebreak
-
-## Shortcuts
-
-Shortcuts are quicker ways of doing basic things.  You may have noticed some of these being used already.  
-
-\begin{codelisting}
-\codecaption{Shortcuts}
-\label{code:shortcuts}
-<<(programs/0A_shortcuts.py)
-\end{codelisting}
+**Exercise:** Copy Program~\ref{code:fruits} but use `input()` to ask the user to enter the number of apples and pears.
 
 
-\pagebreak
-
+ 
 ## For loops
+ 
+A `for` loop repeats a block of code a number of times.  A variable is created which we can use to find the current number within the loop.  Here
+the variable is called `x` but you can name it whatever you like.  Run this program:
+ 
+```python
+ for x in range(0, 11):
+     print(x)
+```
+
+You can also change the *step* of the loop.  Run this program:
+
+```python
+ for x in range(0, 11, 2):
+     print(x)
+```
+
+### Nested loops
 
 It is often useful to put one loop inside another loop. 
 
 \begin{codelisting}
-\codecaption{Times tables with for loops}
+\codecaption{Nested for loop}
 \label{code:for_loop}
-<<(programs/0B_for_loop.py)
+```python
+for a in range(0, 6):
+    for b in range(0, 6):
+        print(a, "times", b, "is", a * b)
+```
 \end{codelisting}
 
-* Can you print 12 times table?
+**Exercise:** write a program which prints out the 12 times table.
+ 
+### Baker program
+ 
+A baker has three customers.  He asks them each how many cakes they want
+so he knows how many he must bake. He writes this program.
+ 
+```python
+ total = 0
+ print("Customer", 1, "how many cakes do you want?")
+ cakes = int(input())
+ total = total + cakes
+ print("Customer", 2, "how many cakes do you want?")
+ cakes = int(input())
+ total = total + cakes
+ print("Customer", 3, "how many cakes do you want?")
+ cakes = int(input())
+ total = total + cakes
+ print("I will bake", total, "cakes!")
+```
+ 
+**Exercise**: This program is longer than it needs to be.  Instead of typing it, write your own program using a `for` loop.  It should be only 6 (or fewer) lines long.
+ 
+\newpage
+ 
+ 
+\begin{codelisting}
+\codecaption{Possible solution to baker program exercise}
+\label{code:baker}
+```python
+ total=0
+ for x in range(1, 4):
+     print("Customer", x, "how many cakes do you want?")
+     cakes = int(input())
+     total = total + cakes
+ print("I will bake", total, "cakes!")
+```
+\end{codelisting}
+ 
+**Exercise:** The baker gets a fourth customer.  Change Program~\ref{code:baker} so it works for 4 customers.
+ 
+**Exercise:** The baker has a different number of customers every day.  Change the program so it
+asks how many customers there are. Store the number typed by the user in a variable
+called `c`. Change the loop so it works for `c` customers rather than 4 customers.
+ 
+\newpage
+ 
+\begin{codelisting}
+\codecaption{Possible solution to variable number of customers exercise}
+\label{code:baker2}
+```python
+ print("How many customers are there today?")
+ c = int(input())
+ total=0
+ for x in range(1, c+1):
+     print("Customer", x, "how many cakes do you want?")
+     cakes = int(input())
+     total = total + cakes
+ print("I will bake", total, "cakes!")
+```
+\end{codelisting}
+ 
+**Exercise:** If a customer orders 12 cakes, he gets an extra cake for free.  Use an `if` statement to check `cakes > 12`. If so, add one more cake.
+
+ 
+ 
+ 
+
+
+
+
+
+
 
 
 ## Array lists
@@ -134,6 +219,40 @@ what function you want to call and don't need to remember the details of the cod
 \label{code:functions}
 <<(programs/0D_functions.py)
 \end{codelisting}
+
+\pagebreak
+
+
+## Boolean Logic
+
+\begin{codelisting}
+\codecaption{Boolean logic}
+\label{code:logic}
+\phantom{.}
+<<(programs/08_logic.py)
+\end{codelisting}
+
+## Comparisons
+
+\begin{codelisting}
+\codecaption{Comparisons: greater than, lesser than, equal to}
+\label{code:logic2}
+\phantom{.}
+<<(programs/09_logic2.py)
+\end{codelisting}
+
+\pagebreak
+
+## Shortcuts
+
+Shortcuts are quicker ways of doing basic things.  You may have noticed some of these being used already.  
+
+\begin{codelisting}
+\codecaption{Shortcuts}
+\label{code:shortcuts}
+<<(programs/0A_shortcuts.py)
+\end{codelisting}
+
 
 \pagebreak
 
