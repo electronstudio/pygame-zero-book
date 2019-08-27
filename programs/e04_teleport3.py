@@ -1,4 +1,3 @@
-# Teleport player into the air
 
 from mcpi.minecraft import *
 

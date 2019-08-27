@@ -12,3 +12,4 @@ overview.md
 4_more_graphics.md
 5_more_games.md
 6_advanced.md
+minecraft.md

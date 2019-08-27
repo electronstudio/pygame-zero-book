@@ -1,4 +1,3 @@
-# Do lots of teleports so it looks like a jump
 
 from mcpi.minecraft import *
 import time
@@ -23,10 +22,3 @@ while True:
             pos.y += 1  # move up a bit
             time.sleep(0.1) # short delay of 0.2 seconds
             mc.player.setTilePos(pos)
-
-# TODO
-# Change the height of the jump.
-# Make the jump faster.
-# Move the player in X and Z directions as well during the jump.
-# Instead of one tile, use < and > to check if player is within a larger
-#   area.

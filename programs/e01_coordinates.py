@@ -1,5 +1,3 @@
-# Get the player's co-ordinates
-# Print them to the chat
 
 from mcpi.minecraft import *
 import time
