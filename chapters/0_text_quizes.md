@@ -37,7 +37,7 @@ is stored in a variable, `x`.
 
 ## Decisions: if, elif, else
 
-This is how to add another name to  Program~\ref{code:input}
+This is how to add another name to Program~\ref{code:input}
 
 \begin{codelisting}
 \codecaption{Decisions: if, elif, else}

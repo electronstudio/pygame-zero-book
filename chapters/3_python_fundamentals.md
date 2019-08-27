@@ -5,7 +5,10 @@ Now we've had some fun with games I hope to have generated enough interest to ta
 \begin{aside}
 \label{aside:funda}
 \heading{Instructor note}
-\noindent Don't have the students type these, just discuss them.  You also don't need to cover all of the programs in the chapter in the same lesson; you can teach them when they are relevant to another program.
+\noindent Unlike the rest of the book, these examples are not games.  For a 'fun' class, just discuss them, rather than having the students type them.
+Also you can skip this chapter entirely and teach them only when they are relevant to one of the games, or use them to reinforce concepts from the games for students who need additional examples.
+There are also some more formal exercises here
+that you can use to evaluate students in a more academic setting.
 \end{aside}
 
 \pagebreak
@@ -13,7 +16,7 @@ Now we've had some fun with games I hope to have generated enough interest to ta
 ## The REPL
 
 REPL stands for *Read Evaluate Print Loop*.  In Mu you access it via the `REPL` button.  It appears at the bottom of the window.  It's a special mode in which you type an instruction to Python and Python
-executes it immediately (no need to click `RUN`) and displays the result.  It's useful for doing calculations and trying things out, but it won't save what you type, so you will
+executes it immediately (no need to click `RUN`) and displays the result (no need to type `print()`).  It's useful for doing calculations and trying things out, but it won't save what you type, so you will
 only want to use it for very short programs.
 
 ![The REPL](images/figures/repl.png)
@@ -22,10 +25,13 @@ only want to use it for very short programs.
 
 A *variable* is a place in the computer's memory where data is stored.  You can name a variable whatever you like; you should
 try to make the name descriptive.  There are many *types* of variable but Python sets the type for us automatically
-when we store data in the variable.  (Unlike some languages we do not need to specify the type.)  The types we will see most often are whole numbers (*integers*)
-and *strings* of text.
+when we store data in the variable.  (Unlike in many other languages, we do not need to specify the type.)  The types we will see most
+often are whole numbers (*integers*) and *strings* of text.
 
 We create a variable and assign a value to it using the `=` operator.  Note this is different from the `==` operator which is used for comparisons.
+
+We use the `print()` function to print the value of our variables.  It will print any type of data (e.g. numbers, strings, literals) provided each
+item is separated with a comma (`,`). 
 
 \begin{codelisting}
 \codecaption{Variable assignment}
@@ -36,6 +42,23 @@ my_string = "hello"
 print(my_string, my_number)
 ```
 \end{codelisting}
+
+We can use a variable anywhere we would use a literal number or string.  The value of the variable will be retrieved from the computer's memory and substituted for the variable in any expression.
+
+\begin{codelisting}
+\codecaption{Adding two variables together}
+\label{code:fruits}
+```python
+apples = 27
+pears = 33
+fruits = apples + pears
+print("Number of fruits:", fruits)
+```
+\end{codelisting}
+
+**Exercise:** Copy Program~\ref{code:fruits} but also add 17 bananas to the calculation.
+
+## Input
 
 ## Logic
 

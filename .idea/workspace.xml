@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85ef30d2-737e-42b4-b9a4-54300f9dc2b1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/chapters/overview.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapters/quiz.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapters/tmp.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Book.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Book.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapters/0_text_quizes.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/0_text_quizes.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chapters/3_python_fundamentals.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/3_python_fundamentals.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapters/5_more_games.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/5_more_games.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chapters/6_advanced.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/6_advanced.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/book.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/book.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,7 +31,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$PROJECT_DIR$/../Library/Android/sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/chapters" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -42,9 +47,9 @@
       <recent name="$PROJECT_DIR$/images/figures" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/chapters" />
       <recent name="$PROJECT_DIR$/docs" />
       <recent name="$PROJECT_DIR$/images/figures" />
-      <recent name="$PROJECT_DIR$/chapters" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -137,7 +142,9 @@
       <workItem from="1559156148098" duration="6919000" />
       <workItem from="1559358292087" duration="2501000" />
       <workItem from="1559672855322" duration="4556000" />
-      <workItem from="1566297137447" duration="8892000" />
+      <workItem from="1566297137447" duration="19508000" />
+      <workItem from="1566443053873" duration="5602000" />
+      <workItem from="1566837428969" duration="6583000" />
     </task>
     <task id="LOCAL-00001" summary="mess with formatting">
       <created>1558146868663</created>
@@ -286,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566305122772</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="tom fixes">
+      <created>1566323375850</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1566323375850</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,11 +325,11 @@
     <MESSAGE value="title" />
     <MESSAGE value="update html" />
     <MESSAGE value="improve pics" />
-    <MESSAGE value="tom fixes" />
     <MESSAGE value="more tom fixes" />
     <MESSAGE value="readme fix" />
     <MESSAGE value="more fundamentals" />
-    <option name="LAST_COMMIT_MESSAGE" value="more fundamentals" />
+    <MESSAGE value="tom fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="tom fixes" />
   </component>
   <component name="masterDetails">
     <states>

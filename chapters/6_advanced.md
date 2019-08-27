@@ -58,5 +58,51 @@ This program demonstrates using joysticks and for loops, but is mainly included 
 <<(programs/19_joystick_tester.py)
 \end{codelisting}
 
+\newpage
 
+## Distributing your Pygame Zero games
+
+You can distribute your games to people who don't have Python or Mu installed.  You can put them on a USB stick, or a website for people to download, or even on itch.io for people to buy.
+
+1. Install the full version of python from [www.python.org](https://www.python.org/downloads/).
+
+6. Edit your game source code (using Mu).  We will assume your source is in a file ```NAME_OF_GAME.py```.  At the top of the file add the line:
+```python
+import pgzrun
+```
+At the bottom of the file add the line:
+```python
+pgzrun.go()
+```
+Save the file.
+
+3. Open a command prompt (Click start menu and type ```cmd.exe```)
+
+4. Enter your mu_code folder.  At the prompt type:
+    
+    ```cd mu_code```
+    
+5. Install pyinstaller and pgzero.  At the command prompt type:
+
+    ```pip install pgzero pyinstaller```
+    
+2. You should find the *pgzero* folder at:
+
+    \verb+C:\Users\YOURNAME\AppData\\ocal\\Programs\+
+
+    \verb+Python\Python37\Lib\site-packages\pgzero+
+
+    Copy the *pgzero* folder into your *mu_code* folder.
+    
+    You should find your *mu_code* folder at:
+    \verb+C:\Users\YOURNAME\mu_code+
+      
+7. Create the executable.  At the command prompt type:
+
+    ```pyinstaller NAME_OF_GAME.py --distpath . --add-path "pgzero;pgzero" --onefile --noconfirm --nowindow```
+    
+   This will generate a program called ```NAME_OF_GAME.exe```.  You can double click this program to play your game.
+   
+8. To distribute your game you need to copy the entire *mu_code* folder.  You could put it inside a zip file, and then
+put that on a website
 
