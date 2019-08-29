@@ -22,6 +22,20 @@ only want to use it for very short programs.
 
 ![The REPL](images/figures/repl.png)
 
+## Arithmetic operators
+
+Python understands several operators from maths.  You can use them in your programs, or just enter these examples at the REPL to use Python as a calculator, as in the screenshot above.
+
+| Operator | Symbol | Example | Result |
+| ----- | ---- | ---- | ---- |
+| Addition | + | 20 + 10 | 30 |
+| Subtraction | - | 20 - 10 | 10 |
+| Multiplication | * | 20 * 10 | 200 |
+| Division | / | 20 / 10 | 2 |
+
+There are some more advanced operators in Program~\ref{code:shortcuts}
+
+
 ## Variables
 
 A *variable* is a place in the computer's memory where data is stored.  You can name a variable whatever you like; you should
@@ -31,7 +45,7 @@ often are whole numbers (*integers*) and *strings* of text.
 
 We create a variable and assign a value to it using the `=` operator.  Note this is different from the `==` operator which is used for comparisons.
 
-We use the `print()` function to print the value of our variables.  It will print any type of data (e.g. numbers, strings, literals) provided each
+We use the `print()` function to print the value of our variables.  It will print any type of data (numbers, strings, both literals and variables) provided each
 item is separated with a comma (`,`). 
 
 \begin{codelisting}
@@ -57,7 +71,57 @@ print("Number of fruits:", fruits)
 ```
 \end{codelisting}
 
-**Exercise:** Copy Program~\ref{code:fruits} but also add 17 bananas to the calculation.
+**Exercise:** Copy Program~\ref{code:fruits}, but also add 17 bananas to the calculation of fruits.
+
+We can store a new value in the same variable.  The old value will be forgotten.
+
+\begin{codelisting}
+\codecaption{Overwriting a variable with a new value}
+\label{code:overwriting}
+```python
+apples = 27
+apples = 40
+print("Number of apples:", apples)
+```
+\end{codelisting}
+
+**Exercise:** What do you think Program~\ref{code:overwriting} will print?  If you aren't sure, type it in.
+
+
+More usefully, we can take the old value, modify it, then store it back in the same variable.
+
+\begin{codelisting}
+\codecaption{Modifying a variable}
+\label{code:mod_variables}
+```python
+x = 5
+x = x * 10
+x = x + 7
+print(x)
+```
+\end{codelisting}
+
+**Exercise:** What will Program~\ref{code:mod_variables} print?  Change the numbers in the program.  Use a division `/` operation.
+Then ask your friend to predict what the new program will print.  Was he right?
+
+You will often see this used for counting:
+
+\begin{codelisting}
+\codecaption{Counting}
+\label{code:counting}
+```python
+total = 0
+total = total + 1
+total = total + 1
+total = total + 1
+print(x)
+```
+\end{codelisting}
+
+**Exercise:** What is the total count of Program~\ref{code:counting} ?
+
+See Program~\ref{code:shortcuts} for a quicker way of writing this.
+
 
 ## Input
 
@@ -83,6 +147,156 @@ print("Double your number is", my_number * 2)
 
 **Exercise:** Copy Program~\ref{code:fruits} but use `input()` to ask the user to enter the number of apples and pears.
 
+
+
+## Booleans
+
+A *boolean* is a type of variable that is not a string or a number.  It can have only two possible values: `True` or `False`.  In some
+languages and in electronics you may see these represented as `0` and `1`.
+
+Booleans are used by keywords such as `if` and `while`.  In an `if` statement, the indented code block is only run if the boolean is
+`True`.
+
+```python
+sunny = True
+if a:
+    print("Let's go to the park")
+```
+
+You could write it like this:
+```python
+sunny = True
+if sunny==True:
+    print("Yay!")
+```
+but that would be redundant because `if` always tests if the boolean is `True`.
+
+If the boolean is not true, and if you write an `else` clause, the indented code block under `else` is run instead.
+```python
+sunny = False
+if sunny:
+    print("Let's go to the park")
+else:
+    print("We must stay at home")
+```
+
+## Boolean Logic
+
+The `and`, `or` and `not` operators operate on booleans and return new boolean values.
+
+\begin{codelisting}
+\codecaption{Boolean logic}
+\label{code:logic}
+\phantom{.}
+<<(programs/08_logic.py)
+\end{codelisting}
+
+not windy.
+
+## Comparison operators
+
+Comparison operators take two numbers, strings or other variables, compare them, and then return a *boolean* `True` or `False` from them.
+
+| Operator | Symbol |
+| ----- | ---- |
+| Equal | == | 
+| Less than | < | 
+| Less than or equal | <= |
+| Greater than | > |
+| Greater than or equal | >= |
+
+\begin{codelisting}
+\codecaption{Comparisons: greater than, lesser than, equal to}
+\label{code:logic2}
+\phantom{.}
+<<(programs/09_logic2.py)
+\end{codelisting}
+
+## Conditionals \& boolean logic
+
+Only people older than 12 or taller than 150cm are allowed to ride the rollercoaster.  This program checks whether people are allowed to ride.
+
+```python
+print("How old are you?")
+age = int(input())
+print("How tall are you?")
+height = int(input())
+if age > 12:
+    print("You can ride")
+elif height > 170:
+    print("You can ride")
+else:
+    print("YOU MAY NOT RIDE, GO AWAY!")
+```
+
+Boolean operators combine two truth values together.  The `or` operator is `True` if either of its operands is true.  Try this example:
+
+```python
+a = True
+b = False
+print(a or b)
+```
+
+Now use the `or` operator to make the rollercoaster program shorter by combining the two tests into one test.
+
+\newpage
+
+A possible solution:
+
+```python
+print("How old are you?")
+age = int(input())
+print("How tall are you?")
+height = int(input())
+if age > 12 or height > 170:
+    print("You can ride")
+else:
+    print("YOU MAY NOT RIDE, GO AWAY!")
+```
+
+### And
+
+The `and` operator is `True` if both of its operands is true.  Try this example:
+
+```python
+a = True
+b = False
+print(a and b)
+```
+
+The rollercoaster is only allowed to run on days when the temperature is less than 30 degrees.  Extend the program
+to ask the temperature and use the `and` operator to only allow riding when less than 30 degrees.
+
+\newpage
+
+A possible solution:
+
+```python
+print("How old are you?")
+age = int(input())
+print("How tall are you?")
+height = int(input())
+print("What is the temperature?")
+temp = int(input())
+if (age > 12 or height > 150) and temp < 30:
+    print("You can ride")
+else:
+    print("YOU MAY NOT RIDE, GO AWAY!")
+```
+
+Note that we have put brackets around the `or` expression.  This ensures it is calculated first and the result of that calculation
+is then used in the `and` expression.  This is the same way you use the BODMAS rule to decide the order of operations in maths.
+
+### Not
+
+The `not` operator is `True` if its operand is `False`.  If its operand is `False` then it is `True`.  Try this example:
+
+```python
+a = True
+b = False
+print(not a)
+print(not b)
+```
 
  
 ## For loops
@@ -118,7 +332,7 @@ for a in range(0, 6):
 
 **Exercise:** write a program which prints out the 12 times table.
  
-### Baker program
+### Incrementing a variable in a loop
  
 A baker has three customers.  He asks them each how many cakes they want
 so he knows how many he must bake. He writes this program.
@@ -180,15 +394,6 @@ called `c`. Change the loop so it works for `c` customers rather than 4 customer
  
 **Exercise:** If a customer orders 12 cakes, he gets an extra cake for free.  Use an `if` statement to check `cakes > 12`. If so, add one more cake.
 
- 
- 
- 
-
-
-
-
-
-
 
 
 ## Array lists
@@ -203,11 +408,106 @@ Variables can be stored together in a *list*. Most languages call this an *array
 
 [^afoot]: There are other kinds of list that are not arrays but this need not concern the beginner.
 
+### Looping over lists
 
+
+Rather than the user typing in data, your program might be supplied with data in a list.
+Here is a list of prices  - a shopping list. Note we dont use a currency symbol except when we print the price.
+
+```python
+prices = [3.49, 9.99, 2.50, 20.00]
+for x in range(0, 4):
+    print("item costs £", prices[x])
+```
+
+In this program `x` is used an *index* for the array.  Note that indices begin at `0` rather than `1`.  If the array contains
+4 elements then the final element witll have index `3`, nor `4`.
+
+However, `for` can directly give you all the array values without
+the need for an index or to specify the size of the range:
+
+\begin{codelisting}
+\codecaption{A shopping list}
+\label{code:shoppinglist}
+```python
+prices = [3.49, 9.99, 2.50, 20.00]
+for price in prices:
+    print("item costs £", price)
+```
+\end{codelisting}
+
+**Exercise:** Change the Program~\ref{code:shoppinglist} so that it prints the total price of all the items added together.
+
+\newpage
+
+\begin{codelisting}
+\codecaption{Possible way of calculating the total cost of shopping list}
+\label{code:shoppinglist2}
+```python
+prices = [3.49, 9.99, 2.50, 20.00]
+total = 0
+for price in prices:
+    print("item costs £", price)
+    total = total + price
+print("shopping total", total)
+```
+\end{codelisting}
+
+There is a problem with solution, can you see what it is when you run it?
+
+\newpage
+
+The problem is that we are using *floating point* numbers for the prices and floating point maths in the computer is not entirely accurate, so the answer will be very slightly wrong.
+One way to fix this is to round the result to two decimal places using the `round()` function:
+
+```python
+print("shopping total", round(total,2))
+```
+
+This works for a short list, but if the list was millions of items long it might not give the right result.  Can you think of a better way?
+
+\newpage
+
+Instead of storing the number of pounds, store the the number of pennies.  Britain no longer has a half-penny, so the numbers will always be whole numbers - *integers* - and
+no floating points will be needed for the addition.
+
+\begin{codelisting}
+\codecaption{Better way of calculating the total cost of shopping list}
+\label{code:shoppinglist3}
+```python
+prices = [349, 999, 250, 2000]
+total = 0
+for price in prices:
+    print("item costs £", price/100)
+    total = total + price
+print("shopping total", total/100)
+```
+\end{codelisting}
+
+**Exercise:** Conditional discount.  Any item that costs more than £10 will be discounted by 20 percent. Use an `if` statement to check if the price is more than 1000 pennies.
+If it is, multiply the price by 0.8 to reduce it before you add it to the total.
+
+\newpage
+
+\begin{codelisting}
+\codecaption{Possible way of discounting shopping list}
+\label{code:shoppinglist4}
+```python
+prices = [349, 999, 250, 2000]
+total = 0
+for price in prices:
+    print("item costs £", price/100)
+    if price > 1000:
+        price = price * 0.8
+        print("  item discounted to", price/100)
+    total = total + price
+print("shopping total", total/100)
+```
+\end{codelisting}
 
 ## Functions
 
-You have already defined specially named functions that are called by Pygame: `draw()` and `update()`.
+You may have seen specially named functions that are called by Pygame: `draw()` and `update()`.
 However, you can define a function named whatever you like and call it yourself.
 
 Functions are useful for many reasons. The simplest is that they make your program look more organized. They also enable you re-use code without
@@ -223,25 +523,7 @@ what function you want to call and don't need to remember the details of the cod
 \pagebreak
 
 
-## Boolean Logic
 
-\begin{codelisting}
-\codecaption{Boolean logic}
-\label{code:logic}
-\phantom{.}
-<<(programs/08_logic.py)
-\end{codelisting}
-
-## Comparisons
-
-\begin{codelisting}
-\codecaption{Comparisons: greater than, lesser than, equal to}
-\label{code:logic2}
-\phantom{.}
-<<(programs/09_logic2.py)
-\end{codelisting}
-
-\pagebreak
 
 ## Shortcuts
 
@@ -296,6 +578,153 @@ my_function()
 print(a)
 ```
 \end{codelisting}
+
+
+## Dictionaries
+
+A dictionary (called a *HashMap* in some languages) stores pairs of values.  You can use the first value to look-up the second,
+just like how you look-up a word in a dictionary to find its meaning.  Here is a dictionary of the ages of my friends:
+
+```python
+friends = {'richard': 96, 'john': 12, 'paul': 8}
+print("What is your name?")
+name = input()
+age = friends[name]
+print("Your age is", age)
+```
+
+Change the program so it contains 5 of your friends' ages.
+
+
+### Counting
+
+Here is a loop that prints out all the ages:
+
+```python
+friends = {'richard': 96, 'john': 12, 'paul': 8}
+for name, age in friends.items():
+    print(name, "is age", age)
+```
+    
+
+Can you add an `if` statement to only print the ages of friends older than 10?
+
+\newpage
+
+Possible solution:
+
+```python
+friends = {'richard': 96, 'john': 12, 'paul': 8}
+for name, age in friends.items():
+    if age > 10:
+        print(name, "is age", age)
+```
+        
+Now add a `count` variable that counts how many of the friends are older than 10.  Print the number at the end.
+
+\newpage
+
+Possible solution:
+
+```python
+friends = {'richard': 96, 'john': 12, 'paul': 8}
+count = 0
+for name, age in friends.items():
+    if age > 10:
+        count = count + 1
+print("friends older than 10:",count)
+```
+
+### Finding
+
+We make a variable `oldest` that will contain the oldest age in the list.  
+
+```python
+friends = {'richard': 96, 'john': 12, 'paul': 8}
+oldest = 0
+for name, age in friends.items():
+    if age > oldest:
+        oldest = age
+print("oldest age", oldest)
+```
+
+Now make a variable `youngest` that will contain the youngest age in the list.  Print the youngest at the end.
+
+\newpage
+
+Possible solution:
+
+```python
+friends = {'richard': 96, 'john': 12, 'paul': 8}
+oldest = 0
+youngest = 100
+for name, age in friends.items():
+    if age > oldest:
+        oldest = age
+    if age < youngest:
+        youngest = age
+print("oldest age", oldest)
+print("youngest age", youngest)
+```
+
+### Finding names
+
+As well as the ages, print the names of the youngest and oldest friends.
+
+\newpage
+
+Possible solution:
+
+```python
+friends = {'richard': 96, 'john': 12, 'paul': 8}
+oldest = 0
+youngest = 100
+for name, age in friends.items():
+    if age > oldest:
+        oldest = age
+        oldname = name
+    if age < youngest:
+        youngest = age
+        youngname = name
+print("oldest friend", oldname)
+print("youngest friend", youngname)
+```
+
+### and
+
+Use the `and` operator to only count friends between the ages of 11 to 13.
+
+\newpage
+
+Possible solution:
+
+```python
+friends = {'richard': 96, 'john': 12, 'paul': 8}
+count = 0
+for name, age in friends.items():
+    if age > 10 and age < 14:
+        count = count + 1
+print("friends age 11 to 13 :",count)
+```
+
+### Find the average
+
+Create a `total` variable.  Add each age to the total.  At the end, calculate the average by dividing the total by the number of
+friends.
+
+\newpage
+
+Possible solution:
+
+```python
+friends = {'richard': 96, 'john': 12, 'paul': 8}
+total = 0
+for name, age in friends.items():
+    total = total + age
+average = total / 3
+print("average age is ", average)
+```
+
 
 
 

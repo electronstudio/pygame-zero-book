@@ -1,4 +1,5 @@
 WIDTH = 500
+HEIGHT = 500
 alien = Actor("alien")
 alien.pos = (0, 50)
 box = Rect((20, 20), (100, 100))

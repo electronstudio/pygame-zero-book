@@ -20,6 +20,41 @@ Arcade games need to know when one actor sprite has hit another actor sprite.  M
 
 \pagebreak
 
+## Chase
+
+Instead of moving constantly to the right we can make the movement conditional with an `if` statement so the box chases the alien.
+Most of this code is copied from Program~\ref{code:collisions}.  New lines are heighlighted.  We have also changed what happens when the box
+catches the alien: the program now exits and you must run it again to play again.  This may not be what you want in your game!
+
+\begin{codelisting}
+\codecaption{Alien chase}
+\label{code:chase}
+<<(programs/15b_chase.py, options: "hl_lines": [17, 18, 19, 20, 21, 22])
+\end{codelisting}
+
+* Add joystick input (as before); add vertical movement (as before).
+* Draw a new enemy image.  Save it as `enemy.png` in your `mu_code/images` folder. Load it as an `Actor('enemy')` instead of the `Rect()`.
+
+\pagebreak
+
+## Powerup
+
+Instead of an enemy the box here is a powerup that the player must collect.  When he does it disappears and moves to a new location.
+
+\begin{codelisting}
+\codecaption{Collect the powerups}
+\label{code:powerup}
+<<(programs/15c_powerup.py)
+\end{codelisting}
+
+* Add joystick input (as before); add vertical movement (as before).
+* Draw a new enemy image.  Save it as `powerup.png` in your `mu_code/images` folder. Load it as an `Actor('powerup')` instead of the `Rect()`.
+* Combine this program with the enemy from  Program~\ref{code:chase}, the background from  Program~\ref{code:background} to make your game.
+
+\pagebreak
+
+\pagebreak
+
 ## Sound and animation
 
 Pygame Zero comes with one other image `alien_hurt.png` and one sound `eep.wav`.  If you want more you will have to add them to the `sounds` and `images` folders.

@@ -8,7 +8,7 @@ These games demonstrate some essential building blocks you will need to make mor
 
 We introduced lists in Program~\ref{code:arrays}.
 
-In this game, we create an empty list *[]* and use a loop to fill it with aliens.
+In this game, we create an empty list `[]` and use a loop to fill it with aliens.
 
 We again use loops to draw all the aliens and move all the aliens in the list.
 

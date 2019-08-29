@@ -1,4 +1,3 @@
-# Same as program 06 but in a loop
 
 from mcpi.minecraft import *
 from mcpi.block import *
@@ -12,7 +11,3 @@ while True:
     z = pos.z
     blocktype = WOOL
     mc.setBlock(x, y, z, blocktype)
-
-# TODO
-# Make the block appear one meter BELOW the player's position
-# Change the block to something else.  Ice?

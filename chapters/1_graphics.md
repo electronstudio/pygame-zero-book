@@ -50,11 +50,26 @@ for other images you must add the files yourself.
 
 \begin{codelisting}
 \codecaption{Actor sprites}
-\label{code:prites}
+\label{code:sprites}
 <<(programs/12_sprites.py)
 \end{codelisting}
 
 * Draw or download your own image to use instead of alien.  You could use Microsoft Paint which comes with Windows.
+\newpage
+
+## Background image
+
+We are going to add a background image to  Program~\ref{code:sprites}
+
+Click `Images` to see the folder of image files available.  **You must create or download a picture
+to use a background.  Save it as `background.png`.  It should be the same size as the window, 500×500.**
+
+\begin{codelisting}
+\codecaption{Background}
+\label{code:background}
+<<(programs/12b_background.py)
+\end{codelisting}
+
 \newpage
 
 ## Keyboard input

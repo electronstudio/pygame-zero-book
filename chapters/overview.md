@@ -23,7 +23,8 @@ Examples:
 ## Keywords
 
 Every computer language has a number of *keywords* that you will need to learn along with their meanings.
-Fortunately they look like English words and there are only a few of them in Python.
+Fortunately they look like English words and there are only a few of them in Python.  You could tick them off
+as you meet them.
 
 | False | None | True | and | as | assert | async | await |
 | break | class | continue |  def | del | elif | else | except |
@@ -34,7 +35,7 @@ Fortunately they look like English words and there are only a few of them in Pyt
 ## Built-ins
 
 Python also comes with a large number of *functions*.  The most common ones are built-in and always available, much
-like the keywords.  Here is a list of them, but you probably won't ever use them all, and when you do use one
+like the keywords.  Here is a list of them, just for the sake of completeness, but you probably won't ever use them all, and when you do use one
 you will probably look it up in the documentation rather than remembering it.
 
 | abs | all | any | ascii | bin | bool |
@@ -51,7 +52,8 @@ you will probably look it up in the documentation rather than remembering it.
 | str | sum | super | tuple | type | vars |
 | zip |
 
-Once you understand all of these you effectively understand all of the Python language.
+Once you understand all of these you effectively understand all of the Python language.  By the end of this book you
+will be familiar with at least 20 keywords / functions which is enough to create a huge variety of programs.
 
 ## Libraries
 
@@ -97,3 +99,9 @@ However the programmer must be consistent.  This **would not work**:
 points = 1
 print("Score: ", score)
 ```
+
+## Whitespace
+
+Python is unusual in that it cares about *whitespace*, i.e. what you get when you press the *tab* key or the *space* bar on the keyboard.
+
+Python programs are arranged in blocks of lines.  Every line in a block must have the same amount of whitespace preceeding it - the *indentation*.  See Program~\ref{code:blocks} for an example.

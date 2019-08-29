@@ -15,9 +15,10 @@ def update():
         alien.x = alien.x + 2
     elif keyboard.left:
         alien.x = alien.x - 2
-    box.x = box.x + 2
-    if box.x > WIDTH:
-        box.x = 0
+    if box.x < alien.x:
+        box.x = box.x + 1
+    if box.x > alien.x:
+        box.x = box.x - 1
     if alien.colliderect(box):
-        print("hit")
+        exit()
 

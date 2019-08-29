@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="85ef30d2-737e-42b4-b9a4-54300f9dc2b1" name="Default Changelist" comment="integrate more of the 'quiz' chapter into 'fundamentals' chapter">
-      <change afterPath="$PROJECT_DIR$/chapters/minecraft.md" afterDir="false" />
+    <list default="true" id="85ef30d2-737e-42b4-b9a4-54300f9dc2b1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/chapters/3d_games.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Book.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Book.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programs/e01_coordinates.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/e01_coordinates.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programs/e02_teleport.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/e02_teleport.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programs/e03_teleport2.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/e03_teleport2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programs/e04_teleport3.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/e04_teleport3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programs/e05_teleport4.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/e05_teleport4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programs/e06_create_block.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/e06_create_block.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapters/1_graphics.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/1_graphics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapters/2_simple_games.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/2_simple_games.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapters/3_python_fundamentals.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/3_python_fundamentals.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapters/5_more_games.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/5_more_games.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapters/overview.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/overview.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapters/quiz.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/quiz.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapters/tmp.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/tmp.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/11_moving_boxes.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/11_moving_boxes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/12_sprites.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/12_sprites.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/15_collisions.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/15_collisions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/16_collisions2_sound_animation.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/16_collisions2_sound_animation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/21_arrays.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/21_arrays.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/e07_create_block_loop.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/e07_create_block_loop.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/e08_tower.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/e08_tower.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -144,7 +152,10 @@
       <workItem from="1559672855322" duration="4556000" />
       <workItem from="1566297137447" duration="19508000" />
       <workItem from="1566443053873" duration="5602000" />
-      <workItem from="1566837428969" duration="16182000" />
+      <workItem from="1566837428969" duration="25399000" />
+      <workItem from="1566982892637" duration="1212000" />
+      <workItem from="1567043526714" duration="598000" />
+      <workItem from="1567048625214" duration="4949000" />
     </task>
     <task id="LOCAL-00001" summary="mess with formatting">
       <created>1558146868663</created>
@@ -314,7 +325,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566869545566</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="minecraft stuff">
+      <created>1566909995435</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1566909995435</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,7 +363,8 @@
     <MESSAGE value="tom fixes" />
     <MESSAGE value="yeah but no" />
     <MESSAGE value="integrate more of the 'quiz' chapter into 'fundamentals' chapter" />
-    <option name="LAST_COMMIT_MESSAGE" value="integrate more of the 'quiz' chapter into 'fundamentals' chapter" />
+    <MESSAGE value="minecraft stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="minecraft stuff" />
   </component>
   <component name="masterDetails">
     <states>
