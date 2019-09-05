@@ -29,7 +29,7 @@ catches the alien: the program now exits and you must run it again to play again
 \begin{codelisting}
 \codecaption{Alien chase}
 \label{code:chase}
-<<(programs/15b_chase.py, options: "hl_lines": [17, 18, 19, 20, 21, 22])
+<<(programs/15b_chase.py, options: "hl_lines": [18, 19, 20, 21, 22, 23])
 \end{codelisting}
 
 * Add joystick input (as before); add vertical movement (as before).

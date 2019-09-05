@@ -61,8 +61,10 @@ for other images you must add the files yourself.
 
 We are going to add a background image to  Program~\ref{code:sprites}
 
-Click `Images` to see the folder of image files available.  **You must create or download a picture
-to use a background.  Save it as `background.png`.  It should be the same size as the window, 500×500.**
+Click `Images` to see the folder of image files available.  
+
+**You must create or download a picture
+to use a background.  Save it as `background.png`.  It should be the same size as the window, 500×500 pixels.**
 
 \begin{codelisting}
 \codecaption{Background}

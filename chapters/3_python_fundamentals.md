@@ -200,6 +200,7 @@ Comparison operators take two numbers, strings or other variables, compare them,
 | Operator | Symbol |
 | ----- | ---- |
 | Equal | == | 
+| Not equal | != | 
 | Less than | < | 
 | Less than or equal | <= |
 | Greater than | > |
@@ -223,7 +224,7 @@ print("How tall are you?")
 height = int(input())
 if age > 12:
     print("You can ride")
-elif height > 170:
+elif height > 150:
     print("You can ride")
 else:
     print("YOU MAY NOT RIDE, GO AWAY!")
@@ -237,7 +238,7 @@ b = False
 print(a or b)
 ```
 
-Now use the `or` operator to make the rollercoaster program shorter by combining the two tests into one test.
+**Exercise:** use the `or` operator to make the rollercoaster program shorter by combining the two tests into one test.
 
 \newpage
 
@@ -248,7 +249,7 @@ print("How old are you?")
 age = int(input())
 print("How tall are you?")
 height = int(input())
-if age > 12 or height > 170:
+if age > 12 or height > 150:
     print("You can ride")
 else:
     print("YOU MAY NOT RIDE, GO AWAY!")
@@ -264,7 +265,7 @@ b = False
 print(a and b)
 ```
 
-The rollercoaster is only allowed to run on days when the temperature is less than 30 degrees.  Extend the program
+**Exercise:** The rollercoaster is only allowed to run on days when the temperature is less than 30 degrees.  Extend the program
 to ask the temperature and use the `and` operator to only allow riding when less than 30 degrees.
 
 \newpage
@@ -298,6 +299,39 @@ print(not a)
 print(not b)
 ```
 
+We can get a user input and convert it to a boolean like this:
+
+```python
+print("Is it raining? Y/N")
+if input() == "Y":
+    raining = True
+else:
+    raining = False
+```
+
+**Exercise:** Change the program so that you can only ride the rollercoaster if it is not raining.
+
+\newpage
+
+Possible solution:
+
+```python
+print("Is it raining? Y/N")
+if input() == "Y":
+    raining = True
+else:
+    raining = False
+print("How old are you?")
+age = int(input())
+print("How tall are you?")
+height = int(input())
+print("What is the temperature?")
+temp = int(input())
+if (age > 12 or height > 150) and temp < 30 and not raining:
+    print("You can ride")
+else:
+    print("YOU MAY NOT RIDE, GO AWAY!")
+```
  
 ## For loops
  
