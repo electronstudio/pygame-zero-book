@@ -9,6 +9,7 @@ overview.md
 0_text_quizes.md
 1_graphics.md
 2_simple_games.md
+maze.md
 4_more_graphics.md
 5_more_games.md
 minecraft.md

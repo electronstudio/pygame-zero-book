@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85ef30d2-737e-42b4-b9a4-54300f9dc2b1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/chapters/maze.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapters/1_graphics.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/1_graphics.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapters/2_simple_games.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/2_simple_games.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapters/3_python_fundamentals.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/3_python_fundamentals.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapters/quiz.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/quiz.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Book.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Book.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -147,7 +145,8 @@
       <workItem from="1567392186707" duration="598000" />
       <workItem from="1567526887155" duration="598000" />
       <workItem from="1567602331030" duration="597000" />
-      <workItem from="1567642961467" duration="4660000" />
+      <workItem from="1567642961467" duration="4776000" />
+      <workItem from="1567762155074" duration="5924000" />
     </task>
     <task id="LOCAL-00001" summary="mess with formatting">
       <created>1558146868663</created>
@@ -331,7 +330,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567101581406</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="fixes, start adding maze stuff">
+      <created>1567719998835</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1567719998835</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -364,7 +370,8 @@
     <MESSAGE value="integrate more of the 'quiz' chapter into 'fundamentals' chapter" />
     <MESSAGE value="minecraft stuff" />
     <MESSAGE value="lots of stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="lots of stuff" />
+    <MESSAGE value="fixes, start adding maze stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixes, start adding maze stuff" />
   </component>
   <component name="masterDetails">
     <states>
