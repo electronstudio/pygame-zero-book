@@ -2,7 +2,7 @@ TILE_SIZE = 64
 WIDTH = TILE_SIZE * 8
 HEIGHT = TILE_SIZE * 8
 
-tiles = ['empty', 'wall', 'goal']
+tiles = ['empty0', 'wall1', 'goal2']
 
 maze = [
     [1, 1, 1, 1, 1, 1, 1, 1],
@@ -16,6 +16,17 @@ maze = [
 ]
 
 player = Actor("player", anchor=(0, 0), pos=(1 * TILE_SIZE, 1 * TILE_SIZE))
+
+def draw():
+    screen.clear()
+    for row in range(len(maze)):
+        for column in range(len(maze[row])):
+            x = column * TILE_SIZE
+            y = row * TILE_SIZE
+            tile = tiles[maze[row][column]]
+            screen.blit(tile, (x, y))
+    player.draw()
+
 
 def on_key_down(key):
     row = int(player.y / TILE_SIZE)
@@ -39,12 +50,3 @@ def on_key_down(key):
 
 
 
-def draw():
-    screen.clear()
-    for row in range(len(maze)):
-        for column in range(len(maze[row])):
-            x = column * TILE_SIZE
-            y = row * TILE_SIZE
-            tile = tiles[maze[row][column]]
-            screen.blit(tile, (x, y))
-    player.draw()

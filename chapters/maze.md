@@ -3,6 +3,8 @@
 In this chapter we will build a maze game together, step by step.  The Python we will use is quite simple: mostly just conditionals and loops.
 The technique of creating a tilemap is common in games and after seeing it here you should be able to incorporate it into your own projects.
 
+![Maze game\label{fig:maze_fig}](images/figures/mazegame.png)
+
 ## Tilemap
 
 A tilemap uses a small number of images (the tiles) and draws them many times to build a much larger game level (the map).
@@ -24,6 +26,8 @@ The filenames of the tile images are stored in a *list*, `tiles`.
 The level design is stored in a list of lists, more commonly called a *two dimensional array*.  There are 8 rows
 and 8 columns in the array.  If you change the size of the array you will need to change the `WIDTH` and `HEIGHT` values too.
 The numbers in the `maze` array refers to elements in the `tiles` array.  So `0` means `empty` and `1` means `wall`, etc.
+
+![Tile grid\label{fig:maze_fig_grid}](images/figures/maze2.png)
 
 To draw the maze we use a `for` loop within another `for` loop.  The outer loop iterates over the rows and the inner loop
 iterates over the columns, i.e. the elements of the row.
