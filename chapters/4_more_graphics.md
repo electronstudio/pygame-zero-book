@@ -1,8 +1,31 @@
-# More graphics
+# Game improvements
 
 Here are some tips that will enable you to enhance your games.
 
 \newpage
+
+## Joystick input
+
+You may call them *gamepads* or *controllers*, but Pygame calls them *joysticks*.
+
+Some controllers have different inputs and some are not compatible at all so don't be surprised if this doesnt work properly!  PS4 and Xbox One controllers connected by USB cable seems to work best.  Use Program~\ref{code:joystick_tester} to test yours and find out what inputs it has.  Note: if you run this program with no controller plugged in you will get an error.
+
+
+\begin{codelisting}
+\codecaption{Joystick input}
+\label{code:joystick_input}
+<<(programs/14_joystick_input.py)
+\end{codelisting}
+
+\begin{aside}
+\label{}
+\heading{Optional, if you have a controller}
+\noindent Make the alien move up and down as well as left and right using the controller.  Do the same for any future examples that use the keyboard!
+\end{aside}
+
+
+
+
 
 ## Using loops
 

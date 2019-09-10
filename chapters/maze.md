@@ -32,15 +32,31 @@ The numbers in the `maze` array refers to elements in the `tiles` array.  So `0`
 To draw the maze we use a `for` loop within another `for` loop.  The outer loop iterates over the rows and the inner loop
 iterates over the columns, i.e. the elements of the row.
 
-* Run the progam.
+\begin{aside}
+\label{}
+\heading{}
+\noindent Create your own images `empty.png`, `wall.png` and `goal.png` and run the program.
+\end{aside}
 
-* Create your own images `empty.png`, `wall.png` and `goal.png`.
 
-* The player appears at the top left of the maze at row 1 column 1.  Change the `pos` parameter so he appears at the bottom instead.
+\begin{aside}
+\label{}
+\heading{}
+\noindent The player appears at the top left of the maze at row 1 column 1.  Change the `pos` parameter so he appears at the bottom instead.
+\end{aside}
 
-* Change the design of the maze by changing the numbers in the `maze` array.
+\begin{aside}
+\label{}
+\heading{}
+\noindent Change the design of the maze by changing the numbers in the `maze` array.
+\end{aside}
 
-* Make the maze bigger.
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent Make the maze bigger.
+\end{aside}
+
 
 ## Moving the player
 
@@ -65,7 +81,12 @@ def on_key_down(key):
 This function will be called automatically by Pygame, like `draw()` and `update()`.  However `on_key_down()` is not called every frame; it is
 only called when the player presses a key.  The key that was pressed is passed to the function in the `key` *parameter*.
 
-* Run the program and move the player.  Are there any problems with the movement?
+\begin{aside}
+\label{}
+\heading{}
+\noindent Run the program and move the player.  Are there any problems with the movement?
+\end{aside}
+
 
 ## Restricting where the player can move
 
@@ -80,9 +101,20 @@ Delete the last two lines of the program and replace them with this modified ver
         exit()
 ```
 
-* Run the program and check that the player now *only* moves if the tile is empty.
 
-* Check that the game ends when the player reaches the goal.
+\begin{aside}
+\label{}
+\heading{}
+\noindent Run the program and check that the player now *only* moves if the tile is empty.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Check that the game ends when the player reaches the goal.
+\end{aside}
+
+
 
 ## Animate the movement of the player
 
@@ -118,7 +150,12 @@ replace them with:
 
 ```
 
-* Verify the player image has changed and moves smoothly
+\begin{aside}
+\label{}
+\heading{}
+\noindent Verify the player image has changed and moves smoothly.
+\end{aside}
+
 
 ## Create an enemy
 
@@ -155,9 +192,19 @@ function) to make the enemy move and reverse velocity when it hits a wall.
         exit()
 ```
 
-* Verify that the enemy moves up and down and kills the player.
 
-* Make another enemy that moves horizonally (left and right).
+\begin{aside}
+\label{}
+\heading{}
+\noindent Verify that the enemy moves up and down and kills the player.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent Make another enemy that moves horizonally (left and right).
+\end{aside}
+
 
 ## A locked door and a key
 

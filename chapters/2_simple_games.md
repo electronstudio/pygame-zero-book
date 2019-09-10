@@ -14,9 +14,23 @@ Arcade games need to know when one actor sprite has hit another actor sprite.  M
 <<(programs/15_collisions.py)
 \end{codelisting}
 
-* Add joystick input (as before); add vertical movement (as before).
-* Make the box chase the alien.
-* Print number of times hit (the score).
+\begin{aside}
+\label{}
+\heading{}
+\noindent Add vertical movement (as before).
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent Make the box chase the alien
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent  Print number of times the box hits the alien (the score).
+\end{aside}
 
 \pagebreak
 
@@ -32,8 +46,18 @@ catches the alien: the program now exits and you must run it again to play again
 <<(programs/15b_chase.py, options: "hl_lines": [18, 19, 20, 21, 22, 23])
 \end{codelisting}
 
-* Add joystick input (as before); add vertical movement (as before).
-* Draw a new enemy image.  Save it as `enemy.png` in your `mu_code/images` folder. Load it as an `Actor('enemy')` instead of the `Rect()`.
+\begin{aside}
+\label{}
+\heading{}
+\noindent Add vertical movement (as before)
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Draw a new enemy image.  Save it as `enemy.png` in your `mu_code/images` folder. Load it as an `Actor('enemy')` instead of the `Rect()`.
+\end{aside}
+
 
 \pagebreak
 
@@ -47,11 +71,24 @@ Instead of an enemy the box here is a powerup that the player must collect.  Whe
 <<(programs/15c_powerup.py)
 \end{codelisting}
 
-* Add joystick input (as before); add vertical movement (as before).
-* Draw a new enemy image.  Save it as `powerup.png` in your `mu_code/images` folder. Load it as an `Actor('powerup')` instead of the `Rect()`.
-* Combine this program with the enemy from  Program~\ref{code:chase}, the background from  Program~\ref{code:background} to make your game.
+\begin{aside}
+\label{}
+\heading{}
+\noindent Add vertical movement (as before)
+\end{aside}
 
-\pagebreak
+\begin{aside}
+\label{}
+\heading{}
+\noindent Draw a new powerup image.  Save it as `powerup.png` in your `mu_code/images` folder. Load it as an `Actor('powerup')` instead of the `Rect()`.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent Combine this program with the enemy from  Program~\ref{code:chase}, the background from  Program~\ref{code:background} to make your game.
+\end{aside}
+
 
 \pagebreak
 
@@ -67,9 +104,23 @@ Most of this code is copied from Program~\ref{code:collisions}
 <<(programs/16_collisions2_sound_animation.py, options: "hl_lines": [19, 20, 21, 22, 23])
 \end{codelisting}
 
-* Record your own sound effect and add it to the game.
-* Add more boxes or sprites that move in different ways for the player to avoid.
-* Add a second alien controlled by different keys or gamepad for player 2.
+\begin{aside}
+\label{}
+\heading{}
+\noindent Record your own sound effect and add it to the game.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent Add more boxes or sprites that move in different ways for the player to avoid.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent Add a second alien controlled by different keys or gamepad for player 2.
+\end{aside}
 
 \pagebreak
 
@@ -81,11 +132,8 @@ This uses a *function call-back* for event-based input.  It is similiar to Progr
 * There is an `on_mouse_down()` special function that is called automatically when the player click the mouse.
 * The score is displayed.
 
-\begin{aside}
-\label{aside:mouseclicks}
-\heading{Instructor note}
-\noindent This is a good time to explain functions. See Program~\ref{code:functions} for more functions.
-\end{aside}
+See Program~\ref{code:functions} for more about functions.
+
   
 \begin{codelisting}
 \codecaption{Getting input from mouse clicks}
@@ -97,20 +145,35 @@ This uses a *function call-back* for event-based input.  It is similiar to Progr
 
 ## Mouse movement
 
-If you are more interested in playing using controllers than mice this may be skipped for now.  
-
 \begin{codelisting}
 \codecaption{Getting input from mouse movement}
 \label{code:mouse_movement}
 <<(programs/18_mouse_movement.py)
 \end{codelisting}
 
-* What happens if you delete line 8 and replace it with this:
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent What happens if you delete line 8 and replace it with this:
 ```python
-   animate(alien, pos=pos, duration=1, tween='bounce_end')
+     animate(alien, pos=pos, duration=1, tween='bounce_end')
 ```
-* What happens if you change `on_mouse_move` to `on_mouse_down`?
-* Can you make a game with one alien controlled by mouse and another controlled by keyboard?
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent What happens if you change `on_mouse_move` to `on_mouse_down`?
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent Make a game with one alien controlled by mouse and another controlled by keyboard/
+\end{aside}
+
+
 
 
 

@@ -8,12 +8,12 @@ overview.md
 3_python_fundamentals.md
 0_text_quizes.md
 1_graphics.md
-chase.md
 2_simple_games.md
-maze.md
 4_more_graphics.md
 5_more_games.md
-minecraft.md
-3d_games.md
+chase.md
+maze.md
 appendix:
 6_advanced.md
+minecraft.md
+3d_games.md

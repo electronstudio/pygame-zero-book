@@ -3,14 +3,11 @@
 There are some exercises here.  Each exercise will ask you to write a program.  The solution is
 often on the following page - do not turn the page until you have attempted your own solution!  Save each program in a separate file.
 
-\begin{aside}
-\label{aside:funda}
-\heading{Instructor note}
-\noindent Unlike the rest of the book, these examples are not games.  For a 'fun' class, just discuss them, rather than having the students type them.
+* **Instructor note:** Unlike the rest of the book, these examples are not games.  For a 'fun' class, just discuss them, rather than having the students type them.
 Also you can skip this chapter entirely and teach them only when they are relevant to one of the games, or use them to reinforce concepts from the games for students who need additional examples.
 There are also some more formal exercises here
 that you can use to evaluate students in a more academic setting.
-\end{aside}
+
 
 \pagebreak
 
@@ -561,7 +558,7 @@ what function you want to call and don't need to remember the details of the cod
 
 ## Shortcuts
 
-Shortcuts are quicker ways of doing basic things.  You may have noticed some of these being used already.  
+Here are quicker ways of doing basic things.  You may have noticed some of these being used already.  
 
 \begin{codelisting}
 \codecaption{Shortcuts}
@@ -669,6 +666,25 @@ for name, age in friends.items():
 print("friends older than 10:",count)
 ```
 
+### Combining tests
+
+Use the `and` operator together with the `<` and `>` operators to only count friends between the ages of 11 to 13.
+
+\newpage
+
+Possible solution:
+
+```python
+friends = {'richard': 96, 'john': 12, 'paul': 8}
+count = 0
+for name, age in friends.items():
+    if age > 10 and age < 14:
+        count = count + 1
+print("friends age 11 to 13 :",count)
+```
+
+
+
 ### Finding
 
 We make a variable `oldest` that will contain the oldest age in the list.  
@@ -724,22 +740,6 @@ print("oldest friend", oldname)
 print("youngest friend", youngname)
 ```
 
-### and
-
-Use the `and` operator to only count friends between the ages of 11 to 13.
-
-\newpage
-
-Possible solution:
-
-```python
-friends = {'richard': 96, 'john': 12, 'paul': 8}
-count = 0
-for name, age in friends.items():
-    if age > 10 and age < 14:
-        count = count + 1
-print("friends age 11 to 13 :",count)
-```
 
 ### Find the average
 

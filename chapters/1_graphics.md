@@ -22,7 +22,17 @@ If you are using a different editor, [instructions are online](https://pygame-ze
 <<(programs/10_lines_circles.py)
 \end{codelisting}
 
-* Finish drawing this picture, or your own picture.
+\begin{aside}
+\label{}
+\heading{}
+\noindent Finish drawing this picture
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Draw your own picture.
+\end{aside}
 \newpage
 
 ## Moving rectangles
@@ -36,9 +46,25 @@ We don't need to write our own loop because *Pygame Zero calls this function for
 <<(programs/11_moving_boxes.py)
 \end{codelisting}
 
-* Make the box move faster.
-* Make the box move in different directions.
-* Make two boxes with different colours.
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Make the box move faster.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Make the box move in different directions.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Make two boxes with different colours.
+\end{aside}
+
 \newpage
 
 ## Actor sprites
@@ -54,7 +80,13 @@ for other images you must add the files yourself.
 <<(programs/12_sprites.py)
 \end{codelisting}
 
-* Draw or download your own image to use instead of alien.  You could use Microsoft Paint which comes with Windows.
+\begin{aside}
+\label{}
+\heading{}
+\noindent Draw or download your own image to use instead of alien.  You could use Microsoft Paint which comes with Windows but
+I recommend you download Krita from https://krita.org
+\end{aside}
+
 \newpage
 
 ## Background image
@@ -84,25 +116,24 @@ The alien moves when you press the cursor keys.
 <<(programs/13_keyboard_input.py)
 \end{codelisting}
 
-* Make the alien move up and down as well as left and right.
-* Use the more concise += operator to change the `alien.x` value (see Program~\ref{code:shortcuts}).
-* Use the `or` operator to allow WASD keys to move the alien in addition to the cursor keys (see Program~\ref{code:logic}).
-* Make the alien wrap around when he moves off edge of screen.
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Make the alien move up and down as well as left and right.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Use the more concise += operator to change the `alien.x` value (see Program~\ref{code:shortcuts}).
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent  Use the `or` operator to allow WASD keys to move the alien in addition to the cursor keys (see Program~\ref{code:logic}).
+\end{aside}
 
 \newpage
-
-## Joystick input
-
-You may call them *gamepads* or *controllers*, but Pygame calls them *joysticks*.
-
- Some controllers have different inputs and some are not compatible at all so don't be surprised if this doesnt work properly!  PS4 and Xbox One controllers connected by USB cable seems to work best.  Use Program~\ref{code:joystick_tester} to test yours and find out what inputs it has.  Note: if you run this program with no controller plugged in you will get an error.
-
-
-\begin{codelisting}
-\codecaption{Joystick input}
-\label{code:oystick_input}
-<<(programs/14_joystick_input.py)
-\end{codelisting}
-
-* Make the alien move up and down as well as left and right.
 

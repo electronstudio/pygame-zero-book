@@ -2,7 +2,7 @@ TILE_SIZE = 64
 WIDTH = TILE_SIZE * 8
 HEIGHT = TILE_SIZE * 8
 
-tiles = ['empty0', 'wall1', 'goal2']
+tiles = ['empty', 'wall', 'goal']
 
 maze = [
     [1, 1, 1, 1, 1, 1, 1, 1],

@@ -11,10 +11,17 @@ each program is *brief, complete* and *introduces only one or two new concepts*.
 
 * Each program is complete to avoid the confusion caused by worksheets that tell a student to add lines to a program piecemeal.  If they make an error or omit a step they may never recover and not produce a working program.  Also being *complete* and *separate* means the whole class can be told to skip to the same program and it won't matter so much that some of them didn't complete all the prior programs.
 
-* Introducing ideas one or two at a time allows the students to learn mostly through *doing* and observing the output of each program rather than memorizing.  To this end the *order* of the programs within each chapter has been carefully selected.  However I have attempted to indicate in the text which programs within each chapter are most important or interesting, and which programs can be skipped.  The chapter ordering is more loose and it is possible to skip back and forth between chapters.  If the text quizzes or the Python fundamentals are boring the students, skip ahead to the graphical games, then come back to the earlier examples when necessary.
+* Introducing ideas one or two at a time allows the students to learn mostly through *doing* and observing the output of each program rather than memorizing.  To this end the *order* of the programs within each chapter has been carefully selected.   The chapter ordering is more loose and it is possible to skip back and forth between chapters.  If the text quizzes or the Python fundamentals are boring the students, skip ahead to the graphical games, then come back to the earlier examples when necessary.
 
 Following each program are some ideas for how students can modify the program.  Hopefully they will go further and modify these programs into their own unique games!  The difficulty of these suggestions varies, to accommodate students of different age and ability.
 
 This book may be suitable for self-teaching by a motivated learner, but does not attempt to be comprehensive or give detailed explanations because it is intended to be used in a class with an instructor who will fill in the gaps as needed by the students.
+
+\vspace{5mm}
+
+\noindent \heading{The second edition}
+
+\noindent Many students said they wanted to create larger games than the simple examples given in the first edition.  It was always the intention that students absorb the knowledge from the examples
+and then go on to greater larger games of their own.  Therefore the second edition contains some tutorial chapters to attempt to bridge this gap.
 
 [^example_footnote]: For writing essays nowadays people can use voice input and touch-screen input, but for programming the majority of programmers still type on a keyboard.  There’s no sign of this changing in the immediate future, so practising keyboard skills now is still very important for the future. Students can practise at home with a program such as TuxType. That being said, many programs contain similar code, so it’s also a useful skill for them be able to copy and paste from their other programs.

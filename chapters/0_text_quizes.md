@@ -33,9 +33,14 @@ is stored in a variable, `x`.
 
 \end{codelisting}
 
-* Add some names of your friends and display a different message for each friend.
+\begin{aside}
+\label{}
+\heading{}
+\noindent Add some names of your friends and display a different message for each friend.
+\end{aside}
 
-## Decisions: if, elif, else
+
+## Making decisions: if, elif, else
 
 This is how to add another name to Program~\ref{code:input}
 
@@ -57,11 +62,23 @@ a new file and use copy and paste to copy the code from the old program into the
 <<(programs/04_maths_question.py)
 \end{codelisting}
 
-* Add some more questions, e.g.
-   * Instead of 7, use another random number.
-   * Use a bigger random number.
-   * Multiply (use `*`), divide (use `/`) or subtract (use `-`) numbers.
-* Print how many questions the player got correct at the end.
+\begin{aside}
+\label{}
+\heading{}
+\noindent Add some more questions, e.g.
+
+* Instead of 7, use another random number.
+* Use a bigger random number.
+* Multiply (use `*`), divide (use `/`) or subtract (use `-`) numbers.
+
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Print how many questions the player got correct at the end.
+\end{aside}
+
 
 \newpage
 
@@ -90,8 +107,17 @@ answer, and then it `break`s out of the loop.  Note that everything in the loop 
 <<(programs/06_loop.py)
 \end{codelisting}
 
-* Give a hint to the player when they are wrong.
-* Print how many guesses at the end.
+\begin{aside}
+\label{}
+\heading{}
+\noindent Give a hint to the player when they are wrong.  Was their guess too high or too low?
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Print how many guesses they took to get it right at the end.
+\end{aside}
 
 \newpage
 
