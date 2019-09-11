@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85ef30d2-737e-42b4-b9a4-54300f9dc2b1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/images/figures/krita.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Book.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Book.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapters/0_text_quizes.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/0_text_quizes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapters/1_graphics.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/1_graphics.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapters/2_simple_games.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/2_simple_games.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapters/3_python_fundamentals.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/3_python_fundamentals.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapters/3d_games.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/3d_games.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chapters/4_more_graphics.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/4_more_graphics.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapters/chase.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/chase.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapters/maze.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/maze.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chapters/preface.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/preface.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/lang.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/lang.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/latex_styles/language_customization.sty" beforeDir="false" afterPath="$PROJECT_DIR$/latex_styles/language_customization.sty" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programs/maze5.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/maze5.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -159,7 +149,7 @@
       <workItem from="1567642961467" duration="4776000" />
       <workItem from="1567762155074" duration="10579000" />
       <workItem from="1567822505203" duration="393000" />
-      <workItem from="1568064594528" duration="11528000" />
+      <workItem from="1568064594528" duration="12719000" />
     </task>
     <task id="LOCAL-00001" summary="mess with formatting">
       <created>1558146868663</created>
@@ -364,7 +354,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567783738214</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="everything">
+      <created>1568136944816</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1568136944816</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,7 +370,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="more chaters" />
     <MESSAGE value="first draft done" />
     <MESSAGE value="fixing more" />
     <MESSAGE value="another draft done" />
@@ -398,7 +394,8 @@
     <MESSAGE value="fixes, start adding maze stuff" />
     <MESSAGE value="maze chapter" />
     <MESSAGE value="chase chapter started" />
-    <option name="LAST_COMMIT_MESSAGE" value="chase chapter started" />
+    <MESSAGE value="everything" />
+    <option name="LAST_COMMIT_MESSAGE" value="everything" />
   </component>
   <component name="masterDetails">
     <states>

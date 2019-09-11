@@ -1,4 +1,4 @@
-# Game improvements
+# Improving your games
 
 Here are some tips that will enable you to enhance your games.
 

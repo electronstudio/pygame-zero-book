@@ -24,4 +24,6 @@ This book may be suitable for self-teaching by a motivated learner, but does not
 \noindent Many students said they wanted to create larger games than the simple examples given in the first edition.  It was always the intention that students absorb the knowledge from the examples
 and then go on to greater larger games of their own.  Therefore the second edition contains some tutorial chapters to attempt to bridge this gap.
 
+I also recognized that many students will require more repetative drilling on the basics, and hence the chapter of fundentamals has been greatly expanded with exercises for them to test themselves.
+
 [^example_footnote]: For writing essays nowadays people can use voice input and touch-screen input, but for programming the majority of programmers still type on a keyboard.  There’s no sign of this changing in the immediate future, so practising keyboard skills now is still very important for the future. Students can practise at home with a program such as TuxType. That being said, many programs contain similar code, so it’s also a useful skill for them be able to copy and paste from their other programs.
