@@ -122,12 +122,20 @@ Before you run this program, build two tiles in the game to be your teleporters 
 <<(programs/e03_teleport2.py)
 \end{codelisting}
 
-* Add this line to the end of the program:
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent
+Add this line to the end of the program:
 ```python
 time.sleep(5)
 ```
 
 Then add another line that teleports the player somewhere else.
+
+\end{aside}
+
 
 ## Teleport player into the air
 
@@ -147,15 +155,34 @@ This program does a series of teleports in quick succession to give the effect o
 <<(programs/e05_teleport4.py)
 \end{codelisting}
 
+\begin{aside}
+\label{}
+\heading{}
+\noindent Change the height of the jump.
+\end{aside}
 
-*  Change the height of the jump.
-*  Make the jump faster.
-*  Move the player in X and Z directions as well as Y during the jump.
-*  Instead of checking if player is on a single teleporter tile, check if player is within a larger area.  Use `<`, `and`, `>` operators.
+\begin{aside}
+\label{}
+\heading{}
+\noindent Make the jump faster.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Move the player in X and Z directions as well as Y during the jump.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent Instead of checking if player is on a single teleporter tile, check if player is within a larger area.  Use `<`, `and`, `>` operators.
+\end{aside}
+
 
 ## Create a block
 
-This program creates a block.  Each type of block has it's own number, but if we import `mcpi.block` we can use names instead remembering numbers .
+This program creates a block.  Each type of block has it's own number, but if we import `mcpi.block` we can use names instead remembering numbers.
 
 
 \begin{codelisting}
@@ -164,7 +191,11 @@ This program creates a block.  Each type of block has it's own number, but if we
 <<(programs/e06_create_block.py)
 \end{codelisting}
 
-* Make the block appear a short distance from the player
+\begin{aside}
+\label{}
+\heading{}
+\noindent Make the block appear a short distance from the player.
+\end{aside}
 
 \newpage
 
@@ -195,3 +226,214 @@ This program creates a block.  Each type of block has it's own number, but if we
 | WATER_FLOWING | WATER_STATIONARY | WOOD |
 | WOOD_PLANKS | LAPIS_LAZULI_BLOCK | WOOL |
 
+\pagebreak
+
+## Create a block inside a loop
+
+This program creates a block over and over again in a loop.  Move around to see it.
+
+\begin{codelisting}
+\codecaption{Block loop}
+\label{code:create_block_loop}
+<<(programs/e07_create_block_loop.py)
+\end{codelisting}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Make the block appear one meter **below** the player's position.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Change the block to something else, e.g. `ICE`
+\end{aside}
+
+## Create a tower of blocks
+
+We use a `for` loop to easily build a tower of blocks.
+
+\begin{codelisting}
+\codecaption{Tower of blocks}
+\label{code:e08_tower}
+<<(programs/e08_tower.py)
+\end{codelisting}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Mow high can you make the tower?
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Change the program to create 3 towers next to each other.
+\end{aside}
+
+## Clear space
+
+The `setBlocks()` function lets us create a large cube of blocks.  If we create blocks of type `AIR` this has the effect
+of removing all blocks!  This is such a useful thing that we will need it in the future, therefore in this program we
+put it in a function.  Make sure to save the program as `clear_space.py` so you can `import` it into the next program.
+
+\begin{codelisting}
+\codecaption{Clear space}
+\label{code:e09_clear_space}
+<<(programs/e09_clear_space.py)
+\end{codelisting}
+
+## Build a house
+
+Make sure you have saved the previous program \ref{e09_clear_space} to the same directory before you run this program because we are going to
+`import` the function from `clear_space.py`.  Save this program as `house.py`.
+
+\begin{codelisting}
+\codecaption{A simple house}
+\label{code:e10_basic_house}
+<<(programs/e10_basic_house.py)
+\end{codelisting}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Run the program and manually bash a hole in the wall to see what is inside and to give you a way to get into the building.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Change the program so it *automatically* makes a hole for a door.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Lower the floor in your house.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Add some furniture, torches, windows.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{Advanced }
+\noindent Make the windows get bigger if you increase the size of the house.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Try filling a house with `LAVA`, or `WATER`, or `TNT` (Be careful with `TNT`, too much will crash your computer!)
+\end{aside}
+
+
+
+## Build a street of houses
+
+Make sure you have saved the previous program \ref{e10_basic_house} to the same directory before you run this program because we are going to
+`import` the function from `house.py`.
+
+\begin{codelisting}
+\codecaption{A street of houses}
+\label{code:e11_street}
+<<(programs/e11_street.py)
+\end{codelisting}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent How many houses are there?  Make the street longer with more houses.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Make the houses get taller as the street goes on.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Add some towers to the street.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent Put a loop inside the loop to create multiple streets.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{Advanced }
+\noindent Make some roads or fences.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Make your houses out of TNT.  Use flint tool on them.
+\end{aside}
+
+## Chat commands
+
+This program can read chat messages posted by players.
+It builds a block next to any player who
+says "build".  This is the first example that will
+work for more than one player.
+
+\begin{codelisting}
+\codecaption{Chat commands}
+\label{code:e12_chat}
+<<(programs/e12_chat.py)
+\end{codelisting}
+
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent Build a house around the player if the player says "house".
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent Build a lava trap if the player says "trap".
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent use `mc.getPlayerEntityId("fred")` to get the id of a certain player named Fred
+(or whatever your friend's player name is).  Build something at the position of this player.
+\end{aside}
+
+## Turtle
+
+*This requires `minecraftstuff` package to work.*
+You can install it in Mu by clicking in the bottom right gadget
+and adding `minecraftstuff` to list of third party packages
+
+You may have used a turtle for drawing at school. This is the same but in Minecraft.
+
+\begin{codelisting}
+\codecaption{Turtle}
+\label{code:e13_turtle}
+<<(programs/e13_turtle.py)
+\end{codelisting}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Draw a triangle, hexagon, etc.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent What do turtle.up(90) and turtle.down(90) do?
+\end{aside}
