@@ -62,7 +62,7 @@ This program demonstrates using joysticks and for loops, but is mainly included 
 
 ## Distributing your Pygame Zero games
 
-You can distribute your games to people who don't have Python or Mu installed.  You can put them on a USB stick, or a website for people to download, or even on itch.io for people to buy.
+This is often tricky to get working, but you can distribute your games to people who don't have Python or Mu installed.  You can put them on a USB stick, or a website for people to download, or even on itch.io for people to buy.
 
 1. Install the full version of python from [www.python.org](https://www.python.org/downloads/).
 
@@ -74,7 +74,11 @@ At the bottom of the file add the line:
 ```python
 pgzrun.go()
 ```
+Any time in the program you use `draw.text()` you *must* specify a font, e.g. add parameter  `fontname="arial"`
+
 Save the file.
+
+3. Copy any fonts you have used into the `fonts` folder and rename them to lowercase names, e.g. `arial.ttf`
 
 3. Open a command prompt (Click start menu and type ```cmd.exe```)
 
@@ -88,18 +92,20 @@ Save the file.
     
 2. You should find the *pgzero* folder at:
 
-    \verb+C:\Users\YOURNAME\AppData\\ocal\\Programs\+
+    \verb+C:\Users\YOURNAME\AppData\\Local\\Programs\+
 
     \verb+Python\Python37\Lib\site-packages\pgzero+
 
+    This is a hidden folder so you must enable hidden folders in Windows Explorer to see it.
+    
     Copy the *pgzero* folder into your *mu_code* folder.
     
     You should find your *mu_code* folder at:
     \verb+C:\Users\YOURNAME\mu_code+
       
 7. Create the executable.  At the command prompt type:
-
-    ```pyinstaller NAME_OF_GAME.py --distpath . --add-path "pgzero;pgzero" --onefile --noconfirm --nowindow```
+    
+    ```pyinstaller NAME_OF_GAME.py --distpath . --add-data "pgzero;pgzero" --add-data "images;images" --add-data "fonts;fonts" "sounds;sounds" --add-data "music;music" --onefile --noconfirm --windowed --clean```
     
    This will generate a program called ```NAME_OF_GAME.exe```.  You can double click this program to play your game.
    

@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85ef30d2-737e-42b4-b9a4-54300f9dc2b1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/chapters/race.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapters/shooter.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapters/minecraft.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/minecraft.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programs/e09_clear_space.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/e09_clear_space.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Book.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Book.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapters/6_advanced.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/6_advanced.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapters/maze.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/maze.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/lang.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/lang.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/programs/e10_basic_house.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/e10_basic_house.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programs/e11_street.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/e11_street.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programs/e12_chat.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/e12_chat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programs/e13_turtle.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/e13_turtle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/rl_demo2.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +31,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$PROJECT_DIR$/../Library/Android/sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/images/figures" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/chapters" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -41,13 +43,13 @@
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/chapters" />
+      <recent name="$PROJECT_DIR$/images/figures" />
+      <recent name="$PROJECT_DIR$/docs" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/images/figures" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/images/figures" />
-      <recent name="$PROJECT_DIR$/chapters" />
-      <recent name="$PROJECT_DIR$/docs" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -63,18 +65,6 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="Applet">
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
       <setting name="replType" value="NREPL" />
       <setting name="execution" value="LEININGEN" />
@@ -92,6 +82,18 @@
       <setting name="replType" value="0" />
       <module name="" />
       <method v="2" />
+    </configuration>
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
@@ -152,8 +154,10 @@
       <workItem from="1567642961467" duration="4776000" />
       <workItem from="1567762155074" duration="10579000" />
       <workItem from="1567822505203" duration="393000" />
-      <workItem from="1568064594528" duration="12719000" />
-      <workItem from="1568212612460" duration="7626000" />
+      <workItem from="1568064594528" duration="16442000" />
+      <workItem from="1568303058106" duration="1490000" />
+      <workItem from="1568524636180" duration="233000" />
+      <workItem from="1568601677985" duration="3118000" />
     </task>
     <task id="LOCAL-00001" summary="mess with formatting">
       <created>1558146868663</created>
@@ -365,29 +369,18 @@
       <option name="project" value="LOCAL" />
       <updated>1568136944816</updated>
     </task>
-    <task id="LOCAL-00031" summary="add 3d chapter">
-      <created>1568216256147</created>
+    <task id="LOCAL-00031" summary="minor">
+      <created>1568200424130</created>
       <option name="number" value="00031" />
       <option name="presentableId" value="LOCAL-00031" />
       <option name="project" value="LOCAL" />
-      <updated>1568216256147</updated>
+      <updated>1568200424130</updated>
     </task>
     <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
@@ -416,8 +409,8 @@
     <MESSAGE value="maze chapter" />
     <MESSAGE value="chase chapter started" />
     <MESSAGE value="everything" />
-    <MESSAGE value="add 3d chapter" />
-    <option name="LAST_COMMIT_MESSAGE" value="add 3d chapter" />
+    <MESSAGE value="minor" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor" />
   </component>
   <component name="masterDetails">
     <states>

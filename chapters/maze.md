@@ -276,3 +276,4 @@ However that is not the end!  There are many things you could add to this game.
 * Treasure chest that is unlocked with the key and increases score.
 * Instead of ending the game, give the player 3 lives.
 * Add more types of tile to the map: water, rock, brick, etc.
+* Change the player image depending on the direction they are moving.

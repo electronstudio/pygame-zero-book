@@ -1,4 +1,3 @@
-#quiz.md
 frontmatter:
 maketitle
 tableofcontents
@@ -13,6 +12,8 @@ overview.md
 5_more_games.md
 chase.md
 maze.md
+shooter.md
+race.md
 appendix:
 6_advanced.md
 minecraft.md
