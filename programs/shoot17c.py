@@ -1,3 +1,4 @@
+
 def update(delta):
     move_player()
     move_bullets()

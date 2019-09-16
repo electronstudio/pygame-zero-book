@@ -16,5 +16,5 @@ shooter.md
 race.md
 appendix:
 6_advanced.md
-minecraft.md
-3d_games.md
+#minecraft.md
+#3d_games.md

@@ -74,7 +74,6 @@ def generate_lines():
             left_wall_x = WIDTH - gap_width
             wall_gradient = -random.random() * 2 - 0.1
 
-
 generate_lines()
 
 

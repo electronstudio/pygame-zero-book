@@ -52,21 +52,60 @@ def update(delta):
 
 
 def player_input():
-    pass
+    if keyboard.up:
+        player.vy += 0.1
+    if keyboard.down:
+        player.vy -= 0.1
+        if player.vy < 1:
+            player.vy = 1
+    if keyboard.right:
+        player.vx += 0.4
+    if keyboard.left:
+        player.vx -= 0.4
+    player.x += player.vx
 
 def generate_lines():
-    pass
+    global wall_gradient, left_wall_x
+    gap_width = 300 + math.sin(distance / 3000) * 100
+    while len(lines) < HEIGHT:
+        pretty_colour = (255,0, 0)
+        lines.insert(0, (left_wall_x, gap_width, pretty_colour))
+        left_wall_x += wall_gradient
+        if left_wall_x < 0:
+            left_wall_x = 0
+            wall_gradient = random.random() * 2 + 0.1
+        elif left_wall_x + gap_width > WIDTH:
+            left_wall_x = WIDTH - gap_width
+            wall_gradient = -random.random() * 2 - 0.1
 
 generate_lines()
 
 def scroll_walls():
-    pass
+    global distance
+    for i in range(0, int(player.vy)):
+        lines.pop()
+        distance += 1
 
 def wall_collisions():
-    pass
+    a, b, c = lines[-1]
+    if player.x < a:
+        player.x += 5
+        player.vx = player.vx * -0.5
+        player.vy = 0
+    if player.x > a + b:
+        player.x -= 5
+        player.vx = player.vx * -0.5
+        player.vy = 0
 
 def timer(delta):
-    pass
+    global time, playing, best_distance
+    time -= delta
+    if time < 0:
+        playing = False
+        if distance > best_distance:
+            best_distance = distance
 
 def on_mouse_move(pos):
-    pass
+    x, y = pos
+    player.x = x
+    player.vy = (HEIGHT - y) / 20

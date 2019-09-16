@@ -1,3 +1,4 @@
+
 def draw():
     screen.clear()
     background.draw()

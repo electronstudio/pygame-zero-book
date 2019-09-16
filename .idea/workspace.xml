@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85ef30d2-737e-42b4-b9a4-54300f9dc2b1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/chapters/race.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapters/shooter.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Book.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Book.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chapters/6_advanced.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/6_advanced.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapters/maze.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/maze.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/lang.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/lang.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programs/e10_basic_house.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/e10_basic_house.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programs/rl_demo2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapters/shooter.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/shooter.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/race2.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/race2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/race7.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/race7.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/shoot17a.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/shoot17a.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/shoot17b.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/shoot17b.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/shoot17c.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/shoot17c.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/shoot17d.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/shoot17d.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -157,7 +158,7 @@
       <workItem from="1568064594528" duration="16442000" />
       <workItem from="1568303058106" duration="1490000" />
       <workItem from="1568524636180" duration="233000" />
-      <workItem from="1568601677985" duration="3118000" />
+      <workItem from="1568601677985" duration="6572000" />
     </task>
     <task id="LOCAL-00001" summary="mess with formatting">
       <created>1558146868663</created>
@@ -376,7 +377,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568200424130</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="race game">
+      <created>1568649587918</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1568649587918</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,7 +393,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="fixing more" />
     <MESSAGE value="another draft done" />
     <MESSAGE value="remove minipages, replace with page breaks" />
     <MESSAGE value="remove all minipages so can build epub" />
@@ -410,7 +417,8 @@
     <MESSAGE value="chase chapter started" />
     <MESSAGE value="everything" />
     <MESSAGE value="minor" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor" />
+    <MESSAGE value="race game" />
+    <option name="LAST_COMMIT_MESSAGE" value="race game" />
   </component>
   <component name="masterDetails">
     <states>

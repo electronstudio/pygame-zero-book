@@ -1,15 +1,10 @@
 # Advanced topics
 
-\begin{aside}
-\label{aside:advanced}
-\heading{Instructor note}
 
-\noindent This is the beginning of my attempts to teach object oriented programming, but I wouldn't attempt this with young students since it requires abstract thinking.
+## Instructor note
 
-\end{aside}
+This is the beginning of my attempts to teach object oriented programming, but I wouldn't attempt this with young students since it requires abstract thinking.
 
-
-\newpage
 
 
 ## Classes
