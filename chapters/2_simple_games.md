@@ -1,9 +1,5 @@
 # Arcade games
 
-Now we can draw actor sprites to the screen, we can begin to make simple arcade games with them. 
-
-\newpage
-
 ## Collisions
 
 Arcade games need to know when one actor sprite has hit another actor sprite.  Most of this code is copied from Program~\ref{code:moving_boxes} and Program~\ref{code:keyboard_input}.

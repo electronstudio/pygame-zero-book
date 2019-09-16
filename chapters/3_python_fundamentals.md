@@ -3,8 +3,8 @@
 There are some exercises here.  Each exercise will ask you to write a program.  The solution is
 often on the following page - do not turn the page until you have attempted your own solution!  Save each program in a separate file.
 
-* **Instructor note:** Unlike the rest of the book, these examples are not games.  For a 'fun' class, just discuss them, rather than having the students type them.
-Also you can skip this chapter entirely and teach them only when they are relevant to one of the games, or use them to reinforce concepts from the games for students who need additional examples.
+* **Instructor note:** Unlike the rest of the book, these examples are not games.  You may want to just discuss some of them, rather than having the students type them.
+Also you can skip this chapter entirely and leave it for motivated students to read at home, or use them to reinforce concepts from the games for students who need additional examples.
 There are also some more formal exercises here
 that you can use to evaluate students in a more academic setting.
 
@@ -68,7 +68,12 @@ print("Number of fruits:", fruits)
 ```
 \end{codelisting}
 
-**Exercise:** Copy Program~\ref{code:fruits}, but also add 17 bananas to the calculation of fruits.
+\begin{aside}
+\label{}
+\heading{}
+\noindent Copy Program~\ref{code:fruits}, but also add 17 bananas to the calculation of fruits.
+\end{aside}
+
 
 We can store a new value in the same variable.  The old value will be forgotten.
 
@@ -82,8 +87,11 @@ print("Number of apples:", apples)
 ```
 \end{codelisting}
 
-**Exercise:** What do you think Program~\ref{code:overwriting} will print?  If you aren't sure, type it in.
-
+\begin{aside}
+\label{}
+\heading{}
+\noindent What do you think Program~\ref{code:overwriting} will print?  If you aren't sure, type it in.
+\end{aside}
 
 More usefully, we can take the old value, modify it, then store it back in the same variable.
 
@@ -98,8 +106,11 @@ print(x)
 ```
 \end{codelisting}
 
-**Exercise:** What will Program~\ref{code:mod_variables} print?  Change the numbers in the program.  Use a division `/` operation.
-Then ask your friend to predict what the new program will print.  Was he right?
+\begin{aside}
+\label{}
+\heading{}
+\noindent What will Program~\ref{code:mod_variables} print?  Change the numbers in the program.  Use a division `/` operation.  Then ask your friend to predict what the new program will print.  Was he right?
+\end{aside}
 
 You will often see this used for counting:
 
@@ -115,7 +126,12 @@ print(x)
 ```
 \end{codelisting}
 
-**Exercise:** What is the total count of Program~\ref{code:counting} ?
+\begin{aside}
+\label{}
+\heading{}
+\noindent What is the total count of Program~\ref{code:counting} ?
+\end{aside}
+
 
 See Program~\ref{code:shortcuts} for a quicker way of writing this.
 
@@ -130,7 +146,7 @@ my_string = input()
 print(my_string)
 ```
 
-Sometimes we require that the user type in a number rather than a string.  We can use the `int()` function to convert the string to a number.
+Sometimes we want the user to type in a number rather than a string.  We can use the `int()` function to convert the string to a number.
 
 \begin{codelisting}
 \codecaption{Getting input from user}
@@ -142,13 +158,16 @@ print("Double your number is", my_number * 2)
 ```
 \end{codelisting}
 
-**Exercise:** Copy Program~\ref{code:fruits} but use `input()` to ask the user to enter the number of apples and pears.
-
+\begin{aside}
+\label{}
+\heading{}
+\noindent Copy Program~\ref{code:fruits} but use `input()` to ask the user to enter the number of apples and pears.
+\end{aside}
 
 
 ## Booleans
 
-A *boolean* is a type of variable that is not a string or a number.  It can have only two possible values: `True` or `False`.  In some
+A *boolean* is another type of variable that is not a string or a number.  It can have only two possible values: `True` or `False`.  In some
 languages and in electronics you may see these represented as `0` and `1`.
 
 Booleans are used by keywords such as `if` and `while`.  In an `if` statement, the indented code block is only run if the boolean is
@@ -177,18 +196,7 @@ else:
     print("We must stay at home")
 ```
 
-## Boolean Logic
 
-The `and`, `or` and `not` operators operate on booleans and return new boolean values.
-
-\begin{codelisting}
-\codecaption{Boolean logic}
-\label{code:logic}
-\phantom{.}
-<<(programs/08_logic.py)
-\end{codelisting}
-
-not windy.
 
 ## Comparison operators
 
@@ -210,7 +218,7 @@ Comparison operators take two numbers, strings or other variables, compare them,
 <<(programs/09_logic2.py)
 \end{codelisting}
 
-## Conditionals \& boolean logic
+## Boolean logic
 
 Only people older than 12 or taller than 150cm are allowed to ride the rollercoaster.  This program checks whether people are allowed to ride.
 
@@ -235,7 +243,11 @@ b = False
 print(a or b)
 ```
 
-**Exercise:** use the `or` operator to make the rollercoaster program shorter by combining the two tests into one test.
+\begin{aside}
+\label{}
+\heading{}
+\noindent use the `or` operator to make the rollercoaster program shorter by combining the two tests into one test.
+\end{aside}
 
 \newpage
 
@@ -262,8 +274,12 @@ b = False
 print(a and b)
 ```
 
-**Exercise:** The rollercoaster is only allowed to run on days when the temperature is less than 30 degrees.  Extend the program
-to ask the temperature and use the `and` operator to only allow riding when less than 30 degrees.
+\begin{aside}
+\label{}
+\heading{}
+\noindent The rollercoaster is only allowed to run on days when the temperature is less than 30 degrees.  Extend the program to ask the temperature and use the `and` operator to only allow riding when less than 30 degrees.
+\end{aside}
+
 
 \newpage
 
@@ -306,7 +322,12 @@ else:
     raining = False
 ```
 
-**Exercise:** Change the program so that you can only ride the rollercoaster if it is not raining.
+\begin{aside}
+\label{}
+\heading{}
+\noindent Change the program so that you can only ride the rollercoaster if it is not raining.
+\end{aside}
+
 
 \newpage
 
@@ -361,7 +382,12 @@ for a in range(0, 6):
 ```
 \end{codelisting}
 
-**Exercise:** write a program which prints out the 12 times table.
+\begin{aside}
+\label{}
+\heading{}
+\noindent Write a program which prints out the 12 times table.
+\end{aside}
+ 
  
 ### Incrementing a variable in a loop
  
@@ -382,7 +408,12 @@ so he knows how many he must bake. He writes this program.
  print("I will bake", total, "cakes!")
 ```
  
-**Exercise**: This program is longer than it needs to be.  Instead of typing it, write your own program using a `for` loop.  It should be only 6 (or fewer) lines long.
+\begin{aside}
+\label{}
+\heading{}
+\noindent This program is longer than it needs to be.  Instead of typing it, write your own program using a `for` loop.  It should be only 6 (or fewer) lines long.
+\end{aside} 
+ 
  
 \newpage
  
@@ -400,11 +431,23 @@ so he knows how many he must bake. He writes this program.
 ```
 \end{codelisting}
  
-**Exercise:** The baker gets a fourth customer.  Change Program~\ref{code:baker} so it works for 4 customers.
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent The baker gets a fourth customer.  Change Program~\ref{code:baker} so it works for 4 customers.
+\end{aside} 
  
-**Exercise:** The baker has a different number of customers every day.  Change the program so it
+\begin{aside}
+\label{}
+\heading{}
+\noindent The baker has a different number of customers every day.  Change the program so it
 asks how many customers there are. Store the number typed by the user in a variable
 called `c`. Change the loop so it works for `c` customers rather than 4 customers.
+\end{aside} 
+   
+ 
+
  
 \newpage
  
@@ -423,8 +466,13 @@ called `c`. Change the loop so it works for `c` customers rather than 4 customer
 ```
 \end{codelisting}
  
-**Exercise:** If a customer orders 12 cakes, he gets an extra cake for free.  Use an `if` statement to check `cakes > 12`. If so, add one more cake.
 
+\begin{aside}
+\label{}
+\heading{}
+\noindent If a customer orders 12 cakes, he gets an extra cake for free.  Use an `if` statement to check `cakes > 12`. If so, add one more cake.
+\end{aside} 
+ 
 
 
 ## Array lists
@@ -467,7 +515,12 @@ for price in prices:
 ```
 \end{codelisting}
 
-**Exercise:** Change the Program~\ref{code:shoppinglist} so that it prints the total price of all the items added together.
+\begin{aside}
+\label{}
+\heading{}
+\noindent Change the Program~\ref{code:shoppinglist} so that it prints the total price of all the items added together.
+\end{aside} 
+
 
 \newpage
 
@@ -515,8 +568,13 @@ print("shopping total", total/100)
 ```
 \end{codelisting}
 
-**Exercise:** Conditional discount.  Any item that costs more than £10 will be discounted by 20 percent. Use an `if` statement to check if the price is more than 1000 pennies.
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Conditional discount.  Any item that costs more than £10 will be discounted by 20 percent. Use an `if` statement to check if the price is more than 1000 pennies.
 If it is, multiply the price by 0.8 to reduce it before you add it to the total.
+\end{aside} 
 
 \newpage
 
@@ -624,7 +682,14 @@ age = friends[name]
 print("Your age is", age)
 ```
 
-Change the program so it contains 5 of your friends' ages.
+\begin{aside}
+\label{}
+\heading{}
+\noindent Change the program so it contains 5 of your friends' ages.
+\end{aside} 
+
+
+
 
 
 ### Counting
@@ -636,9 +701,13 @@ friends = {'richard': 96, 'john': 12, 'paul': 8}
 for name, age in friends.items():
     print(name, "is age", age)
 ```
-    
 
-Can you add an `if` statement to only print the ages of friends older than 10?
+\begin{aside}
+\label{}
+\heading{}
+\noindent Can you add an `if` statement to only print the ages of friends older than 10?
+\end{aside}     
+
 
 \newpage
 
@@ -650,8 +719,12 @@ for name, age in friends.items():
     if age > 10:
         print(name, "is age", age)
 ```
-        
-Now add a `count` variable that counts how many of the friends are older than 10.  Print the number at the end.
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Now add a `count` variable that counts how many of the friends are older than 10.  Print the number at the end.
+\end{aside}     
 
 \newpage
 
@@ -668,7 +741,11 @@ print("friends older than 10:",count)
 
 ### Combining tests
 
-Use the `and` operator together with the `<` and `>` operators to only count friends between the ages of 11 to 13.
+\begin{aside}
+\label{}
+\heading{}
+\noindent Use the `and` operator together with the `<` and `>` operators to only count friends between the ages of 11 to 13.
+\end{aside}    
 
 \newpage
 
@@ -698,7 +775,12 @@ for name, age in friends.items():
 print("oldest age", oldest)
 ```
 
-Now make a variable `youngest` that will contain the youngest age in the list.  Print the youngest at the end.
+\begin{aside}
+\label{}
+\heading{}
+\noindent Make a variable `youngest` that will contain the youngest age in the list.  Print the youngest at the end.
+\end{aside}   
+
 
 \newpage
 
@@ -719,7 +801,11 @@ print("youngest age", youngest)
 
 ### Finding names
 
-As well as the ages, print the names of the youngest and oldest friends.
+\begin{aside}
+\label{}
+\heading{}
+\noindent As well as the ages, print the names of the youngest and oldest friends.
+\end{aside}   
 
 \newpage
 
@@ -743,8 +829,12 @@ print("youngest friend", youngname)
 
 ### Find the average
 
-Create a `total` variable.  Add each age to the total.  At the end, calculate the average by dividing the total by the number of
-friends.
+\begin{aside}
+\label{}
+\heading{}
+\noindent Create a `total` variable.  Add each age to the total.  At the end, calculate the average by dividing the total by the number of friends.
+\end{aside}   
+
 
 \newpage
 
@@ -770,7 +860,6 @@ A single wrong letter or space will prevent them from working.
 
 A particular issue in Python is that *indentation* must be correct.
 
-Can you spot and fix the bug in this program?
 
 \begin{codelisting}
 \codecaption{Buggy program}
@@ -778,10 +867,21 @@ Can you spot and fix the bug in this program?
 <<(programs/0E_bug1.py)
 \end{codelisting}
 
-This one has two bugs to fix.
+\begin{aside}
+\label{}
+\heading{}
+\noindent Can you spot and fix the bug in Program \ref{code:bug1}?
+\end{aside}   
+
 
 \begin{codelisting}
 \codecaption{More bugs}
 \label{code:bug2}
 <<(programs/0F_bug2.py)
 \end{codelisting}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Program \ref{code:bug2} has two bugs to fix.
+\end{aside}  

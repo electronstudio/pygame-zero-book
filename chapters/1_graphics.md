@@ -1,6 +1,8 @@
 # Drawing graphics
 
-To create graphics for our games we will use [the Pygame Zero library](https://pygame-zero.readthedocs.io). You will find the documentation on the website useful!
+To create graphics for our games we will use [the Pygame Zero library](https://pygame-zero.readthedocs.io)[^f1]. You will find the documentation on the website useful!
+
+[^f1]: https://pygame-zero.readthedocs.io
 
 The smallest square that can be displayed on a monitor is called a *pixel*. This diagram shows a close-up view
 of a window that is 40 pixels wide and 40 pixels high.  At normal size you will not see the grid lines.
@@ -14,7 +16,9 @@ because everything we do in Pygame Zero will use it.  (In maths this called a 'C
 
 If are using the Mu editor, Pygame Zero is built-in, but **you must remember to click 'Mode' and select 'Pygame Zero' before running your program**!
 
-If you are using a different editor, [instructions are online](https://pygame-zero.readthedocs.io/en/stable/ide-mode.html)
+If you are using a different editor, [instructions are online](https://pygame-zero.readthedocs.io/en/stable/ide-mode.html)[^f2]
+
+[^f2]: https://pygame-zero.readthedocs.io/en/stable/ide-mode.html
 
 \begin{codelisting}
 \codecaption{Lines and circles}
@@ -74,6 +78,11 @@ Click `Images` to see the folder of image files available.
 `alien.png` should already be there, but
 for other images you must add the files yourself.
 
+You could use Microsoft Paint which comes with Windows but
+I recommend you download and install [Krita](https://krita.org)[^f3].
+
+[^f3]: https://krita.org
+
 \begin{codelisting}
 \codecaption{Actor sprites}
 \label{code:sprites}
@@ -83,9 +92,9 @@ for other images you must add the files yourself.
 \begin{aside}
 \label{}
 \heading{}
-\noindent Draw or download your own image to use instead of alien.  You could use Microsoft Paint which comes with Windows but
-I recommend you download Krita from https://krita.org
+\noindent Draw or download your own image to use instead of alien.  
 \end{aside}
+
 
 \newpage
 
@@ -103,6 +112,12 @@ to use a background.  Save it as `background.png`.  It should be the same size a
 \label{code:background}
 <<(programs/12b_background.py)
 \end{codelisting}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent  Create a picture to use a background.  Save it as `background.png`.  Run the program.
+\end{aside}
 
 \newpage
 
