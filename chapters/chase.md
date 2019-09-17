@@ -268,7 +268,7 @@ the score into a string.  Add these lines to the end of the `draw()` function:
 
 ## Timer
 
-Add a variable at the top of the program (but prerably after any `import` statements) to store the number of seconds
+Add a variable at the top of the program (but preferably after any `import` statements) to store the number of seconds
 of time remaining in the game:
 
 ```python
@@ -301,7 +301,7 @@ We can also display the time on the screen.  At the end of the `draw()` function
 \noindent Run the program.  Could the displayed time be improved?
 \end{aside}
 
-We dont need to see the decimal places in the time.  Modify those lines to use the `round()` function, like this:
+We don't need to see the decimal places in the time.  Modify those lines to use the `round()` function, like this:
 
 ```python
     time_string = str(round(time))

@@ -41,7 +41,7 @@ Every Pygame game needs an `draw()` function, and it should draw all the Actors 
 
 ## Step 3: Move your Actors
 
-Every Pygame game needs an `update()` function to move the actors, check for collisions, etc.
+Every Pygame game needs an `update()` function to move the Actors, check for collisions, etc.
 
 \begin{codelisting}
 \codecaption{Shooter game part 3 of 4}

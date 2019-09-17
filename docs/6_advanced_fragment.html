@@ -1,15 +1,12 @@
-<div id="cid40" data-tralics-id="cid40" class="chapter" data-number="7" data-chapter="6_advanced"><h1><a href="6_advanced_fragment.html#cid40" class="heading hyperref"><span class="number">Lesson 7 </span>Advanced topics</a></h1>
-<div class="aside" id="aside-advanced" data-tralics-id="uid100" data-number="7.1"><div class="heading"><span class="number">Note 7.1.</span> 
-
-<span class="description">Instructor note</span></div>
-<p class="noindent">This is beginning of my attempts to teach object oriented programming, but I wouldn’t attempt this with young students.</p>
-
-</div></div><div id="cid41" data-tralics-id="cid41" class="section" data-number="7.1"><h2><a href="6_advanced_fragment.html#cid41" class="heading hyperref"><span class="number">7.1 </span>Classes</a></h2>
-<p class="noindent">You’ve already been using class types, e.g.<span class="intersentencespace"></span> Rect and Actor.<span class="intersentencespace"></span> But if we want to store velocity as in <a href="5_more_games_fragment.html#code-simple_physics" class="hyperref">Program <span class="ref">6.3</span></a> we find classes do not include <em>vx</em> and <em>vy</em> variables inside them.</p>
+<div id="cid98" data-tralics-id="cid98" class="chapter" data-number="12" data-chapter="6_advanced"><h1><a href="6_advanced_fragment.html#cid98" class="heading hyperref"><span class="number">Chapter 12 </span>Advanced topics</a></h1>
+</div><div id="cid99" data-tralics-id="cid99" class="section" data-number="12.1"><h2><a href="6_advanced_fragment.html#cid99" class="heading hyperref"><span class="number">12.1 </span>Instructor note</a></h2>
+<p class="noindent">This is the beginning of my attempts to teach object oriented programming, but I wouldn’t attempt this with young students since it requires abstract thinking.</p>
+</div><div id="cid100" data-tralics-id="cid100" class="section" data-number="12.2"><h2><a href="6_advanced_fragment.html#cid100" class="heading hyperref"><span class="number">12.2 </span>Classes</a></h2>
+<p class="noindent">You’ve already been using class types, e.g.<span class="intersentencespace"></span> Rect and Actor.<span class="intersentencespace"></span> But if we want to store velocity as in <a href="5_more_games_fragment.html#code-simple_physics" class="hyperref">Program <span class="ref">7.3</span></a> we find classes do not include <em>vx</em> and <em>vy</em> variables inside them.</p>
 <p>There let’s
 create our own class, Sprite, that is the same as Actor but with
 these variables included.</p>
-<div class="codelisting" id="code-classes" data-tralics-id="uid101" data-number="7.1"><div class="heading"><span class="number">Program 7.1:</span> <span class="description">Classes</span>
+<div class="codelisting" id="code-classes" data-tralics-id="uid214" data-number="12.1"><div class="heading"><span class="number">Program 12.1:</span> <span class="description">Classes</span>
 
 
 </div>
@@ -34,9 +31,9 @@ these variables included.</p>
         <span class="n">ball</span><span class="o">.</span><span class="n">vx</span> <span class="o">=</span> <span class="o">-</span><span class="n">ball</span><span class="o">.</span><span class="n">vx</span>
     <span class="k">if</span> <span class="n">ball</span><span class="o">.</span><span class="n">bottom</span> <span class="o">&gt;</span> <span class="n">HEIGHT</span> <span class="ow">or</span> <span class="n">ball</span><span class="o">.</span><span class="n">top</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">ball</span><span class="o">.</span><span class="n">vy</span> <span class="o">=</span> <span class="o">-</span><span class="n">ball</span><span class="o">.</span><span class="n">vy</span>
-</pre></div></div></div></div><div id="cid42" data-tralics-id="cid42" class="section" data-number="7.2"><h2><a href="6_advanced_fragment.html#cid42" class="heading hyperref"><span class="number">7.2 </span>Methods</a></h2>
+</pre></div></div></div></div><div id="cid101" data-tralics-id="cid101" class="section" data-number="12.3"><h2><a href="6_advanced_fragment.html#cid101" class="heading hyperref"><span class="number">12.3 </span>Methods</a></h2>
 <p class="noindent">Classes can contain functions (called <em>methods</em>) as well as variables.<span class="intersentencespace"></span> Methods are the best place to modify the class’s variables.</p>
-<div class="codelisting" id="code-classes2" data-tralics-id="uid102" data-number="7.2"><div class="heading"><span class="number">Program 7.2:</span> <span class="description">Class methods</span>
+<div class="codelisting" id="code-classes2" data-tralics-id="uid215" data-number="12.2"><div class="heading"><span class="number">Program 12.2:</span> <span class="description">Class methods</span>
 
 
 </div>
@@ -64,10 +61,10 @@ these variables included.</p>
 
 <span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
     <span class="n">ball</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
-</pre></div></div></div></div><div id="cid43" data-tralics-id="cid43" class="section" data-number="7.3"><h2><a href="6_advanced_fragment.html#cid43" class="heading hyperref"><span class="number">7.3 </span>Joystick tester</a></h2>
-<p class="noindent">This is an example of controller input and example of for loops but
-mostly here so you can test your controllers’ input.<span class="intersentencespace"></span> I dont’s suggest typing this one yourself.</p>
-<div class="codelisting" id="code-joystick_tester" data-tralics-id="uid103" data-number="7.3"><div class="heading"><span class="number">Program 7.3:</span> <span class="description">Joystick tester</span>
+</pre></div></div></div></div><div id="cid102" data-tralics-id="cid102" class="section" data-number="12.4"><h2><a href="6_advanced_fragment.html#cid102" class="heading hyperref"><span class="number">12.4 </span>Joystick tester</a></h2>
+<p class="noindent">This program demonstrates using joysticks and for loops, but is mainly included to help you test the input from your controllers.</p>
+<p>(I don’t suggest typing this one yourself.)</p>
+<div class="codelisting" id="code-joystick_tester" data-tralics-id="uid216" data-number="12.3"><div class="heading"><span class="number">Program 12.3:</span> <span class="description">Joystick tester</span>
 
 
 </div>
@@ -104,4 +101,44 @@ mostly here so you can test your controllers’ input.<span class="intersentence
             <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">"Hat {} value: {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">hat</span><span class="p">)),</span>
                              <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
             <span class="n">y</span> <span class="o">+=</span> <span class="mi">14</span>
-</pre></div></div></div></div>
+</pre></div></div></div></div><div id="cid103" data-tralics-id="cid103" class="section" data-number="12.5"><h2><a href="6_advanced_fragment.html#cid103" class="heading hyperref"><span class="number">12.5 </span>Distributing your Pygame Zero games</a></h2>
+<p class="noindent">This is often tricky to get working, but you can distribute your games to people who don’t have Python or Mu installed.<span class="intersentencespace"></span> You can put them on a USB stick, or a website for people to download, or even on itch.io for people to buy.</p>
+<ol>
+<li>Install the full version of python from <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">www.python.org</a>.<span class="intersentencespace"></span>
+</li>
+<li>Edit your game source code (using Mu).<span class="intersentencespace"></span> We will assume your source is in a file <code>NAME_OF_GAME.py</code>.<span class="intersentencespace"></span> At the top of the file add the line:
+<div class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pgzrun</span>
+</pre></div></div>
+<p>At the bottom of the file add the line:
+</p><div class="code"><div class="highlight"><pre><span></span><span class="n">pgzrun</span><span class="o">.</span><span class="n">go</span><span class="p">()</span>
+</pre></div></div>
+<p>Any time in the program you use <code>draw.text()</code> you <em>must</em> specify a font, e.g.<span class="intersentencespace"></span> add parameter <code>fontname="arial"</code></p>
+</li></ol>
+<p>Save the file.</p>
+<ol>
+<li>Copy any fonts you have used into the <code>fonts</code> folder and rename them to lowercase names, e.g.<span class="intersentencespace"></span> <code>arial.ttf</code>
+</li>
+<li>Open a command prompt (Click start menu and type <code>cmd.exe</code>)
+</li>
+<li>Enter your mu_code folder.<span class="intersentencespace"></span> At the prompt type:
+<p><code>cd mu_code</code></p>
+</li>
+<li>Install pyinstaller and pgzero.<span class="intersentencespace"></span> At the command prompt type:
+<p><code>pip install pgzero pyinstaller</code></p>
+</li>
+<li>You should find the <em>pgzero</em> folder at:
+<p><code class="inline_verbatim">C:\Users\YOURNAME\AppData\\Local\\Programs</code></p>
+<p><code class="inline_verbatim">Python\Python37\Lib\site-packages\pgzero</code></p>
+<p>This is a hidden folder so you must enable hidden folders in Windows Explorer to see it.</p>
+<p>Copy the <em>pgzero</em> folder into your <em>mu_code</em> folder.</p>
+<p>You should find your <em>mu_code</em> folder at:
+<code class="inline_verbatim">C:\Users\YOURNAME\mu_code</code></p>
+</li>
+<li>Create the executable.<span class="intersentencespace"></span> At the command prompt type:
+<p><code>pyinstaller NAME_OF_GAME.py –distpath . –add-data "pgzero;pgzero" –add-data "images;images" –add-data "fonts;fonts" "sounds;sounds" –add-data "music;music" –onefile –noconfirm –windowed –clean</code></p>
+<p>This will generate a program called <code>NAME_OF_GAME.exe</code>.<span class="intersentencespace"></span> You can double click this program to play your game.<span class="intersentencespace"></span></p>
+</li>
+<li>To distribute your game you need to copy the entire <em>mu_code</em> folder.<span class="intersentencespace"></span> You could put it inside a zip file, and then
+put that on a website
+</li></ol>
+</div>

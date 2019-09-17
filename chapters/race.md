@@ -5,7 +5,7 @@ We will show use of velocity, high score and a title screen.
 
 ## Basic game
 
-Similiar to the shooter game, we will begin with a complete program listing but with empty bodies for some of the functions
+Similar to the shooter game, we will begin with a complete program listing but with empty bodies for some of the functions
 that we will fill in later.  (Python will not run a program with completely empty functions, so they just contain `pass` to indicate to
 Python they do nothing.)
 
@@ -119,7 +119,7 @@ def scroll_walls():
 \begin{aside}
 \label{}
 \heading{Advanced}
-\noindent Verify the player can now accelerate foward, i.e. the walls scroll.  (Can you change the amount of the acceleration?)
+\noindent Verify the player can now accelerate forward, i.e. the walls scroll.  (Can you change the amount of the acceleration?)
 \end{aside}
 
 ## Wall collisions

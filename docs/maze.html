@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="stylesheets/pygments.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/softcover.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/custom.css" media="screen" rel="stylesheet" type="text/css" />
+    
+    <title>pygame-book</title>
+    
+      <script type="text/x-mathjax-config">
+              MathJax.Hub.Config({
+        "HTML-CSS": {
+          availableFonts: ["TeX"],
+        },
+        TeX: {
+          extensions: ["AMSmath.js", "AMSsymbols.js", "color.js"],
+          equationNumbers: {
+            autoNumber: "AMS",
+            formatNumber: function (n) { return "9" + '.' + n }
+          },
+          Macros: {
+            PolyTeX:    "Poly{\\TeX}",
+            PolyTeXnic: "Poly{\\TeX}nic",
+            "softcover": "\\texttt{softcover}",
+"unitvec": ["{\\hat #1}", 1]
+          }
+        },
+        showProcessingMessages: false,
+        messageStyle: "none",
+        imageFont: null,
+        "AssistiveMML": { disabled: true }
+      });
+
+        if (/PhantomJS/.test(window.navigator.userAgent)) {
+          MathJax.Hub.Queue([alert, 'MathJax Done']);
+        }
+      </script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+    
+  </head>
+  <body>
+    
+    <div id="book">
+      <div id="cid69" data-tralics-id="cid69" class="chapter" data-number="9" data-chapter="maze"><h1><a href="maze.html#cid69" class="heading hyperref"><span class="number">Chapter 9 </span>Tutorial: Maze game</a></h1>
+<p class="noindent">In this chapter we will build a maze game together, step by step.<span class="intersentencespace"></span> The Python we will use is quite simple: mostly just conditionals and loops.<span class="intersentencespace"></span> The technique of creating a tilemap is common in games and after seeing it here you should be able to incorporate it into your own projects.</p>
+<div class="center figure" id="fig-maze_fig" data-tralics-id="uid178" data-number="9.1">
+<div class="graphics image"><img src="images/figures/mazegame.png" alt="images/figures/mazegame" /></div><div class="caption"><span class="header">Figure 9.1: </span><span class="description">Maze game
+</span></div></div>
+</div>
+<div id="cid70" data-tralics-id="cid70" class="section" data-number="9.1"><h2><a href="maze.html#cid70" class="heading hyperref"><span class="number">9.1 </span>Tilemap</a></h2>
+<p class="noindent">A tilemap uses a small number of images (the tiles) and draws them many times to build a much larger game level (the map).<span class="intersentencespace"></span> This saves you from creating a lot of artwork and makes it very easy to change the design of the level on a whim.<span class="intersentencespace"></span> Here we create a maze level.</p>
+<p>We must create three image files for the tiles: <code>empty.png</code>, <code>wall.png</code> and <code>goal.png</code> and save them in the <code>images</code> folder (accessible with the
+<code>images</code> button in Mu).</p>
+<p>They must each be 64×64 pixels.<span class="intersentencespace"></span> For the player
+we will use the built in <code>alien</code> image.</p>
+<div class="codelisting" id="code-maze2" data-tralics-id="uid179" data-number="9.1"><div class="heading"><span class="number">Program 9.1:</span> <span class="description">Drawing a tilemap</span>
+
+
+</div>
+
+<div class="code"><div class="highlight"><pre><span></span><span class="n">TILE_SIZE</span> <span class="o">=</span> <span class="mi">64</span>
+<span class="n">WIDTH</span> <span class="o">=</span> <span class="n">TILE_SIZE</span> <span class="o">*</span> <span class="mi">8</span>
+<span class="n">HEIGHT</span> <span class="o">=</span> <span class="n">TILE_SIZE</span> <span class="o">*</span> <span class="mi">8</span>
+
+<span class="n">tiles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'empty'</span><span class="p">,</span> <span class="s1">'wall'</span><span class="p">,</span> <span class="s1">'goal'</span><span class="p">]</span>
+
+<span class="n">maze</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="n">player</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">"alien"</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">maze</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">maze</span><span class="p">[</span><span class="n">row</span><span class="p">])):</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">column</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">row</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+            <span class="n">tile</span> <span class="o">=</span> <span class="n">tiles</span><span class="p">[</span><span class="n">maze</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">column</span><span class="p">]]</span>
+            <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">tile</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+    <span class="n">player</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div></div></div><p>The filenames of the tile images are stored in a <em>list</em>, <code>tiles</code>.<span class="intersentencespace"></span> The level design is stored in a list of lists, more commonly called a <em>two dimensional array</em>.<span class="intersentencespace"></span> There are 8 rows
+and 8 columns in the array.<span class="intersentencespace"></span> If you change the size of the array you will need to change the <code>WIDTH</code> and <code>HEIGHT</code> values too.<span class="intersentencespace"></span> The numbers in the <code>maze</code> array refers to elements in the <code>tiles</code> array.<span class="intersentencespace"></span> So <code>0</code> means <code>empty</code> and <code>1</code> means <code>wall</code>, etc.</p>
+<div class="center figure" id="fig-maze_fig_grid" data-tralics-id="uid180" data-number="9.2">
+<div class="graphics image"><img src="images/figures/maze2.png" alt="images/figures/maze2" /></div><div class="caption"><span class="header">Figure 9.2: </span><span class="description">Tile grid
+</span></div></div>
+<p>To draw the maze we use a <code>for</code> loop within another <code>for</code> loop.<span class="intersentencespace"></span> The outer loop iterates over the rows and the inner loop
+iterates over the columns, i.e.<span class="intersentencespace"></span> the elements of the row.</p>
+<div class="aside" id="" data-tralics-id="uid181" data-number="9.1"><div class="heading"><span class="number">Exercise 9.1.</span> 
+
+<span class="description"></span></div>
+<p class="noindent">Create your own images <code>empty.png</code>, <code>wall.png</code> and <code>goal.png</code> and run the program.<span class="intersentencespace"></span></p>
+
+</div><div class="aside" id="" data-tralics-id="uid182" data-number="9.2"><div class="heading"><span class="number">Exercise 9.2.</span> 
+
+<span class="description"></span></div>
+<p class="noindent">The player appears at the top left of the maze at row 1 column 1.<span class="intersentencespace"></span> Change the <code>pos</code> parameter so he appears at the bottom instead.<span class="intersentencespace"></span></p>
+
+</div><div class="aside" id="" data-tralics-id="uid183" data-number="9.3"><div class="heading"><span class="number">Exercise 9.3.</span> 
+
+<span class="description"></span></div>
+<p class="noindent">Change the design of the maze by changing the numbers in the <code>maze</code> array.<span class="intersentencespace"></span></p>
+
+</div><div class="aside" id="" data-tralics-id="uid184" data-number="9.4"><div class="heading"><span class="number">Exercise 9.4.</span> 
+
+<span class="description">Advanced</span></div>
+<p class="noindent">Make the maze bigger.<span class="intersentencespace"></span></p>
+
+</div></div>
+<div id="cid71" data-tralics-id="cid71" class="section" data-number="9.2"><h2><a href="maze.html#cid71" class="heading hyperref"><span class="number">9.2 </span>Moving the player</a></h2>
+<p class="noindent">Add this code to the <em>end</em> of the program:</p>
+<div class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_key_down</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">/</span> <span class="n">TILE_SIZE</span><span class="p">)</span>
+    <span class="n">column</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">/</span> <span class="n">TILE_SIZE</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keys</span><span class="o">.</span><span class="n">UP</span><span class="p">:</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">row</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keys</span><span class="o">.</span><span class="n">DOWN</span><span class="p">:</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">row</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keys</span><span class="o">.</span><span class="n">LEFT</span><span class="p">:</span>
+        <span class="n">column</span> <span class="o">=</span> <span class="n">column</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keys</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">:</span>
+        <span class="n">column</span> <span class="o">=</span> <span class="n">column</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">column</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+    <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">row</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+</pre></div></div>
+<p>This function will be called automatically by Pygame, like <code>draw()</code> and <code>update()</code>.<span class="intersentencespace"></span> However <code>on_key_down()</code> is not called every frame; it is
+only called when the player presses a key.<span class="intersentencespace"></span> The key that was pressed is passed to the function in the <code>key</code> <em>parameter</em>.</p>
+<div class="aside" id="" data-tralics-id="uid185" data-number="9.5"><div class="heading"><span class="number">Exercise 9.5.</span> 
+
+<span class="description"></span></div>
+<p class="noindent">Run the program and move the player.<span class="intersentencespace"></span> Are there any problems with the movement?<span class="intersentencespace"></span></p>
+
+</div></div>
+<div id="cid72" data-tralics-id="cid72" class="section" data-number="9.3"><h2><a href="maze.html#cid72" class="heading hyperref"><span class="number">9.3 </span>Restricting where the player can move</a></h2>
+<p class="noindent">Delete the last two lines of the program and replace them with this modified version:</p>
+<div class="code"><div class="highlight"><pre><span></span>    <span class="k">if</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">'empty'</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">column</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">row</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+    <span class="k">elif</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">'goal'</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">"Well done"</span><span class="p">)</span>
+        <span class="nb">exit</span><span class="p">()</span>
+</pre></div></div>
+<div class="aside" id="" data-tralics-id="uid186" data-number="9.6"><div class="heading"><span class="number">Exercise 9.6.</span> 
+
+<span class="description"></span></div>
+<p class="noindent">Run the program and check that the player now <em>only</em> moves if the tile is empty.<span class="intersentencespace"></span></p>
+
+</div><div class="aside" id="" data-tralics-id="uid187" data-number="9.7"><div class="heading"><span class="number">Exercise 9.7.</span> 
+
+<span class="description"></span></div>
+<p class="noindent">Check that the game ends when the player reaches the goal.<span class="intersentencespace"></span></p>
+
+</div></div>
+<div id="cid73" data-tralics-id="cid73" class="section" data-number="9.4"><h2><a href="maze.html#cid73" class="heading hyperref"><span class="number">9.4 </span>Animate the movement of the player</a></h2>
+<p class="noindent">First, the alien Actor is bit too big.<span class="intersentencespace"></span> Draw a new image of size 64×64 pixels and save it as <code>player.png</code> in the <code>images</code>
+folder.<span class="intersentencespace"></span> In the program, change the lines:</p>
+<div class="code"><div class="highlight"><pre><span></span>player = Actor("alien", anchor=(0, 0), pos=(1 * TILE_SIZE, 1 * TILE_SIZE))*
+</pre></div></div>
+<p>to</p>
+<div class="code"><div class="highlight"><pre><span></span><span class="n">player</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">"player"</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">))</span>
+</pre></div></div>
+<p>Next, the movement of Actor is sudden and jerky.<span class="intersentencespace"></span> Luckily Pygame includes a function to do smooth movement for us automatically.<span class="intersentencespace"></span> Find these lines of the program:</p>
+<div class="code"><div class="highlight"><pre><span></span>    if tile == 'empty':
+          player.x = column * TILE_SIZE
+          player.y = row * TILE_SIZE
+</pre></div></div>
+<p>replace them with:</p>
+<div class="code"><div class="highlight"><pre><span></span>    <span class="k">if</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">'empty'</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">column</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">row</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+        <span class="n">animate</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+</pre></div></div>
+<div class="aside" id="" data-tralics-id="uid188" data-number="9.8"><div class="heading"><span class="number">Exercise 9.8.</span> 
+
+<span class="description"></span></div>
+<p class="noindent">Verify the player image has changed and moves smoothly.<span class="intersentencespace"></span></p>
+
+</div></div>
+<div id="cid74" data-tralics-id="cid74" class="section" data-number="9.5"><h2><a href="maze.html#cid74" class="heading hyperref"><span class="number">9.5 </span>Create an enemy</a></h2>
+<p class="noindent">We will create a simple enemy that moves up and down.<span class="intersentencespace"></span> Add to the top of the program:</p>
+<div class="code"><div class="highlight"><pre><span></span><span class="n">enemy</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">"enemy"</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="mi">6</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">))</span>
+<span class="n">enemy</span><span class="o">.</span><span class="n">yv</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+</pre></div></div>
+<p>To make the enemy visible, add this line at the end of the <code>draw()</code> function, after the player is drawn:</p>
+<div class="code"><div class="highlight"><pre><span></span>  <span class="n">enemy</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div></div>
+<p><code>enemy.yv</code> is the velocity in the y-axis direction (up and down).<span class="intersentencespace"></span> Add these lines to end of the program (still inside the <code>on_key_down()</code>
+function) to make the enemy move and reverse velocity when it hits a wall.</p>
+<div class="code"><div class="highlight"><pre><span></span>    <span class="c1"># enemy movement</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">enemy</span><span class="o">.</span><span class="n">y</span> <span class="o">/</span> <span class="n">TILE_SIZE</span><span class="p">)</span>
+    <span class="n">column</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">enemy</span><span class="o">.</span><span class="n">x</span> <span class="o">/</span> <span class="n">TILE_SIZE</span><span class="p">)</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="n">row</span> <span class="o">+</span> <span class="n">enemy</span><span class="o">.</span><span class="n">yv</span>
+    <span class="n">tile</span> <span class="o">=</span> <span class="n">tiles</span><span class="p">[</span><span class="n">maze</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">column</span><span class="p">]]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">'wall'</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">column</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">row</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+        <span class="n">animate</span><span class="p">(</span><span class="n">enemy</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">enemy</span><span class="o">.</span><span class="n">yv</span> <span class="o">=</span> <span class="n">enemy</span><span class="o">.</span><span class="n">yv</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">if</span> <span class="n">enemy</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="n">player</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">"You died"</span><span class="p">)</span>
+        <span class="nb">exit</span><span class="p">()</span>
+</pre></div></div>
+<div class="aside" id="" data-tralics-id="uid189" data-number="9.9"><div class="heading"><span class="number">Exercise 9.9.</span> 
+
+<span class="description"></span></div>
+<p class="noindent">Verify that the enemy moves up and down and kills the player.<span class="intersentencespace"></span></p>
+
+</div><div class="aside" id="" data-tralics-id="uid190" data-number="9.10"><div class="heading"><span class="number">Exercise 9.10.</span> 
+
+<span class="description">Advanced</span></div>
+<p class="noindent">Make another enemy that moves horizontally (left and right).<span class="intersentencespace"></span></p>
+
+</div></div>
+<div id="cid75" data-tralics-id="cid75" class="section" data-number="9.6"><h2><a href="maze.html#cid75" class="heading hyperref"><span class="number">9.6 </span>A locked door and a key</a></h2>
+<p class="noindent">We will add two new tiles to the game.<span class="intersentencespace"></span> Draw images <code>door.png</code> and <code>key.png</code> and save them in <code>images</code> folder.</p>
+<p>Find the <code>tiles</code> list near the top and <strong>change</strong> it to include the new images, and modify the <code>maze</code> with some number 3s and 4s where
+you want to new tiles to appear.<span class="intersentencespace"></span> Mine looks like this:</p>
+<div class="code"><div class="highlight"><pre><span></span><span class="n">tiles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'empty'</span><span class="p">,</span> <span class="s1">'wall'</span><span class="p">,</span> <span class="s1">'goal'</span><span class="p">,</span> <span class="s1">'door'</span><span class="p">,</span> <span class="s1">'key'</span><span class="p">]</span>
+<span class="n">unlock</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">maze</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">]</span>
+</pre></div></div>
+<p>At the top of the program, create a new variable to store the number of keys the player is carrying:</p>
+<div class="code"><div class="highlight"><pre><span></span><span class="n">unlock</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div></div>
+<p>Find the <code>if</code> statement where we test for <code>goal</code>:</p>
+<div class="code"><div class="highlight"><pre><span></span>   if tile == 'goal':
+        print("Well done")
+        exit()
+</pre></div></div>
+<p>Modify it like this to also test for the key and door tiles.<span class="intersentencespace"></span> Since we are modifying a <em>global</em> variable inside a function we must declare it.</p>
+<div class="code"><div class="highlight"><pre><span></span>    <span class="k">global</span> <span class="n">unlock</span>
+    <span class="k">if</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">'goal'</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">"Well done"</span><span class="p">)</span>
+        <span class="nb">exit</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">'key'</span><span class="p">:</span>
+        <span class="n">unlock</span> <span class="o">=</span> <span class="n">unlock</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">maze</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># 0 is 'empty' tile</span>
+    <span class="k">elif</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">'door'</span> <span class="ow">and</span> <span class="n">unlock</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">unlock</span> <span class="o">=</span> <span class="n">unlock</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">maze</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># 0 is 'empty' tile</span>
+</pre></div></div>
+</div>
+<div id="cid76" data-tralics-id="cid76" class="section" data-number="9.7"><h2><a href="maze.html#cid76" class="heading hyperref"><span class="number">9.7 </span>Finished game</a></h2>
+<p class="noindent">Here is the finished game with all the changes included:</p>
+<div class="codelisting" id="code-maze7" data-tralics-id="uid191" data-number="9.2"><div class="heading"><span class="number">Program 9.2:</span> <span class="description">Finished maze game</span>
+
+
+</div>
+
+<div class="code"><div class="highlight"><pre><span></span><span class="n">TILE_SIZE</span> <span class="o">=</span> <span class="mi">64</span>
+<span class="n">WIDTH</span> <span class="o">=</span> <span class="n">TILE_SIZE</span> <span class="o">*</span> <span class="mi">8</span>
+<span class="n">HEIGHT</span> <span class="o">=</span> <span class="n">TILE_SIZE</span> <span class="o">*</span> <span class="mi">8</span>
+
+<span class="n">tiles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'empty'</span><span class="p">,</span> <span class="s1">'wall'</span><span class="p">,</span> <span class="s1">'goal'</span><span class="p">,</span> <span class="s1">'door'</span><span class="p">,</span> <span class="s1">'key'</span><span class="p">]</span>
+<span class="n">unlock</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">maze</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="n">player</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">"player"</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">))</span>
+<span class="n">enemy</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">"enemy"</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="mi">6</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">))</span>
+<span class="n">enemy</span><span class="o">.</span><span class="n">yv</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">maze</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">maze</span><span class="p">[</span><span class="n">row</span><span class="p">])):</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">column</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">row</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+            <span class="n">tile</span> <span class="o">=</span> <span class="n">tiles</span><span class="p">[</span><span class="n">maze</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">column</span><span class="p">]]</span>
+            <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">tile</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+    <span class="n">player</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">enemy</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">on_key_down</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+    <span class="c1"># player movement</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">/</span> <span class="n">TILE_SIZE</span><span class="p">)</span>
+    <span class="n">column</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">/</span> <span class="n">TILE_SIZE</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keys</span><span class="o">.</span><span class="n">UP</span><span class="p">:</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">row</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keys</span><span class="o">.</span><span class="n">DOWN</span><span class="p">:</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">row</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keys</span><span class="o">.</span><span class="n">LEFT</span><span class="p">:</span>
+        <span class="n">column</span> <span class="o">=</span> <span class="n">column</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keys</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">:</span>
+        <span class="n">column</span> <span class="o">=</span> <span class="n">column</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">tile</span> <span class="o">=</span> <span class="n">tiles</span><span class="p">[</span><span class="n">maze</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">column</span><span class="p">]]</span>
+    <span class="k">if</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">'empty'</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">column</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">row</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+        <span class="n">animate</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+    <span class="k">global</span> <span class="n">unlock</span>
+    <span class="k">if</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">'goal'</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">"Well done"</span><span class="p">)</span>
+        <span class="nb">exit</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">'key'</span><span class="p">:</span>
+        <span class="n">unlock</span> <span class="o">=</span> <span class="n">unlock</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">maze</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># 0 is 'empty' tile</span>
+    <span class="k">elif</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">'door'</span> <span class="ow">and</span> <span class="n">unlock</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">unlock</span> <span class="o">=</span> <span class="n">unlock</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">maze</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># 0 is 'empty' tile</span>
+
+    <span class="c1"># enemy movement</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">enemy</span><span class="o">.</span><span class="n">y</span> <span class="o">/</span> <span class="n">TILE_SIZE</span><span class="p">)</span>
+    <span class="n">column</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">enemy</span><span class="o">.</span><span class="n">x</span> <span class="o">/</span> <span class="n">TILE_SIZE</span><span class="p">)</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="n">row</span> <span class="o">+</span> <span class="n">enemy</span><span class="o">.</span><span class="n">yv</span>
+    <span class="n">tile</span> <span class="o">=</span> <span class="n">tiles</span><span class="p">[</span><span class="n">maze</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">column</span><span class="p">]]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">'wall'</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">column</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">row</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+        <span class="n">animate</span><span class="p">(</span><span class="n">enemy</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">enemy</span><span class="o">.</span><span class="n">yv</span> <span class="o">=</span> <span class="n">enemy</span><span class="o">.</span><span class="n">yv</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">if</span> <span class="n">enemy</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="n">player</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">"You died"</span><span class="p">)</span>
+        <span class="nb">exit</span><span class="p">()</span>
+</pre></div></div></div><p>However that is not the end!<span class="intersentencespace"></span> There are many things you could add to this game.</p>
+<ul>
+<li>Show the player score.<span class="intersentencespace"></span>
+</li>
+<li>Coins that the player collects to increase score.<span class="intersentencespace"></span>
+</li>
+<li>Trap tiles that are difficult to see and kill the player.<span class="intersentencespace"></span>
+</li>
+<li>Treasure chest that is unlocked with the key and increases score.<span class="intersentencespace"></span>
+</li>
+<li>Instead of ending the game, give the player 3 lives.<span class="intersentencespace"></span>
+</li>
+<li>Add more types of tile to the map: water, rock, brick, etc.<span class="intersentencespace"></span>
+</li>
+<li>Change the player image depending on the direction they are moving.<span class="intersentencespace"></span>
+</li></ul>
+</div>
+    </div>
+  </body>
+</html>

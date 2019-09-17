@@ -491,7 +491,7 @@ Variables can be stored together in a *list*. Most languages call this an *array
 
 
 Rather than the user typing in data, your program might be supplied with data in a list.
-Here is a list of prices  - a shopping list. Note we dont use a currency symbol except when we print the price.
+Here is a list of prices  - a shopping list. Note we don't use a currency symbol except when we print the price.
 
 ```python
 prices = [3.49, 9.99, 2.50, 20.00]
@@ -500,7 +500,7 @@ for x in range(0, 4):
 ```
 
 In this program `x` is used an *index* for the array.  Note that indices begin at `0` rather than `1`.  If the array contains
-4 elements then the final element witll have index `3`, nor `4`.
+4 elements then the final element will have index `3`, nor `4`.
 
 However, `for` can directly give you all the array values without
 the need for an index or to specify the size of the range:
@@ -629,7 +629,7 @@ Here are quicker ways of doing basic things.  You may have noticed some of these
 
 ## Indentation
 
-Code is arranged in *blocks*.  For example, a *function* consists of a one line delcaration followed by a block of several lines of code.  Similarly, all the lines
+Code is arranged in *blocks*.  For example, a *function* consists of a one line declaration followed by a block of several lines of code.  Similarly, all the lines
 of a loop form one block.  A *conditional* has a block of code following the `if` statement (and optionally blocks after the `elif` and `else`. )
 
 Many languages use `{}` or `()` to delimit a block.  However Python is unusual: each block begins with `:` and then all the lines of the block
@@ -652,7 +652,7 @@ variable in different functions then you must define it outside the functions, i
 modify the value of the global variable inside a function you will get an error, or - even worse - you will create a local variable with the same name as the global variable
 and your changes to the global variable will be silently lost.
 
-You must explicity tell Python that you
+You must explicitly tell Python that you
 want to use a global variable with the `global` keyword.
 
 \begin{codelisting}

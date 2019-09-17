@@ -20,41 +20,17 @@ Some controllers have different inputs and some are not compatible at all so don
 \begin{aside}
 \label{}
 \heading{Optional, if you have a controller}
-\noindent Make the alien move up and down as well as left and right using the controller.  Do the same for any future examples that use the keyboard!
+\noindent Make the alien move up and down as well as left and right using the controller.  Do the same for any other examples that use the keyboard!
 \end{aside}
 
 
-
-
-
-## Using loops
-
-The loops from Program~\ref{code:loop} are useful for something!  We draw red circles using a *for loop*.
-
-We draw greeen circles using a loop within another loop.
-
-\begin{codelisting}
-\codecaption{Loops are useful}
-\label{code:loops}
-<<(programs/20_loops.py)
-\end{codelisting}
-
-* `import random` and make the positions random, e.g.
-```
-random.randint(0, 100)
-```
-* Learn about RGB colour and make random colours (see Program~\ref{code:colours}).
-
-* Create a timer variable and change colours based on time (see Program~\ref{code:timer})
-
-\pagebreak
 
 ## Colours
 
 Note that sometimes *colour* is spelt *color* in American programs.
 
 Instead of using ready made colours like 'red', 'yellow', etc. you can create your
-own color from three numbers. The numbers must be between 0 - 255 and represent
+own color with a *tuple* of three numbers. The numbers must be between 0 - 255 and represent
 how much *red*, *green* and *blue* to mix together.
 
 
@@ -64,11 +40,64 @@ how much *red*, *green* and *blue* to mix together.
 <<(programs/25_colours.py)
 \end{codelisting}
 
-* Change the green and blue amounts to make different colours
-* Can you make gray?
-* Make random colours
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent Change the green and blue amounts to make different colours.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Make a gray colour.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent Make random colours.
+\end{aside}
 
 \pagebreak
+
+
+## Using loops
+
+The loops from Program~\ref{code:loop} are useful for graphical games too!  Here we draw red circles using a *for loop*.
+
+We draw green circles using a *loop within another loop*.
+
+\begin{codelisting}
+\codecaption{Loops are useful}
+\label{code:loops}
+<<(programs/20_loops.py)
+\end{codelisting}
+
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent `import random` at the top of the program and then make the positions random, e.g.
+```
+x = random.randint(0, 100)
+```
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent  Learn about RGB colour and make random colours (see Program~\ref{code:colours}).
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent Create a timer variable and change colours based on time (see Program~\ref{code:timer})
+\end{aside}
+
+
+
+
 
 ## Fullscreen mode
 
@@ -95,9 +124,23 @@ messages to the player the same way.
 <<(programs/27_displaying_text.py)
 \end{codelisting}
 
-* Make the score text larger.
-* Add a second player who presses a different key and show their score too.
-* Add text to one of your other games.
+\begin{aside}
+\label{}
+\heading{}
+\noindent  Make the score text larger.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent Add a second player who presses a different key and show their score too.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Add text to one of your other games.
+\end{aside}
 
 
 

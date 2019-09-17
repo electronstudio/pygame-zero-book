@@ -17,7 +17,7 @@
           extensions: ["AMSmath.js", "AMSsymbols.js", "color.js"],
           equationNumbers: {
             autoNumber: "AMS",
-            formatNumber: function (n) { return "6" + '.' + n }
+            formatNumber: function (n) { return "7" + '.' + n }
           },
           Macros: {
             PolyTeX:    "Poly{\\TeX}",
@@ -42,20 +42,19 @@
   <body>
     
     <div id="book">
-      <div id="cid33" data-tralics-id="cid33" class="chapter" data-number="6" data-chapter="5_more_games"><h1><a href="5_more_games.html#cid33" class="heading hyperref"><span class="number">Lesson 6 </span>More games</a></h1>
+      <div id="cid53" data-tralics-id="cid53" class="chapter" data-number="7" data-chapter="5_more_games"><h1><a href="5_more_games.html#cid53" class="heading hyperref"><span class="number">Chapter 7 </span>More advanced games</a></h1>
 <p class="noindent">These games demonstrate some essential building blocks you will need to make more advanced games of your own.</p>
 </div>
-<div id="cid34" data-tralics-id="cid34" class="section" data-number="6.1"><h2><a href="5_more_games.html#cid34" class="heading hyperref"><span class="number">6.1 </span>Array lists</a></h2>
-<p class="noindent">We introduced arrays in <a href="5_more_games.html#code-arrays" class="hyperref">Program <span class="ref">4.5</span></a>.</p>
-<p>In this game, we create an empty array <em>[]</em> and use a loop to fill it with aliens.</p>
-<p>We again use loops to draw all the aliens and move all the aliens in the array.</p>
-<p>When the mouse is clicked we add a new alien to the array.</p>
-<div class="codelisting" id="code-arrays" data-tralics-id="uid80" data-number="6.1"><div class="heading"><span class="number">Program 6.1:</span> <span class="description">Array lists are useful in games!</span>
+<div id="cid54" data-tralics-id="cid54" class="section" data-number="7.1"><h2><a href="5_more_games.html#cid54" class="heading hyperref"><span class="number">7.1 </span>Lists</a></h2>
+<p class="noindent">We introduced lists in <a href="3_python_fundamentals.html#code-arrays" class="hyperref">Program <span class="ref">2.11</span></a>.<span class="intersentencespace"></span> In this game, we create an empty list <code>[]</code> and use a loop to fill it with aliens.</p>
+<p>We again use loops to draw all the aliens and move all the aliens in the list.<span class="intersentencespace"></span> When the mouse is clicked we add a new alien to the list.</p>
+<div class="codelisting" id="code-arrays2" data-tralics-id="uid139" data-number="7.1"><div class="heading"><span class="number">Program 7.1:</span> <span class="description">Lists are useful in games!</span>
 
 
 </div>
 
 <div class="code"><div class="highlight"><pre><span></span><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">500</span>
 
 <span class="n">aliens</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
@@ -74,16 +73,18 @@
 
 <span class="k">def</span> <span class="nf">on_mouse_down</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">button</span><span class="p">):</span>
     <span class="n">aliens</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">,</span> <span class="n">pos</span><span class="p">))</span>
-</pre></div></div></div><ul>
-<li>Go back to a previous game (e.g.<span class="intersentencespace"></span> <a href="2_simple_games.html#code-collisions" class="hyperref">Program <span class="ref">3.1</span></a>)
-make an array of bullets that move up the screen.<span class="intersentencespace"></span> When the player presses the spacebar to shoot,
-add a new bullet to the array.<span class="intersentencespace"></span>
-</li></ul>
-</div>
-<div id="cid35" data-tralics-id="cid35" class="section" data-number="6.2"><h2><a href="5_more_games.html#cid35" class="heading hyperref"><span class="number">6.2 </span>Animation</a></h2>
-<p class="noindent">Animation is another use for functions.<span class="intersentencespace"></span> (See <a href="3_python_fundamentals.html#code-functions" class="hyperref">Program <span class="ref">4.6</span></a>) We define our own function and then ask Pygame to <em>call it back</em>
-every 0.2 seconds.<span class="intersentencespace"></span> Most of this code is from <a href="2_simple_games.html#code-collisions" class="hyperref">Program <span class="ref">3.1</span></a>.</p>
-<div class="codelisting" id="code-animation" data-tralics-id="uid82" data-number="6.2"><div class="heading"><span class="number">Program 6.2:</span> <span class="description">Animation</span>
+</pre></div></div></div><div class="aside" id="" data-tralics-id="uid140" data-number="7.1"><div class="heading"><span class="number">Exercise 7.1.</span> 
+
+<span class="description">Advanced</span></div>
+<p class="noindent">Go back to a previous game (e.g.<span class="intersentencespace"></span> <a href="2_simple_games.html#code-collisions" class="hyperref">Program <span class="ref">5.1</span></a>)
+and add a list of bullets that move up the screen.<span class="intersentencespace"></span> When the player presses the spacebar to shoot,
+add a new bullet to the list.<span class="intersentencespace"></span></p>
+
+</div></div>
+<div id="cid55" data-tralics-id="cid55" class="section" data-number="7.2"><h2><a href="5_more_games.html#cid55" class="heading hyperref"><span class="number">7.2 </span>Animation</a></h2>
+<p class="noindent">Animation is another use for functions.<span class="intersentencespace"></span> (See <a href="3_python_fundamentals.html#code-functions" class="hyperref">Program <span class="ref">2.16</span></a>) We define our own function and then ask Pygame to <em>call it back</em>
+every 0.2 seconds.<span class="intersentencespace"></span> Most of this code is from <a href="2_simple_games.html#code-collisions" class="hyperref">Program <span class="ref">5.1</span></a>.</p>
+<div class="codelisting" id="code-animation" data-tralics-id="uid141" data-number="7.2"><div class="heading"><span class="number">Program 7.2:</span> <span class="description">Animation</span>
 
 
 </div>
@@ -110,17 +111,25 @@ every 0.2 seconds.<span class="intersentencespace"></span> Most of this code is 
     <span class="n">image_counter</span> <span class="o">+=</span> <span class="mi">1</span>
 
 <span class="n">clock</span><span class="o">.</span><span class="n">schedule_interval</span><span class="p">(</span><span class="n">animateAlien</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
-</pre></div></div></div><ul>
-<li>Make the alien animate faster.<span class="intersentencespace"></span>
-</li>
-<li>Add another image to list of images.<span class="intersentencespace"></span>
-</li>
-<li>Draw your own animation, e.g.<span class="intersentencespace"></span> a man walking left which plays when the left key is pressed
-</li></ul>
-</div>
-<div id="cid36" data-tralics-id="cid36" class="section" data-number="6.3"><h2><a href="5_more_games.html#cid36" class="heading hyperref"><span class="number">6.3 </span>Simple physics</a></h2>
-<p class="noindent">Instead of moving this ball by a fixed number of pixels, we store the number of pixels to move in variables, <em>vx</em> and <em>vy</em>.<span class="intersentencespace"></span> These are velocities, i.e.<span class="intersentencespace"></span> speed in a fixed direction.<span class="intersentencespace"></span> This allow us to change the velocity - reverse it in fact - when the ball hits the edge.</p>
-<div class="codelisting" id="code-simple_physics" data-tralics-id="uid86" data-number="6.3"><div class="heading"><span class="number">Program 6.3:</span> <span class="description">Simple physics: velocity</span>
+</pre></div></div></div><div class="aside" id="" data-tralics-id="uid142" data-number="7.2"><div class="heading"><span class="number">Exercise 7.2.</span> 
+
+<span class="description"></span></div>
+<p class="noindent">Make the alien animate more quickly.<span class="intersentencespace"></span></p>
+
+</div><div class="aside" id="" data-tralics-id="uid143" data-number="7.3"><div class="heading"><span class="number">Exercise 7.3.</span> 
+
+<span class="description">Advanced</span></div>
+<p class="noindent">Add another image to the list of images.<span class="intersentencespace"></span></p>
+
+</div><div class="aside" id="" data-tralics-id="uid144" data-number="7.4"><div class="heading"><span class="number">Exercise 7.4.</span> 
+
+<span class="description">Advanced</span></div>
+<p class="noindent">Draw your own animation, e.g.<span class="intersentencespace"></span> a man walking left which plays when the left key is pressed</p>
+
+</div></div>
+<div id="cid56" data-tralics-id="cid56" class="section" data-number="7.3"><h2><a href="5_more_games.html#cid56" class="heading hyperref"><span class="number">7.3 </span>Simple physics</a></h2>
+<p class="noindent">Here we draw a ball and move it, like we did in <a href="1_graphics.html#code-moving_boxes" class="hyperref">Program <span class="ref">4.2</span></a>.<span class="intersentencespace"></span> But instead of moving it by a fixed number of pixels, we store the number of pixels to move in variables, <code>vx</code> and <code>vy</code>.<span class="intersentencespace"></span> These are <em>velocities</em>, i.e.<span class="intersentencespace"></span> speed in a fixed direction.<span class="intersentencespace"></span> <code>vx</code> is the speed in the horizontal direction and <code>vy</code> is the speed in the vertical direction.<span class="intersentencespace"></span> This allow us to change the velocity.<span class="intersentencespace"></span> Here we reverse the velocity when the ball hits the edge of the screen.</p>
+<div class="codelisting" id="code-simple_physics" data-tralics-id="uid145" data-number="7.3"><div class="heading"><span class="number">Program 7.3:</span> <span class="description">Simple physics: velocity</span>
 
 
 </div>
@@ -144,13 +153,15 @@ every 0.2 seconds.<span class="intersentencespace"></span> Most of this code is 
         <span class="n">vx</span> <span class="o">=</span> <span class="o">-</span><span class="n">vx</span>
     <span class="k">if</span> <span class="n">ball</span><span class="o">.</span><span class="n">bottom</span> <span class="o">&gt;</span> <span class="n">HEIGHT</span> <span class="ow">or</span> <span class="n">ball</span><span class="o">.</span><span class="n">top</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">vy</span> <span class="o">=</span> <span class="o">-</span><span class="n">vy</span>
-</pre></div></div></div><ul>
-<li>Make the ball get faster each time it hits the sides
-</li></ul>
-</div>
-<div id="cid37" data-tralics-id="cid37" class="section" data-number="6.4"><h2><a href="5_more_games.html#cid37" class="heading hyperref"><span class="number">6.4 </span>Pong</a></h2>
-<p class="noindent">Pong is a classic bat and ball game.</p>
-<div class="codelisting" id="code-pong" data-tralics-id="uid88" data-number="6.4"><div class="heading"><span class="number">Program 6.4:</span> <span class="description">Pong</span>
+</pre></div></div></div><div class="aside" id="" data-tralics-id="uid146" data-number="7.5"><div class="heading"><span class="number">Exercise 7.5.</span> 
+
+<span class="description">Advanced</span></div>
+<p class="noindent">Make the ball move faster by increasing its velocity each time it hits the sides.<span class="intersentencespace"></span></p>
+
+</div></div>
+<div id="cid57" data-tralics-id="cid57" class="section" data-number="7.4"><h2><a href="5_more_games.html#cid57" class="heading hyperref"><span class="number">7.4 </span>Bat and ball game</a></h2>
+<p class="noindent"><em>Pong</em> is the classic bat and ball game.</p>
+<div class="codelisting" id="code-pong" data-tralics-id="uid147" data-number="7.4"><div class="heading"><span class="number">Program 7.4:</span> <span class="description">Pong</span>
 
 
 </div>
@@ -182,18 +193,28 @@ every 0.2 seconds.<span class="intersentencespace"></span> Most of this code is 
         <span class="n">bat</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">2</span>
     <span class="k">elif</span><span class="p">(</span><span class="n">keyboard</span><span class="o">.</span><span class="n">left</span><span class="p">):</span>
         <span class="n">bat</span><span class="o">.</span><span class="n">x</span> <span class="o">-=</span> <span class="mi">2</span>
-</pre></div></div></div><ul>
-<li>Make the ball more quickly.<span class="intersentencespace"></span>
-</li>
-<li>Add another bat at the top of the screen for player 2.<span class="intersentencespace"></span>
-</li>
-<li>Add bricks (Rects) that disappear when the ball hits them.<span class="intersentencespace"></span>
-</li></ul>
-</div>
-<div id="cid38" data-tralics-id="cid38" class="section" data-number="6.5"><h2><a href="5_more_games.html#cid38" class="heading hyperref"><span class="number">6.5 </span>Timer</a></h2>
-<p class="noindent">Pygame can tell us how much time has passed since the last frame
-in a parameter to our update function.<span class="intersentencespace"></span> We use this to keep a timer.</p>
-<div class="codelisting" id="code-timer" data-tralics-id="uid92" data-number="6.5"><div class="heading"><span class="number">Program 6.5:</span> <span class="description">Timer</span>
+</pre></div></div></div><div class="aside" id="" data-tralics-id="uid148" data-number="7.6"><div class="heading"><span class="number">Exercise 7.6.</span> 
+
+<span class="description"></span></div>
+<p class="noindent">Make the ball move more quickly.<span class="intersentencespace"></span></p>
+
+</div><div class="aside" id="" data-tralics-id="uid149" data-number="7.7"><div class="heading"><span class="number">Exercise 7.7.</span> 
+
+<span class="description">Advanced</span></div>
+<p class="noindent">Add another bat at the top of the screen for player 2.<span class="intersentencespace"></span></p>
+
+</div><div class="aside" id="" data-tralics-id="uid150" data-number="7.8"><div class="heading"><span class="number">Exercise 7.8.</span> 
+
+<span class="description">Advanced</span></div>
+<p class="noindent">Add bricks (Rects) that disappear when the ball hits them.<span class="intersentencespace"></span></p>
+
+</div></div>
+<div id="cid58" data-tralics-id="cid58" class="section" data-number="7.5"><h2><a href="5_more_games.html#cid58" class="heading hyperref"><span class="number">7.5 </span>Timer</a></h2>
+<p class="noindent">The <code>update()</code> and <code>draw()</code> functions are called by Pygame many times every second.<span class="intersentencespace"></span> Each time <code>draw()</code> is called we say it draws one <em>frame</em>.<span class="intersentencespace"></span> The exact number of frames per second is called the <em>framerate</em> and
+it will vary from one computer to another.<span class="intersentencespace"></span> Therefore counting frames is not very useful for timing.</p>
+<p>Fortunately Pygame can tell us exactly how much many seconds have passed since the last frame
+in a parameter to our update function.<span class="intersentencespace"></span> We use this <em>delta time</em> to keep a timer.</p>
+<div class="codelisting" id="code-timer" data-tralics-id="uid151" data-number="7.5"><div class="heading"><span class="number">Program 7.5:</span> <span class="description">Timer</span>
 
 
 </div>
@@ -210,18 +231,26 @@ in a parameter to our update function.<span class="intersentencespace"></span> W
     <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">f</span><span class="s2">"Time passed: {timer}"</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
     <span class="k">if</span> <span class="n">timer</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
         <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">textbox</span><span class="p">(</span><span class="s2">"Time's up!"</span><span class="p">,</span> <span class="n">Rect</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
-</pre></div></div></div><ul>
-<li>Make the timer count down, not up.<span class="intersentencespace"></span>
-</li>
-<li>Add a timer to one of your other games.<span class="intersentencespace"></span>
-</li>
-<li>Add a timer to <a href="5_more_games.html#code-arrays" class="hyperref">Program <span class="ref">4.5</span></a> that deletes one of the aliens when the timer runs out, then starts the timer again.<span class="intersentencespace"></span>
-</li></ul>
-</div>
-<div id="cid39" data-tralics-id="cid39" class="section" data-number="6.6"><h2><a href="5_more_games.html#cid39" class="heading hyperref"><span class="number">6.6 </span>Another timer</a></h2>
-<p class="noindent">Pygame has its own clock which we can use by asking it to <em>call back</em> one of our
+</pre></div></div></div><div class="aside" id="" data-tralics-id="uid152" data-number="7.9"><div class="heading"><span class="number">Exercise 7.9.</span> 
+
+<span class="description"></span></div>
+<p class="noindent">Make the timer count down, not up.<span class="intersentencespace"></span></p>
+
+</div><div class="aside" id="" data-tralics-id="uid153" data-number="7.10"><div class="heading"><span class="number">Exercise 7.10.</span> 
+
+<span class="description">Advanced</span></div>
+<p class="noindent">Add a timer to one of your other games.<span class="intersentencespace"></span></p>
+
+</div><div class="aside" id="" data-tralics-id="uid154" data-number="7.11"><div class="heading"><span class="number">Exercise 7.11.</span> 
+
+<span class="description">Advanced</span></div>
+<p class="noindent">Add a timer to <a href="3_python_fundamentals.html#code-arrays" class="hyperref">Program <span class="ref">2.11</span></a> that deletes one of the aliens when the timer runs out, then starts the timer again.<span class="intersentencespace"></span></p>
+
+</div></div>
+<div id="cid59" data-tralics-id="cid59" class="section" data-number="7.6"><h2><a href="5_more_games.html#cid59" class="heading hyperref"><span class="number">7.6 </span>Callbacks: another kind of timer</a></h2>
+<p class="noindent">Pygame has its own clock which we can use by asking it to <em>callback</em> one of our
 functions at a certain time, or regularly over and over at an interval.</p>
-<div class="codelisting" id="code-timer2" data-tralics-id="uid96" data-number="6.6"><div class="heading"><span class="number">Program 6.6:</span> <span class="description">Timer with callback functions</span>
+<div class="codelisting" id="code-timer2" data-tralics-id="uid155" data-number="7.6"><div class="heading"><span class="number">Program 7.6:</span> <span class="description">Timer with callback functions</span>
 
 
 </div>
@@ -245,16 +274,24 @@ functions at a certain time, or regularly over and over at an interval.</p>
     <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">alien</span> <span class="ow">in</span> <span class="n">aliens</span><span class="p">:</span>
         <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
-</pre></div></div></div><ul>
-<li>Make the aliens appear much faster
-</li>
-<li>Use <code>len(aliens)</code> to print how many aliens there are
-</li>
-<li>When there are too many aliens, stop adding them using this code:
-<div class="code"><div class="highlight"><pre><span></span>    <span class="n">clock</span><span class="o">.</span><span class="n">unschedule</span><span class="p">(</span><span class="n">add_alien</span><span class="p">)</span>
+</pre></div></div></div><div class="aside" id="" data-tralics-id="uid156" data-number="7.12"><div class="heading"><span class="number">Exercise 7.12.</span> 
+
+<span class="description"></span></div>
+<p class="noindent">Make the aliens appear more often.<span class="intersentencespace"></span></p>
+
+</div><div class="aside" id="" data-tralics-id="uid157" data-number="7.13"><div class="heading"><span class="number">Exercise 7.13.</span> 
+
+<span class="description">Advanced</span></div>
+<p class="noindent">Use <code>len(aliens)</code> to print how many aliens there are</p>
+
+</div><div class="aside" id="" data-tralics-id="uid158" data-number="7.14"><div class="heading"><span class="number">Exercise 7.14.</span> 
+
+<span class="description">Advanced</span></div>
+<p class="noindent">When there are too many aliens, stop adding them using this code:
+</p><div class="code"><div class="highlight"><pre><span></span>       <span class="n">clock</span><span class="o">.</span><span class="n">unschedule</span><span class="p">(</span><span class="n">add_alien</span><span class="p">)</span>
 </pre></div></div>
-</li></ul>
-</div>
+
+</div></div>
     </div>
   </body>
 </html>

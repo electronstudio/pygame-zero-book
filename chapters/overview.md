@@ -104,4 +104,4 @@ print("Score: ", score)
 
 Python is unusual in that it cares about *whitespace*, i.e. what you get when you press the *tab* key or the *space* bar on the keyboard.
 
-Python programs are arranged in blocks of lines.  Every line in a block must have the same amount of whitespace preceeding it - the *indentation*.  See Program~\ref{code:blocks} for an example.
+Python programs are arranged in blocks of lines.  Every line in a block must have the same amount of whitespace preceding it - the *indentation*.  See Program~\ref{code:blocks} for an example.

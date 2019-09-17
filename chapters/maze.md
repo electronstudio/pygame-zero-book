@@ -202,7 +202,7 @@ function) to make the enemy move and reverse velocity when it hits a wall.
 \begin{aside}
 \label{}
 \heading{Advanced}
-\noindent Make another enemy that moves horizonally (left and right).
+\noindent Make another enemy that moves horizontally (left and right).
 \end{aside}
 
 

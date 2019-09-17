@@ -133,7 +133,7 @@ The alien moves when you press the cursor keys.
 
 
 \begin{aside}
-\label{}
+\label{exercise:updown}
 \heading{}
 \noindent Make the alien move up and down as well as left and right.
 \end{aside}

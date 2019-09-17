@@ -1,4 +1,4 @@
-# More games
+# More advanced games
 
 These games demonstrate some essential building blocks you will need to make more advanced games of your own.
 
@@ -6,13 +6,9 @@ These games demonstrate some essential building blocks you will need to make mor
 
 ## Lists
 
-We introduced lists in Program~\ref{code:arrays}.
+We introduced lists in Program~\ref{code:arrays}.  In this game, we create an empty list `[]` and use a loop to fill it with aliens.
 
-In this game, we create an empty list `[]` and use a loop to fill it with aliens.
-
-We again use loops to draw all the aliens and move all the aliens in the list.
-
-When the mouse is clicked we add a new alien to the list.
+We again use loops to draw all the aliens and move all the aliens in the list.  When the mouse is clicked we add a new alien to the list.
 
 \begin{codelisting}
 \codecaption{Lists are useful in games!}
@@ -20,11 +16,14 @@ When the mouse is clicked we add a new alien to the list.
 <<(programs/21_arrays.py)
 \end{codelisting}
 
-* Go back to a previous game (e.g. Program~\ref{code:collisions})
-  and add a list of bullets that move up the screen.  When the player presses the spacebar to shoot,
-  add a new bullet to the list.
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent Go back to a previous game (e.g. Program~\ref{code:collisions})
+and add a list of bullets that move up the screen.  When the player presses the spacebar to shoot,
+add a new bullet to the list.
+\end{aside}
 
-\pagebreak
 
 ## Animation
 
@@ -38,9 +37,24 @@ Most of this code is from Program~\ref{code:collisions}.
 <<(programs/22_animation.py)
 \end{codelisting}
 
-* Make the alien animate faster.
-* Add another image to the list of images.
-* Draw your own animation, e.g. a man walking left which plays when the left key is pressed
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Make the alien animate more quickly.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent Add another image to the list of images.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent Draw your own animation, e.g. a man walking left which plays when the left key is pressed
+\end{aside}
 
 \pagebreak
 
@@ -56,7 +70,12 @@ This allow us to change the velocity.  Here we reverse the velocity when the bal
 <<(programs/23_simple_physics.py)
 \end{codelisting}
 
-* Make the ball move faster by increasing its velocity each time it hits the sides.
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent Make the ball move faster by increasing its velocity each time it hits the sides.
+\end{aside}
+
 
 \pagebreak
 
@@ -70,9 +89,30 @@ This allow us to change the velocity.  Here we reverse the velocity when the bal
 <<(programs/24_pong.py)
 \end{codelisting}
 
-* Make the ball move more quickly.
-* Add another bat at the top of the screen for player 2.
-* Add bricks (Rects) that disappear when the ball hits them.
+\pagebreak
+
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Make the ball move more quickly.
+\end{aside}
+
+
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent Add another bat at the top of the screen for player 2.
+\end{aside}
+
+
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent Add bricks (Rects) that disappear when the ball hits them.
+\end{aside}
+
+
 
 \pagebreak
 
@@ -91,9 +131,26 @@ in a parameter to our update function. We use this *delta time* to keep a timer.
 <<(programs/28_timer.py)
 \end{codelisting}
 
-* Make the timer count down, not up.
-* Add a timer to one of your other games.
-* Add a timer to Program~\ref{code:arrays} that deletes one of the aliens when the timer runs out, then starts the timer again.
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Make the timer count down, not up.
+\end{aside}
+
+
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent Add a timer to one of your other games.
+\end{aside}
+
+
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent Add a timer to Program~\ref{code:arrays} that deletes one of the aliens when the timer runs out, then starts the timer again.
+\end{aside}
 
 \pagebreak
 
@@ -107,10 +164,25 @@ functions at a certain time, or regularly over and over at an interval.
 \label{code:timer2}
 <<(programs/29_timer2.py)
 \end{codelisting}
+ 
+\begin{aside}
+\label{}
+\heading{}
+\noindent  Make the aliens appear more often.
+\end{aside}
 
-* Make the aliens appear much faster
-* Use ```len(aliens)``` to print how many aliens there are
-* When there are too many aliens, stop adding them using this code:
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent Use ```len(aliens)``` to print how many aliens there are
+\end{aside}
+
+
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent When there are too many aliens, stop adding them using this code:
 ```python
-    clock.unschedule(add_alien)
+       clock.unschedule(add_alien)
 ```
+\end{aside}

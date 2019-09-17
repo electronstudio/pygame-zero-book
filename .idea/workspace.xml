@@ -2,13 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85ef30d2-737e-42b4-b9a4-54300f9dc2b1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/chase.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/chase_fragment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/images/figures/krita.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/images/figures/maze2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/images/figures/mazegame.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/images/figures/repl.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/maze.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/maze_fragment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/overview.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/overview_fragment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/pygame-book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/race.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/race_fragment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/shooter.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/shooter_fragment.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chapters/1_graphics.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/1_graphics.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chapters/2_simple_games.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/2_simple_games.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chapters/3_python_fundamentals.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/3_python_fundamentals.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapters/preface.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/preface.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapters/tmp.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/tmp.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/preamble.tex" beforeDir="false" afterPath="$PROJECT_DIR$/config/preamble.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapters/4_more_graphics.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/4_more_graphics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapters/5_more_games.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/5_more_games.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapters/chase.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/chase.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapters/maze.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/maze.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapters/overview.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/overview.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapters/race.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/race.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapters/shooter.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/shooter.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/0_text_quizes.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/0_text_quizes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/0_text_quizes_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/0_text_quizes_fragment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/1_graphics.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/1_graphics.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/1_graphics_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/1_graphics_fragment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/2_simple_games.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/2_simple_games.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/2_simple_games_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/2_simple_games_fragment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/3_python_fundamentals.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/3_python_fundamentals.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/3_python_fundamentals_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/3_python_fundamentals_fragment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/4_more_graphics.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/4_more_graphics.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/4_more_graphics_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/4_more_graphics_fragment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/5_more_games.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/5_more_games.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/5_more_games_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/5_more_games_fragment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/6_advanced.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/6_advanced.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/6_advanced_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/6_advanced_fragment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/frontmatter.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/frontmatter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/frontmatter_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/frontmatter_fragment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/shoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/shoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/shoot17a.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/shoot17a.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/shoot17c.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/shoot17c.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/shoot17d.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/shoot17d.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +68,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$PROJECT_DIR$/../Library/Android/sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/chapters" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -155,7 +194,8 @@
       <workItem from="1568064594528" duration="16442000" />
       <workItem from="1568303058106" duration="1490000" />
       <workItem from="1568524636180" duration="233000" />
-      <workItem from="1568601677985" duration="10734000" />
+      <workItem from="1568601677985" duration="11250000" />
+      <workItem from="1568695094300" duration="3780000" />
     </task>
     <task id="LOCAL-00001" summary="mess with formatting">
       <created>1558146868663</created>
@@ -388,7 +428,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568653202396</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="redrafting from beginning">
+      <created>1568657513621</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1568657513621</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,7 +444,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="remove minipages, replace with page breaks" />
     <MESSAGE value="remove all minipages so can build epub" />
     <MESSAGE value="fix" />
     <MESSAGE value="replace images symlink with copy" />
@@ -422,7 +468,8 @@
     <MESSAGE value="minor" />
     <MESSAGE value="race game" />
     <MESSAGE value="mostly finished shooter chapter" />
-    <option name="LAST_COMMIT_MESSAGE" value="mostly finished shooter chapter" />
+    <MESSAGE value="redrafting from beginning" />
+    <option name="LAST_COMMIT_MESSAGE" value="redrafting from beginning" />
   </component>
   <component name="masterDetails">
     <states>

@@ -1,0 +1,201 @@
+<div id="cid89" data-tralics-id="cid89" class="chapter" data-number="11" data-chapter="race"><h1><a href="race_fragment.html#cid89" class="heading hyperref"><span class="number">Chapter 11 </span>Tutorial: Race game</a></h1>
+<p class="noindent">In this chapter we will build a racing game together, step by step.<span class="intersentencespace"></span> The Python we will use is: conditionals, loops, lists, functions and tuples.<span class="intersentencespace"></span> We will show use of velocity, high score and a title screen.</p>
+</div><div id="cid90" data-tralics-id="cid90" class="section" data-number="11.1"><h2><a href="race_fragment.html#cid90" class="heading hyperref"><span class="number">11.1 </span>Basic game</a></h2>
+<p class="noindent">Similar to the shooter game, we will begin with a complete program listing but with empty bodies for some of the functions
+that we will fill in later.<span class="intersentencespace"></span> (Python will not run a program with completely empty functions, so they just contain <code>pass</code> to indicate to
+Python they do nothing.)</p>
+<p>Like the shooter program, we begin we three things:</p>
+<ol>
+<li>Definitions of global variables.<span class="intersentencespace"></span>
+</li>
+<li>A <code>draw()</code> function.<span class="intersentencespace"></span>
+</li>
+<li>An <code>update()</code> function.<span class="intersentencespace"></span>
+</li></ol>
+<p>These functions now check a boolean variable <code>playing</code>.<span class="intersentencespace"></span> If <code>False</code> then instead of drawing/updating the game
+we show the title screen.</p>
+<p>The only really complicated part of this program is how we store the shape of the tunnel the player is racing down.<span class="intersentencespace"></span> <code>lines</code> is a list of <em>tuples</em>.<span class="intersentencespace"></span> A tuple is like a list but <em>cannot be modified</em> and can be <em>unpacked</em> into separate variables.<span class="intersentencespace"></span> Each tuple will represent one horizontal line of the screen.<span class="intersentencespace"></span> It will have three values, <code>x</code>, <code>x2</code> and <code>color</code>, representing the position of the left wall,
+the gap between the left wall and the right wall and the colour of the wall.</p>
+<div class="codelisting" id="code-race7" data-tralics-id="uid208" data-number="11.1"><div class="heading"><span class="number">Program 11.1:</span> <span class="description">Basic skeleton of race game</span>
+
+
+</div>
+
+<div class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">600</span>
+<span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">800</span>
+
+<span class="n">player</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">"alien"</span><span class="p">,</span> <span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">780</span><span class="p">))</span>
+<span class="n">player</span><span class="o">.</span><span class="n">vx</span> <span class="o">=</span> <span class="mi">0</span>   <span class="c1"># horizontal velocity</span>
+<span class="n">player</span><span class="o">.</span><span class="n">vy</span> <span class="o">=</span> <span class="mi">1</span>   <span class="c1"># vertical velocity</span>
+
+<span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>          <span class="c1"># list of tuples of horizontal lines of walls</span>
+<span class="n">wall_gradient</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>  <span class="c1"># steepness of wall</span>
+<span class="n">left_wall_x</span> <span class="o">=</span> <span class="mi">200</span>   <span class="c1"># x-coordinate of wall</span>
+<span class="n">distance</span> <span class="o">=</span> <span class="mi">0</span>        <span class="c1"># how far player has travelled</span>
+<span class="n">time</span> <span class="o">=</span> <span class="mi">15</span>           <span class="c1"># time left until game ends</span>
+<span class="n">playing</span> <span class="o">=</span> <span class="bp">False</span>     <span class="c1"># True when in game, False when on title screen</span>
+<span class="n">best_distance</span> <span class="o">=</span> <span class="mi">0</span>   <span class="c1"># remember the highest distance scored</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">playing</span><span class="p">:</span> <span class="c1"># we are in game</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)):</span> <span class="c1"># draw the walls</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">i</span><span class="p">),</span> <span class="n">color</span><span class="p">)</span>
+            <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="n">x2</span><span class="p">,</span> <span class="n">i</span><span class="p">),</span> <span class="p">(</span><span class="n">WIDTH</span><span class="p">,</span> <span class="n">i</span><span class="p">),</span> <span class="n">color</span><span class="p">)</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>   <span class="c1"># we are on title screen</span>
+        <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">"PRESS SPACE TO START"</span><span class="p">,</span>
+            <span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s2">"green"</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+        <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">"BEST DISTANCE: "</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">best_distance</span> <span class="o">/</span> <span class="mi">10</span><span class="p">)),</span>
+            <span class="p">(</span><span class="mi">170</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">"green"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">"SPEED: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">player</span><span class="o">.</span><span class="n">vy</span><span class="p">)),</span>
+        <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">"green"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">"DISTANCE: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">distance</span> <span class="o">/</span> <span class="mi">10</span><span class="p">)),</span>
+        <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">"green"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">"TIME: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">)),</span>
+        <span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">"green"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">delta</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">playing</span><span class="p">,</span> <span class="n">distance</span><span class="p">,</span> <span class="n">time</span>
+    <span class="k">if</span> <span class="n">playing</span><span class="p">:</span>
+        <span class="n">wall_collisions</span><span class="p">()</span>
+        <span class="n">scroll_walls</span><span class="p">()</span>
+        <span class="n">generate_lines</span><span class="p">()</span>
+        <span class="n">player_input</span><span class="p">()</span>
+        <span class="n">timer</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">space</span><span class="p">:</span>
+        <span class="n">playing</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="n">distance</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">time</span> <span class="o">=</span> <span class="mi">10</span>
+
+
+<span class="k">def</span> <span class="nf">player_input</span><span class="p">():</span>
+    <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">generate_lines</span><span class="p">():</span>
+    <span class="k">pass</span>
+
+<span class="n">generate_lines</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">scroll_walls</span><span class="p">():</span>
+    <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">wall_collisions</span><span class="p">():</span>
+    <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">timer</span><span class="p">(</span><span class="n">delta</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">on_mouse_move</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div></div></div><div class="aside" id="" data-tralics-id="uid209" data-number="11.1"><div class="heading"><span class="number">Exercise 11.1.</span> 
+
+<span class="description"></span></div>
+<p class="noindent">Run the program.<span class="intersentencespace"></span> Verify it has a title screen and you can start the game and see the player.<span class="intersentencespace"></span> (That is all it will do until we fill in the
+remaining functions.)<span class="intersentencespace"></span></p>
+
+</div></div><div id="cid91" data-tralics-id="cid91" class="section" data-number="11.2"><h2><a href="race_fragment.html#cid91" class="heading hyperref"><span class="number">11.2 </span>Player input</a></h2>
+<p class="noindent">Replace the definiton of <code>player_input()</code> with this:</p>
+<div class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">player_input</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">up</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">vy</span> <span class="o">+=</span> <span class="mf">0.1</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">down</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">vy</span> <span class="o">-=</span> <span class="mf">0.1</span>
+        <span class="k">if</span> <span class="n">player</span><span class="o">.</span><span class="n">vy</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">player</span><span class="o">.</span><span class="n">vy</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">vx</span> <span class="o">+=</span> <span class="mf">0.4</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">vx</span> <span class="o">-=</span> <span class="mf">0.4</span>
+    <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">player</span><span class="o">.</span><span class="n">vx</span>
+</pre></div></div>
+<div class="aside" id="" data-tralics-id="uid210" data-number="11.2"><div class="heading"><span class="number">Exercise 11.2.</span> 
+
+<span class="description"></span></div>
+<p class="noindent">Run the program.<span class="intersentencespace"></span> Verify the player can move left and right and has momentum.<span class="intersentencespace"></span> Try adjusting the speed or making a limit so you can’t go too fast.<span class="intersentencespace"></span></p>
+
+</div></div><div id="cid92" data-tralics-id="cid92" class="section" data-number="11.3"><h2><a href="race_fragment.html#cid92" class="heading hyperref"><span class="number">11.3 </span>Generate the walls</a></h2>
+<p class="noindent">We already have code to draw the walls, but currently <code>lines</code> is empty so nothing gets drawn.<span class="intersentencespace"></span> Replace the function <code>generate_lines()</code> with this.<span class="intersentencespace"></span> Note that we immediately call <code>generate_lines()</code> after
+defining it to generate the walls for the start of the game.</p>
+<div class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_lines</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">wall_gradient</span><span class="p">,</span> <span class="n">left_wall_x</span>
+    <span class="n">gap_width</span> <span class="o">=</span> <span class="mi">300</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">distance</span> <span class="o">/</span> <span class="mi">3000</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">HEIGHT</span><span class="p">:</span>
+        <span class="n">pretty_colour</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">left_wall_x</span><span class="p">,</span> <span class="n">gap_width</span><span class="p">,</span> <span class="n">pretty_colour</span><span class="p">))</span>
+        <span class="n">left_wall_x</span> <span class="o">+=</span> <span class="n">wall_gradient</span>
+        <span class="k">if</span> <span class="n">left_wall_x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">left_wall_x</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">wall_gradient</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mf">0.1</span>
+        <span class="k">elif</span> <span class="n">left_wall_x</span> <span class="o">+</span> <span class="n">gap_width</span> <span class="o">&gt;</span> <span class="n">WIDTH</span><span class="p">:</span>
+            <span class="n">left_wall_x</span> <span class="o">=</span> <span class="n">WIDTH</span> <span class="o">-</span> <span class="n">gap_width</span>
+            <span class="n">wall_gradient</span> <span class="o">=</span> <span class="o">-</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mf">0.1</span>
+
+<span class="n">generate_lines</span><span class="p">()</span>
+</pre></div></div>
+<div class="aside" id="" data-tralics-id="uid211" data-number="11.3"><div class="heading"><span class="number">Exercise 11.3.</span> 
+
+<span class="description">Advanced</span></div>
+<p class="noindent">Run the program.<span class="intersentencespace"></span> Change the colour of the walls from red to green.<span class="intersentencespace"></span></p>
+
+</div></div><div id="cid93" data-tralics-id="cid93" class="section" data-number="11.4"><h2><a href="race_fragment.html#cid93" class="heading hyperref"><span class="number">11.4 </span>Make the walls colourful</a></h2>
+<p class="noindent">Modify the line the sets the colour of the generated line to this:</p>
+<div class="code"><div class="highlight"><pre><span></span>        <span class="n">pretty_colour</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">left_wall_x</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">time</span> <span class="o">*</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+</pre></div></div>
+</div><div id="cid94" data-tralics-id="cid94" class="section" data-number="11.5"><h2><a href="race_fragment.html#cid94" class="heading hyperref"><span class="number">11.5 </span>Scrolling</a></h2>
+<p class="noindent">Modify the <code>scroll_walls()</code> function so it removes lines from the bottom of the screen according to the player’s vertical
+velocity.</p>
+<div class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">scroll_walls</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">distance</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">player</span><span class="o">.</span><span class="n">vy</span><span class="p">)):</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="n">distance</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div></div>
+<div class="aside" id="" data-tralics-id="uid212" data-number="11.4"><div class="heading"><span class="number">Exercise 11.4.</span> 
+
+<span class="description">Advanced</span></div>
+<p class="noindent">Verify the player can now accelerate forward, i.e.<span class="intersentencespace"></span> the walls scroll.<span class="intersentencespace"></span> (Can you change the amount of the acceleration?)<span class="intersentencespace"></span></p>
+
+</div></div><div id="cid95" data-tralics-id="cid95" class="section" data-number="11.6"><h2><a href="race_fragment.html#cid95" class="heading hyperref"><span class="number">11.6 </span>Wall collisions</a></h2>
+<p class="noindent">Currently the player can move through the walls - we don’t want to allow this.<span class="intersentencespace"></span> Also we want the player to lose all their
+velocity each time they collide as a penalty.</p>
+<div class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">wall_collisions</span><span class="p">():</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">5</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">vx</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">vx</span> <span class="o">*</span> <span class="o">-</span><span class="mf">0.5</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">vy</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">-=</span> <span class="mi">5</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">vx</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">vx</span> <span class="o">*</span> <span class="o">-</span><span class="mf">0.5</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">vy</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div></div>
+</div><div id="cid96" data-tralics-id="cid96" class="section" data-number="11.7"><h2><a href="race_fragment.html#cid96" class="heading hyperref"><span class="number">11.7 </span>Timer</a></h2>
+<p class="noindent">Currently the player has infinite time.<span class="intersentencespace"></span> We want decrease the <code>time</code> variable by how much time has passed and end the game
+when time runs out.</p>
+<div class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">timer</span><span class="p">(</span><span class="n">delta</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">time</span><span class="p">,</span> <span class="n">playing</span><span class="p">,</span> <span class="n">best_distance</span>
+    <span class="n">time</span> <span class="o">-=</span> <span class="n">delta</span>
+    <span class="k">if</span> <span class="n">time</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">playing</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">if</span> <span class="n">distance</span> <span class="o">&gt;</span> <span class="n">best_distance</span><span class="p">:</span>
+            <span class="n">best_distance</span> <span class="o">=</span> <span class="n">distance</span>
+</pre></div></div>
+<div class="aside" id="" data-tralics-id="uid213" data-number="11.5"><div class="heading"><span class="number">Exercise 11.5.</span> 
+
+<span class="description"></span></div>
+<p class="noindent">Verify the game ends after 15 seconds.<span class="intersentencespace"></span> Change it so it lasts 20 seconds.<span class="intersentencespace"></span></p>
+
+</div></div><div id="cid97" data-tralics-id="cid97" class="section" data-number="11.8"><h2><a href="race_fragment.html#cid97" class="heading hyperref"><span class="number">11.8 </span>Mouse movement</a></h2>
+<p class="noindent">The game is easier but perhaps more fun if you can play it with mouse.<span class="intersentencespace"></span> Pygame will call this function for us automatically.</p>
+<div class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_mouse_move</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">pos</span>
+    <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="n">player</span><span class="o">.</span><span class="n">vy</span> <span class="o">=</span> <span class="p">(</span><span class="n">HEIGHT</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="mi">20</span>
+</pre></div></div>
+</div>
