@@ -9,6 +9,8 @@ Similar to the shooter game, we will begin with a complete program listing but w
 that we will fill in later.  (Python will not run a program with completely empty functions, so they just contain `pass` to indicate to
 Python they do nothing.)
 
+![Race game\label{fig:race_fig}](images/figures/race.png)
+
 Like the shooter program, we begin we three things:
 
 1. Definitions of global variables.
@@ -171,3 +173,11 @@ def on_mouse_move(pos):
     player.x = x
     player.vy = (HEIGHT - y) / 20
 ```
+
+## Extension ideas
+
+* Draw a new image for the player.  Make the Actor show a different image depending on if the player is steering left or right.
+
+* Give the player a goal distance that must be reached.  If the player reaches this distance he gets extra time added to allow him to continue.
+
+* Add sound effects and music.

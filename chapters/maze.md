@@ -10,7 +10,7 @@ The technique of creating a tilemap is common in games and after seeing it here 
 A tilemap uses a small number of images (the tiles) and draws them many times to build a much larger game level (the map).
 This saves you from creating a lot of artwork and makes it very easy to change the design of the level on a whim.  Here we create a maze level.
 
-We must create three image files for the tiles: `empty.png`, `wall.png` and `goal.png` and save them in the `images` folder (accessible with the
+We must create three image files for the tiles: `empty.png`, `wall.png` and `goal.png` and save them in the `mu_code/images` folder (accessible with the
 `images` button in Mu).
 
 They must each be 64×64 pixels.  For the player
@@ -31,6 +31,8 @@ The numbers in the `maze` array refers to elements in the `tiles` array.  So `0`
 
 To draw the maze we use a `for` loop within another `for` loop.  The outer loop iterates over the rows and the inner loop
 iterates over the columns, i.e. the elements of the row.
+
+\newpage
 
 \begin{aside}
 \label{}
@@ -57,6 +59,7 @@ iterates over the columns, i.e. the elements of the row.
 \noindent Make the maze bigger.
 \end{aside}
 
+\newpage
 
 ## Moving the player
 
@@ -87,6 +90,7 @@ only called when the player presses a key.  The key that was pressed is passed t
 \noindent Run the program and move the player.  Are there any problems with the movement?
 \end{aside}
 
+\newpage
 
 ## Restricting where the player can move
 
@@ -114,15 +118,16 @@ Delete the last two lines of the program and replace them with this modified ver
 \noindent Check that the game ends when the player reaches the goal.
 \end{aside}
 
+\newpage
 
 
 ## Animate the movement of the player
 
 First, the alien Actor is bit too big.  Draw a new image of size 64×64 pixels and save it as `player.png` in the `images`
-folder.  In the program, change the lines:
+folder.  In the program, change the line:
 
 ```
-player = Actor("alien", anchor=(0, 0), pos=(1 * TILE_SIZE, 1 * TILE_SIZE))*
+player = Actor("alien", anchor=(0, 0), pos=(1 * TILE_SIZE, 1 * TILE_SIZE))
 ```
 
 
@@ -132,7 +137,7 @@ to
 player = Actor("player", anchor=(0, 0), pos=(1 * TILE_SIZE, 1 * TILE_SIZE))
 ```
 
-Next, the movement of Actor is sudden and jerky.  Luckily Pygame includes a function to do smooth movement for us automatically.  Find these lines of the program: 
+Next, the movement of the Actor is sudden and jerky.  Luckily Pygame includes a function to do smooth movement for us automatically.  Find these lines of the program: 
 
 ```
     if tile == 'empty':
@@ -205,7 +210,6 @@ function) to make the enemy move and reverse velocity when it hits a wall.
 \noindent Make another enemy that moves horizontally (left and right).
 \end{aside}
 
-
 ## A locked door and a key
 
 We will add two new tiles to the game.  Draw images `door.png` and `key.png` and save them in `images` folder.
@@ -257,6 +261,8 @@ Modify it like this to also test for the key and door tiles.  Since we are modif
         unlock = unlock - 1
         maze[row][column] = 0 # 0 is 'empty' tile
 ```
+
+\newpage
 
 ## Finished game
 

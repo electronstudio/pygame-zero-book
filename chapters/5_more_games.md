@@ -6,7 +6,7 @@ These games demonstrate some essential building blocks you will need to make mor
 
 ## Lists
 
-We introduced lists in Program~\ref{code:arrays}.  In this game, we create an empty list `[]` and use a loop to fill it with aliens.
+We introduced lists in Program~\ref{code:arrays}.  In this game, we create an empty list `[]` and use a loop to fill it with alien Actors.
 
 We again use loops to draw all the aliens and move all the aliens in the list.  When the mouse is clicked we add a new alien to the list.
 
@@ -120,7 +120,7 @@ This allow us to change the velocity.  Here we reverse the velocity when the bal
 
 The `update()` and `draw()` functions are called by Pygame many times every second.  Each time `draw()` is called we say it draws one *frame*.
 The exact number of frames per second is called the *framerate* and
-it will vary from one computer to another.  Therefore counting frames is not very useful for timing.
+it will vary from one computer to another.  Therefore counting frames is not the most reliable way of keeping time.
 
 Fortunately Pygame can tell us exactly how much many seconds have passed since the last frame
 in a parameter to our update function. We use this *delta time* to keep a timer.

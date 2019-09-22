@@ -10,7 +10,7 @@ Now we will show you how to put them all together in one program.
 
 ## Moving Actor over a background
 
-We must create two image files for our game.  You can use a program such as Krita[^krita_footnote] to draw them and save them in the `images` folder (accessible with the
+We must create two image files for our game.  You can use a program such as Krita[^krita_footnote] to draw them and save them in the `mu_code/images` folder (accessible with the
 `images` button in Mu).  One is the player, called `player.png`.  It should be small, about 64×64 pixels.  Ideally it should have a transparent background.
 
 [^krita_footnote]: https://krita.org
@@ -322,4 +322,7 @@ Here is the finished game with all the changes included:
 However that is not the end!  There are many things you could add to this game.
 
 * Add more enemies.
+
 * Give the player three lives.
+
+* Add music and sound effects.

@@ -9,11 +9,13 @@ This is the beginning of my attempts to teach object oriented programming, but I
 
 ## Classes
 
-You've already been using class types, e.g. Rect and Actor.
-But if we want to store velocity as in Program~\ref{code:simple_physics} we find classes do not include *vx* and *vy* variables inside them.
+You've already been using class types provided by Pygame Zero, e.g. Rect and Actor.
+But if we want to store velocity as in Program~\ref{code:simple_physics} we find these classes do not
+include *vx* and *vy* variables inside them by default.
+We have to remember to add a *vx* and *vy* every time we create an Actor.
 
-There let's
-create our own class, Sprite, that is the same as Actor but with
+So let's
+create our own class, called *Sprite*, that is the same as Actor but with
 these variables included.
 
 \begin{codelisting}

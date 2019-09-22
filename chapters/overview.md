@@ -35,8 +35,8 @@ as you meet them.
 ## Built-ins
 
 Python also comes with a large number of *functions*.  The most common ones are built-in and always available, much
-like the keywords.  Here is a list of them, just for the sake of completeness, but you probably won't ever use them all, and when you do use one
-you will probably look it up in the documentation rather than remembering it.
+like the keywords.  Here is a list of them, just for the sake of completeness, *but you probably won't ever use them all*, and when you do use one
+you will probably look it up in the documentation. So you *don't need to remember these*.
 
 | abs | all | any | ascii | bin | bool |
 | breakpoint | bytearray | bytes | callable | chr | classmethod |

@@ -68,7 +68,7 @@ def generate_lines():
     global wall_gradient, left_wall_x
     gap_width = 300 + math.sin(distance / 3000) * 100
     while len(lines) < HEIGHT:
-        pretty_colour = (255,0, 0)
+        pretty_colour = (255, min(left_wall_x, 255), min(time * 5, 255))
         lines.insert(0, (left_wall_x, gap_width, pretty_colour))
         left_wall_x += wall_gradient
         if left_wall_x < 0:

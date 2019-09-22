@@ -138,7 +138,7 @@ See Program~\ref{code:shortcuts} for a quicker way of writing this.
 
 ## Input
 
-Program~\ref{code:fruits} is not very useful if the number of apples changes.  This would require the programmer to change the program.  We can improve it by allowing the *user* of the program
+Program~\ref{code:fruits} is not very useful if the number of apples changes.  This would require the *programmer* to change the program.  We can improve it by allowing the *user* of the program
 to change the numbers.  The `input()` function allows the user to type a string which can be different every time the program is run.
 
 ```python
@@ -146,7 +146,7 @@ my_string = input()
 print(my_string)
 ```
 
-Sometimes we want the user to type in a number rather than a string.  We can use the `int()` function to convert the string to a number.
+Sometimes we want the user to type in a number rather than a string.  We can combine the `int()` function with the `input()` function to convert the string to a number.
 
 \begin{codelisting}
 \codecaption{Getting input from user}
@@ -183,7 +183,7 @@ You could write it like this:
 ```python
 sunny = True
 if sunny==True:
-    print("Yay!")
+    print("Let's go to the park")
 ```
 but that would be redundant because `if` always tests if the boolean is `True`.
 
@@ -220,6 +220,23 @@ Comparison operators take two numbers, strings or other variables, compare them,
 
 ## Boolean logic
 
+The `and`, `or` and `not` operators operate on booleans and return new boolean values.
+
+\begin{codelisting}
+\codecaption{Boolean operators}
+\label{code:logic}
+\phantom{.}
+<<(programs/08_logic.py)
+\end{codelisting}
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Change the values of `a` and `b` in Progam \ref{code:logic} and see what output is printed by different combinations of `True` and `False`.
+\end{aside}
+
+### Or
+
 Only people older than 12 or taller than 150cm are allowed to ride the rollercoaster.  This program checks whether people are allowed to ride.
 
 ```python
@@ -246,7 +263,7 @@ print(a or b)
 \begin{aside}
 \label{}
 \heading{}
-\noindent use the `or` operator to make the rollercoaster program shorter by combining the two tests into one test.
+\noindent Use the `or` operator to make the rollercoaster program shorter by combining the two tests into one test.
 \end{aside}
 
 \newpage
@@ -411,7 +428,7 @@ so he knows how many he must bake. He writes this program.
 \begin{aside}
 \label{}
 \heading{}
-\noindent This program is longer than it needs to be.  Instead of typing it, write your own program using a `for` loop.  It should be only 6 (or fewer) lines long.
+\noindent This program is longer than it needs to be.  Write your own program that does the same thing using a `for` loop.  It should be only 6 (or fewer) lines long.
 \end{aside} 
  
  
@@ -850,7 +867,7 @@ print("average age is ", average)
 ```
 
 
-
+\newpage
 
 ## Bugs
 

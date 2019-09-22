@@ -18,7 +18,7 @@ Following each program are some ideas for how students can modify the program.  
 This book may be suitable for self-teaching by a motivated learner, but does not attempt to be comprehensive or give detailed explanations because it is intended to be used in a class with an instructor who will fill in the gaps as needed by the students.
 
 
-## The second edition
+# The second edition
 
 I discovered two important things from feedback from the first edition:
 

@@ -168,7 +168,7 @@ See Program~\ref{code:functions} for more about functions.
 \begin{aside}
 \label{}
 \heading{Advanced}
-\noindent Make a game with one alien controlled by mouse and another controlled by keyboard/
+\noindent Make a game with one alien controlled by mouse and another controlled by keyboard
 \end{aside}
 
 

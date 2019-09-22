@@ -110,6 +110,8 @@ def move_player():
         player.x = 0
 ```
 
+\newpage
+
 ## Move the enemies
 
 Replace the `move_enemies()` dummy function definition with this:
@@ -131,7 +133,9 @@ def move_enemies():
             exit()
 ```
 
-## Draw test on the screen
+## Draw text on the screen
+
+Replace the `draw_text()` dummy function definition with this:
 
 ```python
 def draw_text():
@@ -188,6 +192,8 @@ def move_bombs():
                 exit()
 ```
 
+\newpage
+
 ## Check for end of level
 
 Replace the `check_for_end_of_level()` dummy function definition with this:
@@ -200,6 +206,14 @@ def check_for_end_of_level():
         create_enemies()
 ```
 
+## Ideas for extension
 
+* Draw an explosion image and create an explosion Actor every time an alien dies.
 
-animated explosions
+* Make the explosion Actor disappear after a short time.
+
+* Draw several explosion images, put them in a list and make the Actor animate displaying each of them in order.
+
+* The player can only fire 3 bullets at a time.  Create a powerup that allows him to fire additional bullets.
+
+* Add music and sound effects.
