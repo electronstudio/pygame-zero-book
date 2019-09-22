@@ -42,11 +42,11 @@
   <body>
     
     <div id="book">
-      <div id="cid40" data-tralics-id="cid40" class="chapter" data-number="5" data-chapter="2_simple_games"><h1><a href="2_simple_games.html#cid40" class="heading hyperref"><span class="number">Chapter 5 </span>Arcade games</a></h1>
+      <div id="cid39" data-tralics-id="cid39" class="chapter" data-number="5" data-chapter="2_simple_games"><h1><a href="2_simple_games.html#cid39" class="heading hyperref"><span class="number">Chapter 5 </span>Arcade games</a></h1>
 </div>
-<div id="cid41" data-tralics-id="cid41" class="section" data-number="5.1"><h2><a href="2_simple_games.html#cid41" class="heading hyperref"><span class="number">5.1 </span>Collisions</a></h2>
+<div id="cid40" data-tralics-id="cid40" class="section" data-number="5.1"><h2><a href="2_simple_games.html#cid40" class="heading hyperref"><span class="number">5.1 </span>Collisions</a></h2>
 <p class="noindent">Arcade games need to know when one Actor sprite has hit another Actor sprite.<span class="intersentencespace"></span> Most of this code is copied from <a href="1_graphics.html#code-moving_boxes" class="hyperref">Program <span class="ref">4.2</span></a> and <a href="1_graphics.html#code-keyboard_input" class="hyperref">Program <span class="ref">4.5</span></a>.</p>
-<div class="codelisting" id="code-collisions" data-tralics-id="uid101" data-number="5.1"><div class="heading"><span class="number">Program 5.1:</span> <span class="description">Collisions</span>
+<div class="codelisting" id="code-collisions" data-tralics-id="uid104" data-number="5.1"><div class="heading"><span class="number">Program 5.1:</span> <span class="description">Collisions</span>
 
 
 </div>
@@ -73,26 +73,26 @@
         <span class="n">box</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">if</span> <span class="n">alien</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="n">box</span><span class="p">):</span>
         <span class="k">print</span><span class="p">(</span><span class="s2">"hit"</span><span class="p">)</span>
-</pre></div></div></div><div class="aside" id="" data-tralics-id="uid102" data-number="5.1"><div class="heading"><span class="number">Exercise 5.1.</span> 
+</pre></div></div></div><div class="aside" id="" data-tralics-id="uid105" data-number="5.1"><div class="heading"><span class="number">Exercise 5.1.</span> 
 
 <span class="description"></span></div>
 <p class="noindent">Add vertical movement (as you did in <a href="1_graphics.html#exercise-updown" class="hyperref">Exercise <span class="ref">4.8</span></a>).<span class="intersentencespace"></span></p>
 
-</div><div class="aside" id="" data-tralics-id="uid103" data-number="5.2"><div class="heading"><span class="number">Exercise 5.2.</span> 
+</div><div class="aside" id="" data-tralics-id="uid106" data-number="5.2"><div class="heading"><span class="number">Exercise 5.2.</span> 
 
 <span class="description">Advanced</span></div>
 <p class="noindent">Make the box chase the alien.<span class="intersentencespace"></span></p>
 
-</div><div class="aside" id="" data-tralics-id="uid104" data-number="5.3"><div class="heading"><span class="number">Exercise 5.3.</span> 
+</div><div class="aside" id="" data-tralics-id="uid107" data-number="5.3"><div class="heading"><span class="number">Exercise 5.3.</span> 
 
 <span class="description">Advanced</span></div>
 <p class="noindent">Print number of times the box hits the alien (i.e.<span class="intersentencespace"></span> the score).<span class="intersentencespace"></span></p>
 
 </div></div>
-<div id="cid42" data-tralics-id="cid42" class="section" data-number="5.2"><h2><a href="2_simple_games.html#cid42" class="heading hyperref"><span class="number">5.2 </span>Chase</a></h2>
+<div id="cid41" data-tralics-id="cid41" class="section" data-number="5.2"><h2><a href="2_simple_games.html#cid41" class="heading hyperref"><span class="number">5.2 </span>Chase</a></h2>
 <p class="noindent">Instead of moving constantly to the right we can make the movement conditional with an <code>if</code> statement so the box chases the alien.<span class="intersentencespace"></span> Most of this code is copied from <a href="2_simple_games.html#code-collisions" class="hyperref">Program <span class="ref">5.1</span></a>.<span class="intersentencespace"></span> New lines are highlighted.<span class="intersentencespace"></span> We have also changed what happens when the box
 catches the alien: the program now exits and you must run it again to play again.<span class="intersentencespace"></span> This may not be what you want in your game!</p>
-<div class="codelisting" id="code-chase" data-tralics-id="uid105" data-number="5.2"><div class="heading"><span class="number">Program 5.2:</span> <span class="description">Alien chase</span>
+<div class="codelisting" id="code-chase" data-tralics-id="uid108" data-number="5.2"><div class="heading"><span class="number">Program 5.2:</span> <span class="description">Alien chase</span>
 
 
 </div>
@@ -120,20 +120,20 @@ catches the alien: the program now exits and you must run it again to play again
 </span><span class="hll">        <span class="n">box</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">box</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
 </span><span class="hll">    <span class="k">if</span> <span class="n">alien</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="n">box</span><span class="p">):</span>
 </span><span class="hll">        <span class="nb">exit</span><span class="p">()</span>
-</span></pre></div></div></div><div class="aside" id="" data-tralics-id="uid106" data-number="5.4"><div class="heading"><span class="number">Exercise 5.4.</span> 
+</span></pre></div></div></div><div class="aside" id="" data-tralics-id="uid109" data-number="5.4"><div class="heading"><span class="number">Exercise 5.4.</span> 
 
 <span class="description"></span></div>
 <p class="noindent">Add vertical movement (as you did in <a href="1_graphics.html#exercise-updown" class="hyperref">Exercise <span class="ref">4.8</span></a>).<span class="intersentencespace"></span></p>
 
-</div><div class="aside" id="" data-tralics-id="uid107" data-number="5.5"><div class="heading"><span class="number">Exercise 5.5.</span> 
+</div><div class="aside" id="" data-tralics-id="uid110" data-number="5.5"><div class="heading"><span class="number">Exercise 5.5.</span> 
 
 <span class="description">Advanced</span></div>
 <p class="noindent">Draw a new enemy image.<span class="intersentencespace"></span> Save it as <code>enemy.png</code> in your <code>mu_code/images</code> folder.<span class="intersentencespace"></span> Load it as an <code>Actor('enemy')</code> instead of the <code>Rect()</code>.<span class="intersentencespace"></span></p>
 
 </div></div>
-<div id="cid43" data-tralics-id="cid43" class="section" data-number="5.3"><h2><a href="2_simple_games.html#cid43" class="heading hyperref"><span class="number">5.3 </span>Powerup</a></h2>
+<div id="cid42" data-tralics-id="cid42" class="section" data-number="5.3"><h2><a href="2_simple_games.html#cid42" class="heading hyperref"><span class="number">5.3 </span>Powerup</a></h2>
 <p class="noindent">Instead of an enemy the box here is a powerup that the player must collect.<span class="intersentencespace"></span> When he does it disappears and moves to a new location.</p>
-<div class="codelisting" id="code-powerup" data-tralics-id="uid108" data-number="5.3"><div class="heading"><span class="number">Program 5.3:</span> <span class="description">Collect the powerups</span>
+<div class="codelisting" id="code-powerup" data-tralics-id="uid111" data-number="5.3"><div class="heading"><span class="number">Program 5.3:</span> <span class="description">Collect the powerups</span>
 
 
 </div>
@@ -163,26 +163,26 @@ catches the alien: the program now exits and you must run it again to play again
         <span class="n">box</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">)</span>
         <span class="n">score</span> <span class="o">=</span> <span class="n">score</span> <span class="o">+</span> <span class="mi">1</span>
         <span class="k">print</span><span class="p">(</span><span class="s2">"Score:"</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
-</pre></div></div></div><div class="aside" id="" data-tralics-id="uid109" data-number="5.6"><div class="heading"><span class="number">Exercise 5.6.</span> 
+</pre></div></div></div><div class="aside" id="" data-tralics-id="uid112" data-number="5.6"><div class="heading"><span class="number">Exercise 5.6.</span> 
 
 <span class="description"></span></div>
 <p class="noindent">Add vertical movement (as you did in <a href="1_graphics.html#exercise-updown" class="hyperref">Exercise <span class="ref">4.8</span></a>).<span class="intersentencespace"></span></p>
 
-</div><div class="aside" id="" data-tralics-id="uid110" data-number="5.7"><div class="heading"><span class="number">Exercise 5.7.</span> 
+</div><div class="aside" id="" data-tralics-id="uid113" data-number="5.7"><div class="heading"><span class="number">Exercise 5.7.</span> 
 
 <span class="description"></span></div>
 <p class="noindent">Draw a new powerup image.<span class="intersentencespace"></span> Save it as <code>powerup.png</code> in your <code>mu_code/images</code> folder.<span class="intersentencespace"></span> Load it as an <code>Actor('powerup')</code> instead of the <code>Rect()</code>.<span class="intersentencespace"></span></p>
 
-</div><div class="aside" id="" data-tralics-id="uid111" data-number="5.8"><div class="heading"><span class="number">Exercise 5.8.</span> 
+</div><div class="aside" id="" data-tralics-id="uid114" data-number="5.8"><div class="heading"><span class="number">Exercise 5.8.</span> 
 
 <span class="description">Advanced</span></div>
 <p class="noindent">Combine this program with the enemy from <a href="2_simple_games.html#code-chase" class="hyperref">Program <span class="ref">5.2</span></a> and the background from <a href="1_graphics.html#code-background" class="hyperref">Program <span class="ref">4.4</span></a> and whatever else you want to make your own game.<span class="intersentencespace"></span></p>
 
 </div></div>
-<div id="cid44" data-tralics-id="cid44" class="section" data-number="5.4"><h2><a href="2_simple_games.html#cid44" class="heading hyperref"><span class="number">5.4 </span>Sound and animation</a></h2>
+<div id="cid43" data-tralics-id="cid43" class="section" data-number="5.4"><h2><a href="2_simple_games.html#cid43" class="heading hyperref"><span class="number">5.4 </span>Sound and animation</a></h2>
 <p class="noindent">Pygame Zero comes with one other image <code>alien_hurt.png</code> and one sound <code>eep.wav</code>.<span class="intersentencespace"></span> If you want more you will have to add them to the <code>sounds</code> and <code>images</code> folders.</p>
 <p>Most of this code is copied from <a href="2_simple_games.html#code-collisions" class="hyperref">Program <span class="ref">5.1</span></a></p>
-<div class="codelisting" id="code-collisions2_sound_animation" data-tralics-id="uid112" data-number="5.4"><div class="heading"><span class="number">Program 5.4:</span> <span class="description">Sound and animation upon collision</span>
+<div class="codelisting" id="code-collisions2_sound_animation" data-tralics-id="uid115" data-number="5.4"><div class="heading"><span class="number">Program 5.4:</span> <span class="description">Sound and animation upon collision</span>
 
 
 </div>
@@ -211,23 +211,23 @@ catches the alien: the program now exits and you must run it again to play again
 </span><span class="hll">        <span class="n">sounds</span><span class="o">.</span><span class="n">eep</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
 </span><span class="hll">    <span class="k">else</span><span class="p">:</span>
 </span><span class="hll">        <span class="n">alien</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s1">'alien'</span>
-</span></pre></div></div></div><div class="aside" id="" data-tralics-id="uid113" data-number="5.9"><div class="heading"><span class="number">Exercise 5.9.</span> 
+</span></pre></div></div></div><div class="aside" id="" data-tralics-id="uid116" data-number="5.9"><div class="heading"><span class="number">Exercise 5.9.</span> 
 
 <span class="description"></span></div>
 <p class="noindent">Record your own sound effect and add it to the game.<span class="intersentencespace"></span></p>
 
-</div><div class="aside" id="" data-tralics-id="uid114" data-number="5.10"><div class="heading"><span class="number">Exercise 5.10.</span> 
+</div><div class="aside" id="" data-tralics-id="uid117" data-number="5.10"><div class="heading"><span class="number">Exercise 5.10.</span> 
 
 <span class="description">Advanced</span></div>
 <p class="noindent">Add more boxes or sprites that move in different ways for the player to avoid.<span class="intersentencespace"></span></p>
 
-</div><div class="aside" id="" data-tralics-id="uid115" data-number="5.11"><div class="heading"><span class="number">Exercise 5.11.</span> 
+</div><div class="aside" id="" data-tralics-id="uid118" data-number="5.11"><div class="heading"><span class="number">Exercise 5.11.</span> 
 
 <span class="description">Advanced</span></div>
 <p class="noindent">Add a second alien controlled by different keys or gamepad for player 2.<span class="intersentencespace"></span></p>
 
 </div></div>
-<div id="cid45" data-tralics-id="cid45" class="section" data-number="5.5"><h2><a href="2_simple_games.html#cid45" class="heading hyperref"><span class="number">5.5 </span>Mouse clicks</a></h2>
+<div id="cid44" data-tralics-id="cid44" class="section" data-number="5.5"><h2><a href="2_simple_games.html#cid44" class="heading hyperref"><span class="number">5.5 </span>Mouse clicks</a></h2>
 <p class="noindent">This uses a <em>function call-back</em> for event-based input.<span class="intersentencespace"></span> It is similiar to <a href="2_simple_games.html#code-collisions2_sound_animation" class="hyperref">Program <span class="ref">5.4</span></a> but:</p>
 <ul>
 <li>The box has been removed.<span class="intersentencespace"></span>
@@ -236,8 +236,8 @@ catches the alien: the program now exits and you must run it again to play again
 </li>
 <li>The score is displayed.<span class="intersentencespace"></span>
 </li></ul>
-<p>See <a href="3_python_fundamentals.html#code-functions" class="hyperref">Program <span class="ref">2.16</span></a> for more about functions.</p>
-<div class="codelisting" id="code-mouse_input" data-tralics-id="uid119" data-number="5.5"><div class="heading"><span class="number">Program 5.5:</span> <span class="description">Getting input from mouse clicks</span>
+<p>See <a href="3_python_fundamentals.html#code-functions" class="hyperref">Program <span class="ref">2.17</span></a> for more about functions.</p>
+<div class="codelisting" id="code-mouse_input" data-tralics-id="uid122" data-number="5.5"><div class="heading"><span class="number">Program 5.5:</span> <span class="description">Getting input from mouse clicks</span>
 
 
 </div>
@@ -265,8 +265,8 @@ catches the alien: the program now exits and you must run it again to play again
         <span class="n">sounds</span><span class="o">.</span><span class="n">eep</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
         <span class="n">score</span> <span class="o">=</span> <span class="n">score</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div></div></div></div>
-<div id="cid46" data-tralics-id="cid46" class="section" data-number="5.6"><h2><a href="2_simple_games.html#cid46" class="heading hyperref"><span class="number">5.6 </span>Mouse movement</a></h2>
-<div class="codelisting" id="code-mouse_movement" data-tralics-id="uid120" data-number="5.6"><div class="heading"><span class="number">Program 5.6:</span> <span class="description">Getting input from mouse movement</span>
+<div id="cid45" data-tralics-id="cid45" class="section" data-number="5.6"><h2><a href="2_simple_games.html#cid45" class="heading hyperref"><span class="number">5.6 </span>Mouse movement</a></h2>
+<div class="codelisting" id="code-mouse_movement" data-tralics-id="uid123" data-number="5.6"><div class="heading"><span class="number">Program 5.6:</span> <span class="description">Getting input from mouse movement</span>
 
 
 </div>
@@ -281,22 +281,22 @@ catches the alien: the program now exits and you must run it again to play again
 
 <span class="k">def</span> <span class="nf">on_mouse_move</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>
     <span class="n">alien</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">pos</span>
-</pre></div></div></div><div class="aside" id="" data-tralics-id="uid121" data-number="5.12"><div class="heading"><span class="number">Exercise 5.12.</span> 
+</pre></div></div></div><div class="aside" id="" data-tralics-id="uid124" data-number="5.12"><div class="heading"><span class="number">Exercise 5.12.</span> 
 
 <span class="description"></span></div>
 <p class="noindent">What happens if you delete line 8 and replace it with this:
 </p><div class="code"><div class="highlight"><pre><span></span>     <span class="n">animate</span><span class="p">(</span><span class="n">alien</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">tween</span><span class="o">=</span><span class="s1">'bounce_end'</span><span class="p">)</span>
 </pre></div></div>
 
-</div><div class="aside" id="" data-tralics-id="uid122" data-number="5.13"><div class="heading"><span class="number">Exercise 5.13.</span> 
+</div><div class="aside" id="" data-tralics-id="uid125" data-number="5.13"><div class="heading"><span class="number">Exercise 5.13.</span> 
 
 <span class="description"></span></div>
 <p class="noindent">What happens if you change <code>on_mouse_move</code> to <code>on_mouse_down</code>?<span class="intersentencespace"></span></p>
 
-</div><div class="aside" id="" data-tralics-id="uid123" data-number="5.14"><div class="heading"><span class="number">Exercise 5.14.</span> 
+</div><div class="aside" id="" data-tralics-id="uid126" data-number="5.14"><div class="heading"><span class="number">Exercise 5.14.</span> 
 
 <span class="description">Advanced</span></div>
-<p class="noindent">Make a game with one alien controlled by mouse and another controlled by keyboard/</p>
+<p class="noindent">Make a game with one alien controlled by mouse and another controlled by keyboard</p>
 
 </div></div>
     </div>

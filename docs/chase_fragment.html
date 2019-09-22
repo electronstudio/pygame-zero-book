@@ -1,15 +1,15 @@
-<div id="cid60" data-tralics-id="cid60" class="chapter" data-number="8" data-chapter="chase"><h1><a href="chase_fragment.html#cid60" class="heading hyperref"><span class="number">Chapter 8 </span>Tutorial: Chase game</a></h1>
+<div id="cid59" data-tralics-id="cid59" class="chapter" data-number="8" data-chapter="chase"><h1><a href="chase_fragment.html#cid59" class="heading hyperref"><span class="number">Chapter 8 </span>Tutorial: Chase game</a></h1>
 <p class="noindent">In this chapter we will build a complete chase game together, step by step.<span class="intersentencespace"></span> The Python we will use is very simple: just conditionals and loops.</p>
 <p>The techniques here should be familiar to you because we used them in <a href="1_graphics_fragment.html#code-background" class="hyperref">Program <span class="ref">4.4</span></a>, <a href="1_graphics_fragment.html#code-keyboard_input" class="hyperref"><span class="ref">4.5</span></a>, <a href="2_simple_games_fragment.html#code-collisions" class="hyperref"><span class="ref">5.1</span></a> and <a href="2_simple_games_fragment.html#code-chase" class="hyperref"><span class="ref">5.2</span></a></p>
 <p>Now we will show you how to put them all together in one program.</p>
-</div><div id="cid61" data-tralics-id="cid61" class="section" data-number="8.1"><h2><a href="chase_fragment.html#cid61" class="heading hyperref"><span class="number">8.1 </span>Moving Actor over a background</a></h2>
-<p class="noindent">We must create two image files for our game.<span class="intersentencespace"></span> You can use a program such as Krita<sup id="cha-8_footnote-ref-1" class="footnote"><a href="#cha-8_footnote-1">1</a></sup> to draw them and save them in the <code>images</code> folder (accessible with the
+</div><div id="cid60" data-tralics-id="cid60" class="section" data-number="8.1"><h2><a href="chase_fragment.html#cid60" class="heading hyperref"><span class="number">8.1 </span>Moving Actor over a background</a></h2>
+<p class="noindent">We must create two image files for our game.<span class="intersentencespace"></span> You can use a program such as Krita<sup id="cha-8_footnote-ref-1" class="footnote"><a href="#cha-8_footnote-1">1</a></sup> to draw them and save them in the <code>mu_code/images</code> folder (accessible with the
 <code>images</code> button in Mu).<span class="intersentencespace"></span> One is the player, called <code>player.png</code>.<span class="intersentencespace"></span> It should be small, about 64×64 pixels.<span class="intersentencespace"></span> Ideally it should have a transparent background.</p>
 <p>The other is the background for the game itself.<span class="intersentencespace"></span> It can look like whatever you want, but it must be the same size as the game window, which will be 600×600 pixels.</p>
-<div class="center figure" id="fig-krita" data-tralics-id="uid160" data-number="8.1">
+<div class="center figure" id="fig-krita" data-tralics-id="uid163" data-number="8.1">
 <div class="graphics image"><img src="images/figures/krita.png" alt="images/figures/krita" /></div><div class="caption"><span class="header">Figure 8.1: </span><span class="description">New image in Krita, 600×600 pixels
 </span></div></div>
-<div class="codelisting" id="code-chase1" data-tralics-id="uid161" data-number="8.1"><div class="heading"><span class="number">Program 8.1:</span> <span class="description">Chase game</span>
+<div class="codelisting" id="code-chase1" data-tralics-id="uid164" data-number="8.1"><div class="heading"><span class="number">Program 8.1:</span> <span class="description">Chase game</span>
 
 
 </div>
@@ -36,12 +36,12 @@
         <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="mi">4</span>
     <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">up</span><span class="p">:</span>
         <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="mi">4</span>
-</pre></div></div></div><div class="aside" id="" data-tralics-id="uid162" data-number="8.1"><div class="heading"><span class="number">Exercise 8.1.</span> 
+</pre></div></div></div><div class="aside" id="" data-tralics-id="uid165" data-number="8.1"><div class="heading"><span class="number">Exercise 8.1.</span> 
 
 <span class="description"></span></div>
 <p class="noindent">Run the program and move the Actor around with the keys.<span class="intersentencespace"></span></p>
 
-</div></div><div id="cid62" data-tralics-id="cid62" class="section" data-number="8.2"><h2><a href="chase_fragment.html#cid62" class="heading hyperref"><span class="number">8.2 </span>Screen wrap-around</a></h2>
+</div></div><div id="cid61" data-tralics-id="cid61" class="section" data-number="8.2"><h2><a href="chase_fragment.html#cid61" class="heading hyperref"><span class="number">8.2 </span>Screen wrap-around</a></h2>
 <p class="noindent">One problem you will soon find with the program is that you can move off the edge of the screen and get lost.<span class="intersentencespace"></span> One way to solve this would be
 to stop movement at the screen edges.<span class="intersentencespace"></span> Instead we going to make the player teleport to the opposite edge when he leaves the screen.<span class="intersentencespace"></span> Add this code
 to the end of the program, and make sure it is indented so that it becomes part of the <code>update()</code> function.</p>
@@ -54,12 +54,12 @@ to the end of the program, and make sure it is indented so that it becomes part 
     <span class="k">if</span> <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">HEIGHT</span><span class="p">:</span>
         <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div></div>
-<div class="aside" id="" data-tralics-id="uid163" data-number="8.2"><div class="heading"><span class="number">Exercise 8.2.</span> 
+<div class="aside" id="" data-tralics-id="uid166" data-number="8.2"><div class="heading"><span class="number">Exercise 8.2.</span> 
 
 <span class="description"></span></div>
 <p class="noindent">Change the code so that the player stops at the edges rather than wraps-around.<span class="intersentencespace"></span></p>
 
-</div></div><div id="cid63" data-tralics-id="cid63" class="section" data-number="8.3"><h2><a href="chase_fragment.html#cid63" class="heading hyperref"><span class="number">8.3 </span>Enemy chases the player</a></h2>
+</div></div><div id="cid62" data-tralics-id="cid62" class="section" data-number="8.3"><h2><a href="chase_fragment.html#cid62" class="heading hyperref"><span class="number">8.3 </span>Enemy chases the player</a></h2>
 <p class="noindent">Let’s add an enemy to chase the player.<span class="intersentencespace"></span> At the top of the program, create a variable to store the enemy Actor:
 </p><div class="code"><div class="highlight"><pre><span></span><span class="n">enemy</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">"alien"</span><span class="p">)</span>
 </pre></div></div>
@@ -84,22 +84,22 @@ program has two.<span class="intersentencespace"></span> All drawing goes inside
     <span class="k">if</span> <span class="n">player</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="n">enemy</span><span class="p">):</span>
         <span class="nb">exit</span><span class="p">()</span>
 </pre></div></div>
-<div class="aside" id="" data-tralics-id="uid164" data-number="8.3"><div class="heading"><span class="number">Exercise 8.3.</span> 
+<div class="aside" id="" data-tralics-id="uid167" data-number="8.3"><div class="heading"><span class="number">Exercise 8.3.</span> 
 
 <span class="description"></span></div>
 <p class="noindent">Run the program verify the enemy chases the player.<span class="intersentencespace"></span></p>
 
-</div><div class="aside" id="" data-tralics-id="uid165" data-number="8.4"><div class="heading"><span class="number">Exercise 8.4.</span> 
+</div><div class="aside" id="" data-tralics-id="uid168" data-number="8.4"><div class="heading"><span class="number">Exercise 8.4.</span> 
 
 <span class="description"></span></div>
 <p class="noindent">Make the enemy faster so the game is more difficult.<span class="intersentencespace"></span></p>
 
-</div><div class="aside" id="" data-tralics-id="uid166" data-number="8.5"><div class="heading"><span class="number">Exercise 8.5.</span> 
+</div><div class="aside" id="" data-tralics-id="uid169" data-number="8.5"><div class="heading"><span class="number">Exercise 8.5.</span> 
 
 <span class="description"></span></div>
 <p class="noindent">Create an image file <code>enemy.png</code> and save it in the <code>images</code> folder.<span class="intersentencespace"></span> Change the code so it loads <code>"enemy"</code> instead of <code>"alien"</code>.<span class="intersentencespace"></span></p>
 
-</div></div><div id="cid64" data-tralics-id="cid64" class="section" data-number="8.4"><h2><a href="chase_fragment.html#cid64" class="heading hyperref"><span class="number">8.4 </span>Collecting items</a></h2>
+</div></div><div id="cid63" data-tralics-id="cid63" class="section" data-number="8.4"><h2><a href="chase_fragment.html#cid63" class="heading hyperref"><span class="number">8.4 </span>Collecting items</a></h2>
 <p class="noindent">Create a small image file <code>coin.png</code> and save it in the <code>images</code> folder.<span class="intersentencespace"></span> It should look like a coin or something else you would like to collect.<span class="intersentencespace"></span> We will also need a variable to store the <em>score</em>, i.e.<span class="intersentencespace"></span> number of coins collected.</p>
 <div class="code"><div class="highlight"><pre><span></span><span class="n">coin</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">"coin"</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">))</span>
 <span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
@@ -121,7 +121,7 @@ program has two.<span class="intersentencespace"></span> All drawing goes inside
         <span class="n">score</span> <span class="o">=</span> <span class="n">score</span> <span class="o">+</span> <span class="mi">1</span>
         <span class="k">print</span><span class="p">(</span><span class="s2">"Score:"</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
 </pre></div></div>
-<div class="aside" id="" data-tralics-id="uid167" data-number="8.6"><div class="heading"><span class="number">Exercise 8.6.</span> 
+<div class="aside" id="" data-tralics-id="uid170" data-number="8.6"><div class="heading"><span class="number">Exercise 8.6.</span> 
 
 <span class="description"></span></div>
 <p class="noindent">Run the program and collect a coin.<span class="intersentencespace"></span> What happens?<span class="intersentencespace"></span></p>
@@ -131,7 +131,7 @@ program has two.<span class="intersentencespace"></span> All drawing goes inside
 <p>This happens because we are using a function <code>randint()</code> to get a random number.<span class="intersentencespace"></span> This function is not build-in to Python; it is part of the <em>random</em> library.<span class="intersentencespace"></span> So at the top of the program, add the first line:</p>
 <div class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 </pre></div></div>
-<div class="aside" id="" data-tralics-id="uid168" data-number="8.7"><div class="heading"><span class="number">Exercise 8.7.</span> 
+<div class="aside" id="" data-tralics-id="uid171" data-number="8.7"><div class="heading"><span class="number">Exercise 8.7.</span> 
 
 <span class="description"></span></div>
 <p class="noindent">Run the program again and collect a coin.<span class="intersentencespace"></span> Does it work now?<span class="intersentencespace"></span></p>
@@ -148,12 +148,12 @@ our intention to modify a global variable:</p>
     <span class="k">global</span> <span class="n">score</span>
     <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
 </pre></div></div>
-<div class="aside" id="" data-tralics-id="uid169" data-number="8.8"><div class="heading"><span class="number">Exercise 8.8.</span> 
+<div class="aside" id="" data-tralics-id="uid172" data-number="8.8"><div class="heading"><span class="number">Exercise 8.8.</span> 
 
 <span class="description"></span></div>
 <p class="noindent">Run the program again and verify it works!<span class="intersentencespace"></span></p>
 
-</div></div><div id="cid65" data-tralics-id="cid65" class="section" data-number="8.5"><h2><a href="chase_fragment.html#cid65" class="heading hyperref"><span class="number">8.5 </span>Player 2</a></h2>
+</div></div><div id="cid64" data-tralics-id="cid64" class="section" data-number="8.5"><h2><a href="chase_fragment.html#cid64" class="heading hyperref"><span class="number">8.5 </span>Player 2</a></h2>
 <p class="noindent">We can make any game into a two player game.<span class="intersentencespace"></span> At the top of the program, create a variable to store the Actor for the second player:
 </p><div class="code"><div class="highlight"><pre><span></span><span class="n">player2</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">"alien"</span><span class="p">)</span>
 </pre></div></div>
@@ -178,12 +178,12 @@ our intention to modify a global variable:</p>
     <span class="k">if</span> <span class="n">player</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="n">player2</span><span class="p">):</span>
         <span class="nb">exit</span><span class="p">()</span>
 </pre></div></div>
-<div class="aside" id="" data-tralics-id="uid170" data-number="8.9"><div class="heading"><span class="number">Exercise 8.9.</span> 
+<div class="aside" id="" data-tralics-id="uid173" data-number="8.9"><div class="heading"><span class="number">Exercise 8.9.</span> 
 
 <span class="description">Advanced</span></div>
 <p class="noindent">Create a variable <code>score2</code> and store the score for player two, i.e.<span class="intersentencespace"></span> it goes up when he collides with a coin.<span class="intersentencespace"></span></p>
 
-</div></div><div id="cid66" data-tralics-id="cid66" class="section" data-number="8.6"><h2><a href="chase_fragment.html#cid66" class="heading hyperref"><span class="number">8.6 </span>Showing the score on the screen</a></h2>
+</div></div><div id="cid65" data-tralics-id="cid65" class="section" data-number="8.6"><h2><a href="chase_fragment.html#cid65" class="heading hyperref"><span class="number">8.6 </span>Showing the score on the screen</a></h2>
 <p class="noindent">At the end of the <code>draw()</code> function (but still indented so part of the function), draw a title on the screen:</p>
 <div class="code"><div class="highlight"><pre><span></span>    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">"My game"</span><span class="p">,</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">)</span>
 </pre></div></div>
@@ -192,22 +192,22 @@ the score into a string.<span class="intersentencespace"></span> Add these lines
 </p><div class="code"><div class="highlight"><pre><span></span>    <span class="n">score_string</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
     <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">score_string</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">'green'</span><span class="p">)</span>
 </pre></div></div>
-<div class="aside" id="" data-tralics-id="uid171" data-number="8.10"><div class="heading"><span class="number">Exercise 8.10.</span> 
+<div class="aside" id="" data-tralics-id="uid174" data-number="8.10"><div class="heading"><span class="number">Exercise 8.10.</span> 
 
 <span class="description"></span></div>
 <p class="noindent">Change the colour of the text.<span class="intersentencespace"></span></p>
 
-</div><div class="aside" id="" data-tralics-id="uid172" data-number="8.11"><div class="heading"><span class="number">Exercise 8.11.</span> 
+</div><div class="aside" id="" data-tralics-id="uid175" data-number="8.11"><div class="heading"><span class="number">Exercise 8.11.</span> 
 
 <span class="description">Advanced</span></div>
 <p class="noindent">Display the word “Score: “ before the score.<span class="intersentencespace"></span></p>
 
-</div><div class="aside" id="" data-tralics-id="uid173" data-number="8.12"><div class="heading"><span class="number">Exercise 8.12.</span> 
+</div><div class="aside" id="" data-tralics-id="uid176" data-number="8.12"><div class="heading"><span class="number">Exercise 8.12.</span> 
 
 <span class="description">Advanced</span></div>
 <p class="noindent">When the <code>score</code> reaches 10, show a message on the screen to congratulate the player</p>
 
-</div></div><div id="cid67" data-tralics-id="cid67" class="section" data-number="8.7"><h2><a href="chase_fragment.html#cid67" class="heading hyperref"><span class="number">8.7 </span>Timer</a></h2>
+</div></div><div id="cid66" data-tralics-id="cid66" class="section" data-number="8.7"><h2><a href="chase_fragment.html#cid66" class="heading hyperref"><span class="number">8.7 </span>Timer</a></h2>
 <p class="noindent">Add a variable at the top of the program (but preferably after any <code>import</code> statements) to store the number of seconds
 of time remaining in the game:</p>
 <div class="code"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="mi">20</span>
@@ -225,7 +225,7 @@ the first lines look like this:</p>
 <div class="code"><div class="highlight"><pre><span></span>    <span class="n">time_string</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
     <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">time_string</span><span class="p">,</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">'green'</span><span class="p">)</span>
 </pre></div></div>
-<div class="aside" id="" data-tralics-id="uid174" data-number="8.13"><div class="heading"><span class="number">Exercise 8.13.</span> 
+<div class="aside" id="" data-tralics-id="uid177" data-number="8.13"><div class="heading"><span class="number">Exercise 8.13.</span> 
 
 <span class="description"></span></div>
 <p class="noindent">Run the program.<span class="intersentencespace"></span> Could the displayed time be improved?<span class="intersentencespace"></span></p>
@@ -234,9 +234,9 @@ the first lines look like this:</p>
 <div class="code"><div class="highlight"><pre><span></span>    <span class="n">time_string</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">time</span><span class="p">))</span>
     <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">time_string</span><span class="p">,</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">'green'</span><span class="p">)</span>
 </pre></div></div>
-</div><div id="cid68" data-tralics-id="cid68" class="section" data-number="8.8"><h2><a href="chase_fragment.html#cid68" class="heading hyperref"><span class="number">8.8 </span>Finished game</a></h2>
+</div><div id="cid67" data-tralics-id="cid67" class="section" data-number="8.8"><h2><a href="chase_fragment.html#cid67" class="heading hyperref"><span class="number">8.8 </span>Finished game</a></h2>
 <p class="noindent">Here is the finished game with all the changes included:</p>
-<div class="codelisting" id="code-chaser7" data-tralics-id="uid175" data-number="8.2"><div class="heading"><span class="number">Program 8.2:</span> <span class="description">Finished chase game</span>
+<div class="codelisting" id="code-chaser7" data-tralics-id="uid178" data-number="8.2"><div class="heading"><span class="number">Program 8.2:</span> <span class="description">Finished chase game</span>
 
 
 </div>
@@ -326,6 +326,8 @@ the first lines look like this:</p>
 <li>Add more enemies.<span class="intersentencespace"></span>
 </li>
 <li>Give the player three lives.<span class="intersentencespace"></span>
+</li>
+<li>Add music and sound effects.<span class="intersentencespace"></span>
 </li></ul>
 </div><div id="cha-8_footnotes">
   <div class="footnotes">

@@ -42,13 +42,13 @@
   <body>
     
     <div id="book">
-      <div id="cid47" data-tralics-id="cid47" class="chapter" data-number="6" data-chapter="4_more_graphics"><h1><a href="4_more_graphics.html#cid47" class="heading hyperref"><span class="number">Chapter 6 </span>Improving your games</a></h1>
+      <div id="cid46" data-tralics-id="cid46" class="chapter" data-number="6" data-chapter="4_more_graphics"><h1><a href="4_more_graphics.html#cid46" class="heading hyperref"><span class="number">Chapter 6 </span>Improving your games</a></h1>
 <p class="noindent">Here are some tips that will enable you to enhance your games.</p>
 </div>
-<div id="cid48" data-tralics-id="cid48" class="section" data-number="6.1"><h2><a href="4_more_graphics.html#cid48" class="heading hyperref"><span class="number">6.1 </span>Joystick input</a></h2>
+<div id="cid47" data-tralics-id="cid47" class="section" data-number="6.1"><h2><a href="4_more_graphics.html#cid47" class="heading hyperref"><span class="number">6.1 </span>Joystick input</a></h2>
 <p class="noindent">You may call them <em>gamepads</em> or <em>controllers</em>, but Pygame calls them <em>joysticks</em>.</p>
 <p>Some controllers have different inputs and some are not compatible at all so don’t be surprised if this doesnt work properly!<span class="intersentencespace"></span> PS4 and Xbox One controllers connected by USB cable seems to work best.<span class="intersentencespace"></span> Use <a href="6_advanced.html#code-joystick_tester" class="hyperref">Program <span class="ref">12.3</span></a> to test yours and find out what inputs it has.<span class="intersentencespace"></span> Note: if you run this program with no controller plugged in you will get an error.</p>
-<div class="codelisting" id="code-joystick_input" data-tralics-id="uid124" data-number="6.1"><div class="heading"><span class="number">Program 6.1:</span> <span class="description">Joystick input</span>
+<div class="codelisting" id="code-joystick_input" data-tralics-id="uid127" data-number="6.1"><div class="heading"><span class="number">Program 6.1:</span> <span class="description">Joystick input</span>
 
 
 </div>
@@ -72,18 +72,18 @@
         <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
     <span class="k">elif</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">left</span> <span class="ow">or</span> <span class="n">joystick</span><span class="o">.</span><span class="n">get_axis</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">:</span>
         <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span>
-</pre></div></div></div><div class="aside" id="" data-tralics-id="uid125" data-number="6.1"><div class="heading"><span class="number">Exercise 6.1.</span> 
+</pre></div></div></div><div class="aside" id="" data-tralics-id="uid128" data-number="6.1"><div class="heading"><span class="number">Exercise 6.1.</span> 
 
 <span class="description">Optional, if you have a controller</span></div>
 <p class="noindent">Make the alien move up and down as well as left and right using the controller.<span class="intersentencespace"></span> Do the same for any other examples that use the keyboard!<span class="intersentencespace"></span></p>
 
 </div></div>
-<div id="cid49" data-tralics-id="cid49" class="section" data-number="6.2"><h2><a href="4_more_graphics.html#cid49" class="heading hyperref"><span class="number">6.2 </span>Colours</a></h2>
+<div id="cid48" data-tralics-id="cid48" class="section" data-number="6.2"><h2><a href="4_more_graphics.html#cid48" class="heading hyperref"><span class="number">6.2 </span>Colours</a></h2>
 <p class="noindent">Note that sometimes <em>colour</em> is spelt <em>color</em> in American programs.</p>
 <p>Instead of using ready made colours like ‘red’, ‘yellow’, etc.<span class="intersentencespace"></span> you can create your
 own color with a <em>tuple</em> of three numbers.<span class="intersentencespace"></span> The numbers must be between 0 - 255 and represent
 how much <em>red</em>, <em>green</em> and <em>blue</em> to mix together.</p>
-<div class="codelisting" id="code-colours" data-tralics-id="uid126" data-number="6.2"><div class="heading"><span class="number">Program 6.2:</span> <span class="description">RGB colours</span>
+<div class="codelisting" id="code-colours" data-tralics-id="uid129" data-number="6.2"><div class="heading"><span class="number">Program 6.2:</span> <span class="description">RGB colours</span>
 
 
 </div>
@@ -105,26 +105,26 @@ how much <em>red</em>, <em>green</em> and <em>blue</em> to mix together.</p>
     <span class="k">global</span> <span class="n">red_amount</span>
     <span class="n">red_amount</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="n">red_amount</span> <span class="o">=</span> <span class="n">red_amount</span> <span class="o">%</span> <span class="mi">255</span>
-</pre></div></div></div><div class="aside" id="" data-tralics-id="uid127" data-number="6.2"><div class="heading"><span class="number">Exercise 6.2.</span> 
+</pre></div></div></div><div class="aside" id="" data-tralics-id="uid130" data-number="6.2"><div class="heading"><span class="number">Exercise 6.2.</span> 
 
 <span class="description">Advanced</span></div>
 <p class="noindent">Change the green and blue amounts to make different colours.<span class="intersentencespace"></span></p>
 
-</div><div class="aside" id="" data-tralics-id="uid128" data-number="6.3"><div class="heading"><span class="number">Exercise 6.3.</span> 
+</div><div class="aside" id="" data-tralics-id="uid131" data-number="6.3"><div class="heading"><span class="number">Exercise 6.3.</span> 
 
 <span class="description"></span></div>
 <p class="noindent">Make a gray colour.<span class="intersentencespace"></span></p>
 
-</div><div class="aside" id="" data-tralics-id="uid129" data-number="6.4"><div class="heading"><span class="number">Exercise 6.4.</span> 
+</div><div class="aside" id="" data-tralics-id="uid132" data-number="6.4"><div class="heading"><span class="number">Exercise 6.4.</span> 
 
 <span class="description">Advanced</span></div>
 <p class="noindent">Make random colours.<span class="intersentencespace"></span></p>
 
 </div></div>
-<div id="cid50" data-tralics-id="cid50" class="section" data-number="6.3"><h2><a href="4_more_graphics.html#cid50" class="heading hyperref"><span class="number">6.3 </span>Using loops</a></h2>
+<div id="cid49" data-tralics-id="cid49" class="section" data-number="6.3"><h2><a href="4_more_graphics.html#cid49" class="heading hyperref"><span class="number">6.3 </span>Using loops</a></h2>
 <p class="noindent">The loops from <a href="0_text_quizes.html#code-loop" class="hyperref">Program <span class="ref">3.6</span></a> are useful for graphical games too!<span class="intersentencespace"></span> Here we draw red circles using a <em>for loop</em>.</p>
 <p>We draw green circles using a <em>loop within another loop</em>.</p>
-<div class="codelisting" id="code-loops" data-tralics-id="uid130" data-number="6.3"><div class="heading"><span class="number">Program 6.3:</span> <span class="description">Loops are useful</span>
+<div class="codelisting" id="code-loops" data-tralics-id="uid133" data-number="6.3"><div class="heading"><span class="number">Program 6.3:</span> <span class="description">Loops are useful</span>
 
 
 </div>
@@ -140,26 +140,26 @@ how much <em>red</em>, <em>green</em> and <em>blue</em> to mix together.</p>
     <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">WIDTH</span><span class="p">,</span> <span class="mi">40</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">,</span> <span class="mi">40</span><span class="p">):</span>
             <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">filled_circle</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">"green"</span><span class="p">)</span>
-</pre></div></div></div><div class="aside" id="" data-tralics-id="uid131" data-number="6.5"><div class="heading"><span class="number">Exercise 6.5.</span> 
+</pre></div></div></div><div class="aside" id="" data-tralics-id="uid134" data-number="6.5"><div class="heading"><span class="number">Exercise 6.5.</span> 
 
 <span class="description"></span></div>
 <p class="noindent"><code>import random</code> at the top of the program and then make the positions random, e.g.<span class="intersentencespace"></span> </p><div class="code"><div class="highlight"><pre><span></span>x = random.randint(0, 100)
 </pre></div></div>
 
-</div><div class="aside" id="" data-tralics-id="uid132" data-number="6.6"><div class="heading"><span class="number">Exercise 6.6.</span> 
+</div><div class="aside" id="" data-tralics-id="uid135" data-number="6.6"><div class="heading"><span class="number">Exercise 6.6.</span> 
 
 <span class="description">Advanced</span></div>
 <p class="noindent">Learn about RGB colour and make random colours (see <a href="4_more_graphics.html#code-colours" class="hyperref">Program <span class="ref">6.2</span></a>).<span class="intersentencespace"></span></p>
 
-</div><div class="aside" id="" data-tralics-id="uid133" data-number="6.7"><div class="heading"><span class="number">Exercise 6.7.</span> 
+</div><div class="aside" id="" data-tralics-id="uid136" data-number="6.7"><div class="heading"><span class="number">Exercise 6.7.</span> 
 
 <span class="description">Advanced</span></div>
 <p class="noindent">Create a timer variable and change colours based on time (see <a href="5_more_games.html#code-timer" class="hyperref">Program <span class="ref">7.5</span></a>)</p>
 
 </div></div>
-<div id="cid51" data-tralics-id="cid51" class="section" data-number="6.4"><h2><a href="4_more_graphics.html#cid51" class="heading hyperref"><span class="number">6.4 </span>Fullscreen mode</a></h2>
+<div id="cid50" data-tralics-id="cid50" class="section" data-number="6.4"><h2><a href="4_more_graphics.html#cid50" class="heading hyperref"><span class="number">6.4 </span>Fullscreen mode</a></h2>
 <p class="noindent">Sometimes it is nice to play your game using the entire screen rather than in a window.<span class="intersentencespace"></span> Add these lines to any game to enable fullscreen mode.<span class="intersentencespace"></span> Then press <em>F</em> to go fullscreen, <em>ESCAPE</em> to quit.</p>
-<div class="codelisting" id="code-full_screen_mode" data-tralics-id="uid134" data-number="6.4"><div class="heading"><span class="number">Program 6.4:</span> <span class="description">Fullscreen mode</span>
+<div class="codelisting" id="code-full_screen_mode" data-tralics-id="uid137" data-number="6.4"><div class="heading"><span class="number">Program 6.4:</span> <span class="description">Fullscreen mode</span>
 
 
 </div>
@@ -181,10 +181,10 @@ how much <em>red</em>, <em>green</em> and <em>blue</em> to mix together.</p>
     <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">escape</span><span class="p">:</span>
         <span class="nb">exit</span><span class="p">()</span>
 </pre></div></div></div></div>
-<div id="cid52" data-tralics-id="cid52" class="section" data-number="6.5"><h2><a href="4_more_graphics.html#cid52" class="heading hyperref"><span class="number">6.5 </span>Displaying the score</a></h2>
+<div id="cid51" data-tralics-id="cid51" class="section" data-number="6.5"><h2><a href="4_more_graphics.html#cid51" class="heading hyperref"><span class="number">6.5 </span>Displaying the score</a></h2>
 <p class="noindent">This game shows how you can keep the score in a variable and print it on to the game screen.<span class="intersentencespace"></span> You can display any other
 messages to the player the same way.</p>
-<div class="codelisting" id="code-displaying_text" data-tralics-id="uid135" data-number="6.5"><div class="heading"><span class="number">Program 6.5:</span> <span class="description">Keeping score in a variable and displaying it</span>
+<div class="codelisting" id="code-displaying_text" data-tralics-id="uid138" data-number="6.5"><div class="heading"><span class="number">Program 6.5:</span> <span class="description">Keeping score in a variable and displaying it</span>
 
 
 </div>
@@ -206,17 +206,17 @@ messages to the player the same way.</p>
     <span class="k">global</span> <span class="n">score</span>
     <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keys</span><span class="o">.</span><span class="n">SPACE</span><span class="p">:</span>
         <span class="n">score</span> <span class="o">+=</span> <span class="mi">1</span>
-</pre></div></div></div><div class="aside" id="" data-tralics-id="uid136" data-number="6.8"><div class="heading"><span class="number">Exercise 6.8.</span> 
+</pre></div></div></div><div class="aside" id="" data-tralics-id="uid139" data-number="6.8"><div class="heading"><span class="number">Exercise 6.8.</span> 
 
 <span class="description"></span></div>
 <p class="noindent">Make the score text larger.<span class="intersentencespace"></span></p>
 
-</div><div class="aside" id="" data-tralics-id="uid137" data-number="6.9"><div class="heading"><span class="number">Exercise 6.9.</span> 
+</div><div class="aside" id="" data-tralics-id="uid140" data-number="6.9"><div class="heading"><span class="number">Exercise 6.9.</span> 
 
 <span class="description">Advanced</span></div>
 <p class="noindent">Add a second player who presses a different key and show their score too.<span class="intersentencespace"></span></p>
 
-</div><div class="aside" id="" data-tralics-id="uid138" data-number="6.10"><div class="heading"><span class="number">Exercise 6.10.</span> 
+</div><div class="aside" id="" data-tralics-id="uid141" data-number="6.10"><div class="heading"><span class="number">Exercise 6.10.</span> 
 
 <span class="description"></span></div>
 <p class="noindent">Add text to one of your other games.<span class="intersentencespace"></span></p>
