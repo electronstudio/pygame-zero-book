@@ -319,10 +319,20 @@ Here is the finished game with all the changes included:
 <<(programs/chaser7.py)
 \end{codelisting}
 
-However that is not the end!  There are many things you could add to this game.
+\newpage
+
+## Ideas for extension
+
+There are many things you could add to this game.
 
 * Add more enemies.
 
 * Give the player three lives.
 
 * Add music and sound effects.
+
+* Create a powerup that makes the player move faster.
+
+* Make the enemies more intelligent.
+
+* Allow the player to kill the enemies.

@@ -1,41 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="85ef30d2-737e-42b4-b9a4-54300f9dc2b1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/images/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/images/cover-web.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/images/cover.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/images/cover.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/images/cover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/images/figures/race.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/images/testimonial_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/0_text_quizes.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/0_text_quizes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/0_text_quizes_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/0_text_quizes_fragment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/1_graphics.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/1_graphics.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/1_graphics_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/1_graphics_fragment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/2_simple_games.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/2_simple_games.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/2_simple_games_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/2_simple_games_fragment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/3_python_fundamentals.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/3_python_fundamentals.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/3_python_fundamentals_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/3_python_fundamentals_fragment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/4_more_graphics.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/4_more_graphics.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/4_more_graphics_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/4_more_graphics_fragment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/5_more_games.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/5_more_games.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/5_more_games_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/5_more_games_fragment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/6_advanced.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/6_advanced.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/6_advanced_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/6_advanced_fragment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/chase.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/chase.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/chase_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/chase_fragment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/frontmatter.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/frontmatter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/frontmatter_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/frontmatter_fragment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/maze.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/maze.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/maze_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/maze_fragment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/overview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/overview_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/overview_fragment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/pygame-book.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/pygame-book.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/race.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/race.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/race_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/race_fragment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/shooter.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/shooter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/shooter_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/shooter_fragment.html" afterDir="false" />
+    <list default="true" id="85ef30d2-737e-42b4-b9a4-54300f9dc2b1" name="Default Changelist" comment="publish">
+      <change afterPath="$PROJECT_DIR$/epub/OEBPS/0_text_quizes_fragment.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epub/OEBPS/1_graphics_fragment.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epub/OEBPS/2_simple_games_fragment.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epub/OEBPS/3_python_fundamentals_fragment.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epub/OEBPS/4_more_graphics_fragment.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epub/OEBPS/5_more_games_fragment.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epub/OEBPS/6_advanced_fragment.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epub/OEBPS/chase_fragment.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epub/OEBPS/maze_fragment.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epub/OEBPS/nav.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epub/OEBPS/overview_fragment.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epub/OEBPS/race_fragment.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epub/OEBPS/shooter_fragment.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapters/chase.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/chase.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapters/maze.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/maze.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapters/race.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/race.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapters/shooter.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/shooter.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epub/OEBPS/frontmatter_fragment.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/epub/OEBPS/frontmatter_fragment.xhtml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -192,7 +177,7 @@
       <workItem from="1568803260325" duration="540000" />
       <workItem from="1568896649589" duration="177000" />
       <workItem from="1569182714142" duration="276000" />
-      <workItem from="1569183024243" duration="6496000" />
+      <workItem from="1569183024243" duration="8684000" />
     </task>
     <task id="LOCAL-00001" summary="mess with formatting">
       <created>1558146868663</created>
@@ -453,7 +438,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569192705202</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="publish">
+      <created>1569193852297</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1569193852297</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -463,7 +455,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="replace images symlink with copy" />
     <MESSAGE value="why no index publish?" />
     <MESSAGE value="license, readme" />
     <MESSAGE value="creative commons" />
@@ -488,7 +479,8 @@
     <MESSAGE value="redrafting from beginning" />
     <MESSAGE value="deploy" />
     <MESSAGE value="finished?" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished?" />
+    <MESSAGE value="publish" />
+    <option name="LAST_COMMIT_MESSAGE" value="publish" />
   </component>
   <component name="masterDetails">
     <states>

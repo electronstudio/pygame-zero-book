@@ -40,8 +40,6 @@ the gap between the left wall and the right wall and the colour of the wall.
 remaining functions.)
 \end{aside}
 
-\newpage
-
 ## Player input
 
 Replace the definiton of `player_input()` with this:
@@ -120,8 +118,14 @@ def scroll_walls():
 ```
 \begin{aside}
 \label{}
+\heading{}
+\noindent Modify `scroll_walls()` as above and check that the player can now accelerate forward.
+\end{aside}
+
+\begin{aside}
+\label{}
 \heading{Advanced}
-\noindent Verify the player can now accelerate forward, i.e. the walls scroll.  (Can you change the amount of the acceleration?)
+\noindent Change the amount of the forward acceleration to make the game faster or slower.
 \end{aside}
 
 ## Wall collisions
@@ -142,6 +146,18 @@ def wall_collisions():
         player.vy = 0
 ```
 
+\begin{aside}
+\label{}
+\heading{}
+\noindent Modify `wall_collisions()` as above and check that the player now bounces off the walls.
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent Make the collision more bouncy, i.e. the player bounces further when he hits the wall.
+\end{aside}
+
 ## Timer
 
 Currently the player has infinite time.  We want decrease the `time` variable by how much time has passed and end the game
@@ -160,7 +176,14 @@ def timer(delta):
 \begin{aside}
 \label{}
 \heading{}
-\noindent Verify the game ends after 15 seconds.  Change it so it lasts 20 seconds.
+\noindent Modify the `timer()` function as above.  Verify the game ends after 15 seconds.
+\end{aside}
+
+
+\begin{aside}
+\label{}
+\heading{}
+\noindent Make the game last for 30 seconds.
 \end{aside}
 
 ## Mouse movement
@@ -174,7 +197,15 @@ def on_mouse_move(pos):
     player.vy = (HEIGHT - y) / 20
 ```
 
-## Extension ideas
+\begin{aside}
+\label{}
+\heading{}
+\noindent Modify the `on_mouse_move()` function as above.  How does the player accelerate using the mouse?
+\end{aside}
+
+\newpage
+
+## Ideas for extension
 
 * Draw a new image for the player.  Make the Actor show a different image depending on if the player is steering left or right.
 

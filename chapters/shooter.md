@@ -6,13 +6,13 @@ In this chapter we will build a shooting game together, step by step.  The Pytho
 
 Our game will need these Actors, so **we must create images for all of them and save them as `.png` files in the `images` folder.**
 
-| variable name | image file name | image size | description                             |
-|---------------|-----------------|-----------------------------------------|
-| player        | player.png      | 64x64 | spaceship controlled by the player    |
-| background    | background.png  | 600x800 | image of stars                  |
-| enemies (list)| enemy.png       | 64x64 | evil alien                           |
-| bullets (list)| bullet.png      | 16x16  | fired by the player upwards    |
-| bombs (list)  | bomb.png        | 16x16 | dropped by the enemies downwards |
+| variable name | image file name | image size | description       |
+|---------------|-----------------|--------------------------------|
+| player        | player.png      | 64x64 | player's spaceship     |
+| background    | background.png  | 600x800 | image of stars       |
+| enemies (list)| enemy.png       | 64x64 | evil alien             |
+| bullets (list)| bullet.png      | 16x16  | fired by the player   |
+| bombs (list)  | bomb.png        | 16x16 | dropped by the enemies |
 
 The `player` and `background` variables will contain Actors.  The others are lists which
 we initialize to the empty list `[]`.  Actors will be appended to the lists later.

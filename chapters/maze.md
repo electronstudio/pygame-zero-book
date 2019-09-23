@@ -274,6 +274,10 @@ Here is the finished game with all the changes included:
 <<(programs/maze7.py)
 \end{codelisting}
 
+\newpage
+
+## Ideas for extension
+
 However that is not the end!  There are many things you could add to this game.
 
 * Show the player score.
