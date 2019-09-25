@@ -1,23 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="85ef30d2-737e-42b4-b9a4-54300f9dc2b1" name="Default Changelist" comment="publish">
-      <change afterPath="$PROJECT_DIR$/epub/OEBPS/0_text_quizes_fragment.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epub/OEBPS/1_graphics_fragment.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epub/OEBPS/2_simple_games_fragment.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epub/OEBPS/3_python_fundamentals_fragment.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epub/OEBPS/4_more_graphics_fragment.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epub/OEBPS/5_more_games_fragment.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epub/OEBPS/6_advanced_fragment.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epub/OEBPS/chase_fragment.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epub/OEBPS/maze_fragment.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epub/OEBPS/nav.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epub/OEBPS/overview_fragment.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epub/OEBPS/race_fragment.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epub/OEBPS/shooter_fragment.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="85ef30d2-737e-42b4-b9a4-54300f9dc2b1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epub/OEBPS/frontmatter_fragment.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/epub/OEBPS/frontmatter_fragment.xhtml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,15 +38,15 @@
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/html/images/figures" />
+      <recent name="$PROJECT_DIR$/images/figures" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/docs" />
       <recent name="$PROJECT_DIR$/images/figures" />
       <recent name="$PROJECT_DIR$/docs/images/figures" />
       <recent name="$PROJECT_DIR$/chapters" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/html/images/figures" />
-      <recent name="$PROJECT_DIR$/images/figures" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -175,7 +160,7 @@
       <workItem from="1568896649589" duration="177000" />
       <workItem from="1569182714142" duration="276000" />
       <workItem from="1569183024243" duration="9345000" />
-      <workItem from="1569423670605" duration="83000" />
+      <workItem from="1569423670605" duration="463000" />
     </task>
     <task id="LOCAL-00001" summary="mess with formatting">
       <created>1558146868663</created>
@@ -450,7 +435,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569197762336</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="online version match published version 2.0">
+      <created>1569423859461</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1569423859461</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -460,7 +452,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="license, readme" />
     <MESSAGE value="creative commons" />
     <MESSAGE value="title" />
     <MESSAGE value="update html" />
@@ -485,7 +476,8 @@
     <MESSAGE value="finished?" />
     <MESSAGE value="publish" />
     <MESSAGE value="fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixes" />
+    <MESSAGE value="online version match published version 2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="online version match published version 2.0" />
   </component>
   <component name="masterDetails">
     <states>
