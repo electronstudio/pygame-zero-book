@@ -3,7 +3,7 @@
 
 [Read the text here](https://electronstudio.github.io/pygame-zero-book/)
 
-Support the author by [buying the book](https://www.amazon.co.uk/dp/1071147706) or [buying his game](http://retrowar.net)
+Support the author by [buying the book](https://www.amazon.co.uk/dp/1071147706) or [buying the cheaper black and white version](https://www.amazon.co.uk/Coding-Games-Pygame-Zero-Python/dp/1695028805) or [buying his game](http://retrowar.net)
 
 This book contains all the example programs used in my CoderDojo class to teach Python programming.  The primary goal of the class is to teach
 programming using action games to make learning more interesting.  Some of the examples are entirely focused on

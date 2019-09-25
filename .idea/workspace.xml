@@ -16,10 +16,7 @@
       <change afterPath="$PROJECT_DIR$/epub/OEBPS/race_fragment.xhtml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/epub/OEBPS/shooter_fragment.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapters/chase.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/chase.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapters/maze.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/maze.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapters/race.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/race.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapters/shooter.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/shooter.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/epub/OEBPS/frontmatter_fragment.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/epub/OEBPS/frontmatter_fragment.xhtml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -177,7 +174,8 @@
       <workItem from="1568803260325" duration="540000" />
       <workItem from="1568896649589" duration="177000" />
       <workItem from="1569182714142" duration="276000" />
-      <workItem from="1569183024243" duration="8684000" />
+      <workItem from="1569183024243" duration="9345000" />
+      <workItem from="1569423670605" duration="83000" />
     </task>
     <task id="LOCAL-00001" summary="mess with formatting">
       <created>1558146868663</created>
@@ -445,7 +443,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569193852297</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="fixes">
+      <created>1569197762336</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1569197762336</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -455,7 +460,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="why no index publish?" />
     <MESSAGE value="license, readme" />
     <MESSAGE value="creative commons" />
     <MESSAGE value="title" />
@@ -480,7 +484,8 @@
     <MESSAGE value="deploy" />
     <MESSAGE value="finished?" />
     <MESSAGE value="publish" />
-    <option name="LAST_COMMIT_MESSAGE" value="publish" />
+    <MESSAGE value="fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixes" />
   </component>
   <component name="masterDetails">
     <states>

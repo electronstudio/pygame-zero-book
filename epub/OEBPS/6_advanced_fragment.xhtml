@@ -1,59 +1,28 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <link href="stylesheets/pygments.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href="stylesheets/softcover.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href="stylesheets/custom.css" media="screen" rel="stylesheet" type="text/css" />
-    
-    <title>pygame-book</title>
-    
-      <script type="text/x-mathjax-config">
-              MathJax.Hub.Config({
-        "HTML-CSS": {
-          availableFonts: ["TeX"],
-        },
-        TeX: {
-          extensions: ["AMSmath.js", "AMSsymbols.js", "color.js"],
-          equationNumbers: {
-            autoNumber: "AMS",
-            formatNumber: function (n) { return "12" + '.' + n }
-          },
-          Macros: {
-            PolyTeX:    "Poly{\\TeX}",
-            PolyTeXnic: "Poly{\\TeX}nic",
-            "softcover": "\\texttt{softcover}",
-"unitvec": ["{\\hat #1}", 1]
-          }
-        },
-        showProcessingMessages: false,
-        messageStyle: "none",
-        imageFont: null,
-        "AssistiveMML": { disabled: true }
-      });
+<?xml version="1.0" encoding="utf-8"?>
+        <!DOCTYPE html>
 
-        if (/PhantomJS/.test(window.navigator.userAgent)) {
-          MathJax.Hub.Queue([alert, 'MathJax Done']);
-        }
-      </script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_SVG"></script>
-    
-  </head>
-  <body>
-    
-    <div id="book">
-      <div id="cid101" data-tralics-id="cid101" class="chapter" data-number="12" data-chapter="6_advanced"><h1><a href="6_advanced.html#cid101" class="heading hyperref"><span class="number">Chapter 12 </span>Advanced topics</a></h1>
-</div>
-<div id="cid102" data-tralics-id="cid102" class="section" data-number="12.1"><h2><a href="6_advanced.html#cid102" class="heading hyperref"><span class="number">12.1 </span>Instructor note</a></h2>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+          <title>Chapter 12</title>
+          <link rel="stylesheet" href="styles/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="styles/softcover.css" type="text/css" />
+          <link rel="stylesheet" href="styles/epub.css" type="text/css" />
+          <link rel="stylesheet" href="styles/custom.css" type="text/css"/>
+          <link rel="stylesheet" href="styles/custom_epub.css" type="text/css"/>
+          <link rel="stylesheet" type="application/vnd.adobe-page-template+xml" href="styles/page-template.xpgt" />
+        </head>
+
+        <body>
+          <div id="cid101" class="chapter"><h1><a href="6_advanced_fragment.xhtml#cid101" class="heading hyperref"><span class="number">Chapter 12 </span>Advanced topics</a></h1>
+</div><div id="cid102" class="section"><h2><a href="6_advanced_fragment.xhtml#cid102" class="heading hyperref"><span class="number">12.1 </span>Instructor note</a></h2>
 <p class="noindent">This is the beginning of my attempts to teach object oriented programming, but I wouldn’t attempt this with young students since it requires abstract thinking.</p>
-</div>
-<div id="cid103" data-tralics-id="cid103" class="section" data-number="12.2"><h2><a href="6_advanced.html#cid103" class="heading hyperref"><span class="number">12.2 </span>Classes</a></h2>
-<p class="noindent">You’ve already been using class types provided by Pygame Zero, e.g.<span class="intersentencespace"></span> Rect and Actor.<span class="intersentencespace"></span> But if we want to store velocity as in <a href="5_more_games.html#code-simple_physics" class="hyperref">Program <span class="ref">7.3</span></a> we find these classes do not
+</div><div id="cid103" class="section"><h2><a href="6_advanced_fragment.xhtml#cid103" class="heading hyperref"><span class="number">12.2 </span>Classes</a></h2>
+<p class="noindent">You’ve already been using class types provided by Pygame Zero, e.g.<span class="intersentencespace"></span> Rect and Actor.<span class="intersentencespace"></span> But if we want to store velocity as in <a href="5_more_games_fragment.xhtml#code-simple_physics" class="hyperref">Program <span class="ref">7.3</span></a> we find these classes do not
 include <em>vx</em> and <em>vy</em> variables inside them by default.<span class="intersentencespace"></span> We have to remember to add a <em>vx</em> and <em>vy</em> every time we create an Actor.</p>
 <p>So let’s
 create our own class, called <em>Sprite</em>, that is the same as Actor but with
 these variables included.</p>
-<div class="codelisting" id="code-classes" data-tralics-id="uid235" data-number="12.1"><div class="heading"><span class="number">Program 12.1:</span> <span class="description">Classes</span>
+<div class="codelisting" id="code-classes"><div class="heading"><span class="number">Program 12.1:</span> <span class="description">Classes</span>
 
 
 </div>
@@ -78,10 +47,9 @@ these variables included.</p>
         <span class="n">ball</span><span class="o">.</span><span class="n">vx</span> <span class="o">=</span> <span class="o">-</span><span class="n">ball</span><span class="o">.</span><span class="n">vx</span>
     <span class="k">if</span> <span class="n">ball</span><span class="o">.</span><span class="n">bottom</span> <span class="o">&gt;</span> <span class="n">HEIGHT</span> <span class="ow">or</span> <span class="n">ball</span><span class="o">.</span><span class="n">top</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">ball</span><span class="o">.</span><span class="n">vy</span> <span class="o">=</span> <span class="o">-</span><span class="n">ball</span><span class="o">.</span><span class="n">vy</span>
-</pre></div></div></div></div>
-<div id="cid104" data-tralics-id="cid104" class="section" data-number="12.3"><h2><a href="6_advanced.html#cid104" class="heading hyperref"><span class="number">12.3 </span>Methods</a></h2>
+</pre></div></div></div></div><div id="cid104" class="section"><h2><a href="6_advanced_fragment.xhtml#cid104" class="heading hyperref"><span class="number">12.3 </span>Methods</a></h2>
 <p class="noindent">Classes can contain functions (called <em>methods</em>) as well as variables.<span class="intersentencespace"></span> Methods are the best place to modify the class’s variables.</p>
-<div class="codelisting" id="code-classes2" data-tralics-id="uid236" data-number="12.2"><div class="heading"><span class="number">Program 12.2:</span> <span class="description">Class methods</span>
+<div class="codelisting" id="code-classes2"><div class="heading"><span class="number">Program 12.2:</span> <span class="description">Class methods</span>
 
 
 </div>
@@ -109,11 +77,10 @@ these variables included.</p>
 
 <span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
     <span class="n">ball</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
-</pre></div></div></div></div>
-<div id="cid105" data-tralics-id="cid105" class="section" data-number="12.4"><h2><a href="6_advanced.html#cid105" class="heading hyperref"><span class="number">12.4 </span>Joystick tester</a></h2>
+</pre></div></div></div></div><div id="cid105" class="section"><h2><a href="6_advanced_fragment.xhtml#cid105" class="heading hyperref"><span class="number">12.4 </span>Joystick tester</a></h2>
 <p class="noindent">This program demonstrates using joysticks and for loops, but is mainly included to help you test the input from your controllers.</p>
 <p>(I don’t suggest typing this one yourself.)</p>
-<div class="codelisting" id="code-joystick_tester" data-tralics-id="uid237" data-number="12.3"><div class="heading"><span class="number">Program 12.3:</span> <span class="description">Joystick tester</span>
+<div class="codelisting" id="code-joystick_tester"><div class="heading"><span class="number">Program 12.3:</span> <span class="description">Joystick tester</span>
 
 
 </div>
@@ -150,11 +117,10 @@ these variables included.</p>
             <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">"Hat {} value: {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">hat</span><span class="p">)),</span>
                              <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
             <span class="n">y</span> <span class="o">+=</span> <span class="mi">14</span>
-</pre></div></div></div></div>
-<div id="cid106" data-tralics-id="cid106" class="section" data-number="12.5"><h2><a href="6_advanced.html#cid106" class="heading hyperref"><span class="number">12.5 </span>Distributing your Pygame Zero games</a></h2>
+</pre></div></div></div></div><div id="cid106" class="section"><h2><a href="6_advanced_fragment.xhtml#cid106" class="heading hyperref"><span class="number">12.5 </span>Distributing your Pygame Zero games</a></h2>
 <p class="noindent">This is often tricky to get working, but you can distribute your games to people who don’t have Python or Mu installed.<span class="intersentencespace"></span> You can put them on a USB stick, or a website for people to download, or even on itch.io for people to buy.</p>
 <ol>
-<li>Install the full version of python from <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">www.python.org</a>.<span class="intersentencespace"></span>
+<li>Install the full version of python from <a href="https://www.python.org/downloads/" rel="noopener">www.python.org</a>.<span class="intersentencespace"></span>
 </li>
 <li>Edit your game source code (using Mu).<span class="intersentencespace"></span> We will assume your source is in a file <code>NAME_OF_GAME.py</code>.<span class="intersentencespace"></span> At the top of the file add the line:
 <div class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pgzrun</span>
@@ -192,6 +158,5 @@ these variables included.</p>
 put that on a website
 </li></ol>
 </div>
-    </div>
-  </body>
-</html>
+        </body>
+        </html>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+        <!DOCTYPE html>
+
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+          <title>Chapter 4</title>
+          <link rel="stylesheet" href="styles/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="styles/softcover.css" type="text/css" />
+          <link rel="stylesheet" href="styles/epub.css" type="text/css" />
+          <link rel="stylesheet" href="styles/custom.css" type="text/css"/>
+          <link rel="stylesheet" href="styles/custom_epub.css" type="text/css"/>
+          <link rel="stylesheet" type="application/vnd.adobe-page-template+xml" href="styles/page-template.xpgt" />
+        </head>
+
+        <body>
+          <div id="cid33" class="chapter"><h1><a href="1_graphics_fragment.xhtml#cid33" class="heading hyperref"><span class="number">Chapter 4 </span>Drawing graphics</a></h1>
+<p class="noindent">To create graphics for our games we will use <a href="https://pygame-zero.readthedocs.io" rel="noopener">the Pygame Zero library</a><sup id="cha-4_footnote-ref-1" class="footnote"><a href="#cha-4_footnote-1">1</a></sup>.<span class="intersentencespace"></span> You will find the documentation on the website useful!</p>
+<p>The smallest square that can be displayed on a monitor is called a <em>pixel</em>.<span class="intersentencespace"></span> This diagram shows a close-up view
+of a window that is 40 pixels wide and 40 pixels high.<span class="intersentencespace"></span> At normal size you will not see the grid lines.</p>
+<div class="graphics image"><img src="images/figures/pixelgrid.png" alt="images/figures/pixelgrid" /></div>
+<p>We can refer to any pixel by giving two co-ordinates, <em>(x,y)</em> Make sure you understand co-ordinates before moving on
+because everything we do in Pygame Zero will use it.<span class="intersentencespace"></span> (In maths this called a ‘Cartesian coordinate system’).</p>
+</div><div id="cid34" class="section"><h2><a href="1_graphics_fragment.xhtml#cid34" class="heading hyperref"><span class="number">4.1 </span>Lines and circles</a></h2>
+<p class="noindent">If are using the Mu editor, Pygame Zero is built-in, but <strong>you must remember to click ‘Mode’ and select ‘Pygame Zero’ before running your program</strong>!</p>
+<p>If you are using a different editor, <a href="https://pygame-zero.readthedocs.io/en/stable/ide-mode.html" rel="noopener">instructions are online</a><sup id="cha-4_footnote-ref-2" class="footnote"><a href="#cha-4_footnote-2">2</a></sup></p>
+<div class="codelisting" id="code-lines_circles"><div class="heading"><span class="number">Program 4.1:</span> <span class="description">Lines and circles</span>
+
+
+</div>
+
+<div class="code"><div class="highlight"><pre><span></span><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">500</span>  <span class="c1"># What are these units? What if we change them?</span>
+<span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">500</span>  <span class="c1"># What if we delete this line?</span>
+
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">((</span><span class="mi">250</span><span class="p">,</span> <span class="mi">250</span><span class="p">),</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">"white"</span><span class="p">)</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">filled_circle</span><span class="p">((</span><span class="mi">250</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">"red"</span><span class="p">)</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">((</span><span class="mi">150</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">450</span><span class="p">),</span> <span class="s2">"purple"</span><span class="p">)</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">((</span><span class="mi">150</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="mi">350</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="s2">"purple"</span><span class="p">)</span>
+</pre></div></div></div><div class="aside" id=""><div class="heading"><span class="number">Exercise 4.1.</span> 
+
+<span class="description"></span></div>
+<p class="noindent">Finish drawing this picture</p>
+
+</div><div class="aside" id=""><div class="heading"><span class="number">Exercise 4.2.</span> 
+
+<span class="description"></span></div>
+<p class="noindent">Draw your own picture.<span class="intersentencespace"></span></p>
+
+</div></div><div id="cid35" class="section"><h2><a href="1_graphics_fragment.xhtml#cid35" class="heading hyperref"><span class="number">4.2 </span>Moving rectangles</a></h2>
+<p class="noindent">To make things move we need to add the special <code>update()</code> function.<span class="intersentencespace"></span> We don’t need to write our own loop because <em>Pygame Zero calls this function for us in its own loop</em>, over and over, many times per second.</p>
+<div class="codelisting" id="code-moving_boxes"><div class="heading"><span class="number">Program 4.2:</span> <span class="description">Moving rectangles</span>
+
+
+</div>
+
+<div class="code"><div class="highlight"><pre><span></span><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="n">box</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">((</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">filled_rect</span><span class="p">(</span><span class="n">box</span><span class="p">,</span> <span class="s2">"red"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="n">box</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">box</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+    <span class="k">if</span> <span class="n">box</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">WIDTH</span><span class="p">:</span>
+        <span class="n">box</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div></div></div><div class="aside" id=""><div class="heading"><span class="number">Exercise 4.3.</span> 
+
+<span class="description"></span></div>
+<p class="noindent">Make the box move faster.<span class="intersentencespace"></span></p>
+
+</div><div class="aside" id=""><div class="heading"><span class="number">Exercise 4.4.</span> 
+
+<span class="description"></span></div>
+<p class="noindent">Make the box move in different directions.<span class="intersentencespace"></span></p>
+
+</div><div class="aside" id=""><div class="heading"><span class="number">Exercise 4.5.</span> 
+
+<span class="description"></span></div>
+<p class="noindent">Make two boxes with different colours.<span class="intersentencespace"></span></p>
+
+</div></div><div id="cid36" class="section"><h2><a href="1_graphics_fragment.xhtml#cid36" class="heading hyperref"><span class="number">4.3 </span>Actor sprites</a></h2>
+<p class="noindent">Actor sprites are very similar to boxes!<span class="intersentencespace"></span> Click <code>Images</code> to see the folder of image files available.<span class="intersentencespace"></span> <code>alien.png</code> should already be there, but
+for other images you must add the files yourself.</p>
+<p>You could use Microsoft Paint which comes with Windows but
+I recommend you download and install <a href="https://krita.org" rel="noopener">Krita</a><sup id="cha-4_footnote-ref-3" class="footnote"><a href="#cha-4_footnote-3">3</a></sup>.</p>
+<div class="codelisting" id="code-sprites"><div class="heading"><span class="number">Program 4.3:</span> <span class="description">Actor sprites</span>
+
+
+</div>
+
+<div class="code"><div class="highlight"><pre><span></span><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">50</span>
+
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">2</span>
+    <span class="k">if</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">WIDTH</span><span class="p">:</span>
+        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div></div></div><div class="aside" id=""><div class="heading"><span class="number">Exercise 4.6.</span> 
+
+<span class="description"></span></div>
+<p class="noindent">Draw or download your own image to use instead of alien.</p>
+
+</div></div><div id="cid37" class="section"><h2><a href="1_graphics_fragment.xhtml#cid37" class="heading hyperref"><span class="number">4.4 </span>Background image</a></h2>
+<p class="noindent">We are going to add a background image to <a href="1_graphics_fragment.xhtml#code-sprites" class="hyperref">Program <span class="ref">4.3</span></a></p>
+<p>Click <code>Images</code> to see the folder of image files available.</p>
+<p><strong>You must create or download a picture
+to use a background.<span class="intersentencespace"></span> Save it as <code>background.png</code> in the directory <code>mu_code/images</code>.<span class="intersentencespace"></span> It should be the same size as the window, 500×500 pixels and it must be in <code>.png</code> format.</strong></p>
+<div class="codelisting" id="code-background"><div class="heading"><span class="number">Program 4.4:</span> <span class="description">Background</span>
+
+
+</div>
+
+<div class="code"><div class="highlight"><pre><span></span><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="n">background</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'background'</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">background</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">2</span>
+    <span class="k">if</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">WIDTH</span><span class="p">:</span>
+        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div></div></div><div class="aside" id=""><div class="heading"><span class="number">Exercise 4.7.</span> 
+
+<span class="description"></span></div>
+<p class="noindent">Create a picture to use a background.<span class="intersentencespace"></span> Save it as <code>background.png</code>.<span class="intersentencespace"></span> Run the program.<span class="intersentencespace"></span></p>
+
+</div></div><div id="cid38" class="section"><h2><a href="1_graphics_fragment.xhtml#cid38" class="heading hyperref"><span class="number">4.5 </span>Keyboard input</a></h2>
+<p class="noindent">The alien moves when you press the cursor keys.</p>
+<div class="codelisting" id="code-keyboard_input"><div class="heading"><span class="number">Program 4.5:</span> <span class="description">Keyboard input</span>
+
+
+</div>
+
+<div class="code"><div class="highlight"><pre><span></span><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+    <span class="k">elif</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span>
+</pre></div></div></div><div class="aside" id="exercise-updown"><div class="heading"><span class="number">Exercise 4.8.</span> 
+
+<span class="description"></span></div>
+<p class="noindent">Make the alien move up and down as well as left and right.<span class="intersentencespace"></span></p>
+
+</div><div class="aside" id=""><div class="heading"><span class="number">Exercise 4.9.</span> 
+
+<span class="description"></span></div>
+<p class="noindent">Use the more concise += operator to change the <code>alien.x</code> value (see <a href="3_python_fundamentals_fragment.xhtml#code-shortcuts" class="hyperref">Program <span class="ref">2.18</span></a>).<span class="intersentencespace"></span></p>
+
+</div><div class="aside" id=""><div class="heading"><span class="number">Exercise 4.10.</span> 
+
+<span class="description"></span></div>
+<p class="noindent">Use the <code>or</code> operator to allow WASD keys to move the alien in addition to the cursor keys (see <a href="3_python_fundamentals_fragment.xhtml#code-logic" class="hyperref">Program <span class="ref">2.8</span></a>).<span class="intersentencespace"></span></p>
+
+</div></div><div id="cha-4_footnotes">
+  <div class="footnotes">
+    <div id="cha-4_footnote-1" class="footnote"><a class="footnote-link" href="#cha-4_footnote-ref-1">1.</a> https://pygame-zero.readthedocs.io</div>
+    <div id="cha-4_footnote-2" class="footnote"><a class="footnote-link" href="#cha-4_footnote-ref-2">2.</a> https://pygame-zero.readthedocs.io/en/stable/ide-mode.html</div>
+    <div id="cha-4_footnote-3" class="footnote"><a class="footnote-link" href="#cha-4_footnote-ref-3">3.</a> https://krita.org</div>
+  </div>
+</div>
+        </body>
+        </html>
