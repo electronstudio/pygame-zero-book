@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85ef30d2-737e-42b4-b9a4-54300f9dc2b1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapters/6_advanced.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/6_advanced.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -160,7 +161,11 @@
       <workItem from="1568896649589" duration="177000" />
       <workItem from="1569182714142" duration="276000" />
       <workItem from="1569183024243" duration="9345000" />
-      <workItem from="1569423670605" duration="463000" />
+      <workItem from="1569423670605" duration="2191000" />
+      <workItem from="1569461615650" duration="518000" />
+      <workItem from="1569533369639" duration="416000" />
+      <workItem from="1569549947183" duration="510000" />
+      <workItem from="1569788869011" duration="532000" />
     </task>
     <task id="LOCAL-00001" summary="mess with formatting">
       <created>1558146868663</created>
@@ -442,7 +447,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569423859461</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="readme">
+      <created>1569424144993</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1569424144993</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,7 +464,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="creative commons" />
     <MESSAGE value="title" />
     <MESSAGE value="update html" />
     <MESSAGE value="improve pics" />
@@ -477,7 +488,8 @@
     <MESSAGE value="publish" />
     <MESSAGE value="fixes" />
     <MESSAGE value="online version match published version 2.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="online version match published version 2.0" />
+    <MESSAGE value="readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="readme" />
   </component>
   <component name="masterDetails">
     <states>

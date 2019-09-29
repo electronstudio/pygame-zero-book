@@ -102,7 +102,7 @@ Save the file.
       
 7. Create the executable.  At the command prompt type:
     
-    ```pyinstaller NAME_OF_GAME.py --distpath . --add-data "pgzero;pgzero" --add-data "images;images" --add-data "fonts;fonts" "sounds;sounds" --add-data "music;music" --onefile --noconfirm --windowed --clean```
+    ```pyinstaller NAME_OF_GAME.py --distpath . --add-data "pgzero;pgzero" --add-data "images;images" --add-data "fonts;fonts" --add-data "sounds;sounds" --add-data "music;music" --onefile --noconfirm --windowed --clean```
     
    This will generate a program called ```NAME_OF_GAME.exe```.  You can double click this program to play your game.
    
