@@ -141,7 +141,8 @@ only called when the player presses a key.<span class="intersentencespace"></spa
 </div></div>
 <div id="cid72" data-tralics-id="cid72" class="section" data-number="9.3"><h2><a href="maze.html#cid72" class="heading hyperref"><span class="number">9.3 </span>Restricting where the player can move</a></h2>
 <p class="noindent">Delete the last two lines of the program and replace them with this modified version:</p>
-<div class="code"><div class="highlight"><pre><span></span>    <span class="k">if</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">'empty'</span><span class="p">:</span>
+<div class="code"><div class="highlight"><pre><span></span>    <span class="n">tile</span> <span class="o">=</span> <span class="n">tiles</span><span class="p">[</span><span class="n">maze</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">column</span><span class="p">]]</span>
+    <span class="k">if</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">'empty'</span><span class="p">:</span>
         <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">column</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
         <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">row</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
     <span class="k">elif</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">'goal'</span><span class="p">:</span>

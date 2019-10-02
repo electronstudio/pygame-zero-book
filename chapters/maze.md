@@ -97,6 +97,7 @@ only called when the player presses a key.  The key that was pressed is passed t
 Delete the last two lines of the program and replace them with this modified version:
 
 ```python
+    tile = tiles[maze[row][column]]
     if tile == 'empty':
         player.x = column * TILE_SIZE
         player.y = row * TILE_SIZE

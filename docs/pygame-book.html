@@ -1359,11 +1359,9 @@ to use a background.<span class="intersentencespace"></span> Save it as <code>ba
 <div class="code"><div class="highlight"><pre><span></span><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>
 <span class="n">alien</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 
-
 <span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
     <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
     <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
-
 
 <span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
     <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
@@ -1661,6 +1659,8 @@ catches the alien: the program now exits and you must run it again to play again
 </div>
 
 <div class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pygame</span>
+<span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">500</span>
 
 <span class="n">joystick</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">joystick</span><span class="o">.</span><span class="n">Joystick</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">joystick</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
@@ -1668,11 +1668,9 @@ catches the alien: the program now exits and you must run it again to play again
 <span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">"alien"</span><span class="p">)</span>
 <span class="n">alien</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 
-
 <span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
     <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
     <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
-
 
 <span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
     <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">right</span> <span class="ow">or</span> <span class="n">joystick</span><span class="o">.</span><span class="n">get_axis</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.1</span><span class="p">:</span>
@@ -2530,7 +2528,8 @@ only called when the player presses a key.<span class="intersentencespace"></spa
 </div></div>
 <div id="cid72" data-tralics-id="cid72" class="section" data-number="9.3"><h2><a href="#cid72" class="heading hyperref"><span class="number">9.3 </span>Restricting where the player can move</a></h2>
 <p class="noindent">Delete the last two lines of the program and replace them with this modified version:</p>
-<div class="code"><div class="highlight"><pre><span></span>    <span class="k">if</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">'empty'</span><span class="p">:</span>
+<div class="code"><div class="highlight"><pre><span></span>    <span class="n">tile</span> <span class="o">=</span> <span class="n">tiles</span><span class="p">[</span><span class="n">maze</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">column</span><span class="p">]]</span>
+    <span class="k">if</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">'empty'</span><span class="p">:</span>
         <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">column</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
         <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">row</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
     <span class="k">elif</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">'goal'</span><span class="p">:</span>
@@ -3375,7 +3374,7 @@ these variables included.</p>
 <code class="inline_verbatim">C:\Users\YOURNAME\mu_code</code></p>
 </li>
 <li>Create the executable.<span class="intersentencespace"></span> At the command prompt type:
-<p><code>pyinstaller NAME_OF_GAME.py –distpath . –add-data "pgzero;pgzero" –add-data "images;images" –add-data "fonts;fonts" "sounds;sounds" –add-data "music;music" –onefile –noconfirm –windowed –clean</code></p>
+<p><code>pyinstaller NAME_OF_GAME.py –distpath . –add-data "pgzero;pgzero" –add-data "images;images" –add-data "fonts;fonts" –add-data "sounds;sounds" –add-data "music;music" –onefile –noconfirm –windowed –clean</code></p>
 <p>This will generate a program called <code>NAME_OF_GAME.exe</code>.<span class="intersentencespace"></span> You can double click this program to play your game.<span class="intersentencespace"></span></p>
 </li>
 <li>To distribute your game you need to copy the entire <em>mu_code</em> folder.<span class="intersentencespace"></span> You could put it inside a zip file, and then
