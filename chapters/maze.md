@@ -165,7 +165,7 @@ replace them with:
 
 ## Create an enemy
 
-We will create a simple enemy that moves up and down.  Add to the top of the program:
+We will create a simple enemy that moves up and down.  Add this code near the top just *above* the `draw()` function.
 
 ```python
 enemy = Actor("enemy", anchor=(0, 0), pos=(3 * TILE_SIZE, 6 * TILE_SIZE))
@@ -209,6 +209,14 @@ function) to make the enemy move and reverse velocity when it hits a wall.
 \label{}
 \heading{Advanced}
 \noindent Make another enemy that moves horizontally (left and right).
+\end{aside}
+
+\begin{aside}
+\label{}
+\heading{Advanced}
+\noindent The collision detection is quite lenient (i.e. buggy) because it only tests for collisions between the
+enemy and player when a key is pressed.  Define a new function called `update()` and move the collisions detection there
+so that is called every frame.
 \end{aside}
 
 ## A locked door and a key
