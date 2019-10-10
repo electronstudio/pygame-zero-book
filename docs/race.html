@@ -49,7 +49,7 @@
 <p class="noindent">Similar to the shooter game, we will begin with a complete program listing but with empty bodies for some of the functions
 that we will fill in later.<span class="intersentencespace"></span> (Python will not run a program with completely empty functions, so they just contain <code>pass</code> to indicate to
 Python they do nothing.)</p>
-<div class="center figure" id="fig-race_fig" data-tralics-id="uid217" data-number="11.1">
+<div class="center figure" id="fig-race_fig" data-tralics-id="uid218" data-number="11.1">
 <div class="graphics image"><img src="images/figures/race.png" alt="images/figures/race" /></div><div class="caption"><span class="header">Figure 11.1: </span><span class="description">Race game
 </span></div></div>
 <p>Like the shooter program, we begin we three things:</p>
@@ -64,7 +64,7 @@ Python they do nothing.)</p>
 we show the title screen.</p>
 <p>The only really complicated part of this program is how we store the shape of the tunnel the player is racing down.<span class="intersentencespace"></span> <code>lines</code> is a list of <em>tuples</em>.<span class="intersentencespace"></span> A tuple is like a list but <em>cannot be modified</em> and can be <em>unpacked</em> into separate variables.<span class="intersentencespace"></span> Each tuple will represent one horizontal line of the screen.<span class="intersentencespace"></span> It will have three values, <code>x</code>, <code>x2</code> and <code>color</code>, representing the position of the left wall,
 the gap between the left wall and the right wall and the colour of the wall.</p>
-<div class="codelisting" id="code-race7" data-tralics-id="uid221" data-number="11.1"><div class="heading"><span class="number">Program 11.1:</span> <span class="description">Basic skeleton of race game</span>
+<div class="codelisting" id="code-race7" data-tralics-id="uid222" data-number="11.1"><div class="heading"><span class="number">Program 11.1:</span> <span class="description">Basic skeleton of race game</span>
 
 
 </div>
@@ -141,7 +141,7 @@ the gap between the left wall and the right wall and the colour of the wall.</p>
 
 <span class="k">def</span> <span class="nf">on_mouse_move</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>
     <span class="k">pass</span>
-</pre></div></div></div><div class="aside" id="" data-tralics-id="uid222" data-number="11.1"><div class="heading"><span class="number">Exercise 11.1.</span> 
+</pre></div></div></div><div class="aside" id="" data-tralics-id="uid223" data-number="11.1"><div class="heading"><span class="number">Exercise 11.1.</span> 
 
 <span class="description"></span></div>
 <p class="noindent">Run the program.<span class="intersentencespace"></span> Verify it has a title screen and you can start the game and see the player.<span class="intersentencespace"></span> (That is all it will do until we fill in the
@@ -163,7 +163,7 @@ remaining functions.)<span class="intersentencespace"></span></p>
         <span class="n">player</span><span class="o">.</span><span class="n">vx</span> <span class="o">-=</span> <span class="mf">0.4</span>
     <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">player</span><span class="o">.</span><span class="n">vx</span>
 </pre></div></div>
-<div class="aside" id="" data-tralics-id="uid223" data-number="11.2"><div class="heading"><span class="number">Exercise 11.2.</span> 
+<div class="aside" id="" data-tralics-id="uid224" data-number="11.2"><div class="heading"><span class="number">Exercise 11.2.</span> 
 
 <span class="description"></span></div>
 <p class="noindent">Run the program.<span class="intersentencespace"></span> Verify the player can move left and right and has momentum.<span class="intersentencespace"></span> Try adjusting the speed or making a limit so you can’t go too fast.<span class="intersentencespace"></span></p>
@@ -188,7 +188,7 @@ defining it to generate the walls for the start of the game.</p>
 
 <span class="n">generate_lines</span><span class="p">()</span>
 </pre></div></div>
-<div class="aside" id="" data-tralics-id="uid224" data-number="11.3"><div class="heading"><span class="number">Exercise 11.3.</span> 
+<div class="aside" id="" data-tralics-id="uid225" data-number="11.3"><div class="heading"><span class="number">Exercise 11.3.</span> 
 
 <span class="description">Advanced</span></div>
 <p class="noindent">Run the program.<span class="intersentencespace"></span> Change the colour of the walls from red to green.<span class="intersentencespace"></span></p>
@@ -208,12 +208,12 @@ velocity.</p>
         <span class="n">lines</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
         <span class="n">distance</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div></div>
-<div class="aside" id="" data-tralics-id="uid225" data-number="11.4"><div class="heading"><span class="number">Exercise 11.4.</span> 
+<div class="aside" id="" data-tralics-id="uid226" data-number="11.4"><div class="heading"><span class="number">Exercise 11.4.</span> 
 
 <span class="description"></span></div>
 <p class="noindent">Modify <code>scroll_walls()</code> as above and check that the player can now accelerate forward.<span class="intersentencespace"></span></p>
 
-</div><div class="aside" id="" data-tralics-id="uid226" data-number="11.5"><div class="heading"><span class="number">Exercise 11.5.</span> 
+</div><div class="aside" id="" data-tralics-id="uid227" data-number="11.5"><div class="heading"><span class="number">Exercise 11.5.</span> 
 
 <span class="description">Advanced</span></div>
 <p class="noindent">Change the amount of the forward acceleration to make the game faster or slower.<span class="intersentencespace"></span></p>
@@ -233,12 +233,12 @@ velocity each time they collide as a penalty.</p>
         <span class="n">player</span><span class="o">.</span><span class="n">vx</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">vx</span> <span class="o">*</span> <span class="o">-</span><span class="mf">0.5</span>
         <span class="n">player</span><span class="o">.</span><span class="n">vy</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div></div>
-<div class="aside" id="" data-tralics-id="uid227" data-number="11.6"><div class="heading"><span class="number">Exercise 11.6.</span> 
+<div class="aside" id="" data-tralics-id="uid228" data-number="11.6"><div class="heading"><span class="number">Exercise 11.6.</span> 
 
 <span class="description"></span></div>
 <p class="noindent">Modify <code>wall_collisions()</code> as above and check that the player now bounces off the walls.<span class="intersentencespace"></span></p>
 
-</div><div class="aside" id="" data-tralics-id="uid228" data-number="11.7"><div class="heading"><span class="number">Exercise 11.7.</span> 
+</div><div class="aside" id="" data-tralics-id="uid229" data-number="11.7"><div class="heading"><span class="number">Exercise 11.7.</span> 
 
 <span class="description">Advanced</span></div>
 <p class="noindent">Make the collision more bouncy, i.e.<span class="intersentencespace"></span> the player bounces further when he hits the wall.<span class="intersentencespace"></span></p>
@@ -255,12 +255,12 @@ when time runs out.</p>
         <span class="k">if</span> <span class="n">distance</span> <span class="o">&gt;</span> <span class="n">best_distance</span><span class="p">:</span>
             <span class="n">best_distance</span> <span class="o">=</span> <span class="n">distance</span>
 </pre></div></div>
-<div class="aside" id="" data-tralics-id="uid229" data-number="11.8"><div class="heading"><span class="number">Exercise 11.8.</span> 
+<div class="aside" id="" data-tralics-id="uid230" data-number="11.8"><div class="heading"><span class="number">Exercise 11.8.</span> 
 
 <span class="description"></span></div>
 <p class="noindent">Modify the <code>timer()</code> function as above.<span class="intersentencespace"></span> Verify the game ends after 15 seconds.<span class="intersentencespace"></span></p>
 
-</div><div class="aside" id="" data-tralics-id="uid230" data-number="11.9"><div class="heading"><span class="number">Exercise 11.9.</span> 
+</div><div class="aside" id="" data-tralics-id="uid231" data-number="11.9"><div class="heading"><span class="number">Exercise 11.9.</span> 
 
 <span class="description"></span></div>
 <p class="noindent">Make the game last for 30 seconds.<span class="intersentencespace"></span></p>
@@ -273,7 +273,7 @@ when time runs out.</p>
     <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
     <span class="n">player</span><span class="o">.</span><span class="n">vy</span> <span class="o">=</span> <span class="p">(</span><span class="n">HEIGHT</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="mi">20</span>
 </pre></div></div>
-<div class="aside" id="" data-tralics-id="uid231" data-number="11.10"><div class="heading"><span class="number">Exercise 11.10.</span> 
+<div class="aside" id="" data-tralics-id="uid232" data-number="11.10"><div class="heading"><span class="number">Exercise 11.10.</span> 
 
 <span class="description"></span></div>
 <p class="noindent">Modify the <code>on_mouse_move()</code> function as above.<span class="intersentencespace"></span> How does the player accelerate using the mouse?<span class="intersentencespace"></span></p>

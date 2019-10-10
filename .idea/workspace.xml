@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85ef30d2-737e-42b4-b9a4-54300f9dc2b1" name="Default Changelist" comment="errata">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapters/maze.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/maze.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/6_advanced.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/6_advanced.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/6_advanced_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/6_advanced_fragment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/maze.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/maze.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/maze_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/maze_fragment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/pygame-book.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/pygame-book.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/race.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/race.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/race_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/race_fragment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/shooter.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/shooter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/shooter_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/shooter_fragment.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/programs/maze7.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/maze7.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -168,7 +175,7 @@
       <workItem from="1569549947183" duration="510000" />
       <workItem from="1569788869011" duration="610000" />
       <workItem from="1570042570560" duration="1598000" />
-      <workItem from="1570651014160" duration="1917000" />
+      <workItem from="1570651014160" duration="2072000" />
     </task>
     <task id="LOCAL-00001" summary="mess with formatting">
       <created>1558146868663</created>
@@ -471,7 +478,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570043747453</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="errata">
+      <created>1570728448811</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1570728448811</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

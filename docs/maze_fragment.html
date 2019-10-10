@@ -137,7 +137,7 @@ folder.<span class="intersentencespace"></span> In the program, change the line:
 <p class="noindent">Verify the player image has changed and moves smoothly.<span class="intersentencespace"></span></p>
 
 </div></div><div id="cid74" data-tralics-id="cid74" class="section" data-number="9.5"><h2><a href="maze_fragment.html#cid74" class="heading hyperref"><span class="number">9.5 </span>Create an enemy</a></h2>
-<p class="noindent">We will create a simple enemy that moves up and down.<span class="intersentencespace"></span> Add to the top of the program:</p>
+<p class="noindent">We will create a simple enemy that moves up and down.<span class="intersentencespace"></span> Add this code near the top just <em>above</em> the <code>draw()</code> function.</p>
 <div class="code"><div class="highlight"><pre><span></span><span class="n">enemy</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">"enemy"</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="mi">6</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">))</span>
 <span class="n">enemy</span><span class="o">.</span><span class="n">yv</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 </pre></div></div>
@@ -170,6 +170,13 @@ function) to make the enemy move and reverse velocity when it hits a wall.</p>
 
 <span class="description">Advanced</span></div>
 <p class="noindent">Make another enemy that moves horizontally (left and right).<span class="intersentencespace"></span></p>
+
+</div><div class="aside" id="" data-tralics-id="uid198" data-number="9.11"><div class="heading"><span class="number">Exercise 9.11.</span> 
+
+<span class="description">Advanced</span></div>
+<p class="noindent">The collision detection is quite lenient (i.e.<span class="intersentencespace"></span> buggy) because it only tests for collisions between the
+enemy and player when a key is pressed.<span class="intersentencespace"></span> Define a new function called <code>update()</code> and move the collisions detection there
+so that is called every frame.<span class="intersentencespace"></span></p>
 
 </div></div><div id="cid75" data-tralics-id="cid75" class="section" data-number="9.6"><h2><a href="maze_fragment.html#cid75" class="heading hyperref"><span class="number">9.6 </span>A locked door and a key</a></h2>
 <p class="noindent">We will add two new tiles to the game.<span class="intersentencespace"></span> Draw images <code>door.png</code> and <code>key.png</code> and save them in <code>images</code> folder.</p>
@@ -211,7 +218,7 @@ you want to new tiles to appear.<span class="intersentencespace"></span> Mine lo
 </pre></div></div>
 </div><div id="cid76" data-tralics-id="cid76" class="section" data-number="9.7"><h2><a href="maze_fragment.html#cid76" class="heading hyperref"><span class="number">9.7 </span>Finished game</a></h2>
 <p class="noindent">Here is the finished game with all the changes included:</p>
-<div class="codelisting" id="code-maze7" data-tralics-id="uid198" data-number="9.2"><div class="heading"><span class="number">Program 9.2:</span> <span class="description">Finished maze game</span>
+<div class="codelisting" id="code-maze7" data-tralics-id="uid199" data-number="9.2"><div class="heading"><span class="number">Program 9.2:</span> <span class="description">Finished maze game</span>
 
 
 </div>
