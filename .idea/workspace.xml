@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="85ef30d2-737e-42b4-b9a4-54300f9dc2b1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapters/race.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/race.md" afterDir="false" />
-    </list>
+    <list default="true" id="85ef30d2-737e-42b4-b9a4-54300f9dc2b1" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +168,7 @@
       <workItem from="1570897643632" duration="489000" />
       <workItem from="1571254047068" duration="588000" />
       <workItem from="1573560617537" duration="2249000" />
-      <workItem from="1573563260457" duration="479000" />
+      <workItem from="1573563260457" duration="811000" />
     </task>
     <task id="LOCAL-00001" summary="mess with formatting">
       <created>1558146868663</created>
@@ -502,7 +499,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573563441874</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="layout">
+      <created>1573563805582</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1573563805582</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -512,7 +516,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="more tom fixes" />
     <MESSAGE value="readme fix" />
     <MESSAGE value="more fundamentals" />
     <MESSAGE value="tom fixes" />
@@ -537,7 +540,8 @@
     <MESSAGE value="errata" />
     <MESSAGE value="update html" />
     <MESSAGE value="fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixes" />
+    <MESSAGE value="layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="layout" />
   </component>
   <component name="masterDetails">
     <states>

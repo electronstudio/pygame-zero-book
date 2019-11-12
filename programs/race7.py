@@ -2,9 +2,9 @@ import random
 import math
 
 WIDTH = 600
-HEIGHT = 800
+HEIGHT = 600
 
-player = Actor("alien", (300, 780))
+player = Actor("alien", (300, 580))
 player.vx = 0   # horizontal velocity
 player.vy = 1   # vertical velocity
 
