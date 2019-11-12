@@ -128,6 +128,8 @@ def scroll_walls():
 \noindent Change the amount of the forward acceleration to make the game faster or slower.
 \end{aside}
 
+\newpage
+
 ## Wall collisions
 
 Currently the player can move through the walls - we don't want to allow this. Also we want the player to lose all their
@@ -158,6 +160,8 @@ def wall_collisions():
 \noindent Make the collision more bouncy, i.e. the player bounces further when he hits the wall.
 \end{aside}
 
+\newpage
+
 ## Timer
 
 Currently the player has infinite time.  We want decrease the `time` variable by how much time has passed and end the game
@@ -186,6 +190,8 @@ def timer(delta):
 \noindent Make the game last for 30 seconds.
 \end{aside}
 
+\newpage
+
 ## Mouse movement
 
 The game is easier but perhaps more fun if you can play it with mouse.  Pygame will call this function for us automatically.
@@ -203,7 +209,6 @@ def on_mouse_move(pos):
 \noindent Modify the `on_mouse_move()` function as above.  How does the player accelerate using the mouse?
 \end{aside}
 
-\newpage
 
 ## Ideas for extension
 

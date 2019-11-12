@@ -1,25 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="85ef30d2-737e-42b4-b9a4-54300f9dc2b1" name="Default Changelist" comment="fixes">
-      <change afterPath="$PROJECT_DIR$/programs/26_fullscreen_mode_b.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/programs/e14_chat2.py" afterDir="false" />
+    <list default="true" id="85ef30d2-737e-42b4-b9a4-54300f9dc2b1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chapters/race.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/race.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapters/shooter.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapters/shooter.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/4_more_graphics.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/4_more_graphics.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/4_more_graphics_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/4_more_graphics_fragment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/6_advanced.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/6_advanced.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/6_advanced_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/6_advanced_fragment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/pygame-book.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/pygame-book.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/race.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/race.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/race_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/race_fragment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/shooter.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/shooter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/shooter_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/shooter_fragment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programs/26_fullscreen_mode.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/26_fullscreen_mode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programs/race.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/race.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programs/shoot17a.py" beforeDir="false" afterPath="$PROJECT_DIR$/programs/shoot17a.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -187,6 +171,7 @@
       <workItem from="1570897643632" duration="489000" />
       <workItem from="1571254047068" duration="588000" />
       <workItem from="1573560617537" duration="2249000" />
+      <workItem from="1573563260457" duration="479000" />
     </task>
     <task id="LOCAL-00001" summary="mess with formatting">
       <created>1558146868663</created>
@@ -510,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570729128009</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="fixes">
+      <created>1573563441874</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1573563441874</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -539,13 +531,13 @@
     <MESSAGE value="deploy" />
     <MESSAGE value="finished?" />
     <MESSAGE value="publish" />
-    <MESSAGE value="fixes" />
     <MESSAGE value="online version match published version 2.0" />
     <MESSAGE value="readme" />
     <MESSAGE value="fix" />
     <MESSAGE value="errata" />
     <MESSAGE value="update html" />
-    <option name="LAST_COMMIT_MESSAGE" value="update html" />
+    <MESSAGE value="fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixes" />
   </component>
   <component name="masterDetails">
     <states>
