@@ -85,7 +85,7 @@ The reason we put this in a function is we will need to call it again at the sta
 def create_enemies():
     for x in range(0, 600, 60):
         for y in range(0, 200, 60):
-            enemy = Actor("alien", (x, y))
+            enemy = Actor("enemy", (x, y))
             enemy.vx = level * 2
             enemies.append(enemy)
 
@@ -151,7 +151,7 @@ Add this new function to the end of the program.  Pygame will call it for us aut
 ```python
 def on_key_down(key):
     if key == keys.SPACE and len(bullets) < MAX_BULLETS:
-        bullet = Actor("alien", pos=(player.x, player.y))
+        bullet = Actor("bullet", pos=(player.x, player.y))
         bullets.append(bullet)
 ```
 
@@ -174,7 +174,7 @@ Replace the `create_bombs()` dummy function definition with this:
 def create_bombs():
     if random.randint(0, 100 - level * 6) == 0:
         enemy = random.choice(enemies)
-        bomb = Actor("player", enemy.pos)
+        bomb = Actor("bomb", enemy.pos)
         bombs.append(bomb)
 ```
 

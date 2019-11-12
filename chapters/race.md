@@ -98,7 +98,7 @@ generate_lines()
 
 ## Make the walls colourful
 
-Modify the line the sets the colour of the generated line to this:
+Modify the line that sets the colour of the generated line to this:
 
 ```python
         pretty_colour = (255, min(left_wall_x, 255), min(time * 20, 255))
@@ -212,3 +212,5 @@ def on_mouse_move(pos):
 * Give the player a goal distance that must be reached.  If the player reaches this distance he gets extra time added to allow him to continue.
 
 * Add sound effects and music.
+
+* If you have a larger screen, make the game window taller (and make sure the alien appears at the bottom still).

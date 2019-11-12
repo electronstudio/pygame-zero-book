@@ -10,7 +10,7 @@ lives = 3
 score = 0
 
 background = Actor("background")
-player = Actor("player", (200, 780))
+player = Actor("player", (200, 580))
 enemies = []
 bullets = []
 bombs = []

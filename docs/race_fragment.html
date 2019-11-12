@@ -147,7 +147,7 @@ defining it to generate the walls for the start of the game.</p>
 <p class="noindent">Run the program.<span class="intersentencespace"></span> Change the colour of the walls from red to green.<span class="intersentencespace"></span></p>
 
 </div></div><div id="cid95" data-tralics-id="cid95" class="section" data-number="11.4"><h2><a href="race_fragment.html#cid95" class="heading hyperref"><span class="number">11.4 </span>Make the walls colourful</a></h2>
-<p class="noindent">Modify the line the sets the colour of the generated line to this:</p>
+<p class="noindent">Modify the line that sets the colour of the generated line to this:</p>
 <div class="code"><div class="highlight"><pre><span></span>        <span class="n">pretty_colour</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">left_wall_x</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">time</span> <span class="o">*</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
 </pre></div></div>
 </div><div id="cid96" data-tralics-id="cid96" class="section" data-number="11.5"><h2><a href="race_fragment.html#cid96" class="heading hyperref"><span class="number">11.5 </span>Scrolling</a></h2>
@@ -233,5 +233,7 @@ when time runs out.</p>
 <li>Give the player a goal distance that must be reached.<span class="intersentencespace"></span> If the player reaches this distance he gets extra time added to allow him to continue.<span class="intersentencespace"></span>
 </li>
 <li>Add sound effects and music.<span class="intersentencespace"></span>
+</li>
+<li>If you have a larger screen, make the game window taller (and make sure the alien appears at the bottom still).<span class="intersentencespace"></span>
 </li></ul>
 </div>
