@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>8. Tutorial: Shooting game &mdash; Coding Games With Pygame Zero &amp; Python  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="9. Tutorial: Race game" href="race.html" />
+    <link rel="prev" title="7. Tutorial: Maze game" href="maze.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Coding Games With Pygame Zero & Python
+          </a>
+              <div class="version">
+                2.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">1. Overview of Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fundamentals.html">2. Python Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphics.html">3. Drawing graphics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_graphics.html">4. Improving your games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_games.html">5. More advanced games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chase.html">6. Tutorial: Chase game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maze.html">7. Tutorial: Maze game</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">8. Tutorial: Shooting game</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-decide-what-actors-you-will-need">8.1. Step 1: Decide what Actors you will need</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-draw-your-actors">8.2. Step 2: Draw your Actors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-3-move-your-actors">8.3. Step 3: Move your Actors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-4-define-your-functions">8.4. Step 4: Define your functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-enemies">8.5. Create enemies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#move-the-player">8.6. Move the player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#move-the-enemies">8.7. Move the enemies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#draw-text-on-the-screen">8.8. Draw text on the screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#player-bullets">8.9. Player bullets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enemy-bombs">8.10. Enemy bombs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#check-for-end-of-level">8.11. Check for end of level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ideas-for-extension">8.12. Ideas for extension</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="race.html">9. Tutorial: Race game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">10. Advanced topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="minecraft.html">11. Python in Minecraft</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Coding Games With Pygame Zero & Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><span class="section-number">8. </span>Tutorial: Shooting game</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/chapters/shooter.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="tutorial-shooting-game">
+<h1><span class="section-number">8. </span>Tutorial: Shooting game<a class="headerlink" href="#tutorial-shooting-game" title="Permalink to this headline"></a></h1>
+<p>In this chapter we will build a shooting game together, step by step.
+The Python we will use is: conditionals, loops, lists and functions.</p>
+<div class="section" id="step-1-decide-what-actors-you-will-need">
+<h2><span class="section-number">8.1. </span>Step 1: Decide what Actors you will need<a class="headerlink" href="#step-1-decide-what-actors-you-will-need" title="Permalink to this headline"></a></h2>
+<p>Our game will need these Actors, so <strong>we must create images for all of
+them and save them</strong> as <code class="docutils literal notranslate"><span class="pre">.png</span></code> files in the <code class="docutils literal notranslate"><span class="pre">images</span></code> folder.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 38%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>variable name</p></th>
+<th class="head"><p>image file name</p></th>
+<th class="head"><p>image size</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>player</p></td>
+<td><p>player.png</p></td>
+<td><p>64x64</p></td>
+</tr>
+<tr class="row-odd"><td><p>background</p></td>
+<td><p>background.png</p></td>
+<td><p>600x800</p></td>
+</tr>
+<tr class="row-even"><td><p>enemies (list)</p></td>
+<td><p>enemy.png</p></td>
+<td><p>64x64</p></td>
+</tr>
+<tr class="row-odd"><td><p>bullets (list)</p></td>
+<td><p>bullet.png</p></td>
+<td><p>16x16</p></td>
+</tr>
+<tr class="row-even"><td><p>bombs (list)</p></td>
+<td><p>bomb.png</p></td>
+<td><p>16x16</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">player</span></code> and <code class="docutils literal notranslate"><span class="pre">background</span></code> variables will contain Actors. The
+others are lists which we initialize to the empty list <code class="docutils literal notranslate"><span class="pre">[]</span></code>. Actors
+will be appended to the lists later.</p>
+<div class="literal-block-wrapper docutils container" id="code-shoot17a">
+<div class="code-block-caption"><span class="caption-number">Program 8.1 </span><span class="caption-text">Shooter game part 1 of 4</span><a class="headerlink" href="#code-shoot17a" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">random</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">600</span>
+<span class="linenos"> 5</span><span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">800</span>
+<span class="linenos"> 6</span><span class="n">MAX_BULLETS</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="n">level</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos"> 9</span><span class="n">lives</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="linenos">10</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="n">background</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">&quot;background&quot;</span><span class="p">)</span>
+<span class="linenos">13</span><span class="n">player</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">&quot;player&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">580</span><span class="p">))</span>
+<span class="linenos">14</span><span class="n">enemies</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos">15</span><span class="n">bullets</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos">16</span><span class="n">bombs</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="step-2-draw-your-actors">
+<h2><span class="section-number">8.2. </span>Step 2: Draw your Actors<a class="headerlink" href="#step-2-draw-your-actors" title="Permalink to this headline"></a></h2>
+<p>Every Pygame game needs an <code class="docutils literal notranslate"><span class="pre">draw()</span></code> function, and it should draw all
+the Actors we created above.</p>
+<div class="literal-block-wrapper docutils container" id="code-shoot17b">
+<div class="code-block-caption"><span class="caption-number">Program 8.2 </span><span class="caption-text">Shooter game part 2 of 4</span><a class="headerlink" href="#code-shoot17b" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>
+<span class="linenos"> 2</span><span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+<span class="linenos"> 3</span>    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="linenos"> 4</span>    <span class="n">background</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="linenos"> 5</span>    <span class="n">player</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="linenos"> 6</span>    <span class="k">for</span> <span class="n">enemy</span> <span class="ow">in</span> <span class="n">enemies</span><span class="p">:</span>
+<span class="linenos"> 7</span>        <span class="n">enemy</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="linenos"> 8</span>    <span class="k">for</span> <span class="n">bullet</span> <span class="ow">in</span> <span class="n">bullets</span><span class="p">:</span>
+<span class="linenos"> 9</span>        <span class="n">bullet</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="linenos">10</span>    <span class="k">for</span> <span class="n">bomb</span> <span class="ow">in</span> <span class="n">bombs</span><span class="p">:</span>
+<span class="linenos">11</span>        <span class="n">bomb</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="linenos">12</span>    <span class="n">draw_text</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="step-3-move-your-actors">
+<h2><span class="section-number">8.3. </span>Step 3: Move your Actors<a class="headerlink" href="#step-3-move-your-actors" title="Permalink to this headline"></a></h2>
+<p>Every Pygame game needs an <code class="docutils literal notranslate"><span class="pre">update()</span></code> function to move the Actors,
+check for collisions, etc.</p>
+<div class="literal-block-wrapper docutils container" id="code-shoot17c">
+<div class="code-block-caption"><span class="caption-number">Program 8.3 </span><span class="caption-text">Shooter game part 3 of 4</span><a class="headerlink" href="#code-shoot17c" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>
+<span class="linenos">2</span><span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">delta</span><span class="p">):</span>
+<span class="linenos">3</span>    <span class="n">move_player</span><span class="p">()</span>
+<span class="linenos">4</span>    <span class="n">move_bullets</span><span class="p">()</span>
+<span class="linenos">5</span>    <span class="n">move_enemies</span><span class="p">()</span>
+<span class="linenos">6</span>    <span class="n">create_bombs</span><span class="p">()</span>
+<span class="linenos">7</span>    <span class="n">move_bombs</span><span class="p">()</span>
+<span class="linenos">8</span>    <span class="n">check_for_end_of_level</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Create the png image files (<code class="docutils literal notranslate"><span class="pre">player.png,</span> <span class="pre">background.png,</span> <span class="pre">bullet.png,</span> <span class="pre">bomb.png,</span> <span class="pre">enemy.png</span></code>).  Type in program <a class="reference internal" href="#code-shoot17a"><span class="std std-numref">Program 8.1</span></a>, <a class="reference internal" href="#code-shoot17b"><span class="std std-numref">Program 8.2</span></a> and <a class="reference internal" href="#code-shoot17c"><span class="std std-numref">Program 8.3</span></a> into a single file.  Save the file.  Why doesn’t it run?</p>
+</div>
+</div>
+<div class="section" id="step-4-define-your-functions">
+<h2><span class="section-number">8.4. </span>Step 4: Define your functions<a class="headerlink" href="#step-4-define-your-functions" title="Permalink to this headline"></a></h2>
+<p>Python cannot call a function that has not yet been defined. Therefore
+we must at least provide empty, dummy versions of our functions that
+don’t do anything so we can fill them in later. However Python cannot
+define a completely empty function - it must contain at least one line.
+Therefore we use the <code class="docutils literal notranslate"><span class="pre">pass</span></code> keyword to create a line that doesn’t do
+anything.</p>
+<div class="literal-block-wrapper docutils container" id="code-shoot17d">
+<div class="code-block-caption"><span class="caption-number">Program 8.4 </span><span class="caption-text">Shooter game part 4 of 4</span><a class="headerlink" href="#code-shoot17d" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>
+<span class="linenos"> 2</span><span class="k">def</span> <span class="nf">move_player</span><span class="p">():</span>
+<span class="linenos"> 3</span>    <span class="k">pass</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="k">def</span> <span class="nf">move_enemies</span><span class="p">():</span>
+<span class="linenos"> 6</span>    <span class="k">pass</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="k">def</span> <span class="nf">move_bullets</span><span class="p">():</span>
+<span class="linenos"> 9</span>    <span class="k">pass</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="k">def</span> <span class="nf">create_bombs</span><span class="p">():</span>
+<span class="linenos">12</span>    <span class="k">pass</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="k">def</span> <span class="nf">move_bombs</span><span class="p">():</span>
+<span class="linenos">15</span>    <span class="k">pass</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="k">def</span> <span class="nf">check_for_end_of_level</span><span class="p">():</span>
+<span class="linenos">18</span>    <span class="k">pass</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span><span class="k">def</span> <span class="nf">draw_text</span><span class="p">():</span>
+<span class="linenos">21</span>    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Add listing <a class="reference internal" href="#code-shoot17d"><span class="std std-numref">Program 8.4</span></a> to the end of the file.  Verify the game now runs and you can see the player at the bottom of the screen.  (He can’t move yet.)</p>
+</div>
+</div>
+<div class="section" id="create-enemies">
+<h2><span class="section-number">8.5. </span>Create enemies<a class="headerlink" href="#create-enemies" title="Permalink to this headline"></a></h2>
+<p>Add this new function to the end of the program, and then call it
+immediately. It uses a loop within a loop to create enemy Actors and put
+them in the <code class="docutils literal notranslate"><span class="pre">enemies</span></code> list. The reason we put this in a function is we
+will need to call it again at the start of each level.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_enemies</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">60</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">60</span><span class="p">):</span>
+            <span class="n">enemy</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">&quot;enemy&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+            <span class="n">enemy</span><span class="o">.</span><span class="n">vx</span> <span class="o">=</span> <span class="n">level</span> <span class="o">*</span> <span class="mi">2</span>
+            <span class="n">enemies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">enemy</span><span class="p">)</span>
+
+
+<span class="n">create_enemies</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="move-the-player">
+<h2><span class="section-number">8.6. </span>Move the player<a class="headerlink" href="#move-the-player" title="Permalink to this headline"></a></h2>
+<p>Replace the <code class="docutils literal notranslate"><span class="pre">move_player()</span></code> dummy function definition with this.
+Remember <strong>there can only be one function with a given name</strong>. <em>There
+cannot be two ``move_player()`` function definitions.</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">move_player</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">5</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="mi">5</span>
+    <span class="k">if</span> <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">WIDTH</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">WIDTH</span>
+    <span class="k">if</span> <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="move-the-enemies">
+<h2><span class="section-number">8.7. </span>Move the enemies<a class="headerlink" href="#move-the-enemies" title="Permalink to this headline"></a></h2>
+<p>Replace the <code class="docutils literal notranslate"><span class="pre">move_enemies()</span></code> dummy function definition with this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">move_enemies</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">score</span>
+    <span class="k">for</span> <span class="n">enemy</span> <span class="ow">in</span> <span class="n">enemies</span><span class="p">:</span>
+        <span class="n">enemy</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">enemy</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">enemy</span><span class="o">.</span><span class="n">vx</span>
+        <span class="k">if</span> <span class="n">enemy</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">WIDTH</span> <span class="ow">or</span> <span class="n">enemy</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">enemy</span><span class="o">.</span><span class="n">vx</span> <span class="o">=</span> <span class="o">-</span><span class="n">enemy</span><span class="o">.</span><span class="n">vx</span>
+            <span class="n">animate</span><span class="p">(</span><span class="n">enemy</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">enemy</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="mi">60</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">bullet</span> <span class="ow">in</span> <span class="n">bullets</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">bullet</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="n">enemy</span><span class="p">):</span>
+                <span class="n">enemies</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">enemy</span><span class="p">)</span>
+                <span class="n">bullets</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">bullet</span><span class="p">)</span>
+                <span class="n">score</span> <span class="o">=</span> <span class="n">score</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">enemy</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="n">player</span><span class="p">):</span>
+            <span class="n">exit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="draw-text-on-the-screen">
+<h2><span class="section-number">8.8. </span>Draw text on the screen<a class="headerlink" href="#draw-text-on-the-screen" title="Permalink to this headline"></a></h2>
+<p>Replace the <code class="docutils literal notranslate"><span class="pre">draw_text()</span></code> dummy function definition with this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_text</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;Level &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">level</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;Score &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">score</span><span class="p">),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;Lives &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lives</span><span class="p">),</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="player-bullets">
+<h2><span class="section-number">8.9. </span>Player bullets<a class="headerlink" href="#player-bullets" title="Permalink to this headline"></a></h2>
+<p>Add this new function to the end of the program. Pygame will call it for
+us automatically when a key is pressed.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_key_down</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keys</span><span class="o">.</span><span class="n">SPACE</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">bullets</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">MAX_BULLETS</span><span class="p">:</span>
+        <span class="n">bullet</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">&quot;bullet&quot;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="n">player</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">player</span><span class="o">.</span><span class="n">y</span><span class="p">))</span>
+        <span class="n">bullets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bullet</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Replace the <code class="docutils literal notranslate"><span class="pre">move_bullets()</span></code> dummy function definition with this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">move_bullets</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">bullet</span> <span class="ow">in</span> <span class="n">bullets</span><span class="p">:</span>
+        <span class="n">bullet</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">bullet</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="mi">6</span>
+        <span class="k">if</span> <span class="n">bullet</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">bullets</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">bullet</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="enemy-bombs">
+<h2><span class="section-number">8.10. </span>Enemy bombs<a class="headerlink" href="#enemy-bombs" title="Permalink to this headline"></a></h2>
+<p>Replace the <code class="docutils literal notranslate"><span class="pre">create_bombs()</span></code> dummy function definition with this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_bombs</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span> <span class="o">-</span> <span class="n">level</span> <span class="o">*</span> <span class="mi">6</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">enemy</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">enemies</span><span class="p">)</span>
+        <span class="n">bomb</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">&quot;bomb&quot;</span><span class="p">,</span> <span class="n">enemy</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>
+        <span class="n">bombs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bomb</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Replace the <code class="docutils literal notranslate"><span class="pre">move_bombs()</span></code> dummy function definition with this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">move_bombs</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">lives</span>
+    <span class="k">for</span> <span class="n">bomb</span> <span class="ow">in</span> <span class="n">bombs</span><span class="p">:</span>
+        <span class="n">bomb</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">bomb</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="mi">10</span>
+        <span class="k">if</span> <span class="n">bomb</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="n">player</span><span class="p">):</span>
+            <span class="n">bombs</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">bomb</span><span class="p">)</span>
+            <span class="n">lives</span> <span class="o">=</span> <span class="n">lives</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">lives</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">exit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="check-for-end-of-level">
+<h2><span class="section-number">8.11. </span>Check for end of level<a class="headerlink" href="#check-for-end-of-level" title="Permalink to this headline"></a></h2>
+<p>Replace the <code class="docutils literal notranslate"><span class="pre">check_for_end_of_level()</span></code> dummy function definition with
+this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">check_for_end_of_level</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">level</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">enemies</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">level</span> <span class="o">=</span> <span class="n">level</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">create_enemies</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ideas-for-extension">
+<h2><span class="section-number">8.12. </span>Ideas for extension<a class="headerlink" href="#ideas-for-extension" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Draw an explosion image and create an explosion Actor every time an
+alien dies.</p></li>
+<li><p>Make the explosion Actor disappear after a short time.</p></li>
+<li><p>Draw several explosion images, put them in a list and make the Actor
+animate displaying each of them in order.</p></li>
+<li><p>The player can only fire 3 bullets at a time. Create a powerup that
+allows him to fire additional bullets.</p></li>
+<li><p>Add music and sound effects.</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="maze.html" class="btn btn-neutral float-left" title="7. Tutorial: Maze game" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="race.html" class="btn btn-neutral float-right" title="9. Tutorial: Race game" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Richard Smith.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

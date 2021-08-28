@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arcade games &mdash; Coding Games With Pygame Zero &amp; Python  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Coding Games With Pygame Zero & Python
+          </a>
+              <div class="version">
+                2.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">1. Overview of Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fundamentals.html">2. Python Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphics.html">3. Drawing graphics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_graphics.html">4. Improving your games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_games.html">5. More advanced games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chase.html">6. Tutorial: Chase game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maze.html">7. Tutorial: Maze game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shooter.html">8. Tutorial: Shooting game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="race.html">9. Tutorial: Race game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">10. Advanced topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="minecraft.html">11. Python in Minecraft</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Coding Games With Pygame Zero & Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Arcade games</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/chapters/simple_games.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="arcade-games">
+<h1>Arcade games<a class="headerlink" href="#arcade-games" title="Permalink to this headline"></a></h1>
+<div class="section" id="collisions">
+<h2>Collisions<a class="headerlink" href="#collisions" title="Permalink to this headline"></a></h2>
+<p>Arcade games need to know when one Actor sprite has hit another Actor
+sprite. Most of this code is copied from
+<a class="reference internal" href="graphics.html#code-moving-boxes"><span class="std std-numref">Program 3.2</span></a> and
+<a class="reference internal" href="graphics.html#code-keyboard-input"><span class="std std-numref">Program 3.5</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="code-collisions">
+<div class="code-block-caption"><span class="caption-text">Collisions</span><a class="headerlink" href="#code-collisions" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="linenos"> 2</span><span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">&quot;alien&quot;</span><span class="p">)</span>
+<span class="linenos"> 5</span><span class="n">alien</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="linenos"> 6</span><span class="n">box</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">((</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+<span class="linenos"> 9</span>    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="linenos">10</span>    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">filled_rect</span><span class="p">(</span><span class="n">box</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="linenos">11</span>    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+<span class="linenos">14</span>    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+<span class="linenos">15</span>        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="linenos">16</span>    <span class="k">elif</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+<span class="linenos">17</span>        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span>
+<span class="linenos">18</span>    <span class="n">box</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">box</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="linenos">19</span>    <span class="k">if</span> <span class="n">box</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">WIDTH</span><span class="p">:</span>
+<span class="linenos">20</span>        <span class="n">box</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">21</span>    <span class="k">if</span> <span class="n">alien</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="n">box</span><span class="p">):</span>
+<span class="linenos">22</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hit&quot;</span><span class="p">)</span>
+<span class="linenos">23</span>
+</pre></div>
+</div>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Add vertical movement (as you did in Exercise ref{exercise:updown}).</p>
+</div>
+<div class="topic">
+<p class="topic-title">Advanced</p>
+<p>Make the box chase the alien.</p>
+</div>
+<div class="topic">
+<p class="topic-title">Advanced</p>
+<p>Print number of times the box hits the alien (i.e. the score).</p>
+</div>
+</div>
+<div class="section" id="chase">
+<h2>Chase<a class="headerlink" href="#chase" title="Permalink to this headline"></a></h2>
+<p>Instead of moving constantly to the right we can make the movement
+conditional with an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement so the box chases the alien. Most
+of this code is copied from <code class="xref std std-numref docutils literal notranslate"><span class="pre">code-collisions</span></code>.
+New lines are highlighted. We have also changed what happens when the
+box catches the alien: the program now exits and you must run it again
+to play again. This may not be what you want in your game!</p>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Add vertical movement (as you did in Exercise ref{exercise:updown}).</p>
+</div>
+<div class="topic">
+<p class="topic-title">Advanced</p>
+<p>Draw a new enemy image.  Save it as <cite>enemy.png</cite> in your <cite>mu_code/images</cite> folder. Load it as an <cite>Actor(‘enemy’)</cite> instead of the <cite>Rect()</cite>.</p>
+</div>
+</div>
+<div class="section" id="powerup">
+<h2>Powerup<a class="headerlink" href="#powerup" title="Permalink to this headline"></a></h2>
+<p>Instead of an enemy the box here is a powerup that the player must
+collect. When he does it disappears and moves to a new location.</p>
+<div class="literal-block-wrapper docutils container" id="code-powerup">
+<div class="code-block-caption"><span class="caption-text">Collect the powerups</span><a class="headerlink" href="#code-powerup" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="linenos"> 2</span><span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="linenos"> 3</span><span class="kn">import</span> <span class="nn">random</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">&quot;alien&quot;</span><span class="p">)</span>
+<span class="linenos"> 6</span><span class="n">alien</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="linenos"> 7</span><span class="n">box</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">((</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+<span class="linenos"> 8</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+<span class="linenos">11</span>    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="linenos">12</span>    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">filled_rect</span><span class="p">(</span><span class="n">box</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">)</span>
+<span class="linenos">13</span>    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+<span class="linenos">16</span>    <span class="k">global</span> <span class="n">score</span>
+<span class="linenos">17</span>    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+<span class="linenos">18</span>        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="linenos">19</span>    <span class="k">elif</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+<span class="linenos">20</span>        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span>
+<span class="linenos">21</span>    <span class="k">if</span> <span class="n">alien</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="n">box</span><span class="p">):</span>
+<span class="linenos">22</span>        <span class="n">box</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">WIDTH</span><span class="p">)</span>
+<span class="linenos">23</span>        <span class="n">box</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">)</span>
+<span class="linenos">24</span>        <span class="n">score</span> <span class="o">=</span> <span class="n">score</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="linenos">25</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Score:&quot;</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
+<span class="linenos">26</span>
+</pre></div>
+</div>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Add vertical movement (as you did in Exercise ref{exercise:updown}).</p>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Draw a new powerup image.  Save it as <cite>powerup.png</cite> in your <cite>mu_code/images</cite> folder. Load it as an <cite>Actor(‘powerup’)</cite> instead of the <cite>Rect()</cite>.</p>
+</div>
+<div class="topic">
+<p class="topic-title">Advanced</p>
+<p>Combine this program with the enemy from  Program~ref{code:chase} and the background from <a class="reference internal" href="graphics.html#code-background"><span class="std std-numref">Program 3.4</span></a> and whatever else you want to make your own game.</p>
+</div>
+</div>
+<div class="section" id="sound-and-animation">
+<h2>Sound and animation<a class="headerlink" href="#sound-and-animation" title="Permalink to this headline"></a></h2>
+<p>Pygame Zero comes with one other image <code class="docutils literal notranslate"><span class="pre">alien_hurt.png</span></code> and one sound
+<code class="docutils literal notranslate"><span class="pre">eep.wav</span></code>. If you want more you will have to add them to the
+<code class="docutils literal notranslate"><span class="pre">sounds</span></code> and <code class="docutils literal notranslate"><span class="pre">images</span></code> folders.</p>
+<p>Most of this code is copied from
+<code class="xref std std-numref docutils literal notranslate"><span class="pre">code-collisions</span></code></p>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Record your own sound effect and add it to the game.</p>
+</div>
+<div class="topic">
+<p class="topic-title">Advanced</p>
+<p>Add more boxes or sprites that move in different ways for the player to avoid.</p>
+</div>
+<div class="topic">
+<p class="topic-title">Advanced</p>
+<p>Add a second alien controlled by different keys or gamepad for player 2.</p>
+</div>
+</div>
+<div class="section" id="mouse-clicks">
+<h2>Mouse clicks<a class="headerlink" href="#mouse-clicks" title="Permalink to this headline"></a></h2>
+<p>This uses a <em>function call-back</em> for event-based input. It is similiar
+to <code class="xref std std-numref docutils literal notranslate"><span class="pre">code-collisions2_sound_animation</span></code> but:</p>
+<ul class="simple">
+<li><p>The box has been removed.</p></li>
+<li><p>There is an <code class="docutils literal notranslate"><span class="pre">on_mouse_down()</span></code> special function that is called
+automatically when the player click the mouse.</p></li>
+<li><p>The score is displayed.</p></li>
+</ul>
+<p>See <a class="reference internal" href="fundamentals.html#code-functions"><span class="std std-numref">Program 2.17</span></a> for more about functions.</p>
+<div class="literal-block-wrapper docutils container" id="code-mouse-input">
+<div class="code-block-caption"><span class="caption-text">Getting input from mouse clicks</span><a class="headerlink" href="#code-mouse-input" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">&quot;alien&quot;</span><span class="p">)</span>
+<span class="linenos"> 2</span><span class="n">alien</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="linenos"> 3</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+<span class="linenos"> 6</span>    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="linenos"> 7</span>    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="linenos"> 8</span>    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;Score &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">score</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+<span class="linenos">11</span>    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+<span class="linenos">12</span>        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="linenos">13</span>    <span class="k">elif</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+<span class="linenos">14</span>        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span>
+<span class="linenos">15</span>    <span class="n">alien</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s1">&#39;alien&#39;</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="k">def</span> <span class="nf">on_mouse_down</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">button</span><span class="p">):</span>
+<span class="linenos">18</span>    <span class="k">global</span> <span class="n">score</span>
+<span class="linenos">19</span>    <span class="k">if</span> <span class="n">button</span> <span class="o">==</span> <span class="n">mouse</span><span class="o">.</span><span class="n">LEFT</span> <span class="ow">and</span> <span class="n">alien</span><span class="o">.</span><span class="n">collidepoint</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>
+<span class="linenos">20</span>        <span class="n">alien</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s1">&#39;alien_hurt&#39;</span>
+<span class="linenos">21</span>        <span class="n">sounds</span><span class="o">.</span><span class="n">eep</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+<span class="linenos">22</span>        <span class="n">score</span> <span class="o">=</span> <span class="n">score</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="mouse-movement">
+<h2>Mouse movement<a class="headerlink" href="#mouse-movement" title="Permalink to this headline"></a></h2>
+<div class="literal-block-wrapper docutils container" id="code-mouse-movement">
+<div class="code-block-caption"><span class="caption-text">Getting input from mouse movement</span><a class="headerlink" href="#code-mouse-movement" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># wiggle your mouse around the screen!</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">&quot;alien&quot;</span><span class="p">)</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+<span class="linenos"> 6</span>    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="linenos"> 7</span>    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="k">def</span> <span class="nf">on_mouse_move</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>
+<span class="linenos">10</span>    <span class="n">alien</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">pos</span>
+<span class="linenos">11</span>
+</pre></div>
+</div>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>What happens if you delete line 8 and replace it with this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animate</span><span class="p">(</span><span class="n">alien</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">tween</span><span class="o">=</span><span class="s1">&#39;bounce_end&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>What happens if you change <cite>on_mouse_move</cite> to <cite>on_mouse_down</cite>?</p>
+</div>
+<div class="topic">
+<p class="topic-title">Advanced</p>
+<p>Make a game with one alien controlled by mouse and another controlled by keyboard</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Richard Smith.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

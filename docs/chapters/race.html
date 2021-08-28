@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>9. Tutorial: Race game &mdash; Coding Games With Pygame Zero &amp; Python  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="10. Advanced topics" href="advanced.html" />
+    <link rel="prev" title="8. Tutorial: Shooting game" href="shooter.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Coding Games With Pygame Zero & Python
+          </a>
+              <div class="version">
+                2.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">1. Overview of Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fundamentals.html">2. Python Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphics.html">3. Drawing graphics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_graphics.html">4. Improving your games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_games.html">5. More advanced games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chase.html">6. Tutorial: Chase game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maze.html">7. Tutorial: Maze game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shooter.html">8. Tutorial: Shooting game</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">9. Tutorial: Race game</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic-game">9.1. Basic game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#player-input">9.2. Player input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generate-the-walls">9.3. Generate the walls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#make-the-walls-colourful">9.4. Make the walls colourful</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scrolling">9.5. Scrolling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wall-collisions">9.6. Wall collisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#timer">9.7. Timer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mouse-movement">9.8. Mouse movement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ideas-for-extension">9.9. Ideas for extension</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">10. Advanced topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="minecraft.html">11. Python in Minecraft</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Coding Games With Pygame Zero & Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><span class="section-number">9. </span>Tutorial: Race game</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/chapters/race.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="tutorial-race-game">
+<h1><span class="section-number">9. </span>Tutorial: Race game<a class="headerlink" href="#tutorial-race-game" title="Permalink to this headline"></a></h1>
+<p>In this chapter we will build a racing game together, step by step. The
+Python we will use is: conditionals, loops, lists, functions and tuples.
+We will show use of velocity, high score and a title screen.</p>
+<div class="section" id="basic-game">
+<h2><span class="section-number">9.1. </span>Basic game<a class="headerlink" href="#basic-game" title="Permalink to this headline"></a></h2>
+<p>Similar to the shooter game, we will begin with a complete program
+listing but with empty bodies for some of the functions that we will
+fill in later. (Python will not run a program with completely empty
+functions, so they just contain <code class="docutils literal notranslate"><span class="pre">pass</span></code> to indicate to Python they do
+nothing.)</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/race.png"><img alt="Race game" src="../_images/race.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 9.1 </span><span class="caption-text">Race game</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</div>
+<p>Like the shooter program, we begin we three things:</p>
+<ol class="arabic simple">
+<li><p>Definitions of global variables.</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">draw()</span></code> function.</p></li>
+<li><p>An <code class="docutils literal notranslate"><span class="pre">update()</span></code> function.</p></li>
+</ol>
+<p>These functions now check a boolean variable <code class="docutils literal notranslate"><span class="pre">playing</span></code>. If <code class="docutils literal notranslate"><span class="pre">False</span></code>
+then instead of drawing/updating the game we show the title screen.</p>
+<p>The only really complicated part of this program is how we store the
+shape of the tunnel the player is racing down. <code class="docutils literal notranslate"><span class="pre">lines</span></code> is a list of
+<em>tuples</em>. A tuple is like a list but <em>cannot be modified</em> and can be
+<em>unpacked</em> into separate variables. Each tuple will represent one
+horizontal line of the screen. It will have three values, <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">x2</span></code>
+and <code class="docutils literal notranslate"><span class="pre">color</span></code>, representing the position of the left wall, the gap
+between the left wall and the right wall and the colour of the wall.</p>
+<div class="literal-block-wrapper docutils container" id="code-race7">
+<div class="code-block-caption"><span class="caption-number">Program 9.1 </span><span class="caption-text">Basic skeleton of race game</span><a class="headerlink" href="#code-race7" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">random</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">math</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">600</span>
+<span class="linenos"> 5</span><span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">600</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="n">player</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">&quot;alien&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">580</span><span class="p">))</span>
+<span class="linenos"> 8</span><span class="n">player</span><span class="o">.</span><span class="n">vx</span> <span class="o">=</span> <span class="mi">0</span>   <span class="c1"># horizontal velocity</span>
+<span class="linenos"> 9</span><span class="n">player</span><span class="o">.</span><span class="n">vy</span> <span class="o">=</span> <span class="mi">1</span>   <span class="c1"># vertical velocity</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>          <span class="c1"># list of tuples of horizontal lines of walls</span>
+<span class="linenos">12</span><span class="n">wall_gradient</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>  <span class="c1"># steepness of wall</span>
+<span class="linenos">13</span><span class="n">left_wall_x</span> <span class="o">=</span> <span class="mi">200</span>   <span class="c1"># x-coordinate of wall</span>
+<span class="linenos">14</span><span class="n">distance</span> <span class="o">=</span> <span class="mi">0</span>        <span class="c1"># how far player has travelled</span>
+<span class="linenos">15</span><span class="n">time</span> <span class="o">=</span> <span class="mi">15</span>           <span class="c1"># time left until game ends</span>
+<span class="linenos">16</span><span class="n">playing</span> <span class="o">=</span> <span class="kc">False</span>     <span class="c1"># True when in game, False when on title screen</span>
+<span class="linenos">17</span><span class="n">best_distance</span> <span class="o">=</span> <span class="mi">0</span>   <span class="c1"># remember the highest distance scored</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+<span class="linenos">20</span>    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="linenos">21</span>    <span class="k">if</span> <span class="n">playing</span><span class="p">:</span> <span class="c1"># we are in game</span>
+<span class="linenos">22</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)):</span> <span class="c1"># draw the walls</span>
+<span class="linenos">23</span>            <span class="n">x</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="linenos">24</span>            <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">i</span><span class="p">),</span> <span class="n">color</span><span class="p">)</span>
+<span class="linenos">25</span>            <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="n">x2</span><span class="p">,</span> <span class="n">i</span><span class="p">),</span> <span class="p">(</span><span class="n">WIDTH</span><span class="p">,</span> <span class="n">i</span><span class="p">),</span> <span class="n">color</span><span class="p">)</span>
+<span class="linenos">26</span>        <span class="n">player</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="linenos">27</span>    <span class="k">else</span><span class="p">:</span>   <span class="c1"># we are on title screen</span>
+<span class="linenos">28</span>        <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;PRESS SPACE TO START&quot;</span><span class="p">,</span>
+<span class="linenos">29</span>            <span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="linenos">30</span>        <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;BEST DISTANCE: &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">best_distance</span> <span class="o">/</span> <span class="mi">10</span><span class="p">)),</span>
+<span class="linenos">31</span>            <span class="p">(</span><span class="mi">170</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="linenos">32</span>    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;SPEED: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">player</span><span class="o">.</span><span class="n">vy</span><span class="p">)),</span>
+<span class="linenos">33</span>        <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="linenos">34</span>    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;DISTANCE: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">distance</span> <span class="o">/</span> <span class="mi">10</span><span class="p">)),</span>
+<span class="linenos">35</span>        <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="linenos">36</span>    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;TIME: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">)),</span>
+<span class="linenos">37</span>        <span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="linenos">38</span>
+<span class="linenos">39</span>
+<span class="linenos">40</span><span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">delta</span><span class="p">):</span>
+<span class="linenos">41</span>    <span class="k">global</span> <span class="n">playing</span><span class="p">,</span> <span class="n">distance</span><span class="p">,</span> <span class="n">time</span>
+<span class="linenos">42</span>    <span class="k">if</span> <span class="n">playing</span><span class="p">:</span>
+<span class="linenos">43</span>        <span class="n">wall_collisions</span><span class="p">()</span>
+<span class="linenos">44</span>        <span class="n">scroll_walls</span><span class="p">()</span>
+<span class="linenos">45</span>        <span class="n">generate_lines</span><span class="p">()</span>
+<span class="linenos">46</span>        <span class="n">player_input</span><span class="p">()</span>
+<span class="linenos">47</span>        <span class="n">timer</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span>
+<span class="linenos">48</span>    <span class="k">elif</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">space</span><span class="p">:</span>
+<span class="linenos">49</span>        <span class="n">playing</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="linenos">50</span>        <span class="n">distance</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">51</span>        <span class="n">time</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="linenos">52</span>
+<span class="linenos">53</span>
+<span class="linenos">54</span><span class="k">def</span> <span class="nf">player_input</span><span class="p">():</span>
+<span class="linenos">55</span>    <span class="k">pass</span>
+<span class="linenos">56</span>
+<span class="linenos">57</span><span class="k">def</span> <span class="nf">generate_lines</span><span class="p">():</span>
+<span class="linenos">58</span>    <span class="k">pass</span>
+<span class="linenos">59</span>
+<span class="linenos">60</span><span class="n">generate_lines</span><span class="p">()</span>
+<span class="linenos">61</span>
+<span class="linenos">62</span><span class="k">def</span> <span class="nf">scroll_walls</span><span class="p">():</span>
+<span class="linenos">63</span>    <span class="k">pass</span>
+<span class="linenos">64</span>
+<span class="linenos">65</span><span class="k">def</span> <span class="nf">wall_collisions</span><span class="p">():</span>
+<span class="linenos">66</span>    <span class="k">pass</span>
+<span class="linenos">67</span>
+<span class="linenos">68</span><span class="k">def</span> <span class="nf">timer</span><span class="p">(</span><span class="n">delta</span><span class="p">):</span>
+<span class="linenos">69</span>    <span class="k">pass</span>
+<span class="linenos">70</span>
+<span class="linenos">71</span><span class="k">def</span> <span class="nf">on_mouse_move</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>
+<span class="linenos">72</span>    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Run the program.  Verify it has a title screen and you can start the game and see the player.  (That is all it will do until we fill in the
+remaining functions.)</p>
+</div>
+</div>
+<div class="section" id="player-input">
+<h2><span class="section-number">9.2. </span>Player input<a class="headerlink" href="#player-input" title="Permalink to this headline"></a></h2>
+<p>Replace the definiton of <code class="docutils literal notranslate"><span class="pre">player_input()</span></code> with this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">player_input</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">up</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">vy</span> <span class="o">+=</span> <span class="mf">0.1</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">down</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">vy</span> <span class="o">-=</span> <span class="mf">0.1</span>
+        <span class="k">if</span> <span class="n">player</span><span class="o">.</span><span class="n">vy</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">player</span><span class="o">.</span><span class="n">vy</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">vx</span> <span class="o">+=</span> <span class="mf">0.4</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">vx</span> <span class="o">-=</span> <span class="mf">0.4</span>
+    <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">player</span><span class="o">.</span><span class="n">vx</span>
+</pre></div>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Run the program.  Verify the player can move left and right and has momentum.  Try adjusting the speed or making a limit so you can’t go too fast.</p>
+</div>
+</div>
+<div class="section" id="generate-the-walls">
+<h2><span class="section-number">9.3. </span>Generate the walls<a class="headerlink" href="#generate-the-walls" title="Permalink to this headline"></a></h2>
+<p>We already have code to draw the walls, but currently <code class="docutils literal notranslate"><span class="pre">lines</span></code> is empty
+so nothing gets drawn. Replace the function <code class="docutils literal notranslate"><span class="pre">generate_lines()</span></code> with
+this. Note that we immediately call <code class="docutils literal notranslate"><span class="pre">generate_lines()</span></code> after defining
+it to generate the walls for the start of the game.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_lines</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">wall_gradient</span><span class="p">,</span> <span class="n">left_wall_x</span>
+    <span class="n">gap_width</span> <span class="o">=</span> <span class="mi">300</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">distance</span> <span class="o">/</span> <span class="mi">3000</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">HEIGHT</span><span class="p">:</span>
+        <span class="n">pretty_colour</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">left_wall_x</span><span class="p">,</span> <span class="n">gap_width</span><span class="p">,</span> <span class="n">pretty_colour</span><span class="p">))</span>
+        <span class="n">left_wall_x</span> <span class="o">+=</span> <span class="n">wall_gradient</span>
+        <span class="k">if</span> <span class="n">left_wall_x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">left_wall_x</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">wall_gradient</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mf">0.1</span>
+        <span class="k">elif</span> <span class="n">left_wall_x</span> <span class="o">+</span> <span class="n">gap_width</span> <span class="o">&gt;</span> <span class="n">WIDTH</span><span class="p">:</span>
+            <span class="n">left_wall_x</span> <span class="o">=</span> <span class="n">WIDTH</span> <span class="o">-</span> <span class="n">gap_width</span>
+            <span class="n">wall_gradient</span> <span class="o">=</span> <span class="o">-</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mf">0.1</span>
+
+<span class="n">generate_lines</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="topic">
+<p class="topic-title">Advanced</p>
+<p>Run the program.  Change the colour of the walls from red to green.</p>
+</div>
+</div>
+<div class="section" id="make-the-walls-colourful">
+<h2><span class="section-number">9.4. </span>Make the walls colourful<a class="headerlink" href="#make-the-walls-colourful" title="Permalink to this headline"></a></h2>
+<p>Modify the line that sets the colour of the generated line to this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pretty_colour</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">left_wall_x</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">time</span> <span class="o">*</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="scrolling">
+<h2><span class="section-number">9.5. </span>Scrolling<a class="headerlink" href="#scrolling" title="Permalink to this headline"></a></h2>
+<p>Modify the <code class="docutils literal notranslate"><span class="pre">scroll_walls()</span></code> function so it removes lines from the
+bottom of the screen according to the player’s vertical velocity.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">scroll_walls</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">distance</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">player</span><span class="o">.</span><span class="n">vy</span><span class="p">)):</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="n">distance</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Modify <cite>scroll_walls()</cite> as above and check that the player can now accelerate forward.</p>
+</div>
+<div class="topic">
+<p class="topic-title">Advanced</p>
+<p>Change the amount of the forward acceleration to make the game faster or slower.</p>
+</div>
+</div>
+<div class="section" id="wall-collisions">
+<h2><span class="section-number">9.6. </span>Wall collisions<a class="headerlink" href="#wall-collisions" title="Permalink to this headline"></a></h2>
+<p>Currently the player can move through the walls - we don’t want to allow
+this. Also we want the player to lose all their velocity each time they
+collide as a penalty.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">wall_collisions</span><span class="p">():</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">5</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">vx</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">vx</span> <span class="o">*</span> <span class="o">-</span><span class="mf">0.5</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">vy</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">-=</span> <span class="mi">5</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">vx</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">vx</span> <span class="o">*</span> <span class="o">-</span><span class="mf">0.5</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">vy</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Modify <cite>wall_collisions()</cite> as above and check that the player now bounces off the walls.</p>
+</div>
+<div class="topic">
+<p class="topic-title">Advanced</p>
+<p>Make the collision more bouncy, i.e. the player bounces further when he hits the wall.</p>
+</div>
+</div>
+<div class="section" id="timer">
+<h2><span class="section-number">9.7. </span>Timer<a class="headerlink" href="#timer" title="Permalink to this headline"></a></h2>
+<p>Currently the player has infinite time. We want decrease the <code class="docutils literal notranslate"><span class="pre">time</span></code>
+variable by how much time has passed and end the game when time runs
+out.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">timer</span><span class="p">(</span><span class="n">delta</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">time</span><span class="p">,</span> <span class="n">playing</span><span class="p">,</span> <span class="n">best_distance</span>
+    <span class="n">time</span> <span class="o">-=</span> <span class="n">delta</span>
+    <span class="k">if</span> <span class="n">time</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">playing</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="n">distance</span> <span class="o">&gt;</span> <span class="n">best_distance</span><span class="p">:</span>
+            <span class="n">best_distance</span> <span class="o">=</span> <span class="n">distance</span>
+</pre></div>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Modify the <cite>timer()</cite> function as above.  Verify the game ends after 15 seconds.</p>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Make the game last for 30 seconds.</p>
+</div>
+</div>
+<div class="section" id="mouse-movement">
+<h2><span class="section-number">9.8. </span>Mouse movement<a class="headerlink" href="#mouse-movement" title="Permalink to this headline"></a></h2>
+<p>The game is easier but perhaps more fun if you can play it with mouse.
+Pygame will call this function for us automatically.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_mouse_move</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">pos</span>
+    <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="n">player</span><span class="o">.</span><span class="n">vy</span> <span class="o">=</span> <span class="p">(</span><span class="n">HEIGHT</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="mi">20</span>
+</pre></div>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Modify the <cite>on_mouse_move()</cite> function as above.  How does the player accelerate using the mouse?</p>
+</div>
+</div>
+<div class="section" id="ideas-for-extension">
+<h2><span class="section-number">9.9. </span>Ideas for extension<a class="headerlink" href="#ideas-for-extension" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Draw a new image for the player. Make the Actor show a different
+image depending on if the player is steering left or right.</p></li>
+<li><p>Give the player a goal distance that must be reached. If the player
+reaches this distance he gets extra time added to allow him to
+continue.</p></li>
+<li><p>Add sound effects and music.</p></li>
+<li><p>If you have a larger screen, make the game window taller (and make
+sure the alien appears at the bottom still).</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="shooter.html" class="btn btn-neutral float-left" title="8. Tutorial: Shooting game" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="advanced.html" class="btn btn-neutral float-right" title="10. Advanced topics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Richard Smith.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

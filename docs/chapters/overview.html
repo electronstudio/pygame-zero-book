@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1. Overview of Python &mdash; Coding Games With Pygame Zero &amp; Python  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Python Fundamentals" href="fundamentals.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="preface.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Coding Games With Pygame Zero & Python
+          </a>
+              <div class="version">
+                2.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Overview of Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#comments">1.1. Comments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#literals">1.2. Literals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#keywords">1.3. Keywords</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#built-ins">1.4. Built-ins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#libraries">1.5. Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#names">1.6. Names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#whitespace">1.7. Whitespace</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fundamentals.html">2. Python Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphics.html">3. Drawing graphics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_graphics.html">4. Improving your games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_games.html">5. More advanced games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chase.html">6. Tutorial: Chase game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maze.html">7. Tutorial: Maze game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shooter.html">8. Tutorial: Shooting game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="race.html">9. Tutorial: Race game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">10. Advanced topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="minecraft.html">11. Python in Minecraft</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Coding Games With Pygame Zero & Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><span class="section-number">1. </span>Overview of Python</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/chapters/overview.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="overview-of-python">
+<h1><span class="section-number">1. </span>Overview of Python<a class="headerlink" href="#overview-of-python" title="Permalink to this headline"></a></h1>
+<div class="section" id="comments">
+<h2><span class="section-number">1.1. </span>Comments<a class="headerlink" href="#comments" title="Permalink to this headline"></a></h2>
+<p>A computer program is intended to be understood by both humans and
+computers. However to make it easier for the humans, it can also contain
+comments written in English.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># A comment looks like this</span>
+</pre></div>
+</div>
+<p>Python ignores comments. They provide explanations for the human
+readers.</p>
+</div>
+<div class="section" id="literals">
+<h2><span class="section-number">1.2. </span>Literals<a class="headerlink" href="#literals" title="Permalink to this headline"></a></h2>
+<p>A Python program can contain any number and any <em>string</em> of text
+surrounded by quotes.</p>
+<p>Examples:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 21%" />
+<col style="width: 37%" />
+<col style="width: 37%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>1.23</p></td>
+<td><p>“Hello”</p></td>
+<td><p>‘Barry’</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="keywords">
+<h2><span class="section-number">1.3. </span>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline"></a></h2>
+<p>Every computer language has a number of <em>keywords</em> that you will need to
+learn along with their meanings. Fortunately they look like English
+words and there are only a few of them in Python. You could tick them
+off as you meet them.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 12%" />
+<col style="width: 8%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>False</p></td>
+<td><p>None</p></td>
+<td><p>True</p></td>
+<td><p>and</p></td>
+<td><p>as</p></td>
+<td><p>assert</p></td>
+<td><p>async</p></td>
+<td><p>await</p></td>
+</tr>
+<tr class="row-even"><td><p>break</p></td>
+<td><p>class</p></td>
+<td><p>continue</p></td>
+<td><p>def</p></td>
+<td><p>del</p></td>
+<td><p>elif</p></td>
+<td><p>else</p></td>
+<td><p>except</p></td>
+</tr>
+<tr class="row-odd"><td><p>finally</p></td>
+<td><p>for</p></td>
+<td><p>from</p></td>
+<td><p>global</p></td>
+<td><p>if</p></td>
+<td><p>import</p></td>
+<td><p>in</p></td>
+<td><p>is</p></td>
+</tr>
+<tr class="row-even"><td><p>lambda</p></td>
+<td><p>nonlocal</p></td>
+<td><p>not</p></td>
+<td><p>or</p></td>
+<td><p>pass</p></td>
+<td><p>raise</p></td>
+<td><p>return</p></td>
+<td><p>try</p></td>
+</tr>
+<tr class="row-odd"><td><p>while</p></td>
+<td><p>with</p></td>
+<td><p>yield</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="built-ins">
+<h2><span class="section-number">1.4. </span>Built-ins<a class="headerlink" href="#built-ins" title="Permalink to this headline"></a></h2>
+<p>Python also comes with a large number of <em>functions</em>. The most common
+ones are built-in and always available, much like the keywords. Here is
+a list of them, just for the sake of completeness, <em>but you probably
+won’t ever use them all</em>, and when you do use one you will probably look
+it up in the documentation. So you <em>don’t need to remember these</em>.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 15%" />
+<col style="width: 16%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>abs</p></td>
+<td><p>all</p></td>
+<td><p>any</p></td>
+<td><p>ascii</p></td>
+<td><p>bin</p></td>
+<td><p>bool</p></td>
+</tr>
+<tr class="row-even"><td><p>breakpoint</p></td>
+<td><p>bytearray</p></td>
+<td><p>bytes</p></td>
+<td><p>callable</p></td>
+<td><p>chr</p></td>
+<td><p>classmethod</p></td>
+</tr>
+<tr class="row-odd"><td><p>compile</p></td>
+<td><p>complex</p></td>
+<td><p>copyright</p></td>
+<td><p>credits</p></td>
+<td><p>delattr</p></td>
+<td><p>dict</p></td>
+</tr>
+<tr class="row-even"><td><p>dir</p></td>
+<td><p>divmod</p></td>
+<td><p>enumerate</p></td>
+<td><p>eval</p></td>
+<td><p>exec</p></td>
+<td><p>exit</p></td>
+</tr>
+<tr class="row-odd"><td><p>filter</p></td>
+<td><p>float</p></td>
+<td><p>format</p></td>
+<td><p>frozenset</p></td>
+<td><p>getattr</p></td>
+<td><p>globals</p></td>
+</tr>
+<tr class="row-even"><td><p>hasattr</p></td>
+<td><p>hash</p></td>
+<td><p>help</p></td>
+<td><p>hex</p></td>
+<td><p>id</p></td>
+<td><p>input</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>isinstance</p></td>
+<td><p>issubclass</p></td>
+<td><p>iter</p></td>
+<td><p>len</p></td>
+<td><p>license</p></td>
+</tr>
+<tr class="row-even"><td><p>list</p></td>
+<td><p>locals</p></td>
+<td><p>map</p></td>
+<td><p>max</p></td>
+<td><p>memoryview</p></td>
+<td><p>min</p></td>
+</tr>
+<tr class="row-odd"><td><p>next</p></td>
+<td><p>object</p></td>
+<td><p>oct</p></td>
+<td><p>open</p></td>
+<td><p>ord</p></td>
+<td><p>pow</p></td>
+</tr>
+<tr class="row-even"><td><p>print</p></td>
+<td><p>property</p></td>
+<td><p>quit</p></td>
+<td><p>range</p></td>
+<td><p>repr</p></td>
+<td><p>reversed</p></td>
+</tr>
+<tr class="row-odd"><td><p>round</p></td>
+<td><p>set</p></td>
+<td><p>setattr</p></td>
+<td><p>slice</p></td>
+<td><p>sorted</p></td>
+<td><p>staticmethod</p></td>
+</tr>
+<tr class="row-even"><td><p>str</p></td>
+<td><p>sum</p></td>
+<td><p>super</p></td>
+<td><p>tuple</p></td>
+<td><p>type</p></td>
+<td><p>vars</p></td>
+</tr>
+<tr class="row-odd"><td><p>zip</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Once you understand all of these you effectively understand all of the
+Python language. By the end of this book you will be familiar with at
+least 20 keywords / functions which is enough to create a huge variety
+of programs.</p>
+</div>
+<div class="section" id="libraries">
+<h2><span class="section-number">1.5. </span>Libraries<a class="headerlink" href="#libraries" title="Permalink to this headline"></a></h2>
+<p>There are many more functions available (too many to list here), but not
+everyone will need them, so they are kept in libraries. Some libraries
+are supplied with Python. You can use their functions only after first
+<em>importing</em> the relevant library module. For example, if you want a
+random number, import the random library:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Other libraries are not supplied with Python and must be downloaded
+separately, such as the Minecraft, Pygame and Richlib libraries.</p>
+</div>
+<div class="section" id="names">
+<h2><span class="section-number">1.6. </span>Names<a class="headerlink" href="#names" title="Permalink to this headline"></a></h2>
+<p>You will see many words in a program that appear to be English words and
+yet they are not literals, keywords or library functions. These are
+names chosen by the programmer. For example, if the program needs to
+record a score and store it in a variable, the programmer might choose
+to give that variable the name <code class="docutils literal notranslate"><span class="pre">score</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Score: &quot;</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Python has no understanding of what <code class="docutils literal notranslate"><span class="pre">score</span></code> means. It only cares that
+the same word is used every time. So a different programmer might decide
+to write the program like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">points</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Score: &quot;</span><span class="p">,</span> <span class="n">points</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A programmer who doesn’t like typing might use a shorter, less
+descriptive name:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Score: &quot;</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>However the programmer must be consistent. This <strong>would not work</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">points</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Score: &quot;</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="whitespace">
+<h2><span class="section-number">1.7. </span>Whitespace<a class="headerlink" href="#whitespace" title="Permalink to this headline"></a></h2>
+<p>Python is unusual in that it cares about <em>whitespace</em>, i.e. what you get
+when you press the <em>tab</em> key or the <em>space</em> bar on the keyboard.</p>
+<p>Python programs are arranged in blocks of lines. Every line in a block
+must have the same amount of whitespace preceding it - the
+<em>indentation</em>. See <a class="reference internal" href="fundamentals.html#code-blocks"><span class="std std-numref">Program 2.19</span></a> for an
+example.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="preface.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="fundamentals.html" class="btn btn-neutral float-right" title="2. Python Fundamentals" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Richard Smith.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

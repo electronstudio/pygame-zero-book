@@ -1,5 +1,5 @@
 # Coding Games With Pygame Zero \& Python
-## Student workbook
+## Student workbook, 2nd edition, revised
 
 [Read the text here](https://electronstudio.github.io/pygame-zero-book/)
 
@@ -15,10 +15,12 @@ introducing new language concepts or showing how the Pygame Zero API works, but 
 
 # Build
 
-Uses softcover.io:
+Uses https://www.sphinx-doc.org:
 ```
-softcover build:pdf
-softcover build:html
+make clean
+make html
+cp -a _build/html/. docs/
+make latexpdf
 ```
 
 # Third edition?
