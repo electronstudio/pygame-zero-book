@@ -20,7 +20,7 @@ import sphinx_rtd_theme
 project = 'Coding Games With Pygame Zero & Python'
 copyright = '2021, Richard Smith'
 author = 'Richard Smith'
-version = '2.1.1'
+version = '2.1.2'
 release = ''
 
 # -- General configuration ---------------------------------------------------
