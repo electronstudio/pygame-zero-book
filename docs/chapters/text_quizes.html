@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3. Text-based quiz games &mdash; Coding Games With Pygame Zero &amp; Python  documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4. Drawing graphics" href="graphics.html" />
+    <link rel="prev" title="2. Python Fundamentals" href="fundamentals.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Coding Games With Pygame Zero & Python
+          </a>
+              <div class="version">
+                2.1.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Coding Games With Pygame Zero &amp; Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#build">Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#third-edition">Third edition?</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">1. Overview of Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fundamentals.html">2. Python Fundamentals</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Text-based quiz games</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#hello-world">3.1. Hello, world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-input-from-the-keyboard">3.2. Getting input from the keyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#making-decisions-if-elif-else">3.3. Making decisions: if, elif, else</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-random-maths-question">3.4. A random maths question</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#keeping-score">3.5. Keeping score</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#guessing-game-with-a-loop">3.6. Guessing game with a loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#improved-guessing-game">3.7. Improved guessing game</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="graphics.html">4. Drawing graphics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simple_games.html">5. Arcade games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_graphics.html">6. Improving your games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_games.html">7. More advanced games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chase.html">8. Tutorial: Chase game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maze.html">9. Tutorial: Maze game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shooter.html">10. Tutorial: Shooting game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="race.html">11. Tutorial: Race game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">12. Advanced topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="minecraft.html">13. Python in Minecraft</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Coding Games With Pygame Zero & Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><span class="section-number">3. </span>Text-based quiz games</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/chapters/text_quizes.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="text-based-quiz-games">
+<h1><span class="section-number">3. </span>Text-based quiz games<a class="headerlink" href="#text-based-quiz-games" title="Permalink to this headline"></a></h1>
+<p>These programs can be entered using any text editor, but I suggest using
+<a class="reference external" href="https://codewith.mu/">the Mu editor</a> because it comes with Python,
+Pygame Zero and other libraries all pre-installed in one easy download.</p>
+<div class="section" id="hello-world">
+<h2><span class="section-number">3.1. </span>Hello, world<a class="headerlink" href="#hello-world" title="Permalink to this headline"></a></h2>
+<p>The traditional first program used to make sure Python is working and
+that we can run programs.</p>
+<p>If using the Mu editor:</p>
+<ol class="arabic simple">
+<li><p>Click the mode button and make sure the mode is set to <code class="docutils literal notranslate"><span class="pre">Python3</span></code>.</p></li>
+<li><p>Type in the program.</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Save</span></code> and enter a name for the program.</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Run</span></code>.</p></li>
+</ol>
+<div class="literal-block-wrapper docutils container" id="code-hello">
+<div class="code-block-caption"><span class="caption-number">Program 3.1 </span><span class="caption-text">Hello, world</span><a class="headerlink" href="#code-hello" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
+
+<span class="c1"># This line is a comment, you dont have to type these!</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="getting-input-from-the-keyboard">
+<h2><span class="section-number">3.2. </span>Getting input from the keyboard<a class="headerlink" href="#getting-input-from-the-keyboard" title="Permalink to this headline"></a></h2>
+<p>This program will pause and wait for you to enter some text with the
+keyboard, followed by the return key. The text you enter is stored in a
+variable, <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<div class="literal-block-wrapper docutils container" id="code-input">
+<div class="code-block-caption"><span class="caption-number">Program 3.2 </span><span class="caption-text">Getting input from the keyboard</span><a class="headerlink" href="#code-input" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Enter your name:&quot;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s2">&quot;richard&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That is a very cool name&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Add some names of your friends and display a different message for each friend.</p>
+</div>
+</div>
+<div class="section" id="making-decisions-if-elif-else">
+<h2><span class="section-number">3.3. </span>Making decisions: if, elif, else<a class="headerlink" href="#making-decisions-if-elif-else" title="Permalink to this headline"></a></h2>
+<p>This is how to add another name to <a class="reference internal" href="#code-input"><span class="std std-numref">Program 3.2</span></a></p>
+<div class="literal-block-wrapper docutils container" id="code-input2">
+<div class="code-block-caption"><span class="caption-number">Program 3.3 </span><span class="caption-text">Decisions: if, elif, else</span><a class="headerlink" href="#code-input2" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Enter your name:&quot;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s2">&quot;richard&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That is a very cool name&quot;</span><span class="p">)</span>
+<span class="hll"><span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="s2">&quot;nick&quot;</span><span class="p">:</span>
+</span><span class="hll">    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That is a rubbish name&quot;</span><span class="p">)</span>
+</span><span class="hll"><span class="k">else</span><span class="p">:</span>
+</span><span class="hll">    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I do not know your name&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</span></pre></div>
+</td></tr></table></div>
+</div>
+<p><a class="reference internal" href="#code-input2"><span class="std std-numref">Program 3.3</span></a> is very
+similar to <a class="reference internal" href="#code-input"><span class="std std-numref">Program 3.2</span></a>. The new lines have
+been highlighted. You can either modify
+<a class="reference internal" href="#code-input"><span class="std std-numref">Program 3.2</span></a>, or else create a new file and use
+copy and paste to copy the code from the old program into the new.</p>
+</div>
+<div class="section" id="a-random-maths-question">
+<h2><span class="section-number">3.4. </span>A random maths question<a class="headerlink" href="#a-random-maths-question" title="Permalink to this headline"></a></h2>
+<div class="literal-block-wrapper docutils container" id="codemaths">
+<div class="code-block-caption"><span class="caption-number">Program 3.4 </span><span class="caption-text">A random maths question</span><a class="headerlink" href="#codemaths" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;What is&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s2">&quot;plus 7?&quot;</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>  <span class="c1"># Why do we use int() here?</span>
+<span class="k">if</span> <span class="n">g</span> <span class="o">==</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">7</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wrong&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Add some more questions, e.g.</p>
+<ul class="simple">
+<li><p>Instead of 7, use another random number.</p></li>
+<li><p>Use a bigger random number.</p></li>
+<li><p>Multiply (use <cite>*</cite>), divide (use <cite>/</cite>) or subtract (use <cite>-</cite>) numbers.</p></li>
+</ul>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Print how many questions the player got correct at the end.</p>
+</div>
+</div>
+<div class="section" id="keeping-score">
+<h2><span class="section-number">3.5. </span>Keeping score<a class="headerlink" href="#keeping-score" title="Permalink to this headline"></a></h2>
+<p>We create a <code class="docutils literal notranslate"><span class="pre">score</span></code> variable to record how many questions the player
+answered correctly.</p>
+<div class="literal-block-wrapper docutils container" id="code-maths2">
+<div class="code-block-caption"><span class="caption-number">Program 3.5 </span><span class="caption-text">Keeping score</span><a class="headerlink" href="#code-maths2" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;What is 1+1 ?&quot;</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="k">if</span> <span class="n">g</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct&quot;</span><span class="p">)</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="n">score</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;What is 35-25 ?&quot;</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="k">if</span> <span class="n">g</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct&quot;</span><span class="p">)</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="n">score</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your score:&quot;</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="guessing-game-with-a-loop">
+<h2><span class="section-number">3.6. </span>Guessing game with a loop<a class="headerlink" href="#guessing-game-with-a-loop" title="Permalink to this headline"></a></h2>
+<p>This <code class="docutils literal notranslate"><span class="pre">while</span></code> loop goes round and round forever … or until the player
+gets a correct answer, and then it <a href="#id1"><span class="problematic" id="id2">``</span></a>break``s out of the loop. Note
+that everything in the loop is indented.</p>
+<div class="literal-block-wrapper docutils container" id="codeloop">
+<div class="code-block-caption"><span class="caption-number">Program 3.6 </span><span class="caption-text">Guessing game with a loop</span><a class="headerlink" href="#codeloop" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am thinking of a number, can you guess what it is?&quot;</span><span class="p">)</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+    <span class="k">if</span> <span class="n">g</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wrong&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Give a hint to the player when they are wrong.  Was their guess too high or too low?</p>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Print how many guesses they took to get it right at the end.</p>
+</div>
+</div>
+<div class="section" id="improved-guessing-game">
+<h2><span class="section-number">3.7. </span>Improved guessing game<a class="headerlink" href="#improved-guessing-game" title="Permalink to this headline"></a></h2>
+<p><a class="reference internal" href="#codeloop"><span class="std std-numref">Program 3.6</span></a> with a hint whether the guess is
+greater or lesser than the answer.</p>
+<div class="literal-block-wrapper docutils container" id="code-loop2">
+<div class="code-block-caption"><span class="caption-number">Program 3.7 </span><span class="caption-text">GImproved guessing game</span><a class="headerlink" href="#code-loop2" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">guesses</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">guesses</span> <span class="o">=</span> <span class="n">guesses</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am thinking of a number, can you guess what it is?&quot;</span><span class="p">)</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+    <span class="k">if</span> <span class="n">g</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">elif</span> <span class="n">g</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Too low&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">g</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Too high&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct! You took&quot;</span><span class="p">,</span> <span class="n">guesses</span><span class="p">,</span> <span class="s2">&quot;guesses.&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="fundamentals.html" class="btn btn-neutral float-left" title="2. Python Fundamentals" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="graphics.html" class="btn btn-neutral float-right" title="4. Drawing graphics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Richard Smith.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

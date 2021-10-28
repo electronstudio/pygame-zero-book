@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>12. Advanced topics &mdash; Coding Games With Pygame Zero &amp; Python  documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="13. Python in Minecraft" href="minecraft.html" />
+    <link rel="prev" title="11. Tutorial: Race game" href="race.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Coding Games With Pygame Zero & Python
+          </a>
+              <div class="version">
+                2.1.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Coding Games With Pygame Zero &amp; Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#build">Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#third-edition">Third edition?</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">1. Overview of Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fundamentals.html">2. Python Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_quizes.html">3. Text-based quiz games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphics.html">4. Drawing graphics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simple_games.html">5. Arcade games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_graphics.html">6. Improving your games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_games.html">7. More advanced games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chase.html">8. Tutorial: Chase game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maze.html">9. Tutorial: Maze game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shooter.html">10. Tutorial: Shooting game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="race.html">11. Tutorial: Race game</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">12. Advanced topics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#instructor-note">12.1. Instructor note</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#classes">12.2. Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#methods">12.3. Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#joystick-tester">12.4. Joystick tester</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#distributing-your-pygame-zero-games">12.5. Distributing your Pygame Zero games</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="minecraft.html">13. Python in Minecraft</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Coding Games With Pygame Zero & Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><span class="section-number">12. </span>Advanced topics</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/chapters/advanced.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="advanced-topics">
+<h1><span class="section-number">12. </span>Advanced topics<a class="headerlink" href="#advanced-topics" title="Permalink to this headline"></a></h1>
+<div class="section" id="instructor-note">
+<h2><span class="section-number">12.1. </span>Instructor note<a class="headerlink" href="#instructor-note" title="Permalink to this headline"></a></h2>
+<p>This introduces object oriented
+programming, but I wouldn’t attempt this with young students since it
+requires abstract thinking.</p>
+</div>
+<div class="section" id="classes">
+<h2><span class="section-number">12.2. </span>Classes<a class="headerlink" href="#classes" title="Permalink to this headline"></a></h2>
+<p>You’ve already been using class types provided by Pygame Zero, e.g. Rect
+and Actor. But if we want to store velocity as in
+<a class="reference internal" href="more_games.html#code-simple-physics"><span class="std std-numref">Program 7.3</span></a> we find these classes do
+not include <em>vx</em> and <em>vy</em> variables inside them by default. We have to
+remember to add a <em>vx</em> and <em>vy</em> every time we create an Actor.</p>
+<p>So let’s create our own class, called <em>Sprite</em>, that is the same as
+Actor but with these variables included.</p>
+<div class="literal-block-wrapper docutils container" id="code-classes">
+<div class="code-block-caption"><span class="caption-number">Program 12.1 </span><span class="caption-text">Classes</span><a class="headerlink" href="#code-classes" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="k">class</span> <span class="nc">Sprite</span><span class="p">(</span><span class="n">Actor</span><span class="p">):</span>
+    <span class="n">vx</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">vy</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">ball</span> <span class="o">=</span> <span class="n">Sprite</span><span class="p">(</span><span class="s1">&#39;alien&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">ball</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="n">ball</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">ball</span><span class="o">.</span><span class="n">vx</span>
+    <span class="n">ball</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">ball</span><span class="o">.</span><span class="n">vy</span>
+    <span class="k">if</span> <span class="n">ball</span><span class="o">.</span><span class="n">right</span> <span class="o">&gt;</span> <span class="n">WIDTH</span> <span class="ow">or</span> <span class="n">ball</span><span class="o">.</span><span class="n">left</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">ball</span><span class="o">.</span><span class="n">vx</span> <span class="o">=</span> <span class="o">-</span><span class="n">ball</span><span class="o">.</span><span class="n">vx</span>
+    <span class="k">if</span> <span class="n">ball</span><span class="o">.</span><span class="n">bottom</span> <span class="o">&gt;</span> <span class="n">HEIGHT</span> <span class="ow">or</span> <span class="n">ball</span><span class="o">.</span><span class="n">top</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">ball</span><span class="o">.</span><span class="n">vy</span> <span class="o">=</span> <span class="o">-</span><span class="n">ball</span><span class="o">.</span><span class="n">vy</span>
+
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="methods">
+<h2><span class="section-number">12.3. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this headline"></a></h2>
+<p>Classes can contain functions (called <em>methods</em>) as well as variables.
+Methods are the best place to modify the class’s variables.</p>
+<div class="literal-block-wrapper docutils container" id="code-classes2">
+<div class="code-block-caption"><span class="caption-number">Program 12.2 </span><span class="caption-text">Class methods</span><a class="headerlink" href="#code-classes2" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="k">class</span> <span class="nc">Sprite</span><span class="p">(</span><span class="n">Actor</span><span class="p">):</span>
+    <span class="n">vx</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">vy</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vx</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vy</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">&gt;</span> <span class="n">WIDTH</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vx</span> <span class="o">=</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">vx</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">&gt;</span> <span class="n">HEIGHT</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vy</span> <span class="o">=</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">vy</span>
+
+<span class="n">ball</span> <span class="o">=</span> <span class="n">Sprite</span><span class="p">(</span><span class="s2">&quot;alien&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">ball</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="n">ball</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="joystick-tester">
+<h2><span class="section-number">12.4. </span>Joystick tester<a class="headerlink" href="#joystick-tester" title="Permalink to this headline"></a></h2>
+<p>This program demonstrates using joysticks and for loops, but is mainly
+included to help you test the input from your controllers.</p>
+<p>(I don’t suggest typing this one yourself.)</p>
+<div class="literal-block-wrapper docutils container" id="code-joystick-tester">
+<div class="code-block-caption"><span class="caption-number">Program 12.3 </span><span class="caption-text">Joystick tester</span><a class="headerlink" href="#code-joystick-tester" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pygame</span>
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">joystick_count</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">joystick</span><span class="o">.</span><span class="n">get_count</span><span class="p">()</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">joystick_count</span><span class="p">):</span>
+        <span class="n">joystick</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">joystick</span><span class="o">.</span><span class="n">Joystick</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">joystick</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">joystick</span><span class="o">.</span><span class="n">get_name</span><span class="p">()</span>
+        <span class="n">axes</span> <span class="o">=</span> <span class="n">joystick</span><span class="o">.</span><span class="n">get_numaxes</span><span class="p">()</span>
+        <span class="n">buttons</span> <span class="o">=</span> <span class="n">joystick</span><span class="o">.</span><span class="n">get_numbuttons</span><span class="p">()</span>
+        <span class="n">hats</span> <span class="o">=</span> <span class="n">joystick</span><span class="o">.</span><span class="n">get_numhats</span><span class="p">()</span>
+        <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
+            <span class="s2">&quot;Joystick </span><span class="si">{}</span><span class="s2"> name: </span><span class="si">{}</span><span class="s2"> axes:</span><span class="si">{}</span><span class="s2"> buttons:</span><span class="si">{}</span><span class="s2"> hats:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">i</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">axes</span><span class="p">,</span> <span class="n">buttons</span><span class="p">,</span> <span class="n">hats</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+        <span class="n">y</span> <span class="o">+=</span> <span class="mi">14</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">axes</span><span class="p">):</span>
+            <span class="n">axis</span> <span class="o">=</span> <span class="n">joystick</span><span class="o">.</span><span class="n">get_axis</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;Axis </span><span class="si">{}</span><span class="s2"> value: </span><span class="si">{:&gt;6.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">axis</span><span class="p">),</span>
+                             <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+            <span class="n">y</span> <span class="o">+=</span> <span class="mi">14</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">buttons</span><span class="p">):</span>
+            <span class="n">button</span> <span class="o">=</span> <span class="n">joystick</span><span class="o">.</span><span class="n">get_button</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;Button </span><span class="si">{:&gt;2}</span><span class="s2"> value: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">button</span><span class="p">),</span>
+                             <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+            <span class="n">y</span> <span class="o">+=</span> <span class="mi">14</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">hats</span><span class="p">):</span>
+            <span class="n">hat</span> <span class="o">=</span> <span class="n">joystick</span><span class="o">.</span><span class="n">get_hat</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;Hat </span><span class="si">{}</span><span class="s2"> value: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">hat</span><span class="p">)),</span>
+                             <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+            <span class="n">y</span> <span class="o">+=</span> <span class="mi">14</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="distributing-your-pygame-zero-games">
+<h2><span class="section-number">12.5. </span>Distributing your Pygame Zero games<a class="headerlink" href="#distributing-your-pygame-zero-games" title="Permalink to this headline"></a></h2>
+<p>This is often tricky to get working, but you can distribute your games
+to people who don’t have Python or Mu installed. You can put them on a
+USB stick, or a website for people to download, or even on itch.io for
+people to buy.</p>
+<ol class="arabic">
+<li><p>Install the full version of python from
+<a class="reference external" href="https://www.python.org/downloads/">www.python.org</a>.</p></li>
+<li><p>Edit your game source code (using Mu). We will assume your source is
+in a file <code class="docutils literal notranslate"><span class="pre">MY_GAME.py</span></code>. At the top of the file add the line:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pgzrun</span>
+</pre></div>
+</div>
+<p>At the bottom of the file add the line:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pgzrun</span><span class="o">.</span><span class="n">go</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Save the file.</p>
+</li>
+</ol>
+<ol class="arabic" start="4">
+<li><p>Open a command shell: Click start menu and type <code class="docutils literal notranslate"><span class="pre">cmd.exe</span></code>.  You should see a prompt similar to this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">YourName</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>This means you are in the user YourName home directory, with the <code class="docutils literal notranslate"><span class="pre">mu_code</span></code> sub-directory inside it.
+If you are in a different directory you will have to change it with the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command.</p>
+</li>
+<li><p>Install Nuitka and PGZero. At the command prompt type:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">nuitka</span> <span class="n">pgzero</span>
+</pre></div>
+</div>
+</li>
+<li><p>Create the executable. At the command prompt type this (all one long line):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">nuitka</span> <span class="o">--</span><span class="n">onefile</span> <span class="o">--</span><span class="n">include</span><span class="o">-</span><span class="n">package</span><span class="o">-</span><span class="n">data</span><span class="o">=</span><span class="n">pgzero</span><span class="p">,</span><span class="n">pygame</span> <span class="o">--</span><span class="n">include</span><span class="o">-</span><span class="n">data</span><span class="o">-</span><span class="nb">dir</span><span class="o">=</span><span class="n">mu_code</span><span class="o">=.</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">dir</span><span class="o">=</span><span class="n">Documents</span> <span class="n">mu_code</span><span class="o">/</span><span class="n">MY_GAME</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Remember to replace <code class="docutils literal notranslate"><span class="pre">MY_GAME</span></code> with the actual name of the Python file.  If Nuitka asks for confirmation,
+type <code class="docutils literal notranslate"><span class="pre">Yes</span></code> and press enter.</p>
+<p>This will generate a program called <code class="docutils literal notranslate"><span class="pre">MY_GAME.exe</span></code> in your <code class="docutils literal notranslate"><span class="pre">Documents</span></code> folder.</p>
+</li>
+<li><p>In Windows Explorer, double click the <code class="docutils literal notranslate"><span class="pre">MY_GAME.exe</span></code> icon in <code class="docutils literal notranslate"><span class="pre">Documents</span></code> to play your game.  To distribute your game,
+copy this file.</p></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="race.html" class="btn btn-neutral float-left" title="11. Tutorial: Race game" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="minecraft.html" class="btn btn-neutral float-right" title="13. Python in Minecraft" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Richard Smith.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

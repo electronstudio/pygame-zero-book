@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>8. Tutorial: Chase game &mdash; Coding Games With Pygame Zero &amp; Python  documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="9. Tutorial: Maze game" href="maze.html" />
+    <link rel="prev" title="7. More advanced games" href="more_games.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Coding Games With Pygame Zero & Python
+          </a>
+              <div class="version">
+                2.1.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Coding Games With Pygame Zero &amp; Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#build">Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#third-edition">Third edition?</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">1. Overview of Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fundamentals.html">2. Python Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_quizes.html">3. Text-based quiz games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphics.html">4. Drawing graphics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simple_games.html">5. Arcade games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_graphics.html">6. Improving your games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_games.html">7. More advanced games</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">8. Tutorial: Chase game</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#moving-actor-over-a-background">8.1. Moving Actor over a background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#screen-wrap-around">8.2. Screen wrap-around</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enemy-chases-the-player">8.3. Enemy chases the player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#collecting-items">8.4. Collecting items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#player-2">8.5. Player 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#showing-the-score-on-the-screen">8.6. Showing the score on the screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#timer">8.7. Timer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#finished-game">8.8. Finished game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ideas-for-extension">8.9. Ideas for extension</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="maze.html">9. Tutorial: Maze game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shooter.html">10. Tutorial: Shooting game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="race.html">11. Tutorial: Race game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">12. Advanced topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="minecraft.html">13. Python in Minecraft</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Coding Games With Pygame Zero & Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><span class="section-number">8. </span>Tutorial: Chase game</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/chapters/chase.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="tutorial-chase-game">
+<h1><span class="section-number">8. </span>Tutorial: Chase game<a class="headerlink" href="#tutorial-chase-game" title="Permalink to this headline"></a></h1>
+<p>In this chapter we will build a complete chase game together, step by
+step. The Python we will use is very simple: just conditionals and
+loops.</p>
+<p>The techniques here should be familiar to you because we used them in
+<a class="reference internal" href="graphics.html#code-background"><span class="std std-numref">Program 4.4</span></a>,
+<a class="reference internal" href="graphics.html#code-keyboard-input"><span class="std std-numref">Program 4.5</span></a>,
+<a class="reference internal" href="simple_games.html#code-collisions"><span class="std std-numref">Program 5.1</span></a> and <a class="reference internal" href="simple_games.html#code-chase"><span class="std std-numref">Program 5.2</span></a></p>
+<p>Now we will show you how to put them all together in one program.</p>
+<div class="section" id="moving-actor-over-a-background">
+<h2><span class="section-number">8.1. </span>Moving Actor over a background<a class="headerlink" href="#moving-actor-over-a-background" title="Permalink to this headline"></a></h2>
+<p>We must create two image files for our game. You can use a program such
+as Krita <a class="footnote-reference brackets" href="#id2" id="id1">1</a> to draw them and save them in the <code class="docutils literal notranslate"><span class="pre">mu_code/images</span></code>
+folder (accessible with the <code class="docutils literal notranslate"><span class="pre">images</span></code> button in Mu). One is the player,
+called <code class="docutils literal notranslate"><span class="pre">player.png</span></code>. It should be small, about 64×64 pixels. Ideally
+it should have a transparent background.</p>
+<p>The other is the background for the game itself. It can look like
+whatever you want, but it must be the same size as the game window,
+which will be 600×600 pixels.</p>
+<div class="literal-block-wrapper docutils container" id="code-chase1">
+<div class="code-block-caption"><span class="caption-number">Program 8.1 </span><span class="caption-text">Chase game</span><a class="headerlink" href="#code-chase1" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">600</span>
+<span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">600</span>
+
+<span class="n">background</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">&quot;background&quot;</span><span class="p">)</span>
+<span class="n">player</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">&quot;player&quot;</span><span class="p">)</span>
+<span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">200</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">background</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">player</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">4</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="mi">4</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">down</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="mi">4</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">up</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="mi">4</span>
+
+
+
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Run the program and move the Actor around with the keys.</p>
+</div>
+</div>
+<div class="section" id="screen-wrap-around">
+<h2><span class="section-number">8.2. </span>Screen wrap-around<a class="headerlink" href="#screen-wrap-around" title="Permalink to this headline"></a></h2>
+<p>One problem you will soon find with the program is that you can move off
+the edge of the screen and get lost. One way to solve this would be to
+stop movement at the screen edges. Instead we going to make the player
+teleport to the opposite edge when he leaves the screen. Add this code
+to the end of the program, and make sure it is indented so that it
+becomes part of the <code class="docutils literal notranslate"><span class="pre">update()</span></code> function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">WIDTH</span><span class="p">:</span>
+    <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">if</span> <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">WIDTH</span>
+<span class="k">if</span> <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">HEIGHT</span>
+<span class="k">if</span> <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">HEIGHT</span><span class="p">:</span>
+    <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Change the code so that the player stops at the edges rather than wraps-around.</p>
+</div>
+</div>
+<div class="section" id="enemy-chases-the-player">
+<h2><span class="section-number">8.3. </span>Enemy chases the player<a class="headerlink" href="#enemy-chases-the-player" title="Permalink to this headline"></a></h2>
+<p>Let’s add an enemy to chase the player. At the top of the program,
+create a variable to store the enemy Actor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">enemy</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">&quot;alien&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>At the end of the <code class="docutils literal notranslate"><span class="pre">draw()</span></code> function (but still indented so part of the
+function), draw the enemy. Remember there is only ever one single
+<code class="docutils literal notranslate"><span class="pre">draw()</span></code> function. No program has two. All drawing goes inside this
+function.</p>
+<p>Here is the complete function including the new line at the end:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">background</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">player</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">enemy</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>At the end of the <code class="docutils literal notranslate"><span class="pre">update()</span></code> function (but still indented so part of
+the function), add these lines to move the enemy:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">enemy</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">player</span><span class="o">.</span><span class="n">x</span><span class="p">:</span>
+    <span class="n">enemy</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">enemy</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">if</span> <span class="n">enemy</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">player</span><span class="o">.</span><span class="n">x</span><span class="p">:</span>
+    <span class="n">enemy</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">enemy</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="k">if</span> <span class="n">enemy</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="n">player</span><span class="o">.</span><span class="n">y</span><span class="p">:</span>
+    <span class="n">enemy</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">enemy</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">if</span> <span class="n">enemy</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">player</span><span class="o">.</span><span class="n">y</span><span class="p">:</span>
+    <span class="n">enemy</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">enemy</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="k">if</span> <span class="n">player</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="n">enemy</span><span class="p">):</span>
+    <span class="n">exit</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Run the program verify the enemy chases the player.</p>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Make the enemy faster so the game is more difficult.</p>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Create an image file <cite>enemy.png</cite> and save it in the <cite>images</cite> folder.  Change the code so it loads <cite>“enemy”</cite> instead of <cite>“alien”</cite>.</p>
+</div>
+</div>
+<div class="section" id="collecting-items">
+<h2><span class="section-number">8.4. </span>Collecting items<a class="headerlink" href="#collecting-items" title="Permalink to this headline"></a></h2>
+<p>Create a small image file <code class="docutils literal notranslate"><span class="pre">coin.png</span></code> and save it in the <code class="docutils literal notranslate"><span class="pre">images</span></code>
+folder. It should look like a coin or something else you would like to
+collect. We will also need a variable to store the <em>score</em>, i.e. number
+of coins collected.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">coin</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">&quot;coin&quot;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">))</span>
+<span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>At the end of the <code class="docutils literal notranslate"><span class="pre">draw()</span></code> function (but still indented so part of the
+function), draw the coin. Remember there is only ever one single
+<code class="docutils literal notranslate"><span class="pre">draw()</span></code> function. No program has two. All drawing goes inside this
+function.</p>
+<p>Here is the complete function including the new line at the end:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">background</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">player</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">enemy</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">coin</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>At the end of the <code class="docutils literal notranslate"><span class="pre">update()</span></code> function (but still indented so part of
+the function), add these lines to move the coin when it is collected:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">coin</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="n">player</span><span class="p">):</span>
+    <span class="n">coin</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">WIDTH</span><span class="p">)</span>
+    <span class="n">coin</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">)</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="n">score</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Score:&quot;</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Run the program and collect a coin.  What happens?</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;random&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
+</pre></div>
+</div>
+<p>This happens because we are using a function <code class="docutils literal notranslate"><span class="pre">randint()</span></code> to get a
+random number. This function is not build-in to Python; it is part of
+the <em>random</em> library. So at the top of the program, add the first line:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+</pre></div>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Run the program again and collect a coin.  Does it work now?</p>
+</div>
+<p>No!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ne">UnboundLocalError</span><span class="p">:</span> <span class="n">local</span> <span class="n">variable</span> <span class="s1">&#39;score&#39;</span> <span class="n">referenced</span> <span class="n">before</span> <span class="n">assignment</span>
+</pre></div>
+</div>
+<p>You will get an error because <code class="docutils literal notranslate"><span class="pre">score</span></code> is a global variable and we are
+trying to modify it inside the <code class="docutils literal notranslate"><span class="pre">update()</span></code> function. Therefore at the
+<strong>top</strong> of the <code class="docutils literal notranslate"><span class="pre">update()</span></code> function, add this line to declare to Python
+our intention to modify a global variable:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">global</span> <span class="n">score</span>
+</pre></div>
+</div>
+<p>It must be the <strong>first</strong> line in the function and it must be
+<strong>indented</strong>. The lines surrounding it should look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">score</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+</pre></div>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Run the program again and verify it works!</p>
+</div>
+</div>
+<div class="section" id="player-2">
+<h2><span class="section-number">8.5. </span>Player 2<a class="headerlink" href="#player-2" title="Permalink to this headline"></a></h2>
+<p>We can make any game into a two player game. At the top of the program,
+create a variable to store the Actor for the second player:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">player2</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">&quot;alien&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>At the end of the <code class="docutils literal notranslate"><span class="pre">draw()</span></code> function (but still indented so part of the
+function), draw the enemy. Here is the complete function with the new
+line at the end:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">background</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">player</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">enemy</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">coin</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">player2</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>At the end of the <code class="docutils literal notranslate"><span class="pre">update()</span></code> function (but still indented so part of
+the function), add these lines to move the second player:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">d</span><span class="p">:</span>
+    <span class="n">player2</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">player2</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">4</span>
+<span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">a</span><span class="p">:</span>
+    <span class="n">player2</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">player2</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="mi">4</span>
+<span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">s</span><span class="p">:</span>
+    <span class="n">player2</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">player2</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="mi">4</span>
+<span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">w</span><span class="p">:</span>
+    <span class="n">player2</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">player2</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="mi">4</span>
+<span class="k">if</span> <span class="n">player</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="n">player2</span><span class="p">):</span>
+    <span class="n">exit</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="topic">
+<p class="topic-title">Advanced</p>
+<p>Create a variable <cite>score2</cite> and store the score for player two, i.e. it goes up when he collides with a coin.</p>
+</div>
+</div>
+<div class="section" id="showing-the-score-on-the-screen">
+<h2><span class="section-number">8.6. </span>Showing the score on the screen<a class="headerlink" href="#showing-the-score-on-the-screen" title="Permalink to this headline"></a></h2>
+<p>At the end of the <code class="docutils literal notranslate"><span class="pre">draw()</span></code> function (but still indented so part of the
+function), draw a title on the screen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;My game&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">draw.text()</span></code> function is not like <code class="docutils literal notranslate"><span class="pre">print()</span></code> - it can only print
+strings of text, not numbers. Therefore we must convert the score into a
+string. Add these lines to the end of the <code class="docutils literal notranslate"><span class="pre">draw()</span></code> function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">score_string</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+<span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">score_string</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Change the colour of the text.</p>
+</div>
+<div class="topic">
+<p class="topic-title">Advanced</p>
+<p>Display the word “Score: ” before the score.</p>
+</div>
+<div class="topic">
+<p class="topic-title">Advanced</p>
+<p>When the <cite>score</cite> reaches 10, show a message on the screen to congratulate the player</p>
+</div>
+</div>
+<div class="section" id="timer">
+<h2><span class="section-number">8.7. </span>Timer<a class="headerlink" href="#timer" title="Permalink to this headline"></a></h2>
+<p>Add a variable at the top of the program (but preferably after any
+<code class="docutils literal notranslate"><span class="pre">import</span></code> statements) to store the number of seconds of time remaining
+in the game:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="mi">20</span>
+</pre></div>
+</div>
+<p>Pygame Zero calls our <code class="docutils literal notranslate"><span class="pre">update()</span></code> function many times per second. We
+can ask it to tell us how much time has passed by adding a <em>parameter</em>
+to the function, <code class="docutils literal notranslate"><span class="pre">delta</span></code>. We then subtract this from the remaining
+time. Modify <code class="docutils literal notranslate"><span class="pre">update()</span></code> so the first lines look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">delta</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">score</span><span class="p">,</span> <span class="n">time</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="n">time</span> <span class="o">-</span> <span class="n">delta</span>
+    <span class="k">if</span> <span class="n">time</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+         <span class="n">exit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>We can also display the time on the screen. At the end of the <code class="docutils literal notranslate"><span class="pre">draw()</span></code>
+function (but still indented so part of the function) add these lines:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">time_string</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+<span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">time_string</span><span class="p">,</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Run the program.  Could the displayed time be improved?</p>
+</div>
+<p>We don’t need to see the decimal places in the time. Modify those lines
+to use the <code class="docutils literal notranslate"><span class="pre">round()</span></code> function, like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">time_string</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">time</span><span class="p">))</span>
+<span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">time_string</span><span class="p">,</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="finished-game">
+<h2><span class="section-number">8.8. </span>Finished game<a class="headerlink" href="#finished-game" title="Permalink to this headline"></a></h2>
+<p>Here is the finished game with all the changes included:</p>
+<div class="literal-block-wrapper docutils container" id="code-chaser7">
+<div class="code-block-caption"><span class="caption-number">Program 8.2 </span><span class="caption-text">Finished chase game</span><a class="headerlink" href="#code-chaser7" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">600</span>
+<span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">600</span>
+
+<span class="n">background</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">&quot;background&quot;</span><span class="p">)</span>
+<span class="n">player</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">&quot;player&quot;</span><span class="p">)</span>
+<span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">200</span>
+
+<span class="n">enemy</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">&quot;alien&quot;</span><span class="p">)</span>
+<span class="n">player2</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">&quot;player&quot;</span><span class="p">)</span>
+<span class="n">coin</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">&quot;alien&quot;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">))</span>
+<span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">time</span> <span class="o">=</span> <span class="mi">20</span>
+
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">background</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">player</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">enemy</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">player2</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">coin</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;My game&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    <span class="n">score_string</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">score_string</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+    <span class="n">time_string</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">time</span><span class="p">))</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">time_string</span><span class="p">,</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">delta</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">score</span><span class="p">,</span> <span class="n">time</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="n">time</span> <span class="o">-</span> <span class="n">delta</span>
+    <span class="k">if</span> <span class="n">time</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">exit</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">4</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="mi">4</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">down</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="mi">4</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">up</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="mi">4</span>
+
+    <span class="k">if</span> <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">WIDTH</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">WIDTH</span>
+    <span class="k">if</span> <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">HEIGHT</span>
+    <span class="k">if</span> <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">HEIGHT</span><span class="p">:</span>
+        <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">if</span> <span class="n">enemy</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">player</span><span class="o">.</span><span class="n">x</span><span class="p">:</span>
+        <span class="n">enemy</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">enemy</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">enemy</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">player</span><span class="o">.</span><span class="n">x</span><span class="p">:</span>
+        <span class="n">enemy</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">enemy</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">enemy</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="n">player</span><span class="o">.</span><span class="n">y</span><span class="p">:</span>
+        <span class="n">enemy</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">enemy</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">enemy</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">player</span><span class="o">.</span><span class="n">y</span><span class="p">:</span>
+        <span class="n">enemy</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">enemy</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">player</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="n">enemy</span><span class="p">):</span>
+        <span class="n">exit</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">d</span><span class="p">:</span>
+        <span class="n">player2</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">player2</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">4</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">a</span><span class="p">:</span>
+        <span class="n">player2</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">player2</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="mi">4</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">s</span><span class="p">:</span>
+        <span class="n">player2</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">player2</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="mi">4</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">w</span><span class="p">:</span>
+        <span class="n">player2</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">player2</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="mi">4</span>
+    <span class="k">if</span> <span class="n">player</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="n">player2</span><span class="p">):</span>
+        <span class="n">exit</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">coin</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="n">player</span><span class="p">):</span>
+        <span class="n">coin</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">WIDTH</span><span class="p">)</span>
+        <span class="n">coin</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">)</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="n">score</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Score:&quot;</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
+
+
+
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="ideas-for-extension">
+<h2><span class="section-number">8.9. </span>Ideas for extension<a class="headerlink" href="#ideas-for-extension" title="Permalink to this headline"></a></h2>
+<p>There are many things you could add to this game.</p>
+<ul class="simple">
+<li><p>Add more enemies.</p></li>
+<li><p>Give the player three lives.</p></li>
+<li><p>Add music and sound effects.</p></li>
+<li><p>Create a powerup that makes the player move faster.</p></li>
+<li><p>Make the enemies more intelligent.</p></li>
+<li><p>Allow the player to kill the enemies.</p></li>
+</ul>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><a class="reference external" href="https://krita.org">https://krita.org</a></p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="more_games.html" class="btn btn-neutral float-left" title="7. More advanced games" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="maze.html" class="btn btn-neutral float-right" title="9. Tutorial: Maze game" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Richard Smith.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

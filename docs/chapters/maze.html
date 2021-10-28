@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>9. Tutorial: Maze game &mdash; Coding Games With Pygame Zero &amp; Python  documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="10. Tutorial: Shooting game" href="shooter.html" />
+    <link rel="prev" title="8. Tutorial: Chase game" href="chase.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Coding Games With Pygame Zero & Python
+          </a>
+              <div class="version">
+                2.1.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Coding Games With Pygame Zero &amp; Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#build">Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#third-edition">Third edition?</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">1. Overview of Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fundamentals.html">2. Python Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_quizes.html">3. Text-based quiz games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphics.html">4. Drawing graphics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simple_games.html">5. Arcade games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_graphics.html">6. Improving your games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_games.html">7. More advanced games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chase.html">8. Tutorial: Chase game</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">9. Tutorial: Maze game</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tilemap">9.1. Tilemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#moving-the-player">9.2. Moving the player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#restricting-where-the-player-can-move">9.3. Restricting where the player can move</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#animate-the-movement-of-the-player">9.4. Animate the movement of the player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-an-enemy">9.5. Create an enemy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-locked-door-and-a-key">9.6. A locked door and a key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#finished-game">9.7. Finished game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ideas-for-extension">9.8. Ideas for extension</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="shooter.html">10. Tutorial: Shooting game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="race.html">11. Tutorial: Race game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">12. Advanced topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="minecraft.html">13. Python in Minecraft</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Coding Games With Pygame Zero & Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><span class="section-number">9. </span>Tutorial: Maze game</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/chapters/maze.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="tutorial-maze-game">
+<h1><span class="section-number">9. </span>Tutorial: Maze game<a class="headerlink" href="#tutorial-maze-game" title="Permalink to this headline"></a></h1>
+<p>In this chapter we will build a maze game together, step by step. The
+Python we will use is quite simple: mostly just conditionals and loops.
+The technique of creating a tilemap is common in games and after seeing
+it here you should be able to incorporate it into your own projects.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/mazegame.png"><img alt="Maze game" src="../_images/mazegame.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 9.1 </span><span class="caption-text">Maze game</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</div>
+<div class="section" id="tilemap">
+<h2><span class="section-number">9.1. </span>Tilemap<a class="headerlink" href="#tilemap" title="Permalink to this headline"></a></h2>
+<p>A tilemap uses a small number of images (the tiles) and draws them many
+times to build a much larger game level (the map). This saves you from
+creating a lot of artwork and makes it very easy to change the design of
+the level on a whim. Here we create a maze level.</p>
+<p>We must create three image files for the tiles: <code class="docutils literal notranslate"><span class="pre">empty.png</span></code>,
+<code class="docutils literal notranslate"><span class="pre">wall.png</span></code> and <code class="docutils literal notranslate"><span class="pre">goal.png</span></code> and save them in the <code class="docutils literal notranslate"><span class="pre">mu_code/images</span></code>
+folder (accessible with the <code class="docutils literal notranslate"><span class="pre">images</span></code> button in Mu).</p>
+<p>They must each be 64×64 pixels. For the player we will use the built in
+<code class="docutils literal notranslate"><span class="pre">alien</span></code> image.</p>
+<div class="literal-block-wrapper docutils container" id="code-maze2">
+<div class="code-block-caption"><span class="caption-number">Program 9.1 </span><span class="caption-text">Drawing a tilemap</span><a class="headerlink" href="#code-maze2" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">TILE_SIZE</span> <span class="o">=</span> <span class="mi">64</span>
+<span class="n">WIDTH</span> <span class="o">=</span> <span class="n">TILE_SIZE</span> <span class="o">*</span> <span class="mi">8</span>
+<span class="n">HEIGHT</span> <span class="o">=</span> <span class="n">TILE_SIZE</span> <span class="o">*</span> <span class="mi">8</span>
+
+<span class="n">tiles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;empty&#39;</span><span class="p">,</span> <span class="s1">&#39;wall&#39;</span><span class="p">,</span> <span class="s1">&#39;goal&#39;</span><span class="p">]</span>
+
+<span class="n">maze</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="n">player</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">&quot;alien&quot;</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">maze</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">maze</span><span class="p">[</span><span class="n">row</span><span class="p">])):</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">column</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">row</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+            <span class="n">tile</span> <span class="o">=</span> <span class="n">tiles</span><span class="p">[</span><span class="n">maze</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">column</span><span class="p">]]</span>
+            <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">tile</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+    <span class="n">player</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>The filenames of the tile images are stored in a <em>list</em>, <code class="docutils literal notranslate"><span class="pre">tiles</span></code>. The
+level design is stored in a list of lists, more commonly called a <em>two
+dimensional array</em>. There are 8 rows and 8 columns in the array. If you
+change the size of the array you will need to change the <code class="docutils literal notranslate"><span class="pre">WIDTH</span></code> and
+<code class="docutils literal notranslate"><span class="pre">HEIGHT</span></code> values too. The numbers in the <code class="docutils literal notranslate"><span class="pre">maze</span></code> array refers to
+elements in the <code class="docutils literal notranslate"><span class="pre">tiles</span></code> array. So <code class="docutils literal notranslate"><span class="pre">0</span></code> means <code class="docutils literal notranslate"><span class="pre">empty</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code>
+means <code class="docutils literal notranslate"><span class="pre">wall</span></code>, etc.</p>
+<div class="figure align-default" id="id2">
+<img alt="Tile grid" src="../_images/maze2.png" />
+<p class="caption"><span class="caption-number">Fig. 9.2 </span><span class="caption-text">Tile grid</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</div>
+<p>To draw the maze we use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop within another <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. The
+outer loop iterates over the rows and the inner loop iterates over the
+columns, i.e. the elements of the row.</p>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Create your own images <cite>empty.png</cite>, <cite>wall.png</cite> and <cite>goal.png</cite> and run the program.</p>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>The player appears at the top left of the maze at row 1 column 1.  Change the <cite>pos</cite> parameter so he appears at the bottom instead.</p>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Change the design of the maze by changing the numbers in the <cite>maze</cite> array.</p>
+</div>
+<div class="topic">
+<p class="topic-title">Advanced</p>
+<p>Make the maze bigger.</p>
+</div>
+</div>
+<div class="section" id="moving-the-player">
+<h2><span class="section-number">9.2. </span>Moving the player<a class="headerlink" href="#moving-the-player" title="Permalink to this headline"></a></h2>
+<p>Add this code to the <em>end</em> of the program:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_key_down</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">/</span> <span class="n">TILE_SIZE</span><span class="p">)</span>
+    <span class="n">column</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">/</span> <span class="n">TILE_SIZE</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keys</span><span class="o">.</span><span class="n">UP</span><span class="p">:</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">row</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keys</span><span class="o">.</span><span class="n">DOWN</span><span class="p">:</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">row</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keys</span><span class="o">.</span><span class="n">LEFT</span><span class="p">:</span>
+        <span class="n">column</span> <span class="o">=</span> <span class="n">column</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keys</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">:</span>
+        <span class="n">column</span> <span class="o">=</span> <span class="n">column</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">column</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+    <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">row</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+</pre></div>
+</div>
+<p>This function will be called automatically by Pygame, like <code class="docutils literal notranslate"><span class="pre">draw()</span></code>
+and <code class="docutils literal notranslate"><span class="pre">update()</span></code>. However <code class="docutils literal notranslate"><span class="pre">on_key_down()</span></code> is not called every frame;
+it is only called when the player presses a key. The key that was
+pressed is passed to the function in the <code class="docutils literal notranslate"><span class="pre">key</span></code> <em>parameter</em>.</p>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Run the program and move the player.  Are there any problems with the movement?</p>
+</div>
+</div>
+<div class="section" id="restricting-where-the-player-can-move">
+<h2><span class="section-number">9.3. </span>Restricting where the player can move<a class="headerlink" href="#restricting-where-the-player-can-move" title="Permalink to this headline"></a></h2>
+<p>Delete the last two lines of the program and replace them with this
+modified version:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tile</span> <span class="o">=</span> <span class="n">tiles</span><span class="p">[</span><span class="n">maze</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">column</span><span class="p">]]</span>
+<span class="k">if</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">&#39;empty&#39;</span><span class="p">:</span>
+    <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">column</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+    <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">row</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+<span class="k">elif</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">&#39;goal&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Well done&quot;</span><span class="p">)</span>
+    <span class="n">exit</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Run the program and check that the player now <em>only</em> moves if the tile is empty.</p>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Check that the game ends when the player reaches the goal.</p>
+</div>
+</div>
+<div class="section" id="animate-the-movement-of-the-player">
+<h2><span class="section-number">9.4. </span>Animate the movement of the player<a class="headerlink" href="#animate-the-movement-of-the-player" title="Permalink to this headline"></a></h2>
+<p>First, the alien Actor is bit too big. Draw a new image of size 64×64
+pixels and save it as <code class="docutils literal notranslate"><span class="pre">player.png</span></code> in the <code class="docutils literal notranslate"><span class="pre">images</span></code> folder. In the
+program, change the line:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">player</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">&quot;alien&quot;</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>to</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">player</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">&quot;player&quot;</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Next, the movement of the Actor is sudden and jerky. Luckily Pygame
+includes a function to do smooth movement for us automatically. Find
+these lines of the program:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">&#39;empty&#39;</span><span class="p">:</span>
+      <span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">column</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+      <span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">row</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+</pre></div>
+</div>
+<p>replace them with:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">&#39;empty&#39;</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">column</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">row</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+    <span class="n">animate</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Verify the player image has changed and moves smoothly.</p>
+</div>
+</div>
+<div class="section" id="create-an-enemy">
+<h2><span class="section-number">9.5. </span>Create an enemy<a class="headerlink" href="#create-an-enemy" title="Permalink to this headline"></a></h2>
+<p>We will create a simple enemy that moves up and down. Add this code near
+the top just <em>above</em> the <code class="docutils literal notranslate"><span class="pre">draw()</span></code> function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">enemy</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">&quot;enemy&quot;</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="mi">6</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">))</span>
+<span class="n">enemy</span><span class="o">.</span><span class="n">yv</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>To make the enemy visible, add this line at the end of the <code class="docutils literal notranslate"><span class="pre">draw()</span></code>
+function, after the player is drawn:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">enemy</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">enemy.yv</span></code> is the velocity in the y-axis direction (up and down). Add
+these lines to end of the program (still inside the <code class="docutils literal notranslate"><span class="pre">on_key_down()</span></code>
+function) to make the enemy move and reverse velocity when it hits a
+wall.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># enemy movement</span>
+<span class="n">row</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">enemy</span><span class="o">.</span><span class="n">y</span> <span class="o">/</span> <span class="n">TILE_SIZE</span><span class="p">)</span>
+<span class="n">column</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">enemy</span><span class="o">.</span><span class="n">x</span> <span class="o">/</span> <span class="n">TILE_SIZE</span><span class="p">)</span>
+<span class="n">row</span> <span class="o">=</span> <span class="n">row</span> <span class="o">+</span> <span class="n">enemy</span><span class="o">.</span><span class="n">yv</span>
+<span class="n">tile</span> <span class="o">=</span> <span class="n">tiles</span><span class="p">[</span><span class="n">maze</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">column</span><span class="p">]]</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">&#39;wall&#39;</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">column</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">row</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+    <span class="n">animate</span><span class="p">(</span><span class="n">enemy</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">enemy</span><span class="o">.</span><span class="n">yv</span> <span class="o">=</span> <span class="n">enemy</span><span class="o">.</span><span class="n">yv</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
+<span class="k">if</span> <span class="n">enemy</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="n">player</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You died&quot;</span><span class="p">)</span>
+    <span class="n">exit</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="topic">
+<p class="topic-title">Exercise</p>
+<p>Verify that the enemy moves up and down and kills the player.</p>
+</div>
+<div class="topic">
+<p class="topic-title">Advanced</p>
+<p>Make another enemy that moves horizontally (left and right).</p>
+</div>
+<div class="topic">
+<p class="topic-title">Advanced</p>
+<p>The collision detection is quite lenient (i.e. buggy) because it only tests for collisions between the
+enemy and player when a key is pressed.  Define a new function called <cite>update()</cite> and move the collisions detection there
+so that is called every frame.</p>
+</div>
+</div>
+<div class="section" id="a-locked-door-and-a-key">
+<h2><span class="section-number">9.6. </span>A locked door and a key<a class="headerlink" href="#a-locked-door-and-a-key" title="Permalink to this headline"></a></h2>
+<p>We will add two new tiles to the game. Draw images <code class="docutils literal notranslate"><span class="pre">door.png</span></code> and
+<code class="docutils literal notranslate"><span class="pre">key.png</span></code> and save them in <code class="docutils literal notranslate"><span class="pre">images</span></code> folder.</p>
+<p>Find the <code class="docutils literal notranslate"><span class="pre">tiles</span></code> list near the top and <strong>change</strong> it to include the
+new images, and modify the <code class="docutils literal notranslate"><span class="pre">maze</span></code> with some number 3s and 4s where you
+want to new tiles to appear. Mine looks like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tiles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;empty&#39;</span><span class="p">,</span> <span class="s1">&#39;wall&#39;</span><span class="p">,</span> <span class="s1">&#39;goal&#39;</span><span class="p">,</span> <span class="s1">&#39;door&#39;</span><span class="p">,</span> <span class="s1">&#39;key&#39;</span><span class="p">]</span>
+<span class="n">unlock</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">maze</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>At the top of the program, create a new variable to store the number of
+keys the player is carrying:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">unlock</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>Find the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement where we test for <code class="docutils literal notranslate"><span class="pre">goal</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">&#39;goal&#39;</span><span class="p">:</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Well done&quot;</span><span class="p">)</span>
+     <span class="n">exit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Modify it like this to also test for the key and door tiles. Since we
+are modifying a <em>global</em> variable inside a function we must declare it.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">global</span> <span class="n">unlock</span>
+<span class="k">if</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">&#39;goal&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Well done&quot;</span><span class="p">)</span>
+    <span class="n">exit</span><span class="p">()</span>
+<span class="k">elif</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">&#39;key&#39;</span><span class="p">:</span>
+    <span class="n">unlock</span> <span class="o">=</span> <span class="n">unlock</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">maze</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># 0 is &#39;empty&#39; tile</span>
+<span class="k">elif</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">&#39;door&#39;</span> <span class="ow">and</span> <span class="n">unlock</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">unlock</span> <span class="o">=</span> <span class="n">unlock</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">maze</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># 0 is &#39;empty&#39; tile</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="finished-game">
+<h2><span class="section-number">9.7. </span>Finished game<a class="headerlink" href="#finished-game" title="Permalink to this headline"></a></h2>
+<p>Here is the finished game with all the changes included:</p>
+<div class="literal-block-wrapper docutils container" id="code-maze7">
+<div class="code-block-caption"><span class="caption-number">Program 9.2 </span><span class="caption-text">Finished maze game</span><a class="headerlink" href="#code-maze7" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">TILE_SIZE</span> <span class="o">=</span> <span class="mi">64</span>
+<span class="n">WIDTH</span> <span class="o">=</span> <span class="n">TILE_SIZE</span> <span class="o">*</span> <span class="mi">8</span>
+<span class="n">HEIGHT</span> <span class="o">=</span> <span class="n">TILE_SIZE</span> <span class="o">*</span> <span class="mi">8</span>
+
+<span class="n">tiles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;empty&#39;</span><span class="p">,</span> <span class="s1">&#39;wall&#39;</span><span class="p">,</span> <span class="s1">&#39;goal&#39;</span><span class="p">,</span> <span class="s1">&#39;door&#39;</span><span class="p">,</span> <span class="s1">&#39;key&#39;</span><span class="p">]</span>
+<span class="n">unlock</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">maze</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="n">player</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">&quot;player&quot;</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">))</span>
+<span class="n">enemy</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s2">&quot;enemy&quot;</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="mi">6</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">))</span>
+<span class="n">enemy</span><span class="o">.</span><span class="n">yv</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">maze</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">maze</span><span class="p">[</span><span class="n">row</span><span class="p">])):</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">column</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">row</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+            <span class="n">tile</span> <span class="o">=</span> <span class="n">tiles</span><span class="p">[</span><span class="n">maze</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">column</span><span class="p">]]</span>
+            <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">tile</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+    <span class="n">player</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">enemy</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">on_key_down</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+    <span class="c1"># player movement</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">/</span> <span class="n">TILE_SIZE</span><span class="p">)</span>
+    <span class="n">column</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">player</span><span class="o">.</span><span class="n">x</span> <span class="o">/</span> <span class="n">TILE_SIZE</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keys</span><span class="o">.</span><span class="n">UP</span><span class="p">:</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">row</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keys</span><span class="o">.</span><span class="n">DOWN</span><span class="p">:</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">row</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keys</span><span class="o">.</span><span class="n">LEFT</span><span class="p">:</span>
+        <span class="n">column</span> <span class="o">=</span> <span class="n">column</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keys</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">:</span>
+        <span class="n">column</span> <span class="o">=</span> <span class="n">column</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">tile</span> <span class="o">=</span> <span class="n">tiles</span><span class="p">[</span><span class="n">maze</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">column</span><span class="p">]]</span>
+    <span class="k">if</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">&#39;empty&#39;</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">column</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">row</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+        <span class="n">animate</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+    <span class="k">global</span> <span class="n">unlock</span>
+    <span class="k">if</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">&#39;goal&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Well done&quot;</span><span class="p">)</span>
+        <span class="n">exit</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">&#39;key&#39;</span><span class="p">:</span>
+        <span class="n">unlock</span> <span class="o">=</span> <span class="n">unlock</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">maze</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># 0 is &#39;empty&#39; tile</span>
+    <span class="k">elif</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">&#39;door&#39;</span> <span class="ow">and</span> <span class="n">unlock</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">unlock</span> <span class="o">=</span> <span class="n">unlock</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">maze</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># 0 is &#39;empty&#39; tile</span>
+
+    <span class="c1"># enemy movement</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">enemy</span><span class="o">.</span><span class="n">y</span> <span class="o">/</span> <span class="n">TILE_SIZE</span><span class="p">)</span>
+    <span class="n">column</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">enemy</span><span class="o">.</span><span class="n">x</span> <span class="o">/</span> <span class="n">TILE_SIZE</span><span class="p">)</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="n">row</span> <span class="o">+</span> <span class="n">enemy</span><span class="o">.</span><span class="n">yv</span>
+    <span class="n">tile</span> <span class="o">=</span> <span class="n">tiles</span><span class="p">[</span><span class="n">maze</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">column</span><span class="p">]]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">tile</span> <span class="o">==</span> <span class="s1">&#39;wall&#39;</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">column</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">row</span> <span class="o">*</span> <span class="n">TILE_SIZE</span>
+        <span class="n">animate</span><span class="p">(</span><span class="n">enemy</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">enemy</span><span class="o">.</span><span class="n">yv</span> <span class="o">=</span> <span class="n">enemy</span><span class="o">.</span><span class="n">yv</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">if</span> <span class="n">enemy</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="n">player</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You died&quot;</span><span class="p">)</span>
+        <span class="n">exit</span><span class="p">()</span>
+
+
+
+
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="ideas-for-extension">
+<h2><span class="section-number">9.8. </span>Ideas for extension<a class="headerlink" href="#ideas-for-extension" title="Permalink to this headline"></a></h2>
+<p>However that is not the end! There are many things you could add to this
+game.</p>
+<ul class="simple">
+<li><p>Show the player score.</p></li>
+<li><p>Coins that the player collects to increase score.</p></li>
+<li><p>Trap tiles that are difficult to see and kill the player.</p></li>
+<li><p>Treasure chest that is unlocked with the key and increases score.</p></li>
+<li><p>Instead of ending the game, give the player 3 lives.</p></li>
+<li><p>Add more types of tile to the map: water, rock, brick, etc.</p></li>
+<li><p>Change the player image depending on the direction they are moving.</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="chase.html" class="btn btn-neutral float-left" title="8. Tutorial: Chase game" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="shooter.html" class="btn btn-neutral float-right" title="10. Tutorial: Shooting game" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Richard Smith.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

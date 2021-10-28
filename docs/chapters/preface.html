@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>&lt;no title&gt; &mdash; Coding Games With Pygame Zero &amp; Python  documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. Overview of Python" href="overview.html" />
+    <link rel="prev" title="Coding Games With Pygame Zero &amp; Python" href="../README.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Coding Games With Pygame Zero & Python
+          </a>
+              <div class="version">
+                2.1.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Coding Games With Pygame Zero &amp; Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#build">Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#third-edition">Third edition?</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">1. Overview of Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fundamentals.html">2. Python Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_quizes.html">3. Text-based quiz games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphics.html">4. Drawing graphics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simple_games.html">5. Arcade games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_graphics.html">6. Improving your games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_games.html">7. More advanced games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chase.html">8. Tutorial: Chase game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maze.html">9. Tutorial: Maze game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shooter.html">10. Tutorial: Shooting game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="race.html">11. Tutorial: Race game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">12. Advanced topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="minecraft.html">13. Python in Minecraft</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Coding Games With Pygame Zero & Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>&lt;no title&gt;</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/chapters/preface.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p class="rubric" id="preface">For the instructor</p>
+<p>This book contains all the example programs used in my CoderDojo class
+to teach Python programming. The primary goal of the class is to teach
+programming using action games to make learning more interesting. Some
+of the examples are entirely focused on introducing new language
+concepts or showing how the Pygame Zero API works, but most are a
+mixture of both.</p>
+<p>The intention is that each program in the example chapters is <em>brief,
+complete</em> and <em>introduces only one or two new concepts</em>.</p>
+<ul class="simple">
+<li><p>The programs are short so that students can feasibly type them in
+during the class. Typing for themselves is very valuable for
+beginners, because it helps them learn to type, and to type precisely
+without mistakes (which show up as syntax errors). Even if it takes
+them a while, they should feel proud when they type a program
+correctly in the end! <a class="footnote-reference brackets" href="#id2" id="id1">1</a></p></li>
+<li><p>Each program is complete to avoid the confusion caused by worksheets
+that tell a student to add lines to a program piecemeal. If they make
+an error or omit a step they may never recover and not produce a
+working program. Also being <em>complete</em> and <em>separate</em> means the whole
+class can be told to skip to the same program and it won’t matter so
+much that some of them didn’t complete all the prior programs.</p></li>
+<li><p>Introducing ideas one or two at a time allows the students to learn
+mostly through <em>doing</em> and observing the output of each program
+rather than memorizing. To this end the <em>order</em> of the programs
+within each chapter has been carefully selected. The chapter ordering
+is more loose and it is possible to skip back and forth between
+chapters. If the text quizzes or the Python fundamentals are boring
+the students, skip ahead to the graphical games, then come back to
+the earlier examples when necessary.</p></li>
+</ul>
+<p>Following each program are some ideas for how students can modify the
+program. Hopefully they will go further and modify these programs into
+their own unique games! The difficulty of these suggestions varies, to
+accommodate students of different age and ability.</p>
+<p>This book may be suitable for self-teaching by a motivated learner, but
+does not attempt to be comprehensive or give detailed explanations
+because it is intended to be used in a class with an instructor who will
+fill in the gaps as needed by the students.</p>
+<p class="rubric">The second edition</p>
+<p>I discovered two important things from feedback from the first edition:</p>
+<ol class="arabic simple">
+<li><p>It’s not possible to learn coding with only a single lesson each
+week. Therefore if that is all we have, the time is better spent
+inspiring interest in the subject rather than memorizing syntax or
+wrapping their heads around abstract concepts. Those who are
+motivated to learn more in their own time will require more syntax
+and concepts, of course, and hence the Fundamentals chapter has been
+greatly expanded for their use.</p></li>
+<li><p>Many students wanted to create larger games than the simple examples
+given in the first edition. It was always the intention that they
+absorb the knowledge from the examples and then go on to greater
+larger games of their own but some will require more hand-holding.</p></li>
+</ol>
+<p>Therefore there are four new chapters of tutorial style examples. These
+are intended to be done in class, with the initial code file given to
+the students to save time. They are intended to create a sense of
+accomplishment as each subsequent modifcation improves the game, and
+also to allow lots of scope for student creativity and customisation.</p>
+<p>As noted above, tutorials can become confusing, but I hope the class
+instructors can resolve any issues.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>For writing essays nowadays people can use voice input and
+touch-screen input, but for programming the majority of programmers
+still type on a keyboard. There’s no sign of this changing in the
+immediate future, so practising keyboard skills now is still very
+important for the future. Students can practise at home with a
+program such as TuxType. That being said, many programs contain
+similar code, so it’s also a useful skill for them be able to copy
+and paste from their other programs.</p>
+</dd>
+</dl>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../README.html" class="btn btn-neutral float-left" title="Coding Games With Pygame Zero &amp; Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="overview.html" class="btn btn-neutral float-right" title="1. Overview of Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Richard Smith.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
