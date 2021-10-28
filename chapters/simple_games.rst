@@ -18,7 +18,7 @@ sprite. Most of this code is copied from
 
 .. topic:: Exercise
 
-   Add vertical movement (as you did in Exercise \ref{exercise:updown}).
+   Add vertical movement (as you did in Exercise :numref:`code-keyboard_input`).
 
 
 .. topic:: Advanced
