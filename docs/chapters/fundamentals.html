@@ -3,21 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2. Python Fundamentals &mdash; Coding Games With Pygame Zero &amp; Python  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>2. Python Fundamentals &mdash; Coding Games With Pygame Zero &amp; Python  documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3. Drawing graphics" href="graphics.html" />
+    <link rel="next" title="3. Text-based quiz games" href="text_quizes.html" />
     <link rel="prev" title="1. Overview of Python" href="overview.html" /> 
 </head>
 
@@ -29,7 +27,7 @@
             <a href="../index.html" class="icon icon-home"> Coding Games With Pygame Zero & Python
           </a>
               <div class="version">
-                2.1
+                2.1.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -39,7 +37,12 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Coding Games With Pygame Zero &amp; Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#build">Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#third-edition">Third edition?</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">1. Overview of Python</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">2. Python Fundamentals</a><ul>
@@ -79,15 +82,17 @@
 <li class="toctree-l2"><a class="reference internal" href="#bugs">2.15. Bugs</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="graphics.html">3. Drawing graphics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="more_graphics.html">4. Improving your games</a></li>
-<li class="toctree-l1"><a class="reference internal" href="more_games.html">5. More advanced games</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chase.html">6. Tutorial: Chase game</a></li>
-<li class="toctree-l1"><a class="reference internal" href="maze.html">7. Tutorial: Maze game</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shooter.html">8. Tutorial: Shooting game</a></li>
-<li class="toctree-l1"><a class="reference internal" href="race.html">9. Tutorial: Race game</a></li>
-<li class="toctree-l1"><a class="reference internal" href="advanced.html">10. Advanced topics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="minecraft.html">11. Python in Minecraft</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_quizes.html">3. Text-based quiz games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphics.html">4. Drawing graphics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simple_games.html">5. Arcade games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_graphics.html">6. Improving your games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_games.html">7. More advanced games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chase.html">8. Tutorial: Chase game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maze.html">9. Tutorial: Maze game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shooter.html">10. Tutorial: Shooting game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="race.html">11. Tutorial: Race game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">12. Advanced topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="minecraft.html">13. Python in Minecraft</a></li>
 </ul>
 
         </div>
@@ -362,22 +367,35 @@ them.</p>
 </table>
 <div class="literal-block-wrapper docutils container" id="code-logic2">
 <div class="code-block-caption"><span class="caption-number">Program 2.7 </span><span class="caption-text">Comparisons: greater than, lesser than, equal to</span><a class="headerlink" href="#code-logic2" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">if</span> <span class="mi">7</span> <span class="o">&lt;</span> <span class="mi">9</span><span class="p">:</span>
-<span class="linenos"> 2</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;7 is less than 9&quot;</span><span class="p">)</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="linenos"> 5</span><span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
-<span class="linenos"> 8</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a is equal to b&quot;</span><span class="p">)</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>
-<span class="linenos">11</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a is less than b&quot;</span><span class="p">)</span>
-<span class="linenos">12</span>
-<span class="linenos">13</span><span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
-<span class="linenos">14</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a is greater than b&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">7</span> <span class="o">&lt;</span> <span class="mi">9</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;7 is less than 9&quot;</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a is equal to b&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a is less than b&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a is greater than b&quot;</span><span class="p">)</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 </div>
 <div class="section" id="boolean-logic">
@@ -386,19 +404,29 @@ them.</p>
 new boolean values.</p>
 <div class="literal-block-wrapper docutils container" id="code-logic">
 <div class="code-block-caption"><span class="caption-number">Program 2.8 </span><span class="caption-text">Boolean operators</span><a class="headerlink" href="#code-logic" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="linenos"> 2</span><span class="n">b</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="k">if</span> <span class="n">a</span><span class="p">:</span>
-<span class="linenos"> 5</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a is true&quot;</span><span class="p">)</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="k">if</span> <span class="n">a</span> <span class="ow">and</span> <span class="n">b</span><span class="p">:</span>
-<span class="linenos"> 8</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a and b are both true&quot;</span><span class="p">)</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="k">if</span> <span class="n">a</span> <span class="ow">or</span> <span class="n">b</span><span class="p">:</span>
-<span class="linenos">11</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;either a or b is true&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">b</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">if</span> <span class="n">a</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a is true&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">a</span> <span class="ow">and</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a and b are both true&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">a</span> <span class="ow">or</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;either a or b is true&quot;</span><span class="p">)</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <p>Change the values of <cite>a</cite> and <cite>b</cite> in <a class="reference internal" href="#code-logic"><span class="std std-numref">Program 2.8</span></a> and see what output is printed by different combinations of <cite>True</cite> and <cite>False</cite>.</p>
 <div class="section" id="or">
@@ -533,11 +561,13 @@ Run this program:</p>
 <p>It is often useful to put one loop inside another loop.</p>
 <div class="literal-block-wrapper docutils container" id="code-for-loop">
 <div class="code-block-caption"><span class="caption-number">Program 2.9 </span><span class="caption-text">Nested for loop</span><a class="headerlink" href="#code-for-loop" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
-<span class="linenos">2</span>    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
-<span class="linenos">3</span>        <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s2">&quot;times&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s2">&quot;is&quot;</span><span class="p">,</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s2">&quot;times&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s2">&quot;is&quot;</span><span class="p">,</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="topic">
 <p class="topic-title">Exercise</p>
@@ -567,14 +597,19 @@ so he knows how many he must bake. He writes this program.</p>
 </div>
 <div class="literal-block-wrapper docutils container" id="code-baker">
 <div class="code-block-caption"><span class="caption-number">Program 2.10 </span><span class="caption-text">Possible solution to baker program exercise</span><a class="headerlink" href="#code-baker" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span> <span class="n">total</span><span class="o">=</span><span class="mi">0</span>
-<span class="linenos">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
-<span class="linenos">3</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Customer&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;how many cakes do you want?&quot;</span><span class="p">)</span>
-<span class="linenos">4</span>     <span class="n">cakes</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
-<span class="linenos">5</span>     <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">cakes</span>
-<span class="linenos">6</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I will bake&quot;</span><span class="p">,</span> <span class="n">total</span><span class="p">,</span> <span class="s2">&quot;cakes!&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">total</span><span class="o">=</span><span class="mi">0</span>
+ <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Customer&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;how many cakes do you want?&quot;</span><span class="p">)</span>
+     <span class="n">cakes</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+     <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">cakes</span>
+ <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I will bake&quot;</span><span class="p">,</span> <span class="n">total</span><span class="p">,</span> <span class="s2">&quot;cakes!&quot;</span><span class="p">)</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="topic">
 <p class="topic-title">Exercise</p>
@@ -588,16 +623,23 @@ called <cite>c</cite>. Change the loop so it works for <cite>c</cite> customers 
 </div>
 <div class="literal-block-wrapper docutils container" id="code-baker2">
 <div class="code-block-caption"><span class="caption-number">Program 2.11 </span><span class="caption-text">Possible solution to variable number of customers exercise</span><a class="headerlink" href="#code-baker2" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;How many customers are there today?&quot;</span><span class="p">)</span>
-<span class="linenos">2</span> <span class="n">c</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
-<span class="linenos">3</span> <span class="n">total</span><span class="o">=</span><span class="mi">0</span>
-<span class="linenos">4</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-<span class="linenos">5</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Customer&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;how many cakes do you want?&quot;</span><span class="p">)</span>
-<span class="linenos">6</span>     <span class="n">cakes</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
-<span class="linenos">7</span>     <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">cakes</span>
-<span class="linenos">8</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I will bake&quot;</span><span class="p">,</span> <span class="n">total</span><span class="p">,</span> <span class="s2">&quot;cakes!&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;How many customers are there today?&quot;</span><span class="p">)</span>
+ <span class="n">c</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+ <span class="n">total</span><span class="o">=</span><span class="mi">0</span>
+ <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Customer&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;how many cakes do you want?&quot;</span><span class="p">)</span>
+     <span class="n">cakes</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+     <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">cakes</span>
+ <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I will bake&quot;</span><span class="p">,</span> <span class="n">total</span><span class="p">,</span> <span class="s2">&quot;cakes!&quot;</span><span class="p">)</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="topic">
 <p class="topic-title">Exercise</p>
@@ -611,22 +653,35 @@ called <cite>c</cite>. Change the loop so it works for <cite>c</cite> customers 
 an <em>array</em> so try to remember that word also. <a class="footnote-reference brackets" href="#id4" id="id2">1</a></p>
 <div class="literal-block-wrapper docutils container" id="code-arrays">
 <div class="code-block-caption"><span class="caption-number">Program 2.12 </span><span class="caption-text">Array lists</span><a class="headerlink" href="#code-arrays" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># a is a list of integers</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">74</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">21</span><span class="p">]</span>
-<span class="linenos"> 4</span>
-<span class="linenos"> 5</span><span class="c1"># b is a list of strings</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;goodbye&quot;</span><span class="p">]</span>
-<span class="linenos"> 8</span>
-<span class="linenos"> 9</span><span class="c1"># You can take a single element from the list.</span>
-<span class="linenos">10</span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="c1"># You can use a for loop to print every element.</span>
-<span class="linenos">13</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
-<span class="linenos">14</span>    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># a is a list of integers</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">74</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">21</span><span class="p">]</span>
+
+<span class="c1"># b is a list of strings</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;goodbye&quot;</span><span class="p">]</span>
+
+<span class="c1"># You can take a single element from the list.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="c1"># You can use a for loop to print every element.</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="looping-over-lists">
 <h3><span class="section-number">2.9.1. </span>Looping over lists<a class="headerlink" href="#looping-over-lists" title="Permalink to this headline"></a></h3>
@@ -645,11 +700,13 @@ elements then the final element will have index <code class="docutils literal no
 need for an index or to specify the size of the range:</p>
 <div class="literal-block-wrapper docutils container" id="code-shoppinglist">
 <div class="code-block-caption"><span class="caption-number">Program 2.13 </span><span class="caption-text">A shopping list</span><a class="headerlink" href="#code-shoppinglist" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.49</span><span class="p">,</span> <span class="mf">9.99</span><span class="p">,</span> <span class="mf">2.50</span><span class="p">,</span> <span class="mf">20.00</span><span class="p">]</span>
-<span class="linenos">2</span><span class="k">for</span> <span class="n">price</span> <span class="ow">in</span> <span class="n">prices</span><span class="p">:</span>
-<span class="linenos">3</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;item costs £&quot;</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.49</span><span class="p">,</span> <span class="mf">9.99</span><span class="p">,</span> <span class="mf">2.50</span><span class="p">,</span> <span class="mf">20.00</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">price</span> <span class="ow">in</span> <span class="n">prices</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;item costs £&quot;</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="topic">
 <p class="topic-title">Exercise</p>
@@ -657,14 +714,19 @@ need for an index or to specify the size of the range:</p>
 </div>
 <div class="literal-block-wrapper docutils container" id="code-shoppinglist2">
 <div class="code-block-caption"><span class="caption-number">Program 2.14 </span><span class="caption-text">Possible way of calculating the total cost of shopping list</span><a class="headerlink" href="#code-shoppinglist2" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.49</span><span class="p">,</span> <span class="mf">9.99</span><span class="p">,</span> <span class="mf">2.50</span><span class="p">,</span> <span class="mf">20.00</span><span class="p">]</span>
-<span class="linenos">2</span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">3</span><span class="k">for</span> <span class="n">price</span> <span class="ow">in</span> <span class="n">prices</span><span class="p">:</span>
-<span class="linenos">4</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;item costs £&quot;</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span>
-<span class="linenos">5</span>    <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">price</span>
-<span class="linenos">6</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;shopping total&quot;</span><span class="p">,</span> <span class="n">total</span><span class="p">)</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.49</span><span class="p">,</span> <span class="mf">9.99</span><span class="p">,</span> <span class="mf">2.50</span><span class="p">,</span> <span class="mf">20.00</span><span class="p">]</span>
+<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">price</span> <span class="ow">in</span> <span class="n">prices</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;item costs £&quot;</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">price</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;shopping total&quot;</span><span class="p">,</span> <span class="n">total</span><span class="p">)</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <p>There is a problem with solution, can you see what it is when you run
 it?</p>
@@ -683,14 +745,19 @@ be whole numbers - <em>integers</em> - and no floating points will be needed
 for the addition.</p>
 <div class="literal-block-wrapper docutils container" id="code-shoppinglist3">
 <div class="code-block-caption"><span class="caption-number">Program 2.15 </span><span class="caption-text">Better way of calculating the total cost of shopping list</span><a class="headerlink" href="#code-shoppinglist3" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">349</span><span class="p">,</span> <span class="mi">999</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">2000</span><span class="p">]</span>
-<span class="linenos">2</span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">3</span><span class="k">for</span> <span class="n">price</span> <span class="ow">in</span> <span class="n">prices</span><span class="p">:</span>
-<span class="linenos">4</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;item costs £&quot;</span><span class="p">,</span> <span class="n">price</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
-<span class="linenos">5</span>    <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">price</span>
-<span class="linenos">6</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;shopping total&quot;</span><span class="p">,</span> <span class="n">total</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">349</span><span class="p">,</span> <span class="mi">999</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">2000</span><span class="p">]</span>
+<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">price</span> <span class="ow">in</span> <span class="n">prices</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;item costs £&quot;</span><span class="p">,</span> <span class="n">price</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">price</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;shopping total&quot;</span><span class="p">,</span> <span class="n">total</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="topic">
 <p class="topic-title">Exercise</p>
@@ -699,17 +766,25 @@ If it is, multiply the price by 0.8 to reduce it before you add it to the total.
 </div>
 <div class="literal-block-wrapper docutils container" id="code-shoppinglist4">
 <div class="code-block-caption"><span class="caption-number">Program 2.16 </span><span class="caption-text">Possible way of discounting shopping list</span><a class="headerlink" href="#code-shoppinglist4" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">349</span><span class="p">,</span> <span class="mi">999</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">2000</span><span class="p">]</span>
-<span class="linenos">2</span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">3</span><span class="k">for</span> <span class="n">price</span> <span class="ow">in</span> <span class="n">prices</span><span class="p">:</span>
-<span class="linenos">4</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;item costs £&quot;</span><span class="p">,</span> <span class="n">price</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
-<span class="linenos">5</span>    <span class="k">if</span> <span class="n">price</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">:</span>
-<span class="linenos">6</span>        <span class="n">price</span> <span class="o">=</span> <span class="n">price</span> <span class="o">*</span> <span class="mf">0.8</span>
-<span class="linenos">7</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  item discounted to&quot;</span><span class="p">,</span> <span class="n">price</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
-<span class="linenos">8</span>    <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">price</span>
-<span class="linenos">9</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;shopping total&quot;</span><span class="p">,</span> <span class="n">total</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">349</span><span class="p">,</span> <span class="mi">999</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">2000</span><span class="p">]</span>
+<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">price</span> <span class="ow">in</span> <span class="n">prices</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;item costs £&quot;</span><span class="p">,</span> <span class="n">price</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">price</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">:</span>
+        <span class="n">price</span> <span class="o">=</span> <span class="n">price</span> <span class="o">*</span> <span class="mf">0.8</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  item discounted to&quot;</span><span class="p">,</span> <span class="n">price</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">price</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;shopping total&quot;</span><span class="p">,</span> <span class="n">total</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 </div>
 </div>
@@ -726,19 +801,29 @@ think about what function you want to call and don’t need to remember
 the details of the code inside the function.</p>
 <div class="literal-block-wrapper docutils container" id="code-functions">
 <div class="code-block-caption"><span class="caption-number">Program 2.17 </span><span class="caption-text">Functions</span><a class="headerlink" href="#code-functions" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="k">def</span> <span class="nf">my_func</span><span class="p">():</span>
-<span class="linenos"> 4</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is my function&quot;</span><span class="p">)</span>
-<span class="linenos"> 5</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Imagine there was lots of code here&quot;</span>
-<span class="linenos"> 6</span>          <span class="s2">&quot; that you didnt want to type 3 times&quot;</span><span class="p">)</span>
-<span class="linenos"> 7</span>
-<span class="linenos"> 8</span>
-<span class="linenos"> 9</span><span class="n">my_func</span><span class="p">()</span>
-<span class="linenos">10</span><span class="n">my_func</span><span class="p">()</span>
-<span class="linenos">11</span><span class="n">my_func</span><span class="p">()</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span>
+
+<span class="k">def</span> <span class="nf">my_func</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is my function&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Imagine there was lots of code here&quot;</span>
+          <span class="s2">&quot; that you didnt want to type 3 times&quot;</span><span class="p">)</span>
+
+
+<span class="n">my_func</span><span class="p">()</span>
+<span class="n">my_func</span><span class="p">()</span>
+<span class="n">my_func</span><span class="p">()</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 </div>
 <div class="section" id="shortcuts">
@@ -747,42 +832,75 @@ the details of the code inside the function.</p>
 of these being used already.</p>
 <div class="literal-block-wrapper docutils container" id="code-shortcuts">
 <div class="code-block-caption"><span class="caption-number">Program 2.18 </span><span class="caption-text">Shortcuts</span><a class="headerlink" href="#code-shortcuts" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># f is an easy way to insert variables into strings</span>
-<span class="linenos"> 2</span><span class="n">score</span> <span class="o">=</span> <span class="mi">56</span>
-<span class="linenos"> 3</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Richard&quot;</span>
-<span class="linenos"> 4</span><span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> scored </span><span class="si">{</span><span class="n">score</span><span class="si">}</span><span class="s2"> points&quot;</span>
-<span class="linenos"> 5</span><span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="c1"># += is an easy way to increase the value of a variable</span>
-<span class="linenos"> 8</span><span class="n">score</span> <span class="o">=</span> <span class="n">score</span> <span class="o">+</span> <span class="mi">10</span>  <span class="c1"># hard way</span>
-<span class="linenos"> 9</span><span class="n">score</span> <span class="o">+=</span> <span class="mi">10</span>         <span class="c1"># easy way</span>
-<span class="linenos">10</span><span class="nb">print</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="c1"># double / means whole number division, no decimals</span>
-<span class="linenos">13</span><span class="n">x</span> <span class="o">=</span> <span class="mi">76</span> <span class="o">//</span> <span class="mi">10</span>
-<span class="linenos">14</span><span class="c1"># MODULO is the percent sign %. It means do division and take the remainder.</span>
-<span class="linenos">15</span><span class="n">remainder</span> <span class="o">=</span> <span class="mi">76</span> <span class="o">%</span> <span class="mi">10</span>
-<span class="linenos">16</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;76 divided by 10 is </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> and the remainder is </span><span class="si">{</span><span class="n">remainder</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">17</span>
-<span class="linenos">18</span><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">500</span>
-<span class="linenos">19</span><span class="n">a</span> <span class="o">=</span> <span class="mi">502</span>
-<span class="linenos">20</span><span class="n">b</span> <span class="o">=</span> <span class="mi">502</span>
-<span class="linenos">21</span><span class="c1"># Modulo is often used as a shortcut to reset a number back</span>
-<span class="linenos">22</span><span class="c1"># to zero if it gets too big.  So instead of:</span>
-<span class="linenos">23</span><span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">WIDTH</span><span class="p">:</span>
-<span class="linenos">24</span>    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">WIDTH</span>
-<span class="linenos">25</span><span class="c1"># You could simply do:</span>
-<span class="linenos">26</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">%</span> <span class="n">WIDTH</span>
-<span class="linenos">27</span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<span class="linenos">28</span>
-<span class="linenos">29</span><span class="c1"># input() takes a string argument which it prints out.</span>
-<span class="linenos">30</span><span class="c1"># Instead of:</span>
-<span class="linenos">31</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Enter a number&quot;</span><span class="p">)</span>
-<span class="linenos">32</span><span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
-<span class="linenos">33</span><span class="c1"># You can have a single line:</span>
-<span class="linenos">34</span><span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># f is an easy way to insert variables into strings</span>
+<span class="n">score</span> <span class="o">=</span> <span class="mi">56</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Richard&quot;</span>
+<span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> scored </span><span class="si">{</span><span class="n">score</span><span class="si">}</span><span class="s2"> points&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+
+<span class="c1"># += is an easy way to increase the value of a variable</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">score</span> <span class="o">+</span> <span class="mi">10</span>  <span class="c1"># hard way</span>
+<span class="n">score</span> <span class="o">+=</span> <span class="mi">10</span>         <span class="c1"># easy way</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+
+<span class="c1"># double / means whole number division, no decimals</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">76</span> <span class="o">//</span> <span class="mi">10</span>
+<span class="c1"># MODULO is the percent sign %. It means do division and take the remainder.</span>
+<span class="n">remainder</span> <span class="o">=</span> <span class="mi">76</span> <span class="o">%</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;76 divided by 10 is </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> and the remainder is </span><span class="si">{</span><span class="n">remainder</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">502</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">502</span>
+<span class="c1"># Modulo is often used as a shortcut to reset a number back</span>
+<span class="c1"># to zero if it gets too big.  So instead of:</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">WIDTH</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">WIDTH</span>
+<span class="c1"># You could simply do:</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">%</span> <span class="n">WIDTH</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="c1"># input() takes a string argument which it prints out.</span>
+<span class="c1"># Instead of:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Enter a number&quot;</span><span class="p">)</span>
+<span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="c1"># You can have a single line:</span>
+<span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number&quot;</span><span class="p">)</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 </div>
 <div class="section" id="indentation">
@@ -799,18 +917,27 @@ The block ends when the indentation ends.</p>
 <p>Blocks can be <em>nested</em> inside other blocks.</p>
 <div class="literal-block-wrapper docutils container" id="code-blocks">
 <div class="code-block-caption"><span class="caption-number">Program 2.19 </span><span class="caption-text">Can you predict what this program will print?</span><a class="headerlink" href="#code-blocks" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
-<span class="linenos"> 2</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;entering function block&quot;</span><span class="p">)</span>
-<span class="linenos"> 3</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
-<span class="linenos"> 4</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;entering for loop block&quot;</span><span class="p">)</span>
-<span class="linenos"> 5</span>        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
-<span class="linenos"> 6</span>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;in if block&quot;</span><span class="p">)</span>
-<span class="linenos"> 7</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;leaving for loop block&quot;</span><span class="p">)</span>
-<span class="linenos"> 8</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;leaving function block&quot;</span><span class="p">)</span>
-<span class="linenos"> 9</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;not in any block&quot;</span><span class="p">)</span>
-<span class="linenos">10</span><span class="n">test</span><span class="p">()</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;entering function block&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;entering for loop block&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;in if block&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;leaving for loop block&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;leaving function block&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;not in any block&quot;</span><span class="p">)</span>
+<span class="n">test</span><span class="p">()</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 </div>
 <div class="section" id="global-variables">
@@ -826,14 +953,19 @@ variable and your changes to the global variable will be silently lost.</p>
 with the <code class="docutils literal notranslate"><span class="pre">global</span></code> keyword.</p>
 <div class="literal-block-wrapper docutils container" id="code-globals">
 <div class="code-block-caption"><span class="caption-number">Program 2.20 </span><span class="caption-text">Try removing line 3 and see what happens</span><a class="headerlink" href="#code-globals" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="linenos">2</span><span class="k">def</span> <span class="nf">my_function</span><span class="p">():</span>
-<span class="linenos">3</span>    <span class="k">global</span> <span class="n">a</span>
-<span class="linenos">4</span>    <span class="n">a</span><span class="o">=</span><span class="mi">20</span>
-<span class="linenos">5</span><span class="n">my_function</span><span class="p">()</span>
-<span class="linenos">6</span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">def</span> <span class="nf">my_function</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">a</span>
+    <span class="n">a</span><span class="o">=</span><span class="mi">20</span>
+<span class="n">my_function</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 </div>
 <div class="section" id="dictionaries">
@@ -981,13 +1113,17 @@ single wrong letter or space will prevent them from working.</p>
 <p>A particular issue in Python is that <em>indentation</em> must be correct.</p>
 <div class="literal-block-wrapper docutils container" id="code-bug1">
 <div class="code-block-caption"><span class="caption-number">Program 2.21 </span><span class="caption-text">Buggy program</span><a class="headerlink" href="#code-bug1" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>
-<span class="linenos">2</span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="linenos">3</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">11</span>
-<span class="linenos">4</span><span class="n">z</span> <span class="o">=</span> <span class="mi">12</span>
-<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+ <span class="n">y</span> <span class="o">=</span> <span class="mi">11</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="topic">
 <p class="topic-title">Exercise</p>
@@ -995,13 +1131,17 @@ single wrong letter or space will prevent them from working.</p>
 </div>
 <div class="literal-block-wrapper docutils container" id="code-bug2">
 <div class="code-block-caption"><span class="caption-number">Program 2.22 </span><span class="caption-text">More bugs</span><a class="headerlink" href="#code-bug2" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>
-<span class="linenos">2</span><span class="k">def</span> <span class="nf">myfunction</span><span class="p">:</span>
-<span class="linenos">3</span>    <span class="nb">print</span> <span class="s2">&quot;hello&quot;</span>
-<span class="linenos">4</span>
-<span class="linenos">5</span><span class="n">myfunction</span><span class="p">()</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>
+<span class="k">def</span> <span class="nf">myfunction</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s2">&quot;hello&quot;</span>
+
+<span class="n">myfunction</span><span class="p">()</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="topic">
 <p class="topic-title">Exercise</p>
@@ -1021,7 +1161,7 @@ concern the beginner.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="overview.html" class="btn btn-neutral float-left" title="1. Overview of Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="graphics.html" class="btn btn-neutral float-right" title="3. Drawing graphics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="text_quizes.html" class="btn btn-neutral float-right" title="3. Text-based quiz games" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

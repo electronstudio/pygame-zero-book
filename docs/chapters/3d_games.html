@@ -3,14 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>3D Games &mdash; Coding Games With Pygame Zero &amp; Python  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>3D Games &mdash; Coding Games With Pygame Zero &amp; Python  documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -27,7 +25,7 @@
             <a href="../index.html" class="icon icon-home"> Coding Games With Pygame Zero & Python
           </a>
               <div class="version">
-                2.1
+                2.1.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -37,19 +35,26 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Coding Games With Pygame Zero &amp; Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#build">Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#third-edition">Third edition?</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">1. Overview of Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fundamentals.html">2. Python Fundamentals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="graphics.html">3. Drawing graphics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="more_graphics.html">4. Improving your games</a></li>
-<li class="toctree-l1"><a class="reference internal" href="more_games.html">5. More advanced games</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chase.html">6. Tutorial: Chase game</a></li>
-<li class="toctree-l1"><a class="reference internal" href="maze.html">7. Tutorial: Maze game</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shooter.html">8. Tutorial: Shooting game</a></li>
-<li class="toctree-l1"><a class="reference internal" href="race.html">9. Tutorial: Race game</a></li>
-<li class="toctree-l1"><a class="reference internal" href="advanced.html">10. Advanced topics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="minecraft.html">11. Python in Minecraft</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_quizes.html">3. Text-based quiz games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphics.html">4. Drawing graphics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simple_games.html">5. Arcade games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_graphics.html">6. Improving your games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_games.html">7. More advanced games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chase.html">8. Tutorial: Chase game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maze.html">9. Tutorial: Maze game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shooter.html">10. Tutorial: Shooting game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="race.html">11. Tutorial: Race game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">12. Advanced topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="minecraft.html">13. Python in Minecraft</a></li>
 </ul>
 
         </div>
@@ -83,7 +88,7 @@
 newest version at time of writing is 0.0.6.</p>
 <p>If you are using Mu then add the package <code class="docutils literal notranslate"><span class="pre">richlib==0.0.6</span></code></p>
 <p>If you are using IDLE then type at the command line:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">richlib</span><span class="o">==</span><span class="mf">0.0.6</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">richlib</span><span class="o">==</span><span class="mf">0.0</span><span class="o">.</span><span class="mi">6</span>
 </pre></div>
 </div>
 <p>Richlib is similar to Pygame Zero, but there are some differences.</p>
@@ -108,29 +113,49 @@ spheres. Note if using Mu you must be in <code class="docutils literal notransla
 <code class="docutils literal notranslate"><span class="pre">Pygame</span> <span class="pre">Zero</span></code> mode.</p>
 <div class="literal-block-wrapper docutils container" id="code-cubes">
 <div class="code-block-caption"><span class="caption-text">Cubes and spheres</span><a class="headerlink" href="#code-cubes" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">richlib</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">500</span>
-<span class="linenos"> 4</span><span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">500</span>
-<span class="linenos"> 5</span>
-<span class="linenos"> 6</span><span class="n">cube1</span> <span class="o">=</span> <span class="n">Cube</span><span class="p">((</span><span class="mi">25</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-<span class="linenos"> 7</span><span class="n">cube2</span> <span class="o">=</span> <span class="n">Cube</span><span class="p">((</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-<span class="linenos"> 8</span><span class="n">sphere</span> <span class="o">=</span> <span class="n">Sphere</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="n">cube1</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="linenos">11</span><span class="n">cube2</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">BLUE</span>
-<span class="linenos">12</span>
-<span class="linenos">13</span>
-<span class="linenos">14</span><span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
-<span class="linenos">15</span>    <span class="n">clear</span><span class="p">()</span>
-<span class="linenos">16</span>    <span class="n">cube1</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
-<span class="linenos">17</span>    <span class="n">cube2</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
-<span class="linenos">18</span>    <span class="n">sphere</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
-<span class="linenos">19</span>
-<span class="linenos">20</span>
-<span class="linenos">21</span><span class="n">run</span><span class="p">()</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">richlib</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="n">cube1</span> <span class="o">=</span> <span class="n">Cube</span><span class="p">((</span><span class="mi">25</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">cube2</span> <span class="o">=</span> <span class="n">Cube</span><span class="p">((</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">sphere</span> <span class="o">=</span> <span class="n">Sphere</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="n">cube1</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">cube2</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">BLUE</span>
+
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">clear</span><span class="p">()</span>
+    <span class="n">cube1</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">cube2</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">sphere</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+
+<span class="n">run</span><span class="p">()</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="topic">
 <p class="topic-title">Exercise</p>
@@ -147,24 +172,39 @@ spheres. Note if using Mu you must be in <code class="docutils literal notransla
 where we make things move.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">Moving cubes</span><a class="headerlink" href="#id1" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">richlib</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">cube</span> <span class="o">=</span> <span class="n">Cube</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="s1">&#39;blue&#39;</span><span class="p">)</span>
-<span class="linenos"> 4</span>
-<span class="linenos"> 5</span><span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
-<span class="linenos"> 6</span>    <span class="n">clear</span><span class="p">()</span>
-<span class="linenos"> 7</span>    <span class="n">cube</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
-<span class="linenos"> 8</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
-<span class="linenos">11</span>    <span class="n">cube</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">cube</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="linenos">12</span>    <span class="k">if</span> <span class="n">cube</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
-<span class="linenos">13</span>        <span class="n">cube</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>
-<span class="linenos">14</span>
-<span class="linenos">15</span><span class="n">run</span><span class="p">()</span>
-<span class="linenos">16</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">richlib</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">cube</span> <span class="o">=</span> <span class="n">Cube</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">clear</span><span class="p">()</span>
+    <span class="n">cube</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="n">cube</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">cube</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">cube</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="n">cube</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>
+
+<span class="n">run</span><span class="p">()</span>
+
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="topic">
 <p class="topic-title">Exercise</p>
@@ -191,25 +231,41 @@ model. The following 3d objects are currently built-in:</p>
 file.</p>
 <div class="literal-block-wrapper docutils container" id="code-rl-actors">
 <div class="code-block-caption"><span class="caption-text">3d model actors</span><a class="headerlink" href="#code-rl-actors" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">richlib</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">&#39;trooper&#39;</span><span class="p">)</span>
-<span class="linenos"> 4</span><span class="n">alien</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
-<span class="linenos"> 5</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
-<span class="linenos"> 8</span>    <span class="n">clear</span><span class="p">()</span>
-<span class="linenos"> 9</span>    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
-<span class="linenos">10</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
-<span class="linenos">13</span>    <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="linenos">14</span>    <span class="k">if</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
-<span class="linenos">15</span>        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>
-<span class="linenos">16</span>
-<span class="linenos">17</span><span class="n">run</span><span class="p">()</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">richlib</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">&#39;trooper&#39;</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">clear</span><span class="p">()</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>
+
+<span class="n">run</span><span class="p">()</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="topic">
 <p class="topic-title">Exercise</p>
@@ -228,24 +284,39 @@ file.</p>
 <h2>Keyboard input<a class="headerlink" href="#keyboard-input" title="Permalink to this headline"></a></h2>
 <div class="literal-block-wrapper docutils container" id="code-rl-keyboard-input">
 <div class="code-block-caption"><span class="caption-text">Keyboard input</span><a class="headerlink" href="#code-rl-keyboard-input" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">richlib</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos"> 2</span><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">&#39;trooper&#39;</span><span class="p">)</span>
-<span class="linenos"> 3</span><span class="n">alien</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
-<span class="linenos"> 4</span><span class="n">alien</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="linenos"> 5</span>
-<span class="linenos"> 6</span><span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
-<span class="linenos"> 7</span>    <span class="n">clear</span><span class="p">()</span>
-<span class="linenos"> 8</span>    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
-<span class="linenos">11</span>    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
-<span class="linenos">12</span>        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="linenos">13</span>    <span class="k">elif</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
-<span class="linenos">14</span>        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
-<span class="linenos">15</span>
-<span class="linenos">16</span><span class="n">run</span><span class="p">()</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">richlib</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">&#39;trooper&#39;</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">clear</span><span class="p">()</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="n">run</span><span class="p">()</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="topic">
 <p class="topic-title">Exercise</p>
@@ -266,32 +337,55 @@ file.</p>
 This will require a game controller connected to work.</p>
 <div class="literal-block-wrapper docutils container" id="code-rl-joystick-input">
 <div class="code-block-caption"><span class="caption-text">Game controller input</span><a class="headerlink" href="#code-rl-joystick-input" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">richlib</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">&#39;trooper&#39;</span><span class="p">)</span>
-<span class="linenos"> 4</span><span class="n">alien</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-<span class="linenos"> 5</span><span class="n">alien</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
-<span class="linenos"> 9</span>    <span class="n">clear</span><span class="p">()</span>
-<span class="linenos">10</span>    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span>
-<span class="linenos">13</span><span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
-<span class="linenos">14</span>    <span class="k">if</span> <span class="n">gamepad</span><span class="o">.</span><span class="n">up</span><span class="p">:</span>
-<span class="linenos">15</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;up&quot;</span><span class="p">)</span>
-<span class="linenos">16</span>    <span class="k">if</span> <span class="n">gamepad</span><span class="o">.</span><span class="n">y</span><span class="p">:</span>
-<span class="linenos">17</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Y&quot;</span><span class="p">)</span>
-<span class="linenos">18</span>    <span class="k">if</span> <span class="n">gamepad</span><span class="o">.</span><span class="n">left_stick</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mf">0.3</span><span class="p">:</span>
-<span class="linenos">19</span>        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="linenos">20</span>    <span class="k">elif</span> <span class="n">gamepad</span><span class="o">.</span><span class="n">left_stick</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">:</span>
-<span class="linenos">21</span>        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
-<span class="linenos">22</span>
-<span class="linenos">23</span>
-<span class="linenos">24</span><span class="n">run</span><span class="p">()</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">richlib</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">&#39;trooper&#39;</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">clear</span><span class="p">()</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">gamepad</span><span class="o">.</span><span class="n">up</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;up&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">gamepad</span><span class="o">.</span><span class="n">y</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Y&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">gamepad</span><span class="o">.</span><span class="n">left_stick</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mf">0.3</span><span class="p">:</span>
+        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">gamepad</span><span class="o">.</span><span class="n">left_stick</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">:</span>
+        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
+
+
+<span class="n">run</span><span class="p">()</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="topic">
 <p class="topic-title">Exercise</p>
@@ -302,36 +396,63 @@ This will require a game controller connected to work.</p>
 <h2>3d collisions<a class="headerlink" href="#d-collisions" title="Permalink to this headline"></a></h2>
 <div class="literal-block-wrapper docutils container" id="code-rl-collisions">
 <div class="code-block-caption"><span class="caption-text">3d collisions</span><a class="headerlink" href="#code-rl-collisions" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>
-<span class="linenos"> 2</span><span class="kn">from</span> <span class="nn">richlib</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="n">cube</span> <span class="o">=</span> <span class="n">Cube</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="s1">&#39;blue&#39;</span><span class="p">)</span>
-<span class="linenos"> 5</span><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">&#39;trooper&#39;</span><span class="p">)</span>
-<span class="linenos"> 6</span><span class="n">alien</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
-<span class="linenos"> 7</span><span class="n">alien</span><span class="o">.</span><span class="n">collision_radius</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="linenos"> 8</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
-<span class="linenos">11</span>    <span class="n">clear</span><span class="p">()</span>
-<span class="linenos">12</span>    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
-<span class="linenos">13</span>    <span class="n">cube</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
-<span class="linenos">14</span>
-<span class="linenos">15</span><span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
-<span class="linenos">16</span>    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
-<span class="linenos">17</span>        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="linenos">18</span>    <span class="k">elif</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
-<span class="linenos">19</span>        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">-=</span> <span class="mi">1</span>
-<span class="linenos">20</span>    <span class="n">cube</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="linenos">21</span>    <span class="k">if</span> <span class="n">cube</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
-<span class="linenos">22</span>        <span class="n">cube</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>
-<span class="linenos">23</span>    <span class="k">if</span> <span class="n">alien</span><span class="o">.</span><span class="n">check_collision</span><span class="p">(</span><span class="n">cube</span><span class="p">):</span>
-<span class="linenos">24</span>        <span class="n">alien</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">RED</span>
-<span class="linenos">25</span>    <span class="k">else</span><span class="p">:</span>
-<span class="linenos">26</span>        <span class="n">alien</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">WHITE</span>
-<span class="linenos">27</span>
-<span class="linenos">28</span><span class="n">run</span><span class="p">()</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28</pre></div></td><td class="code"><div class="highlight"><pre><span></span>
+<span class="kn">from</span> <span class="nn">richlib</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">cube</span> <span class="o">=</span> <span class="n">Cube</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">&#39;trooper&#39;</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">collision_radius</span> <span class="o">=</span> <span class="mi">20</span>
+
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">clear</span><span class="p">()</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">cube</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+        <span class="n">alien</span><span class="o">.</span><span class="n">x</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="n">cube</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">cube</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="n">cube</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>
+    <span class="k">if</span> <span class="n">alien</span><span class="o">.</span><span class="n">check_collision</span><span class="p">(</span><span class="n">cube</span><span class="p">):</span>
+        <span class="n">alien</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">RED</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">alien</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">WHITE</span>
+
+<span class="n">run</span><span class="p">()</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="topic">
 <p class="topic-title">Exercise</p>
@@ -352,27 +473,45 @@ This will require a game controller connected to work.</p>
 buttons are pressed.</p>
 <div class="literal-block-wrapper docutils container" id="code-rl-mouse">
 <div class="code-block-caption"><span class="caption-text">Mouse input</span><a class="headerlink" href="#code-rl-mouse" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">richlib</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">cube</span> <span class="o">=</span> <span class="n">Cube</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="s1">&#39;blue&#39;</span><span class="p">)</span>
-<span class="linenos"> 4</span>
-<span class="linenos"> 5</span><span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
-<span class="linenos"> 6</span>    <span class="n">clear</span><span class="p">()</span>
-<span class="linenos"> 7</span>    <span class="n">cube</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
-<span class="linenos"> 8</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
-<span class="linenos">11</span>    <span class="n">cube</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">mouse</span><span class="o">.</span><span class="n">ground_position</span>
-<span class="linenos">12</span>
-<span class="linenos">13</span>    <span class="k">if</span> <span class="n">mouse</span><span class="o">.</span><span class="n">left_button</span><span class="p">:</span>
-<span class="linenos">14</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;button held down&quot;</span><span class="p">)</span>
-<span class="linenos">15</span>    <span class="k">if</span> <span class="n">mouse</span><span class="o">.</span><span class="n">clicked</span><span class="p">:</span>
-<span class="linenos">16</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mouse click&quot;</span><span class="p">)</span>
-<span class="linenos">17</span>
-<span class="linenos">18</span>
-<span class="linenos">19</span><span class="n">run</span><span class="p">()</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">richlib</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">cube</span> <span class="o">=</span> <span class="n">Cube</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">clear</span><span class="p">()</span>
+    <span class="n">cube</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="n">cube</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">mouse</span><span class="o">.</span><span class="n">ground_position</span>
+
+    <span class="k">if</span> <span class="n">mouse</span><span class="o">.</span><span class="n">left_button</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;button held down&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">mouse</span><span class="o">.</span><span class="n">clicked</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mouse click&quot;</span><span class="p">)</span>
+
+
+<span class="n">run</span><span class="p">()</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="topic">
 <p class="topic-title">Exercise</p>
@@ -388,28 +527,47 @@ buttons are pressed.</p>
 <p>We can check if the mouse pointer is touching a 3d object.</p>
 <div class="literal-block-wrapper docutils container" id="code-rl-mouse-collisions">
 <div class="code-block-caption"><span class="caption-text">Mouse collisions</span><a class="headerlink" href="#code-rl-mouse-collisions" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">richlib</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">cube</span> <span class="o">=</span> <span class="n">Cube</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="s1">&#39;blue&#39;</span><span class="p">)</span>
-<span class="linenos"> 4</span>
-<span class="linenos"> 5</span><span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
-<span class="linenos"> 6</span>    <span class="n">clear</span><span class="p">()</span>
-<span class="linenos"> 7</span>    <span class="n">cube</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
-<span class="linenos"> 8</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
-<span class="linenos">11</span>    <span class="n">cube</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">cube</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="linenos">12</span>    <span class="k">if</span> <span class="n">cube</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
-<span class="linenos">13</span>        <span class="n">cube</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>
-<span class="linenos">14</span>    <span class="k">if</span> <span class="n">mouse</span><span class="o">.</span><span class="n">clicked</span><span class="p">:</span>
-<span class="linenos">15</span>        <span class="k">if</span> <span class="n">mouse</span><span class="o">.</span><span class="n">check_collision</span><span class="p">(</span><span class="n">cube</span><span class="p">):</span>
-<span class="linenos">16</span>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hit&quot;</span><span class="p">)</span>
-<span class="linenos">17</span>        <span class="k">else</span><span class="p">:</span>
-<span class="linenos">18</span>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;miss&quot;</span><span class="p">)</span>
-<span class="linenos">19</span>
-<span class="linenos">20</span><span class="n">run</span><span class="p">()</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">richlib</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">cube</span> <span class="o">=</span> <span class="n">Cube</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">clear</span><span class="p">()</span>
+    <span class="n">cube</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="n">cube</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">cube</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">cube</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="n">cube</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>
+    <span class="k">if</span> <span class="n">mouse</span><span class="o">.</span><span class="n">clicked</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">mouse</span><span class="o">.</span><span class="n">check_collision</span><span class="p">(</span><span class="n">cube</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hit&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;miss&quot;</span><span class="p">)</span>
+
+<span class="n">run</span><span class="p">()</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="topic">
 <p class="topic-title">Exercise</p>
@@ -434,20 +592,31 @@ buttons are pressed.</p>
 files. Click the mouse to play the sound.</p>
 <div class="literal-block-wrapper docutils container" id="code-rl-sounds">
 <div class="code-block-caption"><span class="caption-text">Sound effects</span><a class="headerlink" href="#code-rl-sounds" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">richlib</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos"> 2</span><span class="n">sound</span> <span class="o">=</span> <span class="n">Sound</span><span class="p">(</span><span class="s1">&#39;eep&#39;</span><span class="p">)</span>
-<span class="linenos"> 3</span><span class="n">sound</span><span class="o">.</span><span class="n">volume</span> <span class="o">=</span> <span class="mf">0.7</span>
-<span class="linenos"> 4</span><span class="n">sound</span><span class="o">.</span><span class="n">pitch</span> <span class="o">=</span> <span class="mf">0.5</span>
-<span class="linenos"> 5</span>
-<span class="linenos"> 6</span><span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
-<span class="linenos"> 7</span>    <span class="n">clear</span><span class="p">()</span>
-<span class="linenos"> 8</span>
-<span class="linenos"> 9</span><span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
-<span class="linenos">10</span>    <span class="k">if</span> <span class="n">mouse</span><span class="o">.</span><span class="n">clicked</span><span class="p">:</span>
-<span class="linenos">11</span>        <span class="n">sound</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
-<span class="linenos">12</span><span class="n">run</span><span class="p">()</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">richlib</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">sound</span> <span class="o">=</span> <span class="n">Sound</span><span class="p">(</span><span class="s1">&#39;eep&#39;</span><span class="p">)</span>
+<span class="n">sound</span><span class="o">.</span><span class="n">volume</span> <span class="o">=</span> <span class="mf">0.7</span>
+<span class="n">sound</span><span class="o">.</span><span class="n">pitch</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">clear</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">mouse</span><span class="o">.</span><span class="n">clicked</span><span class="p">:</span>
+        <span class="n">sound</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+<span class="n">run</span><span class="p">()</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="topic">
 <p class="topic-title">Exercise</p>
@@ -470,26 +639,43 @@ displays score on screen.</p>
 function not the normal <code class="docutils literal notranslate"><span class="pre">draw()</span></code> function.</p>
 <div class="literal-block-wrapper docutils container" id="code-rl-displaying-text">
 <div class="code-block-caption"><span class="caption-text">Sound effects</span><a class="headerlink" href="#code-rl-displaying-text" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>
-<span class="linenos"> 2</span><span class="kn">from</span> <span class="nn">richlib</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 5</span>
-<span class="linenos"> 6</span><span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
-<span class="linenos"> 7</span>    <span class="n">clear</span><span class="p">()</span>
-<span class="linenos"> 8</span>
-<span class="linenos"> 9</span><span class="k">def</span> <span class="nf">draw2d</span><span class="p">():</span>
-<span class="linenos">10</span>    <span class="n">screen</span><span class="o">.</span><span class="n">draw_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Player 1 score: </span><span class="si">{</span><span class="n">score</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">VIOLET</span><span class="p">)</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
-<span class="linenos">13</span>    <span class="k">global</span> <span class="n">score</span>
-<span class="linenos">14</span>    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">key_pressed</span><span class="p">(</span><span class="s1">&#39;space&#39;</span><span class="p">):</span>
-<span class="linenos">15</span>        <span class="n">score</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="linenos">16</span>
-<span class="linenos">17</span><span class="n">run</span><span class="p">()</span>
-<span class="linenos">18</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span>
+<span class="kn">from</span> <span class="nn">richlib</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">clear</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">draw2d</span><span class="p">():</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">draw_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Player 1 score: </span><span class="si">{</span><span class="n">score</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">VIOLET</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">score</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">key_pressed</span><span class="p">(</span><span class="s1">&#39;space&#39;</span><span class="p">):</span>
+        <span class="n">score</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">run</span><span class="p">()</span>
+
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="topic">
 <p class="topic-title">Exercise</p>

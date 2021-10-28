@@ -7,8 +7,8 @@ loops.
 
 The techniques here should be familiar to you because we used them in
 :numref:`code-background`,
-:numref:`code-keyboard_input}`,
-:numref:`code-collisions}` and :numref:`code-chase`
+:numref:`code-keyboard_input`,
+:numref:`code-collisions` and :numref:`code-chase`
 
 Now we will show you how to put them all together in one program.
 

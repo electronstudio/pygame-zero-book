@@ -43,7 +43,8 @@ New lines are highlighted. We have also changed what happens when the
 box catches the alien: the program now exits and you must run it again
 to play again. This may not be what you want in your game!
 
-.. literalinclude:: programs/15b_chase.py, options: "hl_lines": [18, 19, 20, 21, 22, 23]
+.. literalinclude:: programs/15b_chase.py
+   :emphasize-lines: 18-23
    :caption: Alien chase
    :name: code-chase
    :linenos:
@@ -52,7 +53,7 @@ to play again. This may not be what you want in your game!
 
 .. topic:: Exercise
 
-   Add vertical movement (as you did in Exercise \ref{exercise:updown}).
+   Add vertical movement (as you did in previous exercise).
 
 
 .. topic:: Advanced
@@ -89,7 +90,7 @@ collect. When he does it disappears and moves to a new location.
 
 .. topic:: Advanced
 
-   Combine this program with the enemy from  Program~\ref{code:chase} and the background from :numref:`code-background` and whatever else you want to make your own game.
+   Combine this program with the enemy from  Program :numref:`code-chase` and the background from :numref:`code-background` and whatever else you want to make your own game.
 
 
 
@@ -104,9 +105,10 @@ Pygame Zero comes with one other image ``alien_hurt.png`` and one sound
 Most of this code is copied from
 :numref:`code-collisions`
 
-.. literalinclude:: programs/16_collisions2_sound_animation.py, options: "hl_lines": [21, 22, 23, 24]
+.. literalinclude:: programs/16_collisions2_sound_animation.py
+   :emphasize-lines: 19-24
    :caption: Sound and animation upon collision
-   :name: code-collisions2_sound_animation
+   :name: code-collisions2
    :linenos:
 
 
@@ -131,8 +133,8 @@ Most of this code is copied from
 Mouse clicks
 ------------
 
-This uses a *function call-back* for event-based input. It is similiar
-to :numref:`code-collisions2_sound_animation` but:
+This uses a *function call-back* for event-based input. It is similar
+to :numref:`code-collisions2` but:
 
 -  The box has been removed.
 -  There is an ``on_mouse_down()`` special function that is called
